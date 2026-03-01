@@ -1,0 +1,35 @@
+{
+  "name": "mflocss-vite-starter",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint:css": "stylelint \"src/**/*.scss\"",
+    "lint:js": "eslint \"src/**/*.js\"",
+    "format": "prettier --write \"src/**/*.{html,scss,js}\""
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "globals": "^17.4.0",
+    "prettier": "^3.0.0",
+    "sass": "^1.80.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard-scss": "^13.0.0",
+    "stylelint-selector-bem-pattern": "^4.0.0",
+    "vite": "^6.0.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "esbuild"
+    ]
+  },
+  "dependencies": {
+    "kiso.css": "^1.2.4"
+  }
+}
