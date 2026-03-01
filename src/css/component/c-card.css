@@ -9,7 +9,7 @@
     transition: box-shadow 0.3s var(--ease-out-cubic);
 
     &:hover {
-      box-shadow: 0 4px 12px oklch(0% 0 0deg / 10%);
+      box-shadow: 0 4px 12px var(--color-shadow);
     }
   }
 

@@ -8,8 +8,8 @@ export default defineConfig({
   // ソースのルートを src/ に設定
   root: 'src',
 
-  // 相対パスで出力（サブディレクトリ配置・zip 納品対応）
-  base: './',
+  // ルートパスで出力（HTML 内の絶対パスリンクと整合）
+  base: '/',
 
   build: {
     rollupOptions: {

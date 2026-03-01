@@ -8,6 +8,7 @@
       --color-text: var(--gray-50);
       --color-text-light: var(--gray-400);
       --color-border: var(--gray-600);
+      --color-shadow: oklch(100% 0 0deg / 8%);
     }
   }
 }
