@@ -1,0 +1,27 @@
+@layer component {
+  .c-code-block {
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .c-code-block__header {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-light);
+    background-color: var(--color-bg-secondary);
+    border-block-end: 1px solid var(--color-border);
+  }
+
+  .c-code-block__body {
+    padding: 1rem;
+    margin: 0;
+    overflow-x: auto;
+    background-color: var(--color-bg);
+    white-space: pre;
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+  }
+}

@@ -3,19 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | mFLOCSS Vite Starter</title>
+    <title>Contact | mFLOCSS</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <script type="module" src="/scripts/main.js"></script>
   </head>
   <body>
     <header class="p-header">
       <div class="p-header__inner">
-        <a href="/" class="p-header__logo">mFLOCSS Starter</a>
+        <a href="/" class="p-header__logo">mFLOCSS</a>
         <nav>
           <ul class="p-header__nav-list">
-            <li><a href="/">Top</a></li>
-            <li><a href="/about/">About</a></li>
-            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/" class="p-header__nav-link">Top</a></li>
+            <li>
+              <a href="/philosophy/" class="p-header__nav-link">Philosophy</a>
+            </li>
+            <li>
+              <a href="/layers/" class="p-header__nav-link">Layers</a>
+            </li>
+            <li>
+              <a href="/contact/" class="p-header__nav-link">Contact</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -25,14 +32,69 @@
       <section class="l-section">
         <div class="l-section__inner">
           <h1 class="c-section-heading a-fade-in-activate">Contact</h1>
-          <p class="a-fade-in-slide-up">Contact ページのサンプルです。</p>
+          <p class="u-text-center a-fade-in-slide-up" style="margin-block-start: 1rem">
+            お問い合わせフォームのサンプルです。<br />
+            Foundation 層のフォームリセットと Project 層の <code>p-contact-form</code> の組み合わせを確認できます。
+          </p>
+
+          <form class="p-contact-form a-fade-in-slide-up" style="margin-block-start: 2.5rem">
+            <div class="p-contact-form__field">
+              <label class="p-contact-form__label" for="name">お名前</label>
+              <input
+                class="p-contact-form__input"
+                type="text"
+                id="name"
+                placeholder="山田 太郎"
+                required
+              />
+            </div>
+            <div class="p-contact-form__field">
+              <label class="p-contact-form__label" for="email"
+                >メールアドレス</label
+              >
+              <input
+                class="p-contact-form__input"
+                type="email"
+                id="email"
+                placeholder="example@example.com"
+                required
+              />
+            </div>
+            <div class="p-contact-form__field">
+              <label class="p-contact-form__label" for="subject">件名</label>
+              <input
+                class="p-contact-form__input"
+                type="text"
+                id="subject"
+                placeholder="お問い合わせの件名"
+              />
+            </div>
+            <div class="p-contact-form__field">
+              <label class="p-contact-form__label" for="message"
+                >メッセージ</label
+              >
+              <textarea
+                class="p-contact-form__input"
+                id="message"
+                rows="6"
+                placeholder="お問い合わせ内容をご記入ください"
+                required
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="c-button-cta -large p-contact-form__submit"
+            >
+              送信する
+            </button>
+          </form>
         </div>
       </section>
     </main>
 
     <footer class="p-footer">
       <p class="p-footer__copyright">
-        &copy; 2026 mFLOCSS Vite Starter. MIT License.
+        &copy; 2026 mFLOCSS. MIT License.
       </p>
     </footer>
   </body>

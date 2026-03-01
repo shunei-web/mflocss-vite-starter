@@ -1,0 +1,44 @@
+@layer project {
+  .p-layer-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .p-layer-showcase__item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem 1.5rem;
+    align-items: start;
+    padding: 1.5rem;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+
+    @media (width < 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .p-layer-showcase__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .p-layer-showcase__name {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+  }
+
+  .p-layer-showcase__description {
+    grid-column: 2 / -1;
+    color: var(--color-text-light);
+    line-height: var(--line-height-base);
+
+    @media (width < 768px) {
+      grid-column: 1 / -1;
+    }
+  }
+}

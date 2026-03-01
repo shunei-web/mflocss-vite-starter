@@ -1,0 +1,9 @@
+@layer utility {
+  .u-text-center {
+    text-align: center !important;
+  }
+
+  .u-text-small {
+    font-size: 0.875rem !important;
+  }
+}

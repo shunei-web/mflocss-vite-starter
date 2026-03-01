@@ -1,0 +1,13 @@
+@layer theme {
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-main: var(--blue-400);
+      --color-accent: var(--orange-400);
+      --color-bg: var(--gray-900);
+      --color-bg-secondary: var(--gray-800);
+      --color-text: var(--gray-50);
+      --color-text-light: var(--gray-400);
+      --color-border: var(--gray-600);
+    }
+  }
+}

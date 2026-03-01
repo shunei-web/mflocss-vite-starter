@@ -3,57 +3,216 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mFLOCSS Vite Starter</title>
+    <title>mFLOCSS — 8層CSSアーキテクチャ</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <script type="module" src="/scripts/main.js"></script>
   </head>
   <body>
-    <!-- Project: Header -->
     <header class="p-header">
       <div class="p-header__inner">
-        <a href="/" class="p-header__logo">mFLOCSS Starter</a>
+        <a href="/" class="p-header__logo">mFLOCSS</a>
         <nav>
           <ul class="p-header__nav-list">
-            <li><a href="/">Top</a></li>
-            <li><a href="/about/">About</a></li>
-            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/" class="p-header__nav-link">Top</a></li>
+            <li>
+              <a href="/philosophy/" class="p-header__nav-link">Philosophy</a>
+            </li>
+            <li>
+              <a href="/layers/" class="p-header__nav-link">Layers</a>
+            </li>
+            <li>
+              <a href="/contact/" class="p-header__nav-link">Contact</a>
+            </li>
           </ul>
         </nav>
       </div>
     </header>
 
     <main>
-      <!-- Layout: Section -->
-      <section class="l-section">
-        <div class="l-section__inner">
-          <h1 class="c-section-heading a-fade-in-activate">
-            mFLOCSS Vite Starter
+      <!-- Project: Hero — サイト固有のデザインに依存するため Project 層 -->
+      <section class="p-hero">
+        <div class="p-hero__inner">
+          <h1 class="p-hero__title a-fade-in-activate">
+            その FLOCSS、<br />なぜそこに書いた？
           </h1>
-          <p class="a-fade-in-slide-up">
-            FLOCSS
-            をモダンCSSに対応させた8層アーキテクチャのスターターテンプレートです。
+          <p class="p-hero__lead a-fade-in-slide-up">
+            テンプレートは「結果」であって「判断の過程」ではない。<br />
+            mFLOCSS は CSS
+            の設計判断を8つの層で整理する、思考フレームワークです。
           </p>
-          <a href="#" class="c-button-cta -large a-fade-in-slide-up"
-            >Get Started</a
-          >
+          <div class="p-hero__actions a-fade-in-slide-up">
+            <a href="/philosophy/" class="c-button-cta -large"
+              >設計思想を学ぶ</a
+            >
+            <a href="/layers/" class="c-button-cta -large -accent"
+              >8層を理解する</a
+            >
+          </div>
         </div>
       </section>
 
+      <!-- 8層カード — Layout(l-grid) + Component(c-card, c-badge) の組み合わせ -->
       <section class="l-section">
         <div class="l-section__inner">
-          <h2 class="c-section-heading a-fade-in-activate">8 Layers</h2>
-          <p class="a-fade-in-slide-up">
-            Variable / Foundation / Layout / Component / Project / Animation /
-            Utility / Global
+          <h2 class="c-section-heading a-fade-in-activate">
+            8層アーキテクチャ
+          </h2>
+          <p class="u-text-center a-fade-in-slide-up">
+            mFLOCSS は CSS を 8 つのフラットな層に分類します。<br />
+            各層は <code>@layer</code> で優先順位が固定され、詳細度の衝突が起きません。
           </p>
+
+          <div class="l-grid a-stagger" style="margin-block-start: 2.5rem">
+            <article class="c-card">
+              <div class="c-card__body">
+                <span class="c-badge -tokens">Tokens</span>
+                <h3 class="c-card__title">プリミティブトークン</h3>
+                <p class="c-card__text">
+                  oklch 色コード、フォントスタック、数値スケール。意味を持たない「素材」を一箇所に集約する。
+                </p>
+              </div>
+            </article>
+
+            <article class="c-card">
+              <div class="c-card__body">
+                <span class="c-badge -theme">Theme</span>
+                <h3 class="c-card__title">セマンティックテーマ</h3>
+                <p class="c-card__text">
+                  Tokens に意味のある名前を与える。<code>--color-main</code> のように。ダークモードは Theme だけで切り替わる。
+                </p>
+              </div>
+            </article>
+
+            <article class="c-card">
+              <div class="c-card__body">
+                <span class="c-badge -foundation">Foundation</span>
+                <h3 class="c-card__title">ベーススタイル</h3>
+                <p class="c-card__text">
+                  リセット CSS と要素セレクタのデフォルト。<code>:where()</code> でゼロ詳細度を維持する。
+                </p>
+              </div>
+            </article>
+
+            <article class="c-card">
+              <div class="c-card__body">
+                <span class="c-badge -layout">Layout</span>
+                <h3 class="c-card__title">ページの骨格</h3>
+                <p class="c-card__text">
+                  セクション、グリッド、スタック。中身の見た目に関与せず「配置と空間」だけを担当する。
+                </p>
+              </div>
+            </article>
+
+            <article class="c-card">
+              <div class="c-card__body">
+                <span class="c-badge -component">Component</span>
+                <h3 class="c-card__title">再利用パーツ</h3>
+                <p class="c-card__text">
+                  別のサイトにそのまま持っていけるパーツ。ボタン、カード、見出し、バッジなど。
+                </p>
+              </div>
+            </article>
+
+            <article class="c-card">
+              <div class="c-card__body">
+                <span class="c-badge -project">Project</span>
+                <h3 class="c-card__title">サイト固有パーツ</h3>
+                <p class="c-card__text">
+                  このサイトのデザインに依存するパーツ。ヘッダー、フッター、ヒーローセクションなど。
+                </p>
+              </div>
+            </article>
+
+            <article class="c-card">
+              <div class="c-card__body">
+                <span class="c-badge -animation">Animation</span>
+                <h3 class="c-card__title">動きの管理</h3>
+                <p class="c-card__text">
+                  アニメーションを分離し、<code>prefers-reduced-motion</code> 対応を一元管理する。
+                </p>
+              </div>
+            </article>
+
+            <article class="c-card">
+              <div class="c-card__body">
+                <span class="c-badge -utility">Utility</span>
+                <h3 class="c-card__title">局所的な調整</h3>
+                <p class="c-card__text">
+                  最後の手段。他の層で解決できない微調整のみ。<code>!important</code> で最高優先度を保証する。
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- @layer コード例 -->
+      <section class="l-section">
+        <div class="l-section__inner">
+          <h2 class="c-section-heading a-fade-in-activate">
+            @layer で詳細度を制御する
+          </h2>
+
+          <div class="l-stack a-fade-in-slide-up" style="margin-block-start: 2rem">
+            <blockquote class="c-blockquote">
+              道具がどんなに進化しても、「どこに何を書くか」という設計判断は人間がやるしかない。
+            </blockquote>
+
+            <div class="c-code-block">
+              <div class="c-code-block__header">layer-order.css</div>
+              <pre
+                class="c-code-block__body"
+              ><code>@layer tokens, theme, foundation, layout, component, project, animation, utility;</code></pre>
+            </div>
+
+            <p>
+              この 1 行で、8つの層の優先順位がブラウザに明示的に固定されます。
+              セレクタの詳細度に関係なく、後に宣言された層ほど優先度が高くなります。
+              <code>!important</code> に頼る必要は、もうありません。
+            </p>
+
+            <div class="c-code-block">
+              <div class="c-code-block__header">Before: 詳細度の上書き合戦</div>
+              <pre class="c-code-block__body"><code>.header .button { background: #ff6600; }
+.sidebar .content .button { background: #28a745 !important; }</code></pre>
+            </div>
+
+            <div class="c-code-block">
+              <div class="c-code-block__header">After: mFLOCSS の @layer</div>
+              <pre class="c-code-block__body"><code>@layer component {
+  .c-button { background: var(--color-main); }
+}
+@layer project {
+  .p-hero .c-button { background: var(--color-accent); }
+}
+/* 宣言順で project > component。詳細度の心配は不要 */</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="l-section">
+        <div class="l-section__inner u-text-center">
+          <h2 class="c-section-heading a-fade-in-activate">
+            設計思想を身につけよう
+          </h2>
+          <p class="a-fade-in-slide-up">
+            このサイト自身が mFLOCSS で設計されています。<br />
+            ソースコードを読みながら、設計の判断基準を体験してください。
+          </p>
+          <div style="margin-block-start: 2rem" class="a-fade-in-slide-up">
+            <a href="/philosophy/" class="c-button-cta -large -accent"
+              >設計思想を読む</a
+            >
+          </div>
         </div>
       </section>
     </main>
 
-    <!-- Project: Footer -->
     <footer class="p-footer">
       <p class="p-footer__copyright">
-        &copy; 2026 mFLOCSS Vite Starter. MIT License.
+        &copy; 2026 mFLOCSS. MIT License.
       </p>
     </footer>
   </body>

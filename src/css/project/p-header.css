@@ -29,4 +29,15 @@
     padding: 0;
     margin: 0;
   }
+
+  .p-header__nav-link {
+    padding-block-end: 0.25rem;
+    border-block-end: 2px solid transparent;
+    transition: border-color 0.2s var(--ease-out-cubic);
+
+    &.is-current {
+      color: var(--color-main);
+      border-block-end-color: var(--color-main);
+    }
+  }
 }
