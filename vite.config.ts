@@ -8,14 +8,15 @@ export default defineConfig({
   // ソースのルートを src/ に設定
   root: 'src',
 
-  // 相対パスで出力（サブディレクトリ配置・zip 納品対応）
-  base: './',
+  // ルートパスで出力（HTML 内の絶対パスリンクと整合）
+  base: '/',
 
   build: {
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'src/index.html'),
-        about: resolve(__dirname, 'src/about/index.html'),
+        philosophy: resolve(__dirname, 'src/philosophy/index.html'),
+        layers: resolve(__dirname, 'src/layers/index.html'),
         contact: resolve(__dirname, 'src/contact/index.html'),
       },
     },
