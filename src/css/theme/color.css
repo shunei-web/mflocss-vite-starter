@@ -1,5 +1,6 @@
 @layer theme {
   :root {
+    /* 役割（グローバルセマンティック） */
     --color-main: var(--blue-600);
     --color-accent: var(--orange-500);
     --color-bg: var(--gray-50);
@@ -9,5 +10,10 @@
     --color-border: var(--gray-300);
     --color-white: var(--white);
     --color-shadow: oklch(0% 0 0deg / 10%);
+
+    /* 用途（コンテキストセマンティック） */
+    --color-link: var(--color-main);
+    --color-heading: var(--color-text);
+    --color-focus-ring: oklch(from var(--color-main) l c h / 25%);
   }
 }

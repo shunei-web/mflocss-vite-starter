@@ -1,6 +1,7 @@
 @layer theme {
   @media (prefers-color-scheme: dark) {
     :root {
+      /* 役割 */
       --color-main: var(--blue-400);
       --color-accent: var(--orange-400);
       --color-bg: var(--gray-900);
@@ -9,6 +10,9 @@
       --color-text-light: var(--gray-400);
       --color-border: var(--gray-600);
       --color-shadow: oklch(100% 0 0deg / 8%);
+
+      /* 用途（ダークモードで上書きが必要なもののみ） */
+      --color-focus-ring: oklch(from var(--color-main) l c h / 30%);
     }
   }
 }
