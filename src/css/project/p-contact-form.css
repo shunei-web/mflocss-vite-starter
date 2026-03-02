@@ -25,7 +25,7 @@
     padding-inline: 1rem;
     font-size: 1rem;
     color: var(--color-text);
-    background-color: var(--color-white);
+    background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 0.375rem;
     transition: border-color 0.2s var(--ease-out-cubic);
@@ -39,5 +39,11 @@
 
   .p-contact-form__submit {
     margin-block-start: 2rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .p-contact-form__input {
+      transition: none;
+    }
   }
 }

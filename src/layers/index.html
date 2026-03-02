@@ -69,15 +69,15 @@
                     <div class="c-code-block__header">tokens/color.css — このサイトの実装</div>
                     <pre class="c-code-block__body"><code>@layer tokens {
   :root {
-    --blue-600: oklch(45% 0.2 265deg);
-    --orange-500: oklch(65% 0.25 30deg);
-    --gray-900: oklch(20% 0 0deg);
+    --slate-600: oklch(44% 0.06 240deg);
+    --vermilion-500: oklch(55% 0.24 25deg);
+    --neutral-900: oklch(17% 0.008 240deg);
     --white: oklch(100% 0 0deg);
   }
 }</code></pre>
                   </div>
                   <p class="u-text-small">
-                    <strong>判断基準:</strong> 値に意味を持たせない。<code>--blue-600</code> は「青の 600 番」であり、「メインカラー」ではない。
+                    <strong>判断基準:</strong> 値に意味を持たせない。<code>--slate-600</code> は「スレートの 600 番」であり、「メインカラー」ではない。
                   </p>
                 </div>
               </div>
@@ -98,10 +98,10 @@
                     <div class="c-code-block__header">theme/color.css — このサイトの実装</div>
                     <pre class="c-code-block__body"><code>@layer theme {
   :root {
-    --color-main: var(--blue-600);
-    --color-accent: var(--orange-500);
-    --color-bg: var(--gray-50);
-    --color-text: var(--gray-900);
+    --color-main: var(--slate-600);
+    --color-accent: var(--vermilion-500);
+    --color-bg: var(--neutral-50);
+    --color-text: var(--neutral-900);
   }
 }</code></pre>
                   </div>
@@ -110,8 +110,8 @@
                     <pre class="c-code-block__body"><code>@layer theme {
   @media (prefers-color-scheme: dark) {
     :root {
-      --color-bg: var(--gray-900);
-      --color-text: var(--gray-50);
+      --color-bg: var(--neutral-900);
+      --color-text: var(--neutral-50);
       /* Tokens は一切変更しない */
     }
   }
@@ -329,9 +329,27 @@
     </main>
 
     <footer class="p-footer">
-      <p class="p-footer__copyright">
-        &copy; 2026 mFLOCSS. MIT License.
-      </p>
+      <div class="p-footer__inner">
+        <nav class="p-footer__nav" aria-label="フッターナビゲーション">
+          <div class="p-footer__nav-group">
+            <p class="p-footer__nav-heading">Learn</p>
+            <ul class="p-footer__nav-list">
+              <li><a href="/philosophy/" class="p-footer__nav-link">Philosophy</a></li>
+              <li><a href="/layers/" class="p-footer__nav-link">Layers</a></li>
+            </ul>
+          </div>
+          <div class="p-footer__nav-group">
+            <p class="p-footer__nav-heading">Resource</p>
+            <ul class="p-footer__nav-list">
+              <li><a href="https://github.com/shunei-web/mflocss-vite-starter" class="p-footer__nav-link">GitHub</a></li>
+              <li><a href="/contact/" class="p-footer__nav-link">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="p-footer__bottom">
+          <p class="p-footer__copyright">&copy; 2026 mFLOCSS. MIT License.</p>
+        </div>
+      </div>
     </footer>
   </body>
 </html>

@@ -2,13 +2,14 @@
   @media (prefers-color-scheme: dark) {
     :root {
       /* 役割 */
-      --color-main: var(--blue-400);
-      --color-accent: var(--orange-400);
-      --color-bg: var(--gray-900);
-      --color-bg-secondary: var(--gray-800);
-      --color-text: var(--gray-50);
-      --color-text-light: var(--gray-400);
-      --color-border: var(--gray-600);
+      --color-main: var(--slate-400);
+      --color-accent: var(--vermilion-400);
+      --color-bg: var(--neutral-900);
+      --color-bg-secondary: var(--neutral-800);
+      --color-surface: var(--neutral-800);
+      --color-text: var(--neutral-50);
+      --color-text-light: var(--neutral-400);
+      --color-border: var(--neutral-600);
       --color-shadow: oklch(100% 0 0deg / 8%);
 
       /* 用途（ダークモードで上書きが必要なもののみ） */

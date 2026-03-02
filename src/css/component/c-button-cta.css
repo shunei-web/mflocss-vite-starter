@@ -9,10 +9,17 @@
     color: var(--color-white);
     background-color: var(--color-main);
     border-radius: 0.5em;
-    transition: opacity 0.3s var(--ease-out-cubic);
+    transition:
+      background-color 0.3s var(--ease-out-cubic),
+      translate 0.3s var(--ease-out-cubic);
 
     &:hover {
-      opacity: 0.8;
+      background-color: oklch(from var(--color-main) calc(l - 0.05) c h);
+      translate: 0 -1px;
+    }
+
+    &:active {
+      translate: 0 0;
     }
 
     &.-large {
@@ -23,6 +30,16 @@
 
     &.-accent {
       background-color: var(--color-accent);
+
+      &:hover {
+        background-color: oklch(from var(--color-accent) calc(l - 0.05) c h);
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .c-button-cta {
+      transition: none;
     }
   }
 }

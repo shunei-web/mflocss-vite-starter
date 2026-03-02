@@ -9,6 +9,7 @@
       calc(var(--_max-py) * var(--px))
     );
     text-align: center;
+    background: radial-gradient(ellipse at 50% 0%, oklch(from var(--color-main) l c h / 6%) 0%, transparent 70%);
   }
 
   .p-hero__inner {
@@ -28,6 +29,17 @@
     );
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-heading);
+
+    &::after {
+      content: '';
+      display: block;
+      inline-size: 3rem;
+      block-size: 3px;
+      margin-block-start: 1rem;
+      margin-inline: auto;
+      background: linear-gradient(in oklab, var(--color-main), var(--color-accent));
+      border-radius: 100vmax;
+    }
   }
 
   .p-hero__lead {
