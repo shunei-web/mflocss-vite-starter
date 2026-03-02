@@ -42,8 +42,26 @@ const markCurrentNav = () => {
   });
 };
 
+const initMobileNav = () => {
+  const button = document.querySelector('.p-header__hamburger');
+  const nav = document.querySelector('.p-header__nav');
+
+  if (!button || !nav) return;
+
+  button.addEventListener('click', () => {
+    const isOpen = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', String(!isOpen));
+    button.setAttribute(
+      'aria-label',
+      isOpen ? 'メニューを開く' : 'メニューを閉じる',
+    );
+    nav.classList.toggle('is-open');
+  });
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   markCurrentNav();
+  initMobileNav();
   initStaggerDelays();
   observeAnimations();
 });

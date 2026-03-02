@@ -11,7 +11,16 @@
     <header class="p-header">
       <div class="p-header__inner">
         <a href="/" class="p-header__logo">mFLOCSS</a>
-        <nav aria-label="メインナビゲーション">
+        <button
+          type="button"
+          class="p-header__hamburger"
+          aria-expanded="false"
+          aria-controls="global-nav"
+          aria-label="メニューを開く"
+        >
+          <span class="p-header__hamburger-icon" aria-hidden="true"></span>
+        </button>
+        <nav id="global-nav" class="p-header__nav" aria-label="メインナビゲーション">
           <ul class="p-header__nav-list">
             <li><a href="/" class="p-header__nav-link">Top</a></li>
             <li>
