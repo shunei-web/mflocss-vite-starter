@@ -32,7 +32,7 @@
 
     &:focus {
       border-color: var(--color-main);
-      outline: 2px solid oklch(from var(--color-main) l c h / 25%);
+      outline: 2px solid var(--color-focus-ring);
       outline-offset: 1px;
     }
   }

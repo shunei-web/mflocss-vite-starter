@@ -14,7 +14,7 @@
   }
 
   :where(a) {
-    color: var(--color-main);
+    color: var(--color-link);
     text-decoration: none;
   }
 
