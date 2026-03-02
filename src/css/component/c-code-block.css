@@ -23,6 +23,7 @@
     overflow-x: auto;
     background-color: var(--color-bg);
     white-space: pre;
+    tab-size: 2;
     font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
   }
 }

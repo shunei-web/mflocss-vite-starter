@@ -133,6 +133,7 @@
   /* reduced-motion */
   @media (prefers-reduced-motion: reduce) {
     .p-header__nav,
+    .p-header__nav-link,
     .p-header__hamburger-icon,
     .p-header__hamburger-icon::before,
     .p-header__hamburger-icon::after {

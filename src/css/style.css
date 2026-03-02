@@ -43,6 +43,8 @@
 /* Animation */
 @import './animation/a-fade-in-activate.css';
 @import './animation/a-fade-in-slide-up.css';
+@import './animation/a-fade-in-slide-right.css';
+@import './animation/a-scale-in.css';
 @import './animation/a-stagger.css';
 
 /* Utility */
