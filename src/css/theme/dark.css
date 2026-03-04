@@ -10,7 +10,7 @@
       --color-text: var(--neutral-50);
       --color-text-light: var(--neutral-400);
       --color-border: var(--neutral-600);
-      --color-shadow: oklch(100% 0 0deg / 8%);
+      --color-shadow: oklch(from var(--white) l c h / 8%);
 
       /* 用途（ダークモードで上書きが必要なもののみ） */
       --color-focus-ring: oklch(from var(--color-main) l c h / 30%);
