@@ -1,6 +1,7 @@
 @layer theme {
   :root {
     --font-family-ja: var(--font-ja);
+    --font-family-code: var(--font-code);
     --font-weight-regular: var(--weight-regular);
     --font-weight-bold: var(--weight-bold);
     --line-height-base: var(--leading-relaxed);

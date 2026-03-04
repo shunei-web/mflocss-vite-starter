@@ -4,9 +4,7 @@
  */
 @layer foundation {
   /* Universal */
-  *,
-  ::before,
-  ::after {
+  :where(*, ::before, ::after) {
     box-sizing: border-box;
   }
 
@@ -117,7 +115,7 @@
     resize: block;
   }
 
-  ::placeholder {
+  :where(::placeholder) {
     opacity: unset;
   }
 
@@ -141,7 +139,7 @@
     cursor: default;
   }
 
-  [hidden]:not([hidden="until-found" i]) {
+  :where([hidden]:not([hidden="until-found" i])) {
     display: none !important;
   }
 }

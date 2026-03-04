@@ -10,7 +10,7 @@
     --color-text-light: var(--neutral-600);
     --color-border: var(--neutral-300);
     --color-white: var(--white);
-    --color-shadow: oklch(0% 0 0deg / 10%);
+    --color-shadow: oklch(from var(--black) l c h / 10%);
 
     /* 用途（コンテキストセマンティック） */
     --color-link: var(--color-main);

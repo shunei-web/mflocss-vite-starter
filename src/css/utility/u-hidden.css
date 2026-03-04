@@ -32,11 +32,11 @@
       margin: 0 !important;
       overflow: visible !important;
       clip-path: none !important;
-      font-size: 0.875rem;
-      font-weight: var(--font-weight-bold);
-      color: var(--color-white);
-      background-color: var(--color-main);
-      z-index: var(--z-fixed);
+      font-size: 0.875rem !important;
+      font-weight: var(--font-weight-bold) !important;
+      color: var(--color-white) !important;
+      background-color: var(--color-main) !important;
+      z-index: var(--z-fixed) !important;
     }
   }
 }
