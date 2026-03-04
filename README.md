@@ -1,4 +1,4 @@
-# mflocss-vite-starter
+# mflocss/starter
 
 Zenn 技術書「そのFLOCSS、なぜそこに書いた？ —— mFLOCSS で迷わない CSS 設計の判断基準」付属のリファレンス実装。
 
