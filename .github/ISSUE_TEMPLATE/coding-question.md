@@ -1,6 +1,6 @@
 ---
 name: コーディング質問
-about: mFLOCSS の設計判断やテンプレートの使い方についての質問
+about: mFLOCSS の設計判断やリファレンス実装の使い方についての質問
 title: "[質問] "
 labels: question
 ---

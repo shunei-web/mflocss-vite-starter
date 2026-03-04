@@ -1,8 +1,8 @@
 # mflocss-vite-starter
 
-Zenn 技術書「そのFLOCSS、なぜそこに書いた？ —— FLOCSS をモダン CSS に進化させた mFLOCSS の設計論」付属のスターターテンプレート。
+Zenn 技術書「そのFLOCSS、なぜそこに書いた？ —— mFLOCSS で迷わない CSS 設計の判断基準」付属のリファレンス実装。
 
-mFLOCSS × Vite × モダン CSS で作る、崩れない CSS 設計のひな型です。
+mFLOCSS × Vite × モダン CSS で作る、崩れない CSS 設計のリファレンス実装です。
 
 ## 必要環境
 
@@ -77,7 +77,7 @@ src/css/
 
 ## スタイルを追加する
 
-「どのレイヤーに書くか迷う」という場合は、本の Chapter 4 を参照してください。
+「どのレイヤーに書くか迷う」という場合は、本の Chapter 3 を参照してください。
 
 ### 新しい Component を追加する場合
 
@@ -93,7 +93,7 @@ src/css/
 ## この本について
 
 <!-- TODO: 公開後に URL を追加 -->
-「そのFLOCSS、なぜそこに書いた？ —— FLOCSS をモダン CSS に進化させた mFLOCSS の設計論」
+「そのFLOCSS、なぜそこに書いた？ —— mFLOCSS で迷わない CSS 設計の判断基準」
 
 ## ライセンス
 
