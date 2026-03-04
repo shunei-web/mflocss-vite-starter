@@ -33,6 +33,7 @@
 @import './component/c-badge.css';
 @import './component/c-table.css';
 @import './component/c-blockquote.css';
+@import './component/c-skip-link.css';
 
 /* Project */
 @import './project/p-header.css';
