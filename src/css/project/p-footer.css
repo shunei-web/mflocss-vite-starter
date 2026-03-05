@@ -4,14 +4,11 @@
     background-color: var(--color-bg-secondary);
   }
 
-  .p-footer__inner {
-    display: contents;
-  }
-
   .p-footer__nav {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    gap: 2rem 4rem;
   }
 
   .p-footer__nav-heading {
