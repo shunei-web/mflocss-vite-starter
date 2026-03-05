@@ -180,31 +180,31 @@
             @layer で詳細度を制御する
           </h2>
 
-          <div class="l-stack a-fade-in-slide-up" style="margin-block-start: 2rem">
-            <blockquote class="c-blockquote">
+          <div class="l-stack" style="margin-block-start: 2rem">
+            <blockquote class="c-blockquote a-fade-in-slide-up">
               道具がどんなに進化しても、「どこに何を書くか」という設計判断は人間がやるしかない。
             </blockquote>
 
-            <div class="c-code-block">
+            <div class="c-code-block a-fade-in-slide-up">
               <div class="c-code-block__header">layer-order.css</div>
               <pre
                 class="c-code-block__body"
               ><code>@layer tokens, theme, foundation, layout, component, project, animation, utility;</code></pre>
             </div>
 
-            <p>
+            <p class="a-fade-in-slide-up">
               この 1 行で、8つの層の優先順位がブラウザに明示的に固定されます。
               セレクタの詳細度に関係なく、後に宣言された層ほど優先度が高くなります。
               <code>!important</code> に頼る必要は、もうありません。
             </p>
 
-            <div class="c-code-block">
+            <div class="c-code-block a-fade-in-slide-up">
               <div class="c-code-block__header">Before: 詳細度の上書き合戦</div>
               <pre class="c-code-block__body"><code>.header .button { background: #ff6600; }
 .sidebar .content .button { background: #28a745 !important; }</code></pre>
             </div>
 
-            <div class="c-code-block">
+            <div class="c-code-block a-fade-in-slide-up">
               <div class="c-code-block__header">After: mFLOCSS の @layer</div>
               <pre class="c-code-block__body"><code>@layer component {
   .c-button { background: var(--color-main); }
