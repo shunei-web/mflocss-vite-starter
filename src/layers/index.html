@@ -45,7 +45,7 @@
           <h1 class="c-section-heading a-fade-in-activate">
             8層を理解する
           </h1>
-          <p class="a-fade-in-activate" style="text-align: center; margin-block-start: 1rem">
+          <p class="a-fade-in-slide-up" style="text-align: center; margin-block-start: 1rem">
             各層の「なぜ」を知ることで、「どこに書くか」の判断基準が身につきます。<br />
             このサイト自身の実装コードを例に解説します。
           </p>
@@ -217,7 +217,7 @@
                     ヘッダー、フッター、ヒーローセクション——これらは mFLOCSS サイト固有のデザインなので Project です。
                   </p>
 
-                  <blockquote class="c-blockquote">
+                  <blockquote class="c-blockquote a-fade-in-slide-right">
                     Component は「パーツ単体」で完結する。Project は「Component を組み合わせて構成される」。
                   </blockquote>
 
@@ -248,20 +248,26 @@
                   <div class="c-code-block">
                     <div class="c-code-block__header">animation/a-fade-in-slide-up.css</div>
                     <pre class="c-code-block__body"><code>@layer animation {
-  .a-fade-in-slide-up {
-    opacity: 0;
-    translate: 0 20px;
-    transition: opacity 0.6s, translate 0.6s;
+  @media (prefers-reduced-motion: no-preference)
+     and (scripting: enabled) {
+    .a-fade-in-slide-up {
+      opacity: 0;
+      translate: 0 20px;
 
-    &amp;.is-active { opacity: 1; translate: 0 0; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .a-fade-in-slide-up { opacity: 1; translate: 0 0; }
+      &amp;.is-active {
+        opacity: 1;
+        translate: 0 0;
+        animation: fade-in-slide-up 0.6s ease-out;
+      }
+    }
+    @keyframes fade-in-slide-up {
+      from { opacity: 0; translate: 0 20px; }
+    }
   }
 }</code></pre>
                   </div>
                   <p style="font-size: 0.875rem">
-                    <strong>判断基準:</strong> アニメーションのロジックは Animation 層に集約。Component や Project には書かない。
+                    <strong>判断基準:</strong> アニメーションは Animation 層に集約。<code>@media</code> ラッパーで <code>prefers-reduced-motion</code> と <code>scripting</code> を一元管理する。
                   </p>
                 </div>
               </div>
@@ -309,7 +315,7 @@
       <!-- まとめ CTA -->
       <section class="l-section">
         <div class="l-inner" style="text-align: center">
-          <h2 class="c-section-heading a-fade-in-activate">
+          <h2 class="c-section-heading a-fade-in-slide-up">
             判断基準を身につけたら
           </h2>
           <p class="a-fade-in-slide-up">
@@ -322,7 +328,7 @@
 
     <footer class="p-footer">
       <div class="l-inner p-footer__inner">
-        <nav class="p-footer__nav" aria-label="フッターナビゲーション">
+        <nav class="p-footer__nav a-stagger" aria-label="フッターナビゲーション">
           <div class="p-footer__nav-group">
             <p class="p-footer__nav-heading">Learn</p>
             <ul class="p-footer__nav-list">
