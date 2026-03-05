@@ -4,7 +4,9 @@
  */
 @layer foundation {
   /* Universal */
-  :where(*, ::before, ::after) {
+  *,
+  ::before,
+  ::after {
     box-sizing: border-box;
   }
 
@@ -115,7 +117,7 @@
     resize: block;
   }
 
-  :where(::placeholder) {
+  ::placeholder {
     opacity: unset;
   }
 
