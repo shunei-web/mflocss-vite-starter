@@ -22,8 +22,6 @@
 @import './layout/l-section.css';
 @import './layout/l-inner.css';
 @import './layout/l-container.css';
-@import './layout/l-grid.css';
-@import './layout/l-stack.css';
 
 /* Component */
 @import './component/c-button-cta.css';
@@ -41,6 +39,10 @@
 @import './project/p-hero.css';
 @import './project/p-layer-showcase.css';
 @import './project/p-contact-form.css';
+@import './project/p-home.css';
+@import './project/p-philosophy.css';
+@import './project/p-layers.css';
+@import './project/p-contact.css';
 
 /* Animation */
 @import './animation/a-fade-in-activate.css';

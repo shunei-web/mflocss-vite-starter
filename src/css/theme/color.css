@@ -19,4 +19,5 @@
     --color-heading: var(--color-text);
     --color-focus-ring: light-dark(oklch(from var(--color-main) l c h / 25%), oklch(from var(--color-main) l c h / 30%));
   }
+
 }
