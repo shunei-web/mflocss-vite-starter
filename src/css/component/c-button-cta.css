@@ -36,7 +36,7 @@
   @media (any-hover: hover) {
     .c-button-cta:hover:not(:disabled) {
       background-color: oklch(from var(--color-main) calc(l - 0.05) c h);
-      translate: 0 -1px;
+      translate: 0 -2px;
     }
 
     .c-button-cta.-accent:hover:not(:disabled) {
