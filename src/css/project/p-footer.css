@@ -56,10 +56,4 @@
     font-size: 0.875rem;
     color: var(--color-text-light);
   }
-
-  @media (prefers-reduced-motion: reduce) {
-    .p-footer__nav-link {
-      transition: none;
-    }
-  }
 }

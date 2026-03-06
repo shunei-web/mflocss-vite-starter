@@ -54,9 +54,4 @@
     }
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .c-card {
-      transition: none;
-    }
-  }
 }
