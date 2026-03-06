@@ -40,10 +40,4 @@
   .p-contact-form__submit {
     margin-block-start: 2rem;
   }
-
-  @media (prefers-reduced-motion: reduce) {
-    .p-contact-form__input {
-      transition: none;
-    }
-  }
 }

@@ -127,17 +127,6 @@
     }
   }
 
-  /* reduced-motion */
-  @media (prefers-reduced-motion: reduce) {
-    .p-header__nav,
-    .p-header__nav-link,
-    .p-header__hamburger-icon,
-    .p-header__hamburger-icon::before,
-    .p-header__hamburger-icon::after {
-      transition: none;
-    }
-  }
-
   /* JS 無効時: nav を常時表示 */
   @media (scripting: none) {
     .p-header__hamburger {
