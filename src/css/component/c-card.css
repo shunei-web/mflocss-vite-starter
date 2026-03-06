@@ -41,10 +41,4 @@
     color: var(--color-text-light);
     line-height: var(--line-height-base);
   }
-
-  @media (prefers-reduced-motion: reduce) {
-    .c-card {
-      transition: none;
-    }
-  }
 }
