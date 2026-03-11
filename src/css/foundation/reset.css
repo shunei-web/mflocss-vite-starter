@@ -2,146 +2,145 @@
  * mFLOCSS Reset
  * ブラウザデフォルトの差異を吸収し、日本語組版に最適化するリセット CSS。
  */
-@layer foundation {
-  /* Universal */
-  *,
-  ::before,
-  ::after {
-    box-sizing: border-box;
-  }
 
-  /* Document — 日本語組版 + レイアウト安定化 */
-  :where(:root) {
-    line-height: 1.5;
-    text-spacing-trim: trim-start;
-    text-autospace: normal;
-    line-break: strict;
-    overflow-wrap: anywhere;
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-    scrollbar-gutter: stable;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-  }
+/* Universal */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
 
-  :where(body) {
-    min-block-size: 100dvb;
-    margin: unset;
-  }
+/* Document — 日本語組版 + レイアウト安定化 */
+:where(:root) {
+  line-height: 1.5;
+  text-spacing-trim: trim-start;
+  text-autospace: normal;
+  line-break: strict;
+  overflow-wrap: anywhere;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scrollbar-gutter: stable;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
 
-  /* Sections */
-  :where(h1) {
-    margin-block: 0.67em;
-    font-size: 2em;
-  }
+:where(body) {
+  min-block-size: 100dvb;
+  margin: unset;
+}
 
-  :where(h2, h3, h4, h5, h6) {
-    margin-block: unset;
-  }
+/* Sections */
+:where(h1) {
+  margin-block: 0.67em;
+  font-size: 2em;
+}
 
-  /* Grouping content */
-  :where(p, blockquote, figure, pre, ul, ol, dl) {
-    margin-block: unset;
-  }
+:where(h2, h3, h4, h5, h6) {
+  margin-block: unset;
+}
 
-  :where(blockquote, figure) {
-    margin-inline: unset;
-  }
+/* Grouping content */
+:where(p, blockquote, figure, pre, ul, ol, dl) {
+  margin-block: unset;
+}
 
-  :where(ul, ol, menu) {
-    padding-inline-start: unset;
-    list-style-type: "";
-  }
+:where(blockquote, figure) {
+  margin-inline: unset;
+}
 
-  :where(dd) {
-    margin-inline-start: unset;
-  }
+:where(ul, ol, menu) {
+  padding-inline-start: unset;
+  list-style-type: "";
+}
 
-  :where(pre) {
-    text-spacing-trim: space-all;
-    text-autospace: no-autospace;
-  }
+:where(dd) {
+  margin-inline-start: unset;
+}
 
-  /* Text-level semantics — 日本語対応 */
-  :where(em:lang(ja)) {
-    font-weight: bolder;
-  }
+:where(pre) {
+  text-spacing-trim: space-all;
+  text-autospace: no-autospace;
+}
 
-  :where(:is(i, cite, em, dfn, address):lang(ja)) {
-    font-style: unset;
-  }
+/* Text-level semantics — 日本語対応 */
+:where(em:lang(ja)) {
+  font-weight: bolder;
+}
 
-  /* Links */
-  :where(a) {
-    color: unset;
-  }
+:where(:is(i, cite, em, dfn, address):lang(ja)) {
+  font-style: unset;
+}
 
-  :where(a:any-link) {
-    text-decoration-line: unset;
-  }
+/* Links */
+:where(a) {
+  color: unset;
+}
 
-  /* Embedded content */
-  :where(img, svg, video, canvas, iframe) {
-    max-inline-size: 100%;
-    block-size: auto;
-    vertical-align: bottom;
-  }
+:where(a:any-link) {
+  text-decoration-line: unset;
+}
 
-  /* Tabular data */
-  :where(table) {
-    border-collapse: collapse;
-  }
+/* Embedded content */
+:where(img, svg, video, canvas, iframe) {
+  max-inline-size: 100%;
+  block-size: auto;
+  vertical-align: bottom;
+}
 
-  :where(caption, th) {
-    text-align: unset;
-  }
+/* Tabular data */
+:where(table) {
+  border-collapse: collapse;
+}
 
-  /* Forms */
-  :where(button, input, select, textarea) {
-    border: 1px solid;
-    border-radius: unset;
-    color: inherit;
-    font: inherit;
-    letter-spacing: unset;
-  }
+:where(caption, th) {
+  text-align: unset;
+}
 
-  :where(fieldset) {
-    min-inline-size: 0;
-    margin: unset;
-    padding: unset;
-    border: unset;
-  }
+/* Forms */
+:where(button, input, select, textarea) {
+  border: 1px solid;
+  border-radius: unset;
+  color: inherit;
+  font: inherit;
+  letter-spacing: unset;
+}
 
-  :where(textarea) {
-    margin-block: unset;
-    resize: block;
-  }
+:where(fieldset) {
+  min-inline-size: 0;
+  margin: unset;
+  padding: unset;
+  border: unset;
+}
 
-  ::placeholder {
-    opacity: unset;
-  }
+:where(textarea) {
+  margin-block: unset;
+  resize: block;
+}
 
-  /* Interactive */
-  :where(summary) {
-    list-style-type: "";
-    cursor: pointer;
-  }
+::placeholder {
+  opacity: unset;
+}
 
-  :where(dialog, [popover]) {
-    padding: unset;
-    border: unset;
-  }
+/* Interactive */
+:where(summary) {
+  list-style-type: "";
+  cursor: pointer;
+}
 
-  :where(:focus-visible) {
-    outline: 2px solid currentcolor;
-    outline-offset: 3px;
-  }
+:where(dialog, [popover]) {
+  padding: unset;
+  border: unset;
+}
 
-  :where(:disabled, [aria-disabled="true" i]) {
-    cursor: default;
-  }
+:where(:focus-visible) {
+  outline: 2px solid currentcolor;
+  outline-offset: 3px;
+}
 
-  :where([hidden]:not([hidden="until-found" i])) {
-    display: none !important;
-  }
+:where(:disabled, [aria-disabled="true" i]) {
+  cursor: default;
+}
+
+:where([hidden]:not([hidden="until-found" i])) {
+  display: none !important;
 }

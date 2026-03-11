@@ -1,10 +1,8 @@
-@layer project {
-  .p-contact__lead {
-    text-align: center;
-    margin-block-start: 1rem;
-  }
+.p-contact__lead {
+  text-align: center;
+  margin-block-start: 1rem;
+}
 
-  .p-contact__form {
-    margin-block-start: 2.5rem;
-  }
+.p-contact__form {
+  margin-block-start: 2.5rem;
 }

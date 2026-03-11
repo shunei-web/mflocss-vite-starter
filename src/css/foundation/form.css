@@ -1,8 +1,6 @@
-@layer foundation {
-  :where(button) {
-    cursor: pointer;
-    border: none;
-    background: none;
-    padding: 0;
-  }
+:where(button) {
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
 }
