@@ -93,7 +93,7 @@
                 <article class="c-card">
                   <div class="c-card__body">
                     <span class="c-badge">Theme</span>
-                    <h3 class="c-card__title">セマンティックテーマ</h3>
+                    <h3 class="c-card__title">セマンティック変数へのマッピング</h3>
                     <p class="c-card__text">
                       Tokens に意味のある名前を与える。<code>--color-main</code> のように。ダークモードは Theme だけで切り替わる。
                     </p>
@@ -107,7 +107,7 @@
                 <article class="c-card">
                   <div class="c-card__body">
                     <span class="c-badge">Foundation</span>
-                    <h3 class="c-card__title">ベーススタイル</h3>
+                    <h3 class="c-card__title">ブラウザ環境の初期化と基本スタイル</h3>
                     <p class="c-card__text">
                       リセット CSS と要素セレクタのデフォルト。<code>:where()</code> でゼロ詳細度を維持する。
                     </p>
@@ -121,7 +121,7 @@
                 <article class="c-card">
                   <div class="c-card__body">
                     <span class="c-badge">Layout</span>
-                    <h3 class="c-card__title">ページの骨格</h3>
+                    <h3 class="c-card__title">位置と空間の配置</h3>
                     <p class="c-card__text">
                       セクション、グリッド、スタック。中身の見た目に関与せず「配置と空間」だけを担当する。
                     </p>
@@ -149,9 +149,9 @@
                 <article class="c-card">
                   <div class="c-card__body">
                     <span class="c-badge">Project</span>
-                    <h3 class="c-card__title">サイト固有パーツ</h3>
+                    <h3 class="c-card__title">サイト固有のパーツと文脈</h3>
                     <p class="c-card__text">
-                      このサイトのデザインに依存するパーツ。ヘッダー、フッター、ヒーローセクションなど。
+                      サイト固有のデザインに依存するパーツ。Component を組み合わせ、文脈に応じた配置・装飾を担う。
                     </p>
                   </div>
                 </article>
@@ -163,9 +163,9 @@
                 <article class="c-card">
                   <div class="c-card__body">
                     <span class="c-badge">Animation</span>
-                    <h3 class="c-card__title">動きの管理</h3>
+                    <h3 class="c-card__title">動きの分離管理</h3>
                     <p class="c-card__text">
-                      アニメーションを分離し、<code>prefers-reduced-motion</code> 対応を一元管理する。
+                      アニメーションを分離し、<code>prefers-reduced-motion</code> と <code>scripting</code> の 2 条件を一元管理する。
                     </p>
                   </div>
                 </article>
@@ -177,9 +177,9 @@
                 <article class="c-card">
                   <div class="c-card__body">
                     <span class="c-badge">Utility</span>
-                    <h3 class="c-card__title">局所的な調整</h3>
+                    <h3 class="c-card__title">単一目的のスタイル上書き</h3>
                     <p class="c-card__text">
-                      最後の手段。他の層で解決できない微調整のみ。<code>!important</code> で最高優先度を保証する。
+                      他の層で解決できない局所的な微調整のみ。<code>!important</code> で最高優先度を保証する。
                     </p>
                   </div>
                 </article>
@@ -216,19 +216,19 @@
 
             <div class="c-code-block a-fade-in-slide-up">
               <div class="c-code-block__header">Before: 詳細度の上書き合戦</div>
-              <pre class="c-code-block__body"><code>.header .button { background: #ff6600; }
-.sidebar .content .button { background: #28a745 !important; }</code></pre>
+              <pre class="c-code-block__body"><code>.card .button { background: #28a745; }             /* (0, 2, 0) */
+.card .button.is-featured { background: #ff6600; } /* (0, 3, 0) で対抗… */</code></pre>
             </div>
 
             <div class="c-code-block a-fade-in-slide-up">
               <div class="c-code-block__header">After: mFLOCSS の @layer</div>
               <pre class="c-code-block__body"><code>@layer component {
-  .c-button { background: var(--color-main); }
+  .c-card .c-button.-accent { background: var(--color-accent); } /* (0, 3, 0) */
 }
 @layer project {
-  .p-hero .c-button { background: var(--color-accent); }
+  .p-hero .c-button { background: var(--color-hero); }          /* (0, 2, 0) */
 }
-/* 宣言順で project > component。詳細度の心配は不要 */</code></pre>
+/* project の詳細度が低くても、layer 宣言順で project が勝つ */</code></pre>
             </div>
           </div>
         </div>
@@ -265,7 +265,7 @@
         <div class="p-footer__nav-group">
           <p class="p-footer__nav-heading">Resource</p>
           <ul class="p-footer__nav-list">
-            <li><a href="https://github.com/mflocss/starter" class="p-footer__nav-link">GitHub</a></li>
+            <li><a href="https://github.com/mflocss/starter" class="p-footer__nav-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             <li><a href="/contact/" class="p-footer__nav-link">Contact</a></li>
           </ul>
         </div>

@@ -3,6 +3,11 @@
   margin-block-start: 1rem;
 }
 
+.p-layers__note {
+  text-align: center;
+  color: var(--color-text-light);
+}
+
 .p-layers__cta {
   text-align: center;
 }

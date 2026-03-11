@@ -87,20 +87,20 @@
                 <div class="c-code-block">
                   <div class="c-code-block__header">詳細度の上書き合戦</div>
                   <pre class="c-code-block__body"><code>/* はじめは素直なコード */
-.button {
+.button {                        /* 詳細度 (0, 1, 0) */
   background: #007bff;
   color: #fff;
   padding: 12px 24px;
 }
 
-/* 別のページで色を変えたくなった */
-.header .button {
-  background: #ff6600;
+/* カード内のボタンだけ色を変えたい */
+.card .button {                  /* 詳細度 (0, 2, 0) — 勝つ */
+  background: #28a745;
 }
 
-/* さらに別の箇所で、上書きが効かない… */
-.sidebar .content .button {
-  background: #28a745 !important;
+/* 全ボタンを青に統一したくなったが、(0, 1, 0) では勝てない… */
+.button {                        /* 詳細度 (0, 1, 0) — 負ける */
+  background: #007bff !important; /* !important で強制上書きするしかない */
 }</code></pre>
                 </div>
 
@@ -120,7 +120,7 @@
 
               <div class="p-philosophy__section-content">
                 <p>
-                  2025 年現在、CSS 自体が大きく進化しています。<code>@layer</code> でスタイルの優先順位を制御でき、<code>@scope</code> でスタイルの適用範囲を構造的に制限でき、CSS Nesting でネスト記法がネイティブに書ける。かつて Sass や命名規則で「回避」していた問題を、ブラウザが「解決」してくれる時代になりました。
+                  現在、CSS 自体が大きく進化しています。<code>@layer</code> でカスケードの優先順位を制御でき、CSS Nesting で Sass なしにネスト記法が書ける。<code>:has()</code> で親要素の状態に応じたスタイリングが可能になり、Container Queries でコンポーネント単位のレスポンシブが実現した。<code>@scope</code> によるネイティブなスコーピングも全ブラウザで利用可能になりました。かつて Sass や命名規則で「回避」していた問題を、ブラウザが「解決」してくれる時代です。
                 </p>
 
                 <div class="p-philosophy__table-wrap">
@@ -151,7 +151,7 @@
                       </tr>
                       <tr>
                         <td><strong>ネイティブ CSS</strong></td>
-                        <td>@layer, @scope</td>
+                        <td>@layer, :has(), @scope 等</td>
                         <td>ブラウザ標準機能が設計手法の役割を吸収しつつある</td>
                       </tr>
                       <tr>
@@ -195,52 +195,52 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td><span class="c-badge -tokens">Tokens</span></td>
+                        <td class="p-philosophy__layer -tokens"><span class="c-badge">Tokens</span></td>
                         <td>—</td>
                         <td>新設</td>
                         <td>プリミティブなデザイントークン</td>
                       </tr>
                       <tr>
-                        <td><span class="c-badge -theme">Theme</span></td>
+                        <td class="p-philosophy__layer -theme"><span class="c-badge">Theme</span></td>
                         <td>—</td>
                         <td>新設</td>
-                        <td>セマンティックなトークン</td>
+                        <td>Tokens をセマンティック変数にマッピング</td>
                       </tr>
                       <tr>
-                        <td><span class="c-badge -foundation">Foundation</span></td>
+                        <td class="p-philosophy__layer -foundation"><span class="c-badge">Foundation</span></td>
                         <td>あり</td>
                         <td>継承</td>
-                        <td>リセット CSS・ベーススタイル</td>
+                        <td>ブラウザ環境の初期化と基本スタイル</td>
                       </tr>
                       <tr>
-                        <td><span class="c-badge -layout">Layout</span></td>
+                        <td class="p-philosophy__layer -layout"><span class="c-badge">Layout</span></td>
                         <td>あり</td>
                         <td>継承</td>
-                        <td>ページの骨格</td>
+                        <td>位置と空間の配置</td>
                       </tr>
                       <tr>
-                        <td><span class="c-badge -component">Component</span></td>
+                        <td class="p-philosophy__layer -component"><span class="c-badge">Component</span></td>
                         <td>Object 配下</td>
                         <td>トップレベル化</td>
                         <td>再利用できるパーツ</td>
                       </tr>
                       <tr>
-                        <td><span class="c-badge -project">Project</span></td>
+                        <td class="p-philosophy__layer -project"><span class="c-badge">Project</span></td>
                         <td>Object 配下</td>
                         <td>トップレベル化</td>
-                        <td>サイト固有のパーツ</td>
+                        <td>サイト固有のパーツと文脈</td>
                       </tr>
                       <tr>
-                        <td><span class="c-badge -animation">Animation</span></td>
+                        <td class="p-philosophy__layer -animation"><span class="c-badge">Animation</span></td>
                         <td>—</td>
                         <td>新設</td>
-                        <td>アニメーションの分離管理</td>
+                        <td>動きの分離管理</td>
                       </tr>
                       <tr>
-                        <td><span class="c-badge -utility">Utility</span></td>
+                        <td class="p-philosophy__layer -utility"><span class="c-badge">Utility</span></td>
                         <td>Object 配下</td>
                         <td>トップレベル化</td>
-                        <td>局所的な調整の最終手段</td>
+                        <td>単一目的のスタイル上書き</td>
                       </tr>
                     </tbody>
                   </table>
@@ -273,7 +273,7 @@
         <div class="p-footer__nav-group">
           <p class="p-footer__nav-heading">Resource</p>
           <ul class="p-footer__nav-list">
-            <li><a href="https://github.com/mflocss/starter" class="p-footer__nav-link">GitHub</a></li>
+            <li><a href="https://github.com/mflocss/starter" class="p-footer__nav-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             <li><a href="/contact/" class="p-footer__nav-link">Contact</a></li>
           </ul>
         </div>
