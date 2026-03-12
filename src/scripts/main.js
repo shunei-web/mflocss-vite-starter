@@ -1,6 +1,3 @@
-import '../css/style.css';
-
-
 const observeAnimations = () => {
   if (!('IntersectionObserver' in window)) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
