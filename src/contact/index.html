@@ -50,26 +50,49 @@
 
           <form class="p-contact-form p-contact__form">
             <div class="p-contact-form__field a-fade-in-slide-up">
-              <label class="p-contact-form__label" for="name">お名前</label>
+              <label class="p-contact-form__label" for="name">
+                お名前<span class="p-contact-form__required" aria-hidden="true">*</span>
+              </label>
               <input
                 class="p-contact-form__input"
                 type="text"
                 id="name"
+                name="name"
+                autocomplete="name"
                 placeholder="山田 太郎"
                 required
               />
             </div>
             <div class="p-contact-form__field a-fade-in-slide-up">
-              <label class="p-contact-form__label" for="email"
-                >メールアドレス</label
-              >
+              <label class="p-contact-form__label" for="email">
+                メールアドレス<span class="p-contact-form__required" aria-hidden="true">*</span>
+              </label>
               <input
                 class="p-contact-form__input"
                 type="email"
                 id="email"
+                name="email"
+                autocomplete="email"
                 placeholder="example@example.com"
                 required
               />
+            </div>
+            <div class="p-contact-form__field a-fade-in-slide-up">
+              <label class="p-contact-form__label" for="category">
+                お問い合わせ種別<span class="p-contact-form__required" aria-hidden="true">*</span>
+              </label>
+              <select
+                class="p-contact-form__select"
+                id="category"
+                name="category"
+                required
+              >
+                <option value="">選択してください</option>
+                <option value="general">一般的なお問い合わせ</option>
+                <option value="support">技術サポート</option>
+                <option value="feedback">フィードバック</option>
+                <option value="other">その他</option>
+              </select>
             </div>
             <div class="p-contact-form__field a-fade-in-slide-up">
               <label class="p-contact-form__label" for="subject">件名</label>
@@ -77,20 +100,69 @@
                 class="p-contact-form__input"
                 type="text"
                 id="subject"
+                name="subject"
                 placeholder="お問い合わせの件名"
               />
             </div>
+            <fieldset class="p-contact-form__field a-fade-in-slide-up">
+              <legend class="p-contact-form__label">
+                優先度<span class="p-contact-form__required" aria-hidden="true">*</span>
+              </legend>
+              <div class="p-contact-form__option-group">
+                <label class="p-contact-form__option-label">
+                  <input
+                    class="p-contact-form__radio"
+                    type="radio"
+                    name="priority"
+                    value="low"
+                  />
+                  低
+                </label>
+                <label class="p-contact-form__option-label">
+                  <input
+                    class="p-contact-form__radio"
+                    type="radio"
+                    name="priority"
+                    value="normal"
+                    checked
+                  />
+                  通常
+                </label>
+                <label class="p-contact-form__option-label">
+                  <input
+                    class="p-contact-form__radio"
+                    type="radio"
+                    name="priority"
+                    value="high"
+                  />
+                  高
+                </label>
+              </div>
+            </fieldset>
             <div class="p-contact-form__field a-fade-in-slide-up">
-              <label class="p-contact-form__label" for="message"
-                >メッセージ</label
-              >
+              <label class="p-contact-form__label" for="message">
+                メッセージ<span class="p-contact-form__required" aria-hidden="true">*</span>
+              </label>
               <textarea
                 class="p-contact-form__input"
                 id="message"
+                name="message"
                 rows="6"
                 placeholder="お問い合わせ内容をご記入ください"
                 required
               ></textarea>
+            </div>
+            <div class="p-contact-form__field a-fade-in-slide-up">
+              <label class="p-contact-form__option-label">
+                <input
+                  class="p-contact-form__checkbox"
+                  type="checkbox"
+                  name="agree"
+                  id="agree"
+                  required
+                />
+                プライバシーポリシーに同意する
+              </label>
             </div>
             <button
               type="submit"

@@ -4,3 +4,31 @@
   background: none;
   padding: 0;
 }
+
+:where(select) {
+  appearance: none;
+  background: none;
+}
+
+:where(label) {
+  cursor: pointer;
+}
+
+:where(input[type="radio"], input[type="checkbox"]) {
+  appearance: none;
+  inline-size: 1.25em;
+  block-size: 1.25em;
+  margin: 0;
+  border: 1px solid;
+  vertical-align: middle;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+:where(input[type="radio"]) {
+  border-radius: 50%;
+}
+
+:where(input[type="checkbox"]) {
+  border-radius: 0.25em;
+}
