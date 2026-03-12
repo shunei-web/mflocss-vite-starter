@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
     <title>Layers | mFLOCSS</title>
     <meta name="description" content="mFLOCSS の8つの層を詳しく解説。Tokens・Theme・Foundation・Layout・Component・Project・Animation・Utility の判断基準を学べます。" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/css/style.css" />
     <script type="module" src="/scripts/main.js"></script>
   </head>
   <body>
@@ -25,15 +27,9 @@
         <nav id="global-nav" class="p-header__nav" aria-label="メインナビゲーション">
           <ul class="p-header__nav-list">
             <li><a href="/" class="p-header__nav-link">Top</a></li>
-            <li>
-              <a href="/philosophy/" class="p-header__nav-link">Philosophy</a>
-            </li>
-            <li>
-              <a href="/layers/" class="p-header__nav-link">Layers</a>
-            </li>
-            <li>
-              <a href="/contact/" class="p-header__nav-link">Contact</a>
-            </li>
+            <li><a href="/philosophy/" class="p-header__nav-link">Philosophy</a></li>
+            <li><a href="/layers/" class="p-header__nav-link">Layers</a></li>
+            <li><a href="/contact/" class="p-header__nav-link">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -45,24 +41,27 @@
           <h1 class="c-section-heading a-fade-in-activate">
             8層を理解する
           </h1>
-          <p class="a-fade-in-slide-up" style="text-align: center; margin-block-start: 1rem">
+          <p class="p-layers__lead a-fade-in-slide-up">
             各層の「なぜ」を知ることで、「どこに書くか」の判断基準が身につきます。<br />
             このサイト自身の実装コードを例に解説します。
+          </p>
+          <p class="p-layers__note a-fade-in-slide-up">
+            <small>※ コード例では層の所属を明示するため <code>@layer</code> ラッパーで表記していますが、
+            このサイトの実装では <code>style.css</code> の <code>@import layer()</code> で層を一元管理しています。</small>
           </p>
         </div>
       </section>
 
-      <!-- Tokens + Theme -->
-      <section class="l-section" style="padding-block-start: 0">
+      <section class="l-section -flush">
         <div class="l-inner">
-          <div class="p-layer-showcase a-fade-in-slide-up">
-            <div class="p-layer-showcase__item">
+          <div class="p-layer-showcase">
+            <div class="p-layer-showcase__item -tokens a-fade-in-slide-up">
               <div class="p-layer-showcase__header">
-                <span class="c-badge -tokens">Tokens</span>
+                <span class="c-badge">Tokens</span>
                 <h2 class="p-layer-showcase__name">プリミティブトークン</h2>
               </div>
               <div class="p-layer-showcase__description">
-                <div class="l-stack" style="--_gap: 1rem">
+                <div class="p-layer-showcase__content">
                   <p>
                     意味を持たない「素材」を定義する層。色コード、フォント名、数値スケールなど。
                     「この青色の oklch 値はいくつか？」に答える層です。
@@ -78,44 +77,34 @@
   }
 }</code></pre>
                   </div>
-                  <p style="font-size: 0.875rem">
+                  <p class="p-layer-showcase__criteria">
                     <strong>判断基準:</strong> 値に意味を持たせない。<code>--slate-600</code> は「スレートの 600 番」であり、「メインカラー」ではない。
                   </p>
                 </div>
               </div>
             </div>
 
-            <div class="p-layer-showcase__item">
+            <div class="p-layer-showcase__item -theme a-fade-in-slide-up">
               <div class="p-layer-showcase__header">
-                <span class="c-badge -theme">Theme</span>
-                <h2 class="p-layer-showcase__name">セマンティックテーマ</h2>
+                <span class="c-badge">Theme</span>
+                <h2 class="p-layer-showcase__name">Tokens のセマンティックマッピング</h2>
               </div>
               <div class="p-layer-showcase__description">
-                <div class="l-stack" style="--_gap: 1rem">
+                <div class="p-layer-showcase__content">
                   <p>
                     Tokens に意味のある名前を与える層。「プライマリカラーとしてどの色を使うか？」に答えます。
                     ダークモードは、この層だけを切り替えることで実現します。
                   </p>
                   <div class="c-code-block">
-                    <div class="c-code-block__header">theme/color.css — このサイトの実装</div>
+                    <div class="c-code-block__header">theme/color.css — light-dark() でダークモード統合</div>
                     <pre class="c-code-block__body"><code>@layer theme {
   :root {
-    --color-main: var(--slate-600);
-    --color-accent: var(--vermilion-500);
-    --color-bg: var(--neutral-50);
-    --color-text: var(--neutral-900);
-  }
-}</code></pre>
-                  </div>
-                  <div class="c-code-block">
-                    <div class="c-code-block__header">theme/dark.css — Theme だけでダークモード</div>
-                    <pre class="c-code-block__body"><code>@layer theme {
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --color-bg: var(--neutral-900);
-      --color-text: var(--neutral-50);
-      /* Tokens は一切変更しない */
-    }
+    color-scheme: light dark;
+
+    --color-main: light-dark(var(--slate-600), var(--slate-400));
+    --color-accent: light-dark(var(--vermilion-500), var(--vermilion-400));
+    --color-bg: light-dark(var(--neutral-50), var(--neutral-900));
+    --color-text: light-dark(var(--neutral-900), var(--neutral-50));
   }
 }</code></pre>
                   </div>
@@ -123,13 +112,13 @@
               </div>
             </div>
 
-            <div class="p-layer-showcase__item">
+            <div class="p-layer-showcase__item -foundation a-fade-in-slide-up">
               <div class="p-layer-showcase__header">
-                <span class="c-badge -foundation">Foundation</span>
-                <h2 class="p-layer-showcase__name">ベーススタイル</h2>
+                <span class="c-badge">Foundation</span>
+                <h2 class="p-layer-showcase__name">ブラウザ環境の初期化と基本スタイル</h2>
               </div>
               <div class="p-layer-showcase__description">
-                <div class="l-stack" style="--_gap: 1rem">
+                <div class="p-layer-showcase__content">
                   <p>
                     リセット CSS と要素セレクタのデフォルトスタイル。クラスを使わず、HTML 要素そのものに適用する。
                     <code>:where()</code> で詳細度をゼロに保ち、上位の層で確実に上書きできるようにします。
@@ -148,52 +137,52 @@
   }
 }</code></pre>
                   </div>
-                  <p style="font-size: 0.875rem">
-                    <strong>判断基準:</strong> 「クラスなしの HTML 要素に適用すべきスタイルか？」 → Yes なら Foundation。
+                  <p class="p-layer-showcase__criteria">
+                    <strong>判断基準:</strong> 「ブラウザ環境の初期化・要素の基本スタイルか？」 → Yes なら Foundation。
                   </p>
                 </div>
               </div>
             </div>
 
-            <div class="p-layer-showcase__item">
+            <div class="p-layer-showcase__item -layout a-fade-in-slide-up">
               <div class="p-layer-showcase__header">
-                <span class="c-badge -layout">Layout</span>
-                <h2 class="p-layer-showcase__name">ページの骨格</h2>
+                <span class="c-badge">Layout</span>
+                <h2 class="p-layer-showcase__name">位置と空間の配置</h2>
               </div>
               <div class="p-layer-showcase__description">
-                <div class="l-stack" style="--_gap: 1rem">
+                <div class="p-layer-showcase__content">
                   <p>
                     「配置と空間」だけを担当する層。中身の見た目（色、フォントサイズ等）には一切関与しません。
-                    このページのセクション間の余白は <code>l-section</code>、8層カードの並びは <code>l-grid</code> が担当しています。
+                    このページのセクション間の余白は <code>l-section</code>、中央寄せは <code>l-inner</code> が担当しています。
                   </p>
                   <div class="c-code-block">
-                    <div class="c-code-block__header">layout/l-grid.css — このサイトの実装</div>
+                    <div class="c-code-block__header">layout/l-section.css — このサイトの実装</div>
                     <pre class="c-code-block__body"><code>@layer layout {
-  .l-grid {
-    --_columns: 1;
-    --_gap: calc(24 * var(--px));
-    display: grid;
-    grid-template-columns: repeat(var(--_columns), 1fr);
-    gap: var(--_gap);
+  .l-section {
+    container-type: inline-size;
+    container-name: section;
+    padding-block: clamp(/* fluid spacing */);
+
+    &amp;.-flush { padding-block-start: 0; }
   }
 }</code></pre>
                   </div>
-                  <p style="font-size: 0.875rem">
-                    <strong>判断基準:</strong> 「色やフォントに触れているか？」 → 触れているなら Layout ではない。
+                  <p class="p-layer-showcase__criteria">
+                    <strong>判断基準（Layout Test）:</strong> 「色・文字・装飾に触れているか？」 → 触れているなら Layout ではない。
                   </p>
                 </div>
               </div>
             </div>
 
-            <div class="p-layer-showcase__item">
+            <div class="p-layer-showcase__item -component a-fade-in-slide-up">
               <div class="p-layer-showcase__header">
-                <span class="c-badge -component">Component</span>
+                <span class="c-badge">Component</span>
                 <h2 class="p-layer-showcase__name">再利用パーツ</h2>
               </div>
               <div class="p-layer-showcase__description">
-                <div class="l-stack" style="--_gap: 1rem">
+                <div class="p-layer-showcase__content">
                   <p>
-                    <strong>別のサイトにそのまま持っていけるか？</strong> これが Component の判断基準です。
+                    <strong>別のサイトにそのまま持っていけるか？（Portability Test）</strong> これが Component の判断基準です。
                     ボタン、カード、バッジ、テーブル——このページで使われているパーツの多くが Component です。
                   </p>
                   <div class="c-code-block">
@@ -207,7 +196,7 @@
   }
 }</code></pre>
                   </div>
-                  <p style="font-size: 0.875rem">
+                  <p class="p-layer-showcase__criteria">
                     <strong>Modifier</strong> は <code>.-large</code> のようにハイフン始まりの短縮記法。
                     BEM の <code>--modifier</code> より簡潔で、HTML の可読性が向上します。
                   </p>
@@ -215,19 +204,19 @@
               </div>
             </div>
 
-            <div class="p-layer-showcase__item">
+            <div class="p-layer-showcase__item -project a-fade-in-slide-up">
               <div class="p-layer-showcase__header">
-                <span class="c-badge -project">Project</span>
-                <h2 class="p-layer-showcase__name">サイト固有パーツ</h2>
+                <span class="c-badge">Project</span>
+                <h2 class="p-layer-showcase__name">サイト固有のパーツと文脈</h2>
               </div>
               <div class="p-layer-showcase__description">
-                <div class="l-stack" style="--_gap: 1rem">
+                <div class="p-layer-showcase__content">
                   <p>
-                    <strong>このサイトのデザインに依存しているか？</strong> これが Project の判断基準です。
+                    <strong>サイト固有の文脈を持つパーツか？</strong> これが Project の判断基準です。
                     ヘッダー、フッター、ヒーローセクション——これらは mFLOCSS サイト固有のデザインなので Project です。
                   </p>
 
-                  <blockquote class="c-blockquote">
+                  <blockquote class="c-blockquote a-fade-in-slide-right">
                     Component は「パーツ単体」で完結する。Project は「Component を組み合わせて構成される」。
                   </blockquote>
 
@@ -236,7 +225,7 @@
                     中に <code>c-button-cta</code>（Component）を含んでいます。
                     Project は Component を組み合わせて、サイト固有の文脈を作ります。
                   </p>
-                  <p style="font-size: 0.875rem">
+                  <p class="p-layer-showcase__criteria">
                     <strong>State クラス:</strong> <code>.is-current</code> のような動的な状態変化は State クラスで管理。
                     Modifier（静的なバリエーション）とは区別します。
                   </p>
@@ -244,46 +233,52 @@
               </div>
             </div>
 
-            <div class="p-layer-showcase__item">
+            <div class="p-layer-showcase__item -animation a-fade-in-slide-up">
               <div class="p-layer-showcase__header">
-                <span class="c-badge -animation">Animation</span>
-                <h2 class="p-layer-showcase__name">動きの管理</h2>
+                <span class="c-badge">Animation</span>
+                <h2 class="p-layer-showcase__name">動きの分離管理</h2>
               </div>
               <div class="p-layer-showcase__description">
-                <div class="l-stack" style="--_gap: 1rem">
+                <div class="p-layer-showcase__content">
                   <p>
-                    アニメーションを他の層から分離し、<code>prefers-reduced-motion</code>（モーション軽減設定）への対応を一元管理する層。
+                    アニメーションを他の層から分離し、<code>prefers-reduced-motion</code> と <code>scripting</code> の 2 条件（2 ガード原則）への対応を一元管理する層。
                     アクセシビリティを「仕組み」で担保します。
                   </p>
                   <div class="c-code-block">
                     <div class="c-code-block__header">animation/a-fade-in-slide-up.css</div>
                     <pre class="c-code-block__body"><code>@layer animation {
-  .a-fade-in-slide-up {
-    opacity: 0;
-    translate: 0 20px;
-    transition: opacity 0.6s, translate 0.6s;
+  @media (prefers-reduced-motion: no-preference)
+     and (scripting: enabled) {
+    .a-fade-in-slide-up {
+      opacity: 0;
+      translate: 0 20px;
 
-    &amp;.is-active { opacity: 1; translate: 0 0; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .a-fade-in-slide-up { opacity: 1; translate: 0 0; }
+      &amp;.is-active {
+        opacity: 1;
+        translate: 0 0;
+        animation: fade-in-slide-up 0.6s var(--ease-out-cubic);
+      }
+    }
+    @keyframes fade-in-slide-up {
+      from { opacity: 0; translate: 0 20px; }
+    }
   }
 }</code></pre>
                   </div>
-                  <p style="font-size: 0.875rem">
-                    <strong>判断基準:</strong> アニメーションのロジックは Animation 層に集約。Component や Project には書かない。
+                  <p class="p-layer-showcase__criteria">
+                    <strong>判断基準:</strong> アニメーションは Animation 層に集約。<code>@media</code> ラッパーで <code>prefers-reduced-motion</code> と <code>scripting</code> を一元管理する。
                   </p>
                 </div>
               </div>
             </div>
 
-            <div class="p-layer-showcase__item">
+            <div class="p-layer-showcase__item -utility a-fade-in-slide-up">
               <div class="p-layer-showcase__header">
-                <span class="c-badge -utility">Utility</span>
-                <h2 class="p-layer-showcase__name">局所的な調整</h2>
+                <span class="c-badge">Utility</span>
+                <h2 class="p-layer-showcase__name">単一目的のスタイル上書き</h2>
               </div>
               <div class="p-layer-showcase__description">
-                <div class="l-stack" style="--_gap: 1rem">
+                <div class="p-layer-showcase__content">
                   <p>
                     <strong>最後の手段。</strong>
                     他の層で解決できない局所的な微調整のみに使います。
@@ -306,7 +301,7 @@
   }
 }</code></pre>
                   </div>
-                  <p style="font-size: 0.875rem">
+                  <p class="p-layer-showcase__criteria">
                     <strong>判断基準:</strong> 「Utility でないと解決できないか？」 → Component や Project で対応できるなら、そちらに書く。
                   </p>
                 </div>
@@ -316,10 +311,9 @@
         </div>
       </section>
 
-      <!-- まとめ CTA -->
       <section class="l-section">
-        <div class="l-inner" style="text-align: center">
-          <h2 class="c-section-heading a-fade-in-activate">
+        <div class="l-inner p-layers__cta">
+          <h2 class="c-section-heading a-fade-in-slide-up">
             判断基準を身につけたら
           </h2>
           <p class="a-fade-in-slide-up">
@@ -331,26 +325,24 @@
     </main>
 
     <footer class="p-footer">
-      <div class="l-inner p-footer__inner">
-        <nav class="p-footer__nav" aria-label="フッターナビゲーション">
-          <div class="p-footer__nav-group">
-            <p class="p-footer__nav-heading">Learn</p>
-            <ul class="p-footer__nav-list">
-              <li><a href="/philosophy/" class="p-footer__nav-link">Philosophy</a></li>
-              <li><a href="/layers/" class="p-footer__nav-link">Layers</a></li>
-            </ul>
-          </div>
-          <div class="p-footer__nav-group">
-            <p class="p-footer__nav-heading">Resource</p>
-            <ul class="p-footer__nav-list">
-              <li><a href="https://github.com/mflocss/starter" class="p-footer__nav-link">GitHub</a></li>
-              <li><a href="/contact/" class="p-footer__nav-link">Contact</a></li>
-            </ul>
-          </div>
-        </nav>
-        <div class="p-footer__bottom">
-          <p class="p-footer__copyright">&copy; 2026 mFLOCSS. MIT License.</p>
+      <nav class="p-footer__nav a-stagger" aria-label="フッターナビゲーション">
+        <div class="p-footer__nav-group">
+          <p class="p-footer__nav-heading">Learn</p>
+          <ul class="p-footer__nav-list">
+            <li><a href="/philosophy/" class="p-footer__nav-link">Philosophy</a></li>
+            <li><a href="/layers/" class="p-footer__nav-link">Layers</a></li>
+          </ul>
         </div>
+        <div class="p-footer__nav-group">
+          <p class="p-footer__nav-heading">Resource</p>
+          <ul class="p-footer__nav-list">
+            <li><a href="https://github.com/mflocss/starter" class="p-footer__nav-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="/contact/" class="p-footer__nav-link">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="p-footer__bottom">
+        <p class="p-footer__copyright">&copy; 2026 mFLOCSS. MIT License.</p>
       </div>
     </footer>
   </body>

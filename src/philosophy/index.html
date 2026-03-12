@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
     <title>Philosophy | mFLOCSS</title>
     <meta name="description" content="なぜ設計思想が先なのか。テンプレートが解決しない「判断の過程」を、mFLOCSS の8層アーキテクチャで体系化します。" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/css/style.css" />
     <script type="module" src="/scripts/main.js"></script>
   </head>
   <body>
@@ -25,15 +27,9 @@
         <nav id="global-nav" class="p-header__nav" aria-label="メインナビゲーション">
           <ul class="p-header__nav-list">
             <li><a href="/" class="p-header__nav-link">Top</a></li>
-            <li>
-              <a href="/philosophy/" class="p-header__nav-link">Philosophy</a>
-            </li>
-            <li>
-              <a href="/layers/" class="p-header__nav-link">Layers</a>
-            </li>
-            <li>
-              <a href="/contact/" class="p-header__nav-link">Contact</a>
-            </li>
+            <li><a href="/philosophy/" class="p-header__nav-link">Philosophy</a></li>
+            <li><a href="/layers/" class="p-header__nav-link">Layers</a></li>
+            <li><a href="/contact/" class="p-header__nav-link">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -46,18 +42,17 @@
             なぜ「設計思想」が先なのか
           </h1>
 
-          <div class="l-stack a-fade-in-slide-up" style="--_gap: 2rem; margin-block-start: 2.5rem">
+          <div class="p-philosophy__body">
 
-            <!-- テンプレートを使っても崩れる理由 -->
-            <section>
+            <section class="a-fade-in-slide-up">
               <h2>テンプレートを使っても崩れる理由</h2>
 
-              <div class="l-stack" style="--_gap: 1rem">
+              <div class="p-philosophy__section-content">
                 <p>
                   「FLOCSS のテンプレートを使っているのに、気づけば CSS がぐちゃぐちゃになっている」——メンタリングをしていると、この相談をよく受けます。
                 </p>
 
-                <blockquote class="c-blockquote">
+                <blockquote class="c-blockquote a-fade-in-slide-right">
                   テンプレートは「結果」であって「判断の過程」ではない。
                 </blockquote>
 
@@ -77,30 +72,29 @@
               </div>
             </section>
 
-            <!-- 「動けばいい」が生む技術的負債 -->
-            <section>
+            <section class="a-fade-in-slide-up">
               <h2>「動けばいい」が生む技術的負債</h2>
 
-              <div class="l-stack" style="--_gap: 1rem">
+              <div class="p-philosophy__section-content">
                 <p>最初は問題なく動いていた CSS が、修正を重ねるうちに崩壊していく。この過程を見てみましょう。</p>
 
                 <div class="c-code-block">
                   <div class="c-code-block__header">詳細度の上書き合戦</div>
                   <pre class="c-code-block__body"><code>/* はじめは素直なコード */
-.button {
+.button {                        /* 詳細度 (0, 1, 0) */
   background: #007bff;
   color: #fff;
   padding: 12px 24px;
 }
 
-/* 別のページで色を変えたくなった */
-.header .button {
-  background: #ff6600;
+/* カード内のボタンだけ色を変えたい */
+.card .button {                  /* 詳細度 (0, 2, 0) — 勝つ */
+  background: #28a745;
 }
 
-/* さらに別の箇所で、上書きが効かない… */
-.sidebar .content .button {
-  background: #28a745 !important;
+/* 全ボタンを青に統一したくなったが、(0, 1, 0) では勝てない… */
+.button {                        /* 詳細度 (0, 1, 0) — 負ける */
+  background: #007bff !important; /* !important で強制上書きするしかない */
 }</code></pre>
                 </div>
 
@@ -114,16 +108,15 @@
               </div>
             </section>
 
-            <!-- CSS設計は今、どこにいるのか -->
-            <section>
+            <section class="a-fade-in-slide-up">
               <h2>CSS 設計は今、どこにいるのか</h2>
 
-              <div class="l-stack" style="--_gap: 1rem">
+              <div class="p-philosophy__section-content">
                 <p>
-                  2025 年現在、CSS 自体が大きく進化しています。<code>@layer</code> でスタイルの優先順位を制御でき、<code>@scope</code> でスタイルの適用範囲を構造的に制限でき、CSS Nesting でネスト記法がネイティブに書ける。かつて Sass や命名規則で「回避」していた問題を、ブラウザが「解決」してくれる時代になりました。
+                  現在、CSS 自体が大きく進化しています。<code>@layer</code> でカスケードの優先順位を制御でき、CSS Nesting で Sass なしにネスト記法が書ける。<code>:has()</code> で親要素の状態に応じたスタイリングが可能になり、Container Queries でコンポーネント単位のレスポンシブが実現した。<code>@scope</code> によるネイティブなスコーピングも全ブラウザで利用可能になりました。かつて Sass や命名規則で「回避」していた問題を、ブラウザが「解決」してくれる時代です。
                 </p>
 
-                <div style="overflow-x: auto">
+                <div class="p-philosophy__table-wrap">
                   <table class="c-table">
                     <caption class="u-visually-hidden">CSS 設計アプローチの比較</caption>
                     <thead>
@@ -151,7 +144,7 @@
                       </tr>
                       <tr>
                         <td><strong>ネイティブ CSS</strong></td>
-                        <td>@layer, @scope</td>
+                        <td>@layer, :has(), @scope 等</td>
                         <td>ブラウザ標準機能が設計手法の役割を吸収しつつある</td>
                       </tr>
                       <tr>
@@ -163,7 +156,7 @@
                   </table>
                 </div>
 
-                <blockquote class="c-blockquote">
+                <blockquote class="c-blockquote a-fade-in-slide-right">
                   技術としては不要になりつつある。でも思考フレームワークとしては必要。
                 </blockquote>
 
@@ -173,16 +166,15 @@
               </div>
             </section>
 
-            <!-- mFLOCSS の進化 -->
-            <section>
+            <section class="a-fade-in-slide-up">
               <h2>FLOCSS から mFLOCSS へ</h2>
 
-              <div class="l-stack" style="--_gap: 1rem">
+              <div class="p-philosophy__section-content">
                 <p>
                   <strong>mFLOCSS（エムフロックス）</strong>は、日本発の CSS 設計手法 FLOCSS の設計思想を継承しつつ、モダン CSS の力で再構築した設計手法です。
                 </p>
 
-                <div style="overflow-x: auto">
+                <div class="p-philosophy__table-wrap">
                   <table class="c-table">
                     <caption class="u-visually-hidden">FLOCSS と mFLOCSS の層比較</caption>
                     <thead>
@@ -195,52 +187,52 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td><span class="c-badge -tokens">Tokens</span></td>
+                        <td class="p-philosophy__layer -tokens"><span class="c-badge">Tokens</span></td>
                         <td>—</td>
                         <td>新設</td>
                         <td>プリミティブなデザイントークン</td>
                       </tr>
                       <tr>
-                        <td><span class="c-badge -theme">Theme</span></td>
+                        <td class="p-philosophy__layer -theme"><span class="c-badge">Theme</span></td>
                         <td>—</td>
                         <td>新設</td>
-                        <td>セマンティックなトークン</td>
+                        <td>Tokens をセマンティック変数にマッピング</td>
                       </tr>
                       <tr>
-                        <td><span class="c-badge -foundation">Foundation</span></td>
+                        <td class="p-philosophy__layer -foundation"><span class="c-badge">Foundation</span></td>
                         <td>あり</td>
                         <td>継承</td>
-                        <td>リセット CSS・ベーススタイル</td>
+                        <td>ブラウザ環境の初期化と基本スタイル</td>
                       </tr>
                       <tr>
-                        <td><span class="c-badge -layout">Layout</span></td>
+                        <td class="p-philosophy__layer -layout"><span class="c-badge">Layout</span></td>
                         <td>あり</td>
                         <td>継承</td>
-                        <td>ページの骨格</td>
+                        <td>位置と空間の配置</td>
                       </tr>
                       <tr>
-                        <td><span class="c-badge -component">Component</span></td>
+                        <td class="p-philosophy__layer -component"><span class="c-badge">Component</span></td>
                         <td>Object 配下</td>
                         <td>トップレベル化</td>
                         <td>再利用できるパーツ</td>
                       </tr>
                       <tr>
-                        <td><span class="c-badge -project">Project</span></td>
+                        <td class="p-philosophy__layer -project"><span class="c-badge">Project</span></td>
                         <td>Object 配下</td>
                         <td>トップレベル化</td>
-                        <td>サイト固有のパーツ</td>
+                        <td>サイト固有のパーツと文脈</td>
                       </tr>
                       <tr>
-                        <td><span class="c-badge -animation">Animation</span></td>
+                        <td class="p-philosophy__layer -animation"><span class="c-badge">Animation</span></td>
                         <td>—</td>
                         <td>新設</td>
-                        <td>アニメーションの分離管理</td>
+                        <td>動きの分離管理</td>
                       </tr>
                       <tr>
-                        <td><span class="c-badge -utility">Utility</span></td>
+                        <td class="p-philosophy__layer -utility"><span class="c-badge">Utility</span></td>
                         <td>Object 配下</td>
                         <td>トップレベル化</td>
-                        <td>局所的な調整の最終手段</td>
+                        <td>単一目的のスタイル上書き</td>
                       </tr>
                     </tbody>
                   </table>
@@ -262,26 +254,24 @@
     </main>
 
     <footer class="p-footer">
-      <div class="l-inner p-footer__inner">
-        <nav class="p-footer__nav" aria-label="フッターナビゲーション">
-          <div class="p-footer__nav-group">
-            <p class="p-footer__nav-heading">Learn</p>
-            <ul class="p-footer__nav-list">
-              <li><a href="/philosophy/" class="p-footer__nav-link">Philosophy</a></li>
-              <li><a href="/layers/" class="p-footer__nav-link">Layers</a></li>
-            </ul>
-          </div>
-          <div class="p-footer__nav-group">
-            <p class="p-footer__nav-heading">Resource</p>
-            <ul class="p-footer__nav-list">
-              <li><a href="https://github.com/mflocss/starter" class="p-footer__nav-link">GitHub</a></li>
-              <li><a href="/contact/" class="p-footer__nav-link">Contact</a></li>
-            </ul>
-          </div>
-        </nav>
-        <div class="p-footer__bottom">
-          <p class="p-footer__copyright">&copy; 2026 mFLOCSS. MIT License.</p>
+      <nav class="p-footer__nav a-stagger" aria-label="フッターナビゲーション">
+        <div class="p-footer__nav-group">
+          <p class="p-footer__nav-heading">Learn</p>
+          <ul class="p-footer__nav-list">
+            <li><a href="/philosophy/" class="p-footer__nav-link">Philosophy</a></li>
+            <li><a href="/layers/" class="p-footer__nav-link">Layers</a></li>
+          </ul>
         </div>
+        <div class="p-footer__nav-group">
+          <p class="p-footer__nav-heading">Resource</p>
+          <ul class="p-footer__nav-list">
+            <li><a href="https://github.com/mflocss/starter" class="p-footer__nav-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="/contact/" class="p-footer__nav-link">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="p-footer__bottom">
+        <p class="p-footer__copyright">&copy; 2026 mFLOCSS. MIT License.</p>
       </div>
     </footer>
   </body>
