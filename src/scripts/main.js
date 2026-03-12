@@ -43,6 +43,7 @@ const markCurrentNav = () => {
     const href = link.getAttribute('href');
     if (path === href || (href !== '/' && path.startsWith(href))) {
       link.classList.add('is-current');
+      link.setAttribute('aria-current', 'page');
     }
   });
 };
