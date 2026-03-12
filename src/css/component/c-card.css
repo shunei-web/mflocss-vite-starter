@@ -34,7 +34,7 @@
   line-height: var(--line-height-base);
 }
 
-@container (width >= 480px) {
+@container (inline-size >= 480px) {
   .c-card {
     flex-direction: row;
   }

@@ -14,8 +14,8 @@
   --color-shadow: light-dark(oklch(from var(--black) l c h / 10%), oklch(from var(--white) l c h / 8%));
 
   /* 状態 */
-  --color-error: light-dark(oklch(55% 0.22 25deg), oklch(70% 0.18 25deg));
-  --color-error-bg: light-dark(oklch(97% 0.01 25deg), oklch(20% 0.04 25deg));
+  --color-error: light-dark(var(--error-light), var(--error-dark));
+  --color-error-bg: light-dark(var(--error-bg-light), var(--error-bg-dark));
 
   /* 用途（コンテキストセマンティック） */
   --color-link: var(--color-main);
