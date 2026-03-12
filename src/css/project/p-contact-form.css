@@ -41,17 +41,13 @@
   }
 }
 
-/* セレクトボックス */
+/* セレクトボックス（Foundation のリセット上にサイズ・配色を追加） */
 .p-contact-form__select {
   padding-block: 0.75rem;
   padding-inline: 1rem 2.5rem;
   font-size: 1rem;
   color: var(--color-text);
   background-color: var(--color-surface);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23666' d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0.75rem center;
-  background-size: 1rem;
   border: 1px solid var(--color-border);
   border-radius: 0.375rem;
   transition: border-color 0.2s var(--ease-out-cubic);
@@ -63,7 +59,7 @@
   }
 }
 
-/* ラジオボタン・チェックボックス */
+/* ラジオ・チェックボックスのレイアウト */
 .p-contact-form__option-group {
   display: flex;
   flex-wrap: wrap;
@@ -77,38 +73,6 @@
   font-size: 0.9375rem;
   color: var(--color-text);
   cursor: pointer;
-}
-
-.p-contact-form__radio,
-.p-contact-form__checkbox {
-  border-color: var(--color-border);
-  transition: border-color 0.2s var(--ease-out-cubic);
-
-  &:checked {
-    border-color: var(--color-main);
-    background-color: var(--color-main);
-  }
-
-  &:focus-visible {
-    outline: 2px solid var(--color-focus-ring);
-    outline-offset: 2px;
-  }
-}
-
-.p-contact-form__radio:checked {
-  /* ラジオボタンの内側の白丸 */
-  background-image: radial-gradient(
-    circle at center,
-    var(--color-white) 30%,
-    var(--color-main) 32%
-  );
-}
-
-.p-contact-form__checkbox:checked {
-  /* チェックマーク */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' d='M3.5 8l3 3 6-6'/%3E%3C/svg%3E");
-  background-size: 100%;
-  background-position: center;
 }
 
 /* エラー状態 — JS バリデーション連携時に .is-error を付与して使用 */
