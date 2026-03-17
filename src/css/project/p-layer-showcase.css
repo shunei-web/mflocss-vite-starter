@@ -52,12 +52,12 @@
   font-size: 0.875rem;
 }
 
-/* レイヤーバッジ — 親要素の Modifier でカスケード注入 */
-.p-layer-showcase__item.-tokens     { --_bg: var(--color-layer-tokens); }
-.p-layer-showcase__item.-theme      { --_bg: var(--color-layer-theme); }
-.p-layer-showcase__item.-foundation { --_bg: var(--color-layer-foundation); }
-.p-layer-showcase__item.-layout     { --_bg: var(--color-layer-layout); }
-.p-layer-showcase__item.-component  { --_bg: var(--color-layer-component); }
-.p-layer-showcase__item.-project    { --_bg: var(--color-layer-project); }
-.p-layer-showcase__item.-animation  { --_bg: var(--color-layer-animation); }
-.p-layer-showcase__item.-utility    { --_bg: var(--color-layer-utility); }
+/* レイヤーバッジ — 子孫の c-badge を明示指定 */
+.p-layer-showcase__item.-tokens .c-badge     { --_bg: var(--color-layer-tokens); }
+.p-layer-showcase__item.-theme .c-badge      { --_bg: var(--color-layer-theme); }
+.p-layer-showcase__item.-foundation .c-badge { --_bg: var(--color-layer-foundation); }
+.p-layer-showcase__item.-layout .c-badge     { --_bg: var(--color-layer-layout); }
+.p-layer-showcase__item.-component .c-badge  { --_bg: var(--color-layer-component); }
+.p-layer-showcase__item.-project .c-badge    { --_bg: var(--color-layer-project); }
+.p-layer-showcase__item.-animation .c-badge  { --_bg: var(--color-layer-animation); }
+.p-layer-showcase__item.-utility .c-badge    { --_bg: var(--color-layer-utility); }

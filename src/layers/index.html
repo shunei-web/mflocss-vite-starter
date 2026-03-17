@@ -121,7 +121,7 @@
                 <div class="p-layer-showcase__content">
                   <p>
                     リセット CSS と要素セレクタのデフォルトスタイル。クラスを使わず、HTML 要素そのものに適用する。
-                    <code>:where()</code> で詳細度をゼロに保つことが推奨されており、上位の層で確実に上書きできるようにします。
+                    <code>:where()</code> で詳細度をゼロに保つことが推奨されており、同一層内でのセレクタ詳細度の競合を防ぎます。
                   </p>
                   <div class="c-code-block">
                     <div class="c-code-block__header">foundation/base.css — このサイトの実装</div>
@@ -141,7 +141,7 @@
                     <strong>判断基準:</strong> 「ブラウザ環境の初期化・要素の基本スタイルか？」 → Yes なら Foundation。
                   </p>
                   <p class="p-layer-showcase__criteria">
-                    Foundation はサブレイヤー（reset / base）に分離することが推奨されています。
+                    Foundation はサブレイヤー（reset / base）に分離することが推奨されています。外部リセット CSS が <code>:where()</code> を使っていない場合でも、自作ベーススタイルがリセットを確実に上書きできるようにするためです。
                   </p>
                 </div>
               </div>
