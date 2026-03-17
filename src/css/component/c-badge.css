@@ -1,5 +1,5 @@
 .c-badge {
-  --_bg: var(--color-main, #475569);
+  --_bg: var(--color-main);
 
   display: inline-block;
   padding-block: 0.125em;
