@@ -1,5 +1,5 @@
-@layer foundation.reset, foundation.base;
+@layer reset, base;
 
-@import './reset.css' layer(foundation.reset);
-@import './base.css' layer(foundation.base);
-@import './form.css' layer(foundation.base);
+@import './reset.css' layer(reset);
+@import './base.css' layer(base);
+@import './form.css' layer(base);
