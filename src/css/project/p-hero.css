@@ -1,11 +1,11 @@
 .p-hero {
-  --_min-py: 80;
-  --_max-py: 140;
+  --_min-padding-block: 80;
+  --_max-padding-block: 140;
 
   padding-block: clamp(
-    calc(var(--_min-py) * var(--px)),
-    calc((var(--_max-py) - var(--_min-py)) / var(--vp-range) * var(--vp-offset) + var(--_min-py) * var(--px)),
-    calc(var(--_max-py) * var(--px))
+    calc(var(--_min-padding-block) * var(--px)),
+    calc((var(--_max-padding-block) - var(--_min-padding-block)) / var(--vp-range) * var(--vp-offset) + var(--_min-padding-block) * var(--px)),
+    calc(var(--_max-padding-block) * var(--px))
   );
   text-align: center;
   background: radial-gradient(ellipse at 50% 0%, oklch(from var(--color-main) l c h / 6%) 0%, transparent 70%);

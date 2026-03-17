@@ -25,11 +25,11 @@
 }
 
 /* レイヤーバッジ — 親要素の Modifier でカスケード注入 */
-.p-home__card.-tokens     { --_badge-bg: var(--color-layer-tokens); }
-.p-home__card.-theme      { --_badge-bg: var(--color-layer-theme); }
-.p-home__card.-foundation { --_badge-bg: var(--color-layer-foundation); }
-.p-home__card.-layout     { --_badge-bg: var(--color-layer-layout); }
-.p-home__card.-component  { --_badge-bg: var(--color-layer-component); }
-.p-home__card.-project    { --_badge-bg: var(--color-layer-project); }
-.p-home__card.-animation  { --_badge-bg: var(--color-layer-animation); }
-.p-home__card.-utility    { --_badge-bg: var(--color-layer-utility); }
+.p-home__card.-tokens     { --_bg: var(--color-layer-tokens); }
+.p-home__card.-theme      { --_bg: var(--color-layer-theme); }
+.p-home__card.-foundation { --_bg: var(--color-layer-foundation); }
+.p-home__card.-layout     { --_bg: var(--color-layer-layout); }
+.p-home__card.-component  { --_bg: var(--color-layer-component); }
+.p-home__card.-project    { --_bg: var(--color-layer-project); }
+.p-home__card.-animation  { --_bg: var(--color-layer-animation); }
+.p-home__card.-utility    { --_bg: var(--color-layer-utility); }
