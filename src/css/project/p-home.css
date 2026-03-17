@@ -24,12 +24,12 @@
   margin-block-start: 2rem;
 }
 
-/* レイヤーバッジ — 親要素の Modifier でカスケード注入 */
-.p-home__card.-tokens     { --_badge-bg: var(--color-layer-tokens); }
-.p-home__card.-theme      { --_badge-bg: var(--color-layer-theme); }
-.p-home__card.-foundation { --_badge-bg: var(--color-layer-foundation); }
-.p-home__card.-layout     { --_badge-bg: var(--color-layer-layout); }
-.p-home__card.-component  { --_badge-bg: var(--color-layer-component); }
-.p-home__card.-project    { --_badge-bg: var(--color-layer-project); }
-.p-home__card.-animation  { --_badge-bg: var(--color-layer-animation); }
-.p-home__card.-utility    { --_badge-bg: var(--color-layer-utility); }
+/* レイヤーバッジ — 子孫の c-badge を明示指定 */
+.p-home__card.-tokens .c-badge     { --_bg: var(--color-layer-tokens); }
+.p-home__card.-theme .c-badge      { --_bg: var(--color-layer-theme); }
+.p-home__card.-foundation .c-badge { --_bg: var(--color-layer-foundation); }
+.p-home__card.-layout .c-badge     { --_bg: var(--color-layer-layout); }
+.p-home__card.-component .c-badge  { --_bg: var(--color-layer-component); }
+.p-home__card.-project .c-badge    { --_bg: var(--color-layer-project); }
+.p-home__card.-animation .c-badge  { --_bg: var(--color-layer-animation); }
+.p-home__card.-utility .c-badge    { --_bg: var(--color-layer-utility); }

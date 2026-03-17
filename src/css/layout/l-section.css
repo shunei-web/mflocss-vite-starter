@@ -1,3 +1,4 @@
+/* 流体計算ヘルパー（--px, --vp-range, --vp-offset）で連続的なレスポンシブを実現 */
 .l-section {
   --_min: 60;
   --_max: 100;
