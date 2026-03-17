@@ -1,8 +1,3 @@
-:where(html) {
-  container-type: inline-size;
-  container-name: viewport;
-}
-
 :where(body) {
   font-family: var(--font-family-ja);
   font-weight: var(--font-weight-regular);

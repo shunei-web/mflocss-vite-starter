@@ -16,12 +16,11 @@
 @import './theme/typography.css' layer(theme);
 @import './theme/structure.css' layer(theme);
 
-/* Foundation */
-@import './foundation/reset.css' layer(foundation);
-@import './foundation/base.css' layer(foundation);
-@import './foundation/form.css' layer(foundation);
+/* Foundation（サブレイヤー: foundation.reset / foundation.base） */
+@import './foundation/index.css' layer(foundation);
 
 /* Layout */
+@import './layout/l-viewport.css' layer(layout);
 @import './layout/l-section.css' layer(layout);
 @import './layout/l-inner.css' layer(layout);
 @import './layout/l-container.css' layer(layout);
