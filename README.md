@@ -113,11 +113,12 @@ src/css/
 
 ```css
 /* foundation/index.css — ここで layer(foundation) が適用されるのはこのファイルの直接の内容のみ */
-@layer foundation.reset, foundation.base;
+@layer reset, base;
 
 /* 内部の @import には layer() が伝播しないため、明示的にサブレイヤーを指定する */
-@import './reset.css' layer(foundation.reset);
-@import './base.css' layer(foundation.base);
+@import './reset.css' layer(reset);
+@import './base.css' layer(base);
+@import './form.css' layer(base);
 ```
 
 この挙動はネスト構造を持つ場合に注意が必要です。サブレイヤーを使う場合は、中間ファイル（index.css）で明示的に `layer()` を指定してください。
