@@ -12,7 +12,7 @@ export default defineConfig({
   base: '/',
 
   build: {
-    rollupOptions: {
+    rolldownOptions: {
       input: {
         main: resolve(__dirname, 'src/index.html'),
         philosophy: resolve(__dirname, 'src/philosophy/index.html'),
