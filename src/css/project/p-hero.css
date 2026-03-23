@@ -1,13 +1,8 @@
 .p-hero {
-  --_min-padding-block: 80;
-  --_max-padding-block: 140;
+  /* l-section の流体余白を CSS 変数で上書き（§5.6 CSS 変数経由パターン） */
+  --_min: 80;
+  --_max: 140;
 
-  /* l-section のデフォルト余白を上書き。Hero 独自の余白で制御 */
-  padding-block: clamp(
-    calc(var(--_min-padding-block) * var(--px)),
-    calc((var(--_max-padding-block) - var(--_min-padding-block)) / var(--vp-range) * var(--vp-offset) + var(--_min-padding-block) * var(--px)),
-    calc(var(--_max-padding-block) * var(--px))
-  );
   text-align: center;
   background: radial-gradient(ellipse at 50% 0%, oklch(from var(--color-main) l c h / 6%) 0%, transparent 70%);
 }
