@@ -1,0 +1,27 @@
+/* ----------------------------------------
+ * p-home-architecture — 8層アーキテクチャセクション
+ * ---------------------------------------- */
+
+/* セクション Block — プロジェクトに合わせてスタイルを追加 */
+.p-home-architecture {}
+
+.p-home-architecture__lead {
+  text-align: center;
+}
+
+.p-home-architecture__body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: calc(24 * var(--px));
+  margin-block-start: 2.5rem;
+}
+
+/* レイヤーバッジ — 子孫の c-badge を明示指定 */
+.p-home-architecture__card.-tokens .c-badge     { --badge-bg: var(--color-layer-tokens); }
+.p-home-architecture__card.-theme .c-badge      { --badge-bg: var(--color-layer-theme); }
+.p-home-architecture__card.-foundation .c-badge { --badge-bg: var(--color-layer-foundation); }
+.p-home-architecture__card.-layout .c-badge     { --badge-bg: var(--color-layer-layout); }
+.p-home-architecture__card.-component .c-badge  { --badge-bg: var(--color-layer-component); }
+.p-home-architecture__card.-project .c-badge    { --badge-bg: var(--color-layer-project); }
+.p-home-architecture__card.-animation .c-badge  { --badge-bg: var(--color-layer-animation); }
+.p-home-architecture__card.-utility .c-badge    { --badge-bg: var(--color-layer-utility); }

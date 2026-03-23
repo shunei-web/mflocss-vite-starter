@@ -1,11 +1,11 @@
 .c-section-heading {
-  --_min: 24;
-  --_max: 36;
+  --_font-size-min: 24;
+  --_font-size-max: 36;
 
   font-size: clamp(
-    calc(var(--_min) * var(--px)),
-    calc((var(--_max) - var(--_min)) / var(--vp-range) * var(--vp-offset) + var(--_min) * var(--px)),
-    calc(var(--_max) * var(--px))
+    calc(var(--_font-size-min) * var(--px)),
+    calc((var(--_font-size-max) - var(--_font-size-min)) / var(--vp-range) * var(--vp-offset) + var(--_font-size-min) * var(--px)),
+    calc(var(--_font-size-max) * var(--px))
   );
   line-height: var(--line-height-heading);
   text-align: center;

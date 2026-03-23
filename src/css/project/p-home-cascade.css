@@ -1,0 +1,13 @@
+/* ----------------------------------------
+ * p-home-cascade — @layer 詳細度制御セクション
+ * ---------------------------------------- */
+
+/* セクション Block — プロジェクトに合わせてスタイルを追加 */
+.p-home-cascade {}
+
+.p-home-cascade__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-block-start: 2rem;
+}

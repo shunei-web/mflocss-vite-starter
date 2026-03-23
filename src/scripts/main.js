@@ -27,7 +27,7 @@ const initStaggerDelays = () => {
 
   containers.forEach((container) => {
     Array.from(container.children).forEach((child, index) => {
-      child.style.setProperty('--_delay', `${index * 0.1}s`);
+      child.style.setProperty('--stagger-delay', `${index * 0.1}s`);
     });
   });
 };

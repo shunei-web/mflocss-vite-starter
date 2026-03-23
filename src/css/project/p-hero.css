@@ -1,24 +1,20 @@
 .p-hero {
-  --_min-padding-block: 80;
-  --_max-padding-block: 140;
+  /* l-section の流体余白を上書き（§5.6 CSS 変数経由パターン） */
+  --section-padding-min: 80;
+  --section-padding-max: 140;
 
-  padding-block: clamp(
-    calc(var(--_min-padding-block) * var(--px)),
-    calc((var(--_max-padding-block) - var(--_min-padding-block)) / var(--vp-range) * var(--vp-offset) + var(--_min-padding-block) * var(--px)),
-    calc(var(--_max-padding-block) * var(--px))
-  );
   text-align: center;
   background: radial-gradient(ellipse at 50% 0%, oklch(from var(--color-main) l c h / 6%) 0%, transparent 70%);
 }
 
 .p-hero__title {
-  --_min: 28;
-  --_max: 48;
+  --_font-size-min: 28;
+  --_font-size-max: 48;
 
   font-size: clamp(
-    calc(var(--_min) * var(--px)),
-    calc((var(--_max) - var(--_min)) / var(--vp-range) * var(--vp-offset) + var(--_min) * var(--px)),
-    calc(var(--_max) * var(--px))
+    calc(var(--_font-size-min) * var(--px)),
+    calc((var(--_font-size-max) - var(--_font-size-min)) / var(--vp-range) * var(--vp-offset) + var(--_font-size-min) * var(--px)),
+    calc(var(--_font-size-max) * var(--px))
   );
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-heading);
@@ -36,14 +32,14 @@
 }
 
 .p-hero__lead {
-  --_min: 16;
-  --_max: 20;
+  --_font-size-min: 16;
+  --_font-size-max: 20;
 
   margin-block-start: 1.5rem;
   font-size: clamp(
-    calc(var(--_min) * var(--px)),
-    calc((var(--_max) - var(--_min)) / var(--vp-range) * var(--vp-offset) + var(--_min) * var(--px)),
-    calc(var(--_max) * var(--px))
+    calc(var(--_font-size-min) * var(--px)),
+    calc((var(--_font-size-max) - var(--_font-size-min)) / var(--vp-range) * var(--vp-offset) + var(--_font-size-min) * var(--px)),
+    calc(var(--_font-size-max) * var(--px))
   );
   color: var(--color-text-light);
   line-height: var(--line-height-base);

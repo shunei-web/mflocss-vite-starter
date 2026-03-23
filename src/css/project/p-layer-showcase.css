@@ -53,11 +53,11 @@
 }
 
 /* レイヤーバッジ — 子孫の c-badge を明示指定 */
-.p-layer-showcase__item.-tokens .c-badge     { --_bg: var(--color-layer-tokens); }
-.p-layer-showcase__item.-theme .c-badge      { --_bg: var(--color-layer-theme); }
-.p-layer-showcase__item.-foundation .c-badge { --_bg: var(--color-layer-foundation); }
-.p-layer-showcase__item.-layout .c-badge     { --_bg: var(--color-layer-layout); }
-.p-layer-showcase__item.-component .c-badge  { --_bg: var(--color-layer-component); }
-.p-layer-showcase__item.-project .c-badge    { --_bg: var(--color-layer-project); }
-.p-layer-showcase__item.-animation .c-badge  { --_bg: var(--color-layer-animation); }
-.p-layer-showcase__item.-utility .c-badge    { --_bg: var(--color-layer-utility); }
+.p-layer-showcase__item.-tokens .c-badge     { --badge-bg: var(--color-layer-tokens); }
+.p-layer-showcase__item.-theme .c-badge      { --badge-bg: var(--color-layer-theme); }
+.p-layer-showcase__item.-foundation .c-badge { --badge-bg: var(--color-layer-foundation); }
+.p-layer-showcase__item.-layout .c-badge     { --badge-bg: var(--color-layer-layout); }
+.p-layer-showcase__item.-component .c-badge  { --badge-bg: var(--color-layer-component); }
+.p-layer-showcase__item.-project .c-badge    { --badge-bg: var(--color-layer-project); }
+.p-layer-showcase__item.-animation .c-badge  { --badge-bg: var(--color-layer-animation); }
+.p-layer-showcase__item.-utility .c-badge    { --badge-bg: var(--color-layer-utility); }

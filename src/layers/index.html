@@ -11,7 +11,7 @@
     <script type="module" src="/scripts/main.js"></script>
   </head>
   <body>
-    <a href="#main" class="c-skip-link">コンテンツへスキップ</a>
+    <a href="#main" class="c-skip-link p-skip-link">コンテンツへスキップ</a>
     <header class="p-header">
       <div class="l-inner p-header__inner">
         <a href="/" class="p-header__logo">mFLOCSS</a>
@@ -36,24 +36,24 @@
     </header>
 
     <main id="main">
-      <section class="l-section">
-        <div class="l-inner">
+      <section class="l-section p-layers-lead">
+        <div class="l-inner p-layers-lead__inner">
           <h1 class="c-section-heading a-fade-in-activate">
             8層を理解する
           </h1>
-          <p class="p-layers__lead a-fade-in-slide-up">
+          <p class="p-layers-lead__text a-fade-in-slide-up">
             各層の「なぜ」を知ることで、「どこに書くか」の判断基準が身につきます。<br />
             このサイト自身の実装コードを例に解説します。
           </p>
-          <p class="p-layers__note a-fade-in-slide-up">
+          <p class="p-layers-lead__note a-fade-in-slide-up">
             <small>※ コード例では層の所属を明示するため <code>@layer</code> ラッパーで表記していますが、
             このサイトの実装では <code>style.css</code> の <code>@import layer()</code> で層を一元管理しています。</small>
           </p>
         </div>
       </section>
 
-      <section class="l-section -flush">
-        <div class="l-inner">
+      <section class="l-section p-layers-detail">
+        <div class="l-inner p-layers-detail__inner">
           <div class="p-layer-showcase">
             <div class="p-layer-showcase__item -tokens a-fade-in-slide-up">
               <div class="p-layer-showcase__header">
@@ -164,9 +164,11 @@
   .l-section {
     container-type: inline-size;
     container-name: section;
-    padding-block: clamp(/* fluid spacing */);
-
-    &amp;.-flush { padding-block-start: 0; }
+    padding-block: clamp(
+      calc(var(--section-padding-min) * var(--px)),
+      calc((var(--section-padding-max) - var(--section-padding-min)) / var(--vp-range) * var(--vp-offset) + var(--section-padding-min) * var(--px)),
+      calc(var(--section-padding-max) * var(--px))
+    );
   }
 }</code></pre>
                   </div>
@@ -315,8 +317,8 @@
         </div>
       </section>
 
-      <section class="l-section">
-        <div class="l-inner p-layers__cta">
+      <section class="l-section p-layers-cta">
+        <div class="l-inner p-layers-cta__inner">
           <h2 class="c-section-heading a-fade-in-slide-up">
             判断基準を身につけたら
           </h2>

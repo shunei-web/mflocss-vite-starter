@@ -1,0 +1,16 @@
+/* ----------------------------------------
+ * p-layers-lead — Layers ページ導入セクション
+ * ---------------------------------------- */
+
+/* セクション Block — プロジェクトに合わせてスタイルを追加 */
+.p-layers-lead {}
+
+.p-layers-lead__text {
+  text-align: center;
+  margin-block-start: 1rem;
+}
+
+.p-layers-lead__note {
+  text-align: center;
+  color: var(--color-text-light);
+}

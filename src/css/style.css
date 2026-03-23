@@ -41,9 +41,13 @@
 @import './project/p-hero.css' layer(project);
 @import './project/p-layer-showcase.css' layer(project);
 @import './project/p-contact-form.css' layer(project);
-@import './project/p-home.css' layer(project);
+@import './project/p-home-architecture.css' layer(project);
+@import './project/p-home-cascade.css' layer(project);
+@import './project/p-home-cta.css' layer(project);
+@import './project/p-layers-lead.css' layer(project);
+@import './project/p-layers-detail.css' layer(project);
+@import './project/p-layers-cta.css' layer(project);
 @import './project/p-philosophy.css' layer(project);
-@import './project/p-layers.css' layer(project);
 @import './project/p-contact.css' layer(project);
 @import './project/p-skip-link.css' layer(project);
 
