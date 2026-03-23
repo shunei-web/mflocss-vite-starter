@@ -42,10 +42,9 @@
 @import './project/p-layer-showcase.css' layer(project);
 @import './project/p-contact-form.css' layer(project);
 @import './project/p-home.css' layer(project);
-@import './project/p-philosophy.css' layer(project);
 @import './project/p-layers.css' layer(project);
+@import './project/p-philosophy.css' layer(project);
 @import './project/p-contact.css' layer(project);
-@import './project/p-skip-link.css' layer(project);
 
 /* Animation */
 @import './animation/a-fade-in-activate.css' layer(animation);

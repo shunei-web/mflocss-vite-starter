@@ -1,35 +1,54 @@
-.p-home__section-lead {
+/* ----------------------------------------
+ * p-home — ホームページのセクション群
+ * ---------------------------------------- */
+
+/* --- Architecture Section --- */
+
+/* セクション Block — プロジェクトに合わせてスタイルを追加 */
+.p-home-architecture {}
+
+.p-home-architecture__lead {
   text-align: center;
 }
 
-.p-home__section-body {
+.p-home-architecture__body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: calc(24 * var(--px));
   margin-block-start: 2.5rem;
 }
 
-.p-home__layer-section-body {
+/* レイヤーバッジ — 子孫の c-badge を明示指定 */
+.p-home-architecture__card.-tokens .c-badge     { --_bg: var(--color-layer-tokens); }
+.p-home-architecture__card.-theme .c-badge      { --_bg: var(--color-layer-theme); }
+.p-home-architecture__card.-foundation .c-badge { --_bg: var(--color-layer-foundation); }
+.p-home-architecture__card.-layout .c-badge     { --_bg: var(--color-layer-layout); }
+.p-home-architecture__card.-component .c-badge  { --_bg: var(--color-layer-component); }
+.p-home-architecture__card.-project .c-badge    { --_bg: var(--color-layer-project); }
+.p-home-architecture__card.-animation .c-badge  { --_bg: var(--color-layer-animation); }
+.p-home-architecture__card.-utility .c-badge    { --_bg: var(--color-layer-utility); }
+
+/* --- Cascade Section --- */
+
+/* セクション Block — プロジェクトに合わせてスタイルを追加 */
+.p-home-cascade {}
+
+.p-home-cascade__body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin-block-start: 2rem;
 }
 
-.p-home__cta {
+/* --- CTA Section --- */
+
+/* セクション Block — プロジェクトに合わせてスタイルを追加 */
+.p-home-cta {}
+
+.p-home-cta__inner {
   text-align: center;
 }
 
-.p-home__cta-action {
+.p-home-cta__action {
   margin-block-start: 2rem;
 }
-
-/* レイヤーバッジ — 子孫の c-badge を明示指定 */
-.p-home__card.-tokens .c-badge     { --_bg: var(--color-layer-tokens); }
-.p-home__card.-theme .c-badge      { --_bg: var(--color-layer-theme); }
-.p-home__card.-foundation .c-badge { --_bg: var(--color-layer-foundation); }
-.p-home__card.-layout .c-badge     { --_bg: var(--color-layer-layout); }
-.p-home__card.-component .c-badge  { --_bg: var(--color-layer-component); }
-.p-home__card.-project .c-badge    { --_bg: var(--color-layer-project); }
-.p-home__card.-animation .c-badge  { --_bg: var(--color-layer-animation); }
-.p-home__card.-utility .c-badge    { --_bg: var(--color-layer-utility); }

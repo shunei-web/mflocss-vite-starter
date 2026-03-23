@@ -36,24 +36,24 @@
     </header>
 
     <main id="main">
-      <section class="l-section">
-        <div class="l-inner">
+      <section class="l-section p-layers-lead">
+        <div class="l-inner p-layers-lead__inner">
           <h1 class="c-section-heading a-fade-in-activate">
             8層を理解する
           </h1>
-          <p class="p-layers__lead a-fade-in-slide-up">
+          <p class="p-layers-lead__text a-fade-in-slide-up">
             各層の「なぜ」を知ることで、「どこに書くか」の判断基準が身につきます。<br />
             このサイト自身の実装コードを例に解説します。
           </p>
-          <p class="p-layers__note a-fade-in-slide-up">
+          <p class="p-layers-lead__note a-fade-in-slide-up">
             <small>※ コード例では層の所属を明示するため <code>@layer</code> ラッパーで表記していますが、
             このサイトの実装では <code>style.css</code> の <code>@import layer()</code> で層を一元管理しています。</small>
           </p>
         </div>
       </section>
 
-      <section class="l-section -flush">
-        <div class="l-inner">
+      <section class="l-section p-layers-detail">
+        <div class="l-inner p-layers-detail__inner">
           <div class="p-layer-showcase">
             <div class="p-layer-showcase__item -tokens a-fade-in-slide-up">
               <div class="p-layer-showcase__header">
@@ -162,11 +162,16 @@
                     <div class="c-code-block__header">layout/l-section.css — このサイトの実装</div>
                     <pre class="c-code-block__body"><code>@layer layout {
   .l-section {
+    --_min: 60;
+    --_max: 100;
+
     container-type: inline-size;
     container-name: section;
-    padding-block: clamp(/* fluid spacing */);
-
-    &amp;.-flush { padding-block-start: 0; }
+    padding-block: clamp(
+      calc(var(--_min) * var(--px)),
+      calc((var(--_max) - var(--_min)) / var(--vp-range) * var(--vp-offset) + var(--_min) * var(--px)),
+      calc(var(--_max) * var(--px))
+    );
   }
 }</code></pre>
                   </div>
@@ -315,8 +320,8 @@
         </div>
       </section>
 
-      <section class="l-section">
-        <div class="l-inner p-layers__cta">
+      <section class="l-section p-layers-cta">
+        <div class="l-inner p-layers-cta__inner">
           <h2 class="c-section-heading a-fade-in-slide-up">
             判断基準を身につけたら
           </h2>

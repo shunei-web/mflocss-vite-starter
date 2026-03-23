@@ -1,13 +1,34 @@
-.p-layers__lead {
+/* ----------------------------------------
+ * p-layers — Layers ページのセクション群
+ * ---------------------------------------- */
+
+/* --- Lead Section --- */
+
+/* セクション Block — プロジェクトに合わせてスタイルを追加 */
+.p-layers-lead {}
+
+.p-layers-lead__text {
   text-align: center;
   margin-block-start: 1rem;
 }
 
-.p-layers__note {
+.p-layers-lead__note {
   text-align: center;
   color: var(--color-text-light);
 }
 
-.p-layers__cta {
+/* --- Detail Section --- */
+
+.p-layers-detail {
+  /* リードセクションとの間の余白を詰める */
+  padding-block-start: 0;
+}
+
+/* --- CTA Section --- */
+
+/* セクション Block — プロジェクトに合わせてスタイルを追加 */
+.p-layers-cta {}
+
+.p-layers-cta__inner {
   text-align: center;
 }

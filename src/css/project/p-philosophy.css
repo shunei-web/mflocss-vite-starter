@@ -1,3 +1,6 @@
+/* セクション Block — プロジェクトに合わせてスタイルを追加 */
+.p-philosophy {}
+
 .p-philosophy__body {
   display: flex;
   flex-direction: column;
