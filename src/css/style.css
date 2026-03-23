@@ -49,6 +49,7 @@
 @import './project/p-layers-cta.css' layer(project);
 @import './project/p-philosophy.css' layer(project);
 @import './project/p-contact.css' layer(project);
+@import './project/p-skip-link.css' layer(project);
 
 /* Animation */
 @import './animation/a-fade-in-activate.css' layer(animation);
