@@ -1,6 +1,6 @@
 /* フォーカス時の表示位置 — position: fixed はサイト固有のデザイン要件 */
 .p-skip-link {
-  &:focus {
+  &:focus-visible {
     position: fixed;
     inset-block-start: 0;
     inset-inline-start: 0;
