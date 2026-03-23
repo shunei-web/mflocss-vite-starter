@@ -3,6 +3,7 @@
  * ---------------------------------------- */
 
 .p-layers-detail {
-  /* リードセクションとの間の余白を詰める */
-  padding-block-start: 0;
+  /* l-section の流体余白を縮小（リードセクションとの間を詰める） */
+  --section-padding-min: 20;
+  --section-padding-max: 40;
 }
