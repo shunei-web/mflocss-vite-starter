@@ -17,11 +17,11 @@
 }
 
 /* レイヤーバッジ — 子孫の c-badge を明示指定 */
-.p-home-architecture__card.-tokens .c-badge     { --_bg: var(--color-layer-tokens); }
-.p-home-architecture__card.-theme .c-badge      { --_bg: var(--color-layer-theme); }
-.p-home-architecture__card.-foundation .c-badge { --_bg: var(--color-layer-foundation); }
-.p-home-architecture__card.-layout .c-badge     { --_bg: var(--color-layer-layout); }
-.p-home-architecture__card.-component .c-badge  { --_bg: var(--color-layer-component); }
-.p-home-architecture__card.-project .c-badge    { --_bg: var(--color-layer-project); }
-.p-home-architecture__card.-animation .c-badge  { --_bg: var(--color-layer-animation); }
-.p-home-architecture__card.-utility .c-badge    { --_bg: var(--color-layer-utility); }
+.p-home-architecture__card.-tokens .c-badge     { --badge-bg: var(--color-layer-tokens); }
+.p-home-architecture__card.-theme .c-badge      { --badge-bg: var(--color-layer-theme); }
+.p-home-architecture__card.-foundation .c-badge { --badge-bg: var(--color-layer-foundation); }
+.p-home-architecture__card.-layout .c-badge     { --badge-bg: var(--color-layer-layout); }
+.p-home-architecture__card.-component .c-badge  { --badge-bg: var(--color-layer-component); }
+.p-home-architecture__card.-project .c-badge    { --badge-bg: var(--color-layer-project); }
+.p-home-architecture__card.-animation .c-badge  { --badge-bg: var(--color-layer-animation); }
+.p-home-architecture__card.-utility .c-badge    { --badge-bg: var(--color-layer-utility); }

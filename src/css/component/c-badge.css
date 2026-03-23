@@ -1,5 +1,5 @@
 .c-badge {
-  --_bg: var(--color-main);
+  --badge-bg: var(--color-main);
 
   display: inline-block;
   padding-block: 0.125em;
@@ -8,6 +8,6 @@
   font-weight: var(--font-weight-bold);
   line-height: 1.5;
   color: var(--color-white);
-  background-color: var(--_bg);
+  background-color: var(--badge-bg);
   border-radius: 100vmax;
 }

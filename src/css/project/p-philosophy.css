@@ -19,11 +19,11 @@
 }
 
 /* レイヤーバッジ — 子孫の c-badge を明示指定 */
-.p-philosophy__layer.-tokens .c-badge     { --_bg: var(--color-layer-tokens); }
-.p-philosophy__layer.-theme .c-badge      { --_bg: var(--color-layer-theme); }
-.p-philosophy__layer.-foundation .c-badge { --_bg: var(--color-layer-foundation); }
-.p-philosophy__layer.-layout .c-badge     { --_bg: var(--color-layer-layout); }
-.p-philosophy__layer.-component .c-badge  { --_bg: var(--color-layer-component); }
-.p-philosophy__layer.-project .c-badge    { --_bg: var(--color-layer-project); }
-.p-philosophy__layer.-animation .c-badge  { --_bg: var(--color-layer-animation); }
-.p-philosophy__layer.-utility .c-badge    { --_bg: var(--color-layer-utility); }
+.p-philosophy__layer.-tokens .c-badge     { --badge-bg: var(--color-layer-tokens); }
+.p-philosophy__layer.-theme .c-badge      { --badge-bg: var(--color-layer-theme); }
+.p-philosophy__layer.-foundation .c-badge { --badge-bg: var(--color-layer-foundation); }
+.p-philosophy__layer.-layout .c-badge     { --badge-bg: var(--color-layer-layout); }
+.p-philosophy__layer.-component .c-badge  { --badge-bg: var(--color-layer-component); }
+.p-philosophy__layer.-project .c-badge    { --badge-bg: var(--color-layer-project); }
+.p-philosophy__layer.-animation .c-badge  { --badge-bg: var(--color-layer-animation); }
+.p-philosophy__layer.-utility .c-badge    { --badge-bg: var(--color-layer-utility); }
