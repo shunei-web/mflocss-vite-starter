@@ -14,9 +14,12 @@
 }
 
 .p-header__logo {
-  font-size: 1.25rem;
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text);
+  display: inline-flex;
+}
+
+.p-header__logo img {
+  block-size: 2.5rem;
+  inline-size: auto;
 }
 
 /* ハンバーガーボタン — モバイルのみ表示 */
