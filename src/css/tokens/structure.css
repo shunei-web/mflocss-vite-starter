@@ -1,8 +1,5 @@
 :root {
-  /* --viewport-min / --viewport-max は @property (property.css) で定義済み */
-  --content-max: 1280;
-  --gutter-min: 16;
-  --gutter-max: 80;
+  /* Tokens の数値変数は @property (property.css) で定義済み */
 
   /* clamp() 用ヘルパー */
   --px: calc(1rem / 16);

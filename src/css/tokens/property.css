@@ -11,6 +11,24 @@
   initial-value: 1440;
 }
 
+@property --content-max {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 1280;
+}
+
+@property --gutter-min {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 16;
+}
+
+@property --gutter-max {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 80;
+}
+
 @property --section-padding-min {
   syntax: '<number>';
   inherits: false;
