@@ -162,15 +162,12 @@
                     <div class="c-code-block__header">layout/l-section.css — このサイトの実装</div>
                     <pre class="c-code-block__body"><code>@layer layout {
   .l-section {
-    --_min: 60;
-    --_max: 100;
-
     container-type: inline-size;
     container-name: section;
     padding-block: clamp(
-      calc(var(--_min) * var(--px)),
-      calc((var(--_max) - var(--_min)) / var(--vp-range) * var(--vp-offset) + var(--_min) * var(--px)),
-      calc(var(--_max) * var(--px))
+      calc(var(--section-padding-min) * var(--px)),
+      calc((var(--section-padding-max) - var(--section-padding-min)) / var(--vp-range) * var(--vp-offset) + var(--section-padding-min) * var(--px)),
+      calc(var(--section-padding-max) * var(--px))
     );
   }
 }</code></pre>
