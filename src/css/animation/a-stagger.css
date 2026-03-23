@@ -8,7 +8,7 @@
     opacity: 1;
     translate: 0 0;
     animation: stagger-slide-up 0.6s var(--ease-out-cubic);
-    animation-delay: var(--_delay, 0s);
+    animation-delay: var(--stagger-delay, 0s);
     animation-fill-mode: backwards;
   }
 
