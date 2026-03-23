@@ -40,3 +40,14 @@
   inherits: false;
   initial-value: 100;
 }
+
+@property --stagger-delay {
+  syntax: '<time>';
+  inherits: false;
+  initial-value: 0s;
+}
+
+/* --badge-bg は @property を見送る。
+   initial-value に var() が使えず、デフォルト値 var(--color-main) をハードコードすると
+   Tokens/Theme の参照チェーンと二重管理になる。
+   c-badge は葉要素であり、子孫への継承リスクも実質ない。 */
