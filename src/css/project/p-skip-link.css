@@ -1,9 +1,25 @@
-/* フォーカス時の表示位置 — position: fixed はサイト固有のデザイン要件 */
+/* 非表示 + フォーカス時の表示位置（サイト固有の振る舞い） */
 .p-skip-link {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+
   &:focus-visible {
     position: fixed;
     inset-block-start: 0;
     inset-inline-start: 0;
     z-index: var(--z-fixed);
+    inline-size: auto;
+    block-size: auto;
+    padding: 0.75em 1.5em;
+    margin: 0;
+    overflow: visible;
+    clip-path: none;
   }
 }
