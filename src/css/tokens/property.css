@@ -11,13 +11,13 @@
   initial-value: 1440;
 }
 
-@property --_section-padding-min {
+@property --section-padding-min {
   syntax: '<number>';
   inherits: false;
   initial-value: 60;
 }
 
-@property --_section-padding-max {
+@property --section-padding-max {
   syntax: '<number>';
   inherits: false;
   initial-value: 100;

@@ -3,8 +3,8 @@
   container-type: inline-size;
   container-name: section;
   padding-block: clamp(
-    calc(var(--_section-padding-min) * var(--px)),
-    calc((var(--_section-padding-max) - var(--_section-padding-min)) / var(--vp-range) * var(--vp-offset) + var(--_section-padding-min) * var(--px)),
-    calc(var(--_section-padding-max) * var(--px))
+    calc(var(--section-padding-min) * var(--px)),
+    calc((var(--section-padding-max) - var(--section-padding-min)) / var(--vp-range) * var(--vp-offset) + var(--section-padding-min) * var(--px)),
+    calc(var(--section-padding-max) * var(--px))
   );
 }

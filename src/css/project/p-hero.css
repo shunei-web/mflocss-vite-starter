@@ -1,7 +1,7 @@
 .p-hero {
   /* l-section の流体余白を上書き（§5.6 CSS 変数経由パターン） */
-  --_section-padding-min: 80;
-  --_section-padding-max: 140;
+  --section-padding-min: 80;
+  --section-padding-max: 140;
 
   text-align: center;
   background: radial-gradient(ellipse at 50% 0%, oklch(from var(--color-main) l c h / 6%) 0%, transparent 70%);
