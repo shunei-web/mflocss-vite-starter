@@ -1,8 +1,6 @@
 /* ----------------------------------------
- * p-home — ホームページのセクション群
+ * p-home-architecture — 8層アーキテクチャセクション
  * ---------------------------------------- */
-
-/* --- Architecture Section --- */
 
 /* セクション Block — プロジェクトに合わせてスタイルを追加 */
 .p-home-architecture {}
@@ -27,28 +25,3 @@
 .p-home-architecture__card.-project .c-badge    { --_bg: var(--color-layer-project); }
 .p-home-architecture__card.-animation .c-badge  { --_bg: var(--color-layer-animation); }
 .p-home-architecture__card.-utility .c-badge    { --_bg: var(--color-layer-utility); }
-
-/* --- Cascade Section --- */
-
-/* セクション Block — プロジェクトに合わせてスタイルを追加 */
-.p-home-cascade {}
-
-.p-home-cascade__body {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-block-start: 2rem;
-}
-
-/* --- CTA Section --- */
-
-/* セクション Block — プロジェクトに合わせてスタイルを追加 */
-.p-home-cta {}
-
-.p-home-cta__inner {
-  text-align: center;
-}
-
-.p-home-cta__action {
-  margin-block-start: 2rem;
-}

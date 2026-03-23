@@ -2,6 +2,7 @@
   --_min-padding-block: 80;
   --_max-padding-block: 140;
 
+  /* l-section のデフォルト余白を上書き。Hero 独自の余白で制御 */
   padding-block: clamp(
     calc(var(--_min-padding-block) * var(--px)),
     calc((var(--_max-padding-block) - var(--_min-padding-block)) / var(--vp-range) * var(--vp-offset) + var(--_min-padding-block) * var(--px)),
