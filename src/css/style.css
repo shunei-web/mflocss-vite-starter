@@ -56,7 +56,6 @@
 @import './animation/fade-in-slide-up.css' layer(animation);
 @import './animation/fade-in-slide-right.css' layer(animation);
 @import './animation/scale-in.css' layer(animation);
-@import './animation/stagger.css' layer(animation);
 
 /* Utility */
 @import './utility/u-hidden.css' layer(utility);
