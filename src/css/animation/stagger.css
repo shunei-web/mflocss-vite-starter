@@ -1,14 +1,12 @@
+/* 段階的遅延。@keyframes fade-in-slide-up は fade-in-slide-up.css で定義 */
 @media (prefers-reduced-motion: no-preference) and (scripting: enabled) {
   [data-stagger="fade-in-slide-up"] > * {
     opacity: 0;
-    translate: 0 20px;
+    translate: 0 1.25rem;
   }
 
   [data-stagger="fade-in-slide-up"].is-active > * {
-    opacity: 1;
-    translate: 0 0;
-    animation: fade-in-slide-up 0.6s var(--ease-out-cubic);
+    animation: fade-in-slide-up 0.6s var(--ease-out-cubic) backwards;
     animation-delay: var(--stagger-delay, 0s);
-    animation-fill-mode: backwards;
   }
 }
