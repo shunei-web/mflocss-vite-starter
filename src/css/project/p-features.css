@@ -1,3 +1,11 @@
+.p-features { /* l-section の拡張点 */ }
+.p-features__inner { /* l-inner の拡張点 */ }
+.p-features__heading { /* c-section-heading の拡張点 */ }
+.p-features__grid-item { /* l-container の拡張点 */ }
+.p-features__card { /* c-card の拡張点 */ }
+.p-features__card-image { /* c-card__image の拡張点 */ }
+.p-features__badge { /* c-badge の拡張点 */ }
+
 .p-features__grid {
   display: grid;
   gap: 2rem;

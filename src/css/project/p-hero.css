@@ -1,3 +1,6 @@
+.p-hero__inner { /* l-inner の拡張点 */ }
+.p-hero__cta { /* CTA ボタン群の拡張点 */ }
+
 .p-hero {
   --section-padding-min: 80;
   --section-padding-max: 140;

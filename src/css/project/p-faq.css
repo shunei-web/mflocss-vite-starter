@@ -1,3 +1,8 @@
+.p-faq { /* l-section の拡張点 */ }
+.p-faq__inner { /* l-inner の拡張点 */ }
+.p-faq__heading { /* c-section-heading の拡張点 */ }
+.p-faq__accordion { /* c-accordion の拡張点 */ }
+
 .p-faq__list {
   max-inline-size: 48rem;
   margin-block-start: 2.5rem;

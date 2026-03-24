@@ -1,3 +1,9 @@
+.p-voice { /* l-section の拡張点 */ }
+.p-voice__inner { /* l-inner の拡張点 */ }
+.p-voice__heading { /* c-section-heading の拡張点 */ }
+.p-voice__item { /* c-blockquote の拡張点 */ }
+.p-voice__cta { /* CTA ボタン群の拡張点 */ }
+
 .p-voice__list {
   display: grid;
   gap: 2rem;

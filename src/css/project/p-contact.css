@@ -1,3 +1,7 @@
+.p-contact { /* l-section の拡張点 */ }
+.p-contact__inner { /* l-inner の拡張点 */ }
+.p-contact__heading { /* c-section-heading の拡張点 */ }
+
 .p-contact__lead {
   text-align: center;
   margin-block-start: 1rem;

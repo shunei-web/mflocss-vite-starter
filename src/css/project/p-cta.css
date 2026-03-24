@@ -1,3 +1,7 @@
+.p-cta__inner { /* l-inner の拡張点 */ }
+.p-cta__heading { /* c-section-heading の拡張点 */ }
+.p-cta__button { /* c-button-cta の拡張点 */ }
+
 .p-cta {
   text-align: center;
   background-color: var(--color-bg-secondary);

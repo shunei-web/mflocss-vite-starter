@@ -1,3 +1,6 @@
+.p-numbers__inner { /* l-inner の拡張点 */ }
+.p-numbers__heading { /* c-section-heading の拡張点 */ }
+
 .p-numbers {
   background-color: var(--color-bg-secondary);
 }
@@ -13,9 +16,7 @@
   }
 }
 
-.p-numbers__item {
-  /* grid item — 追加スタイルなし */
-}
+.p-numbers__item { /* grid item の拡張点 */ }
 
 .p-numbers__value {
   --_font-size-min: 36;
