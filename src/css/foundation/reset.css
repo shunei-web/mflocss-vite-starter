@@ -82,7 +82,9 @@
 
 /* Forms */
 :where(button, input, select, textarea) {
-  border: 1px solid;
+  border-width: 1px;
+  border-style: solid;
+  border-color: unset;
   border-radius: unset;
   color: inherit;
   font: inherit;
