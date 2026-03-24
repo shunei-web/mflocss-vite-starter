@@ -52,3 +52,13 @@
   justify-content: center;
   margin-block-start: 2.5rem;
 }
+
+.p-hero__image {
+  display: block;
+  inline-size: 100%;
+  max-inline-size: 800px;
+  block-size: auto;
+  margin-block-start: 3rem;
+  margin-inline: auto;
+  border-radius: 0.5rem;
+}
