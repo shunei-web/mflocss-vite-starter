@@ -1,7 +1,5 @@
 /* mFLOCSS Entry Point */
 @import './layer-order.css';
-
-/* @property（@layer の外で宣言が必要） */
 @import './tokens/property.css';
 
 /* Tokens */

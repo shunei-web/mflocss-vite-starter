@@ -1,7 +1,4 @@
 :root {
-  /* Tokens の数値変数は @property (property.css) で定義済み */
-
-  /* clamp() 用ヘルパー */
   --px: calc(1rem / 16);
   --vp-range: calc(var(--viewport-max) - var(--viewport-min));
   --vp-offset: calc(100vi - var(--viewport-min) * var(--px));

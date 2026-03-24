@@ -1,4 +1,3 @@
-/* @property は @layer の外に配置しなければならない（CSS 仕様の制約・mFLOCSS §4） */
 @property --viewport-min {
   syntax: '<number>';
   inherits: true;
