@@ -1,6 +1,6 @@
-.p-voice { /* extension point */ }
-.p-voice__inner { /* extension point */ }
-.p-voice__heading { /* extension point */ }
+.p-voice {}
+.p-voice__inner {}
+.p-voice__heading {}
 
 .p-voice__list {
   display: grid;
@@ -12,7 +12,7 @@
   }
 }
 
-.p-voice__item { /* extension point */ }
+.p-voice__item {}
 
 .p-voice__cite {
   display: flex;
@@ -36,4 +36,4 @@
   text-align: center;
 }
 
-.p-voice__cta { /* extension point */ }
+.p-voice__cta {}

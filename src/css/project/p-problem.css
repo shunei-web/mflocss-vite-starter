@@ -2,8 +2,8 @@
   background-color: var(--color-bg-secondary);
 }
 
-.p-problem__inner { /* extension point */ }
-.p-problem__heading { /* extension point */ }
+.p-problem__inner {}
+.p-problem__heading {}
 
 .p-problem__list {
   display: grid;

@@ -2,8 +2,8 @@
   background-color: var(--color-bg-secondary);
 }
 
-.p-numbers__inner { /* extension point */ }
-.p-numbers__heading { /* extension point */ }
+.p-numbers__inner {}
+.p-numbers__heading {}
 
 .p-numbers__grid {
   display: grid;
@@ -16,7 +16,7 @@
   }
 }
 
-.p-numbers__item { /* extension point */ }
+.p-numbers__item {}
 
 .p-numbers__value {
   --_font-size-min: 36;

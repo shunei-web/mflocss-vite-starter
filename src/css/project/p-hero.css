@@ -6,7 +6,7 @@
   background: radial-gradient(ellipse at 50% 0%, oklch(from var(--color-main) l c h / 6%) 0%, transparent 70%);
 }
 
-.p-hero__inner { /* extension point */ }
+.p-hero__inner {}
 
 .p-hero__title {
   --_font-size-min: 28;
@@ -54,7 +54,7 @@
   margin-block-start: 2.5rem;
 }
 
-.p-hero__cta { /* extension point */ }
+.p-hero__cta {}
 
 .p-hero__image {
   display: block;

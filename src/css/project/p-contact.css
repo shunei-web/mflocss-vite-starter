@@ -1,6 +1,6 @@
-.p-contact { /* extension point */ }
-.p-contact__inner { /* extension point */ }
-.p-contact__heading { /* extension point */ }
+.p-contact {}
+.p-contact__inner {}
+.p-contact__heading {}
 
 .p-contact__lead {
   text-align: center;

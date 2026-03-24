@@ -3,8 +3,8 @@
   background-color: var(--color-bg-secondary);
 }
 
-.p-cta__inner { /* extension point */ }
-.p-cta__heading { /* extension point */ }
+.p-cta__inner {}
+.p-cta__heading {}
 
 .p-cta__text {
   margin-block-start: 1rem;
@@ -16,4 +16,4 @@
   margin-block-start: 2rem;
 }
 
-.p-cta__button { /* extension point */ }
+.p-cta__button {}

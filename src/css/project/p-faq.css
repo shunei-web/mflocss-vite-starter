@@ -1,6 +1,6 @@
-.p-faq { /* extension point */ }
-.p-faq__inner { /* extension point */ }
-.p-faq__heading { /* extension point */ }
+.p-faq {}
+.p-faq__inner {}
+.p-faq__heading {}
 
 .p-faq__list {
   max-inline-size: 48rem;
@@ -8,4 +8,4 @@
   margin-inline: auto;
 }
 
-.p-faq__accordion { /* extension point */ }
+.p-faq__accordion {}

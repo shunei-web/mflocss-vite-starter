@@ -11,7 +11,7 @@
   padding-inline: var(--content-padding-inline);
 }
 
-.p-footer__nav-group { /* extension point */ }
+.p-footer__nav-group {}
 
 .p-footer__nav-heading {
   font-size: 0.875rem;
