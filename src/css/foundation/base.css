@@ -1,5 +1,4 @@
-/* 日本語組版 + レイアウト安定化 */
-:where(:root) {
+:where(html) {
   line-height: 1.5;
   text-spacing-trim: trim-start;
   text-autospace: normal;
@@ -10,9 +9,6 @@
   scrollbar-gutter: stable;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
-}
-
-:where(html) {
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-height);
 }
@@ -38,7 +34,6 @@
   line-height: var(--line-height-heading);
 }
 
-/* 日本語テキスト要素 */
 :where(em:lang(ja)) {
   font-weight: bolder;
 }
