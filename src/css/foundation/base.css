@@ -1,14 +1,8 @@
 :where(html) {
-  line-height: 1.5;
   text-spacing-trim: trim-start;
   text-autospace: normal;
   line-break: strict;
   overflow-wrap: anywhere;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-  scrollbar-gutter: stable;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-height);
 }
@@ -26,7 +20,6 @@
   line-height: var(--line-height-base);
   color: var(--color-text);
   background-color: var(--color-bg);
-  -webkit-font-smoothing: antialiased;
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
