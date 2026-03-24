@@ -12,7 +12,9 @@
     translate: 0 1.25rem;
 
     &.is-active {
-      animation: fade-in-slide-up 0.6s var(--ease-out-cubic) both;
+      opacity: 1;
+      translate: 0;
+      animation: fade-in-slide-up 0.6s var(--ease-out-cubic);
     }
   }
 
@@ -23,7 +25,9 @@
   }
 
   [data-stagger="fade-in-slide-up"].is-active > * {
-    animation: fade-in-slide-up 0.6s var(--ease-out-cubic) backwards;
+    opacity: 1;
+    translate: 0;
+    animation: fade-in-slide-up 0.6s var(--ease-out-cubic);
     animation-delay: var(--stagger-delay, 0s);
   }
 }
