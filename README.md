@@ -61,7 +61,7 @@ base: '/lp/campaign/'
 
 ## カスタマイズの始め方
 
-1. **リセット CSS を差し替える**: `src/css/foundation/reset.css` をお好みのリセット CSS に差し替え → `foundation/index.css` の import を変更
+1. **リセット CSS を差し替える**: `src/css/foundation/reset.css` の中身をお好みのリセット CSS に差し替え
 2. **ブランドカラーを変える**: `src/css/tokens/color.css` のカスタムプロパティを差し替え。デザインカンプの hex 値をそのまま指定できます（oklch への変換は不要）
 3. **フォントを変える**: `src/css/tokens/typography.css` を変更。Web フォントを使う場合は Tokens 層に追加
 4. **セクションを削除する**: HTML からセクションを削除 → 対応する `p-{セクション名}.css` を削除 → そのセクション専用の Component があれば一緒に削除（grep で確認） → `style.css` の import を削除
