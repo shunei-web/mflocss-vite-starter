@@ -1,4 +1,3 @@
-/* Features セクション — カード3列グリッド */
 .p-features__grid {
   display: grid;
   gap: 2rem;
