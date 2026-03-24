@@ -46,7 +46,7 @@
   }
 
   .c-card__image {
-    inline-size: 200px;
+    inline-size: 40%;
     flex-shrink: 0;
   }
 
