@@ -1,11 +1,10 @@
-.p-cta__inner { /* l-inner の拡張点 */ }
-.p-cta__heading { /* c-section-heading の拡張点 */ }
-.p-cta__button { /* c-button-cta の拡張点 */ }
-
 .p-cta {
   text-align: center;
   background-color: var(--color-bg-secondary);
 }
+
+.p-cta__inner { /* extension point */ }
+.p-cta__heading { /* extension point */ }
 
 .p-cta__text {
   margin-block-start: 1rem;
@@ -16,3 +15,5 @@
 .p-cta__action {
   margin-block-start: 2rem;
 }
+
+.p-cta__button { /* extension point */ }

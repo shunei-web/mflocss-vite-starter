@@ -1,6 +1,6 @@
-.p-contact { /* l-section の拡張点 */ }
-.p-contact__inner { /* l-inner の拡張点 */ }
-.p-contact__heading { /* c-section-heading の拡張点 */ }
+.p-contact { /* extension point */ }
+.p-contact__inner { /* extension point */ }
+.p-contact__heading { /* extension point */ }
 
 .p-contact__lead {
   text-align: center;

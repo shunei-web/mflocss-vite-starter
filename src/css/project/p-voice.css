@@ -1,8 +1,6 @@
-.p-voice { /* l-section の拡張点 */ }
-.p-voice__inner { /* l-inner の拡張点 */ }
-.p-voice__heading { /* c-section-heading の拡張点 */ }
-.p-voice__item { /* c-blockquote の拡張点 */ }
-.p-voice__cta { /* CTA ボタン群の拡張点 */ }
+.p-voice { /* extension point */ }
+.p-voice__inner { /* extension point */ }
+.p-voice__heading { /* extension point */ }
 
 .p-voice__list {
   display: grid;
@@ -13,6 +11,8 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.p-voice__item { /* extension point */ }
 
 .p-voice__cite {
   display: flex;
@@ -35,3 +35,5 @@
   margin-block-start: 3rem;
   text-align: center;
 }
+
+.p-voice__cta { /* extension point */ }

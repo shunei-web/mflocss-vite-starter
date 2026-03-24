@@ -1,6 +1,3 @@
-.p-hero__inner { /* l-inner の拡張点 */ }
-.p-hero__cta { /* CTA ボタン群の拡張点 */ }
-
 .p-hero {
   --section-padding-min: 80;
   --section-padding-max: 140;
@@ -8,6 +5,8 @@
   text-align: center;
   background: radial-gradient(ellipse at 50% 0%, oklch(from var(--color-main) l c h / 6%) 0%, transparent 70%);
 }
+
+.p-hero__inner { /* extension point */ }
 
 .p-hero__title {
   --_font-size-min: 28;
@@ -24,8 +23,8 @@
   &::after {
     content: '';
     display: block;
-    inline-size: 3rem;
     block-size: 3px;
+    inline-size: 3rem;
     margin-block-start: 1rem;
     margin-inline: auto;
     background: linear-gradient(in oklab, var(--color-main), var(--color-accent));
@@ -43,21 +42,22 @@
     calc((var(--_font-size-max) - var(--_font-size-min)) / var(--vp-range) * var(--vp-offset) + var(--_font-size-min) * var(--px)),
     calc(var(--_font-size-max) * var(--px))
   );
-  color: var(--color-text-light);
   line-height: var(--line-height-base);
+  color: var(--color-text-light);
 }
 
 .p-hero__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
   justify-content: center;
+  gap: 1rem;
   margin-block-start: 2.5rem;
 }
 
+.p-hero__cta { /* extension point */ }
+
 .p-hero__image {
   display: block;
-  inline-size: 100%;
   max-inline-size: 800px;
   block-size: auto;
   margin-block-start: 3rem;

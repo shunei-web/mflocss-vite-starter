@@ -1,10 +1,6 @@
-.p-features { /* l-section の拡張点 */ }
-.p-features__inner { /* l-inner の拡張点 */ }
-.p-features__heading { /* c-section-heading の拡張点 */ }
-.p-features__grid-item { /* l-container の拡張点 */ }
-.p-features__card { /* c-card の拡張点 */ }
-.p-features__card-image { /* c-card__image の拡張点 */ }
-.p-features__badge { /* c-badge の拡張点 */ }
+.p-features { /* extension point */ }
+.p-features__inner { /* extension point */ }
+.p-features__heading { /* extension point */ }
 
 .p-features__grid {
   display: grid;
@@ -15,6 +11,11 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+.p-features__grid-item { /* extension point */ }
+.p-features__card { /* extension point */ }
+.p-features__card-image { /* extension point */ }
+.p-features__badge { /* extension point */ }
 
 .p-features__card-icon {
   font-size: 2.5rem;

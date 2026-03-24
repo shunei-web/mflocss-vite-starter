@@ -1,9 +1,9 @@
-.p-problem__inner { /* l-inner の拡張点 */ }
-.p-problem__heading { /* c-section-heading の拡張点 */ }
-
 .p-problem {
   background-color: var(--color-bg-secondary);
 }
+
+.p-problem__inner { /* extension point */ }
+.p-problem__heading { /* extension point */ }
 
 .p-problem__list {
   display: grid;
@@ -34,6 +34,6 @@
 .p-problem__text {
   margin-block-start: 0.5rem;
   font-size: 0.9375rem;
-  color: var(--color-text-light);
   line-height: var(--line-height-base);
+  color: var(--color-text-light);
 }

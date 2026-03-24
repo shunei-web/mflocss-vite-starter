@@ -1,9 +1,9 @@
-.p-numbers__inner { /* l-inner の拡張点 */ }
-.p-numbers__heading { /* c-section-heading の拡張点 */ }
-
 .p-numbers {
   background-color: var(--color-bg-secondary);
 }
+
+.p-numbers__inner { /* extension point */ }
+.p-numbers__heading { /* extension point */ }
 
 .p-numbers__grid {
   display: grid;
@@ -16,7 +16,7 @@
   }
 }
 
-.p-numbers__item { /* grid item の拡張点 */ }
+.p-numbers__item { /* extension point */ }
 
 .p-numbers__value {
   --_font-size-min: 36;
