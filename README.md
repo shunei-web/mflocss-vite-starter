@@ -127,7 +127,8 @@ src/css/
 
 mFLOCSS の設計原則と詳細な実装ガイドは以下を参照してください。
 
-- **mFLOCSS 仕様**: https://github.com/mflocss/spec
+- **公式サイト**: https://mflocss.dev
+- **仕様**: https://github.com/mflocss/spec
 - **書籍（設計の詳細解説）**: https://zenn.dev/shunei/books/mflocss-design
 
 
