@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
-    <title>mFLOCSS — 8層CSSアーキテクチャ</title>
-    <meta name="description" content="mFLOCSS は CSS の設計判断を8つの層で整理する思考フレームワーク。@layer によるカスケード制御と、Tokens・Theme の分離設計を学べます。" />
+    <title>サービス名 — あなたのサービスを、ひとことで。</title>
+    <meta name="description" content="サービスの価値を伝えるサブコピー。ユーザーの課題を明確にし、解決策を提示する。" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="mFLOCSS — 8層CSSアーキテクチャ" />
-    <meta property="og:description" content="mFLOCSS は CSS の設計判断を8つの層で整理する思考フレームワーク。@layer によるカスケード制御と、Tokens・Theme の分離設計を学べます。" />
+    <meta property="og:title" content="サービス名 — あなたのサービスを、ひとことで。" />
+    <meta property="og:description" content="サービスの価値を伝えるサブコピー。ユーザーの課題を明確にし、解決策を提示する。" />
     <meta property="og:image" content="https://example.com/ogp.png" />
     <meta property="og:url" content="https://example.com/" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -21,244 +21,228 @@
     <header class="p-header">
       <div class="l-inner p-header__inner">
         <a href="/" class="p-header__logo">
-          <img src="/logo/logo-full.svg" alt="mFLOCSS" width="160" height="32" />
+          <img src="/logo/logo.svg" alt="サービス名" width="160" height="32" />
         </a>
         <button
           type="button"
           class="p-header__hamburger"
+          data-hamburger
           aria-expanded="false"
           aria-controls="global-nav"
           aria-label="メニューを開く"
         >
           <span class="p-header__hamburger-icon" aria-hidden="true"></span>
         </button>
-        <nav id="global-nav" class="p-header__nav" aria-label="メインナビゲーション">
+        <nav id="global-nav" class="p-header__nav" data-nav aria-label="メインナビゲーション">
           <ul class="p-header__nav-list">
-            <li><a href="/" class="p-header__nav-link">Top</a></li>
-            <li><a href="/philosophy/" class="p-header__nav-link">Philosophy</a></li>
-            <li><a href="/layers/" class="p-header__nav-link">Layers</a></li>
-            <li><a href="/contact/" class="p-header__nav-link">Contact</a></li>
+            <li><a href="/" class="p-header__nav-link" data-nav-link>Top</a></li>
+            <li><a href="#features" class="p-header__nav-link" data-nav-link>Features</a></li>
+            <li><a href="#faq" class="p-header__nav-link" data-nav-link>FAQ</a></li>
+            <li><a href="/contact/" class="p-header__nav-link" data-nav-link>Contact</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
     <main id="main">
-      <!-- Hero: l-section の container 定義を利用しつつ、padding-block は Project で上書き -->
-      <section class="l-section p-hero a-scale-in">
+
+      <section class="l-section p-hero" data-animate="scale-in">
         <div class="l-inner p-hero__inner">
-          <h1 class="p-hero__title">
-            その FLOCSS、<br />なぜそこに書いた？
-          </h1>
+          <h1 class="p-hero__title">あなたのサービスを、ひとことで。</h1>
           <p class="p-hero__lead">
-            テンプレートは「結果」であって「判断の過程」ではない。<br />
-            mFLOCSS は CSS の設計判断を8つの層で整理する、思考フレームワークです。
+            サービスの価値を伝えるサブコピー。<br />
+            ユーザーの課題を明確にし、解決策を提示する。
           </p>
           <div class="p-hero__actions">
-            <a href="/philosophy/" class="c-button-cta -large">設計思想を学ぶ</a>
-            <a href="/layers/" class="c-button-cta -large -accent">8層を理解する</a>
+            <a href="#contact" class="c-button-cta -large p-hero__cta">無料で始める</a>
+            <a href="#features" class="c-button-cta -large -accent p-hero__cta">詳しく見る</a>
           </div>
+          <img src="./assets/images/hero.svg" alt="" class="p-hero__image" width="800" height="400" />
         </div>
       </section>
 
-      <section class="l-section p-home-architecture">
-        <div class="l-inner p-home-architecture__inner">
-          <h2 class="c-section-heading a-fade-in-slide-up">8層アーキテクチャ</h2>
-          <p class="p-home-architecture__lead a-fade-in-slide-up">
-            mFLOCSS は CSS を 8 つのフラットな層に分類します。<br />
-            各層は <code>@layer</code> で優先順位が固定され、詳細度の衝突が起きません。
-          </p>
 
-          <div class="p-home-architecture__body">
-            <div class="l-container a-fade-in-slide-up">
-              <div class="p-home-architecture__card -tokens">
-                <article class="c-card">
-                  <div class="c-card__body">
-                    <span class="c-badge">Tokens</span>
-                    <h3 class="c-card__title">プリミティブトークン</h3>
-                    <p class="c-card__text">
-                      oklch 色コード、フォントスタック、数値スケール。意味を持たない「素材」を一箇所に集約する。
-                    </p>
-                  </div>
-                </article>
-              </div>
+      <section id="problem" class="l-section p-problem">
+        <div class="l-inner p-problem__inner">
+          <h2 class="c-section-heading p-problem__heading" data-animate="fade-in-slide-up">こんなお悩みはありませんか？</h2>
+          <div class="p-problem__list">
+            <div class="p-problem__item" data-animate="fade-in-slide-up">
+              <div class="p-problem__icon" aria-hidden="true">😰</div>
+              <h3 class="p-problem__title">課題1のタイトル</h3>
+              <p class="p-problem__text">ここに課題の説明文が入ります。ユーザーが共感できる悩みを具体的に記述してください。</p>
             </div>
-
-            <div class="l-container a-fade-in-slide-up">
-              <div class="p-home-architecture__card -theme">
-                <article class="c-card">
-                  <div class="c-card__body">
-                    <span class="c-badge">Theme</span>
-                    <h3 class="c-card__title">セマンティック変数へのマッピング</h3>
-                    <p class="c-card__text">
-                      Tokens に意味のある名前を与える。<code>--color-main</code> のように。ダークモードは Theme だけで切り替わる。
-                    </p>
-                  </div>
-                </article>
-              </div>
+            <div class="p-problem__item" data-animate="fade-in-slide-up">
+              <div class="p-problem__icon" aria-hidden="true">😓</div>
+              <h3 class="p-problem__title">課題2のタイトル</h3>
+              <p class="p-problem__text">ここに課題の説明文が入ります。ユーザーが共感できる悩みを具体的に記述してください。</p>
             </div>
-
-            <div class="l-container a-fade-in-slide-up">
-              <div class="p-home-architecture__card -foundation">
-                <article class="c-card">
-                  <div class="c-card__body">
-                    <span class="c-badge">Foundation</span>
-                    <h3 class="c-card__title">ブラウザ環境の初期化と基本スタイル</h3>
-                    <p class="c-card__text">
-                      リセット CSS と要素セレクタのデフォルト。<code>:where()</code> でゼロ詳細度を維持する。
-                    </p>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            <div class="l-container a-fade-in-slide-up">
-              <div class="p-home-architecture__card -layout">
-                <article class="c-card">
-                  <div class="c-card__body">
-                    <span class="c-badge">Layout</span>
-                    <h3 class="c-card__title">位置と空間の配置</h3>
-                    <p class="c-card__text">
-                      セクション、グリッド、スタック。中身の見た目に関与せず「配置と空間」だけを担当する。
-                    </p>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            <div class="l-container a-fade-in-slide-up">
-              <div class="p-home-architecture__card -component">
-                <article class="c-card">
-                  <div class="c-card__body">
-                    <span class="c-badge">Component</span>
-                    <h3 class="c-card__title">再利用パーツ</h3>
-                    <p class="c-card__text">
-                      別のサイトにそのまま持っていけるパーツ。ボタン、カード、見出し、バッジなど。
-                    </p>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            <div class="l-container a-fade-in-slide-up">
-              <div class="p-home-architecture__card -project">
-                <article class="c-card">
-                  <div class="c-card__body">
-                    <span class="c-badge">Project</span>
-                    <h3 class="c-card__title">サイト固有のパーツと文脈</h3>
-                    <p class="c-card__text">
-                      サイト固有のデザインに依存するパーツ。Component を組み合わせ、文脈に応じた配置・装飾を担う。
-                    </p>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            <div class="l-container a-fade-in-slide-up">
-              <div class="p-home-architecture__card -animation">
-                <article class="c-card">
-                  <div class="c-card__body">
-                    <span class="c-badge">Animation</span>
-                    <h3 class="c-card__title">動きの分離管理</h3>
-                    <p class="c-card__text">
-                      アニメーションを分離し、<code>prefers-reduced-motion</code> と <code>scripting</code> の 2 条件を一元管理する。
-                    </p>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            <div class="l-container a-fade-in-slide-up">
-              <div class="p-home-architecture__card -utility">
-                <article class="c-card">
-                  <div class="c-card__body">
-                    <span class="c-badge">Utility</span>
-                    <h3 class="c-card__title">単一目的のスタイル上書き</h3>
-                    <p class="c-card__text">
-                      他の層で解決できない局所的な微調整のみ。<code>!important</code> で最高優先度を保証する。
-                    </p>
-                  </div>
-                </article>
-              </div>
+            <div class="p-problem__item" data-animate="fade-in-slide-up">
+              <div class="p-problem__icon" aria-hidden="true">😩</div>
+              <h3 class="p-problem__title">課題3のタイトル</h3>
+              <p class="p-problem__text">ここに課題の説明文が入ります。ユーザーが共感できる悩みを具体的に記述してください。</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="l-section p-home-cascade">
-        <div class="l-inner p-home-cascade__inner">
-          <h2 class="c-section-heading a-fade-in-slide-up">@layer で詳細度を制御する</h2>
 
-          <div class="p-home-cascade__body">
-            <blockquote class="c-blockquote a-fade-in-slide-right">
-              道具がどんなに進化しても、「どこに何を書くか」という設計判断は人間がやるしかない。
+      <section id="features" class="l-section p-features">
+        <div class="l-inner p-features__inner">
+          <h2 class="c-section-heading p-features__heading" data-animate="fade-in-slide-up">選ばれる3つの理由</h2>
+          <div class="p-features__grid" data-stagger="fade-in-slide-up">
+            <div class="l-container p-features__grid-item">
+              <article class="c-card p-features__card">
+                <div class="c-card__body">
+                  <span class="c-badge p-features__badge">Feature 1</span>
+                  <div class="p-features__card-icon" aria-hidden="true">🚀</div>
+                  <h3 class="c-card__title">特徴1のタイトル</h3>
+                  <p class="c-card__text">特徴の説明文が入ります。サービスの強みを具体的に記述してください。</p>
+                </div>
+              </article>
+            </div>
+            <div class="l-container p-features__grid-item">
+              <article class="c-card p-features__card">
+                <div class="c-card__body">
+                  <span class="c-badge p-features__badge">Feature 2</span>
+                  <div class="p-features__card-icon" aria-hidden="true">💡</div>
+                  <h3 class="c-card__title">特徴2のタイトル</h3>
+                  <p class="c-card__text">特徴の説明文が入ります。サービスの強みを具体的に記述してください。</p>
+                </div>
+              </article>
+            </div>
+            <div class="l-container p-features__grid-item">
+              <article class="c-card p-features__card">
+                <div class="c-card__body">
+                  <span class="c-badge p-features__badge">Feature 3</span>
+                  <div class="p-features__card-icon" aria-hidden="true">🔒</div>
+                  <h3 class="c-card__title">特徴3のタイトル</h3>
+                  <p class="c-card__text">特徴の説明文が入ります。サービスの強みを具体的に記述してください。</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="numbers" class="l-section p-numbers">
+        <div class="l-inner p-numbers__inner">
+          <h2 class="c-section-heading p-numbers__heading" data-animate="fade-in-slide-up">実績</h2>
+          <div class="p-numbers__grid">
+            <div class="p-numbers__item" data-animate="fade-in-slide-up">
+              <p class="p-numbers__value">1,000+</p>
+              <p class="p-numbers__label">導入企業数</p>
+            </div>
+            <div class="p-numbers__item" data-animate="fade-in-slide-up">
+              <p class="p-numbers__value">99.9%</p>
+              <p class="p-numbers__label">稼働率</p>
+            </div>
+            <div class="p-numbers__item" data-animate="fade-in-slide-up">
+              <p class="p-numbers__value">24h</p>
+              <p class="p-numbers__label">サポート対応</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="voice" class="l-section p-voice">
+        <div class="l-inner p-voice__inner">
+          <h2 class="c-section-heading p-voice__heading" data-animate="fade-in-slide-up">お客様の声</h2>
+          <div class="p-voice__list">
+            <blockquote class="c-blockquote p-voice__item" data-animate="fade-in-slide-up">
+              <p>導入してから業務効率が劇的に改善しました。操作も直感的で、チーム全体がすぐに使いこなせるようになりました。</p>
+              <footer class="p-voice__cite">
+                <img src="./assets/images/avatar-1.svg" alt="" class="p-voice__avatar" width="48" height="48" loading="lazy" />
+                <span>田中太郎, 株式会社サンプル</span>
+              </footer>
             </blockquote>
-
-            <div class="c-code-block a-fade-in-slide-up">
-              <div class="c-code-block__header">layer-order.css</div>
-              <pre class="c-code-block__body"><code>@layer tokens, theme, foundation, layout, component, project, animation, utility;</code></pre>
-            </div>
-
-            <p class="a-fade-in-slide-up">
-              この 1 行で、8つの層の優先順位がブラウザに明示的に固定されます。
-              セレクタの詳細度に関係なく、後に宣言された層ほど優先度が高くなります。
-              <code>!important</code> に頼る必要は、もうありません。
-            </p>
-
-            <div class="c-code-block a-fade-in-slide-up">
-              <div class="c-code-block__header">Before: 詳細度の上書き合戦</div>
-              <pre class="c-code-block__body"><code>.card .button { background: #28a745; }             /* (0, 2, 0) */
-.card .button.is-featured { background: #ff6600; } /* (0, 3, 0) で対抗… */</code></pre>
-            </div>
-
-            <div class="c-code-block a-fade-in-slide-up">
-              <div class="c-code-block__header">After: mFLOCSS の @layer</div>
-              <pre class="c-code-block__body"><code>@layer component {
-  .c-card .c-button.-accent { background: var(--color-accent); } /* (0, 3, 0) */
-}
-@layer project {
-  .p-hero .c-button { background: var(--color-hero); }          /* (0, 2, 0) */
-}
-/* project の詳細度が低くても、layer 宣言順で project が勝つ */</code></pre>
-            </div>
+            <blockquote class="c-blockquote p-voice__item" data-animate="fade-in-slide-up">
+              <p>サポートが手厚く、安心して使えています。導入時の不安も丁寧なサポートですぐに解消されました。</p>
+              <footer class="p-voice__cite">
+                <img src="./assets/images/avatar-2.svg" alt="" class="p-voice__avatar" width="48" height="48" loading="lazy" />
+                <span>佐藤花子, サンプル商事</span>
+              </footer>
+            </blockquote>
+          </div>
+          <div class="p-voice__action" data-animate="fade-in-slide-up">
+            <a href="/contact/" class="c-button-cta -large p-voice__cta">お問い合わせはこちら</a>
           </div>
         </div>
       </section>
 
-      <section class="l-section p-home-cta">
-        <div class="l-inner p-home-cta__inner">
-          <h2 class="c-section-heading a-fade-in-slide-up">設計思想を身につけよう</h2>
-          <p class="a-fade-in-slide-up">
-            このサイト自身が mFLOCSS で設計されています。<br />
-            ソースコードを読みながら、設計の判断基準を体験してください。
-          </p>
-          <div class="p-home-cta__action a-fade-in-slide-up">
-            <a href="/philosophy/" class="c-button-cta -large -accent">設計思想を読む</a>
+
+      <section id="faq" class="l-section p-faq">
+        <div class="l-inner p-faq__inner">
+          <h2 class="c-section-heading p-faq__heading" data-animate="fade-in-slide-up">よくある質問</h2>
+          <div class="p-faq__list" data-animate="fade-in-slide-up">
+            <details class="c-accordion p-faq__accordion">
+              <summary class="c-accordion__summary">料金プランを教えてください</summary>
+              <div class="c-accordion__body">
+                <p>基本プラン、プロプラン、エンタープライズプランの3種類をご用意しています。詳細はお問い合わせください。</p>
+              </div>
+            </details>
+            <details class="c-accordion p-faq__accordion">
+              <summary class="c-accordion__summary">導入までどのくらいかかりますか？</summary>
+              <div class="c-accordion__body">
+                <p>お申し込みから最短3営業日で導入いただけます。既存システムとの連携が必要な場合は、別途ご相談ください。</p>
+              </div>
+            </details>
+            <details class="c-accordion p-faq__accordion">
+              <summary class="c-accordion__summary">解約はいつでもできますか？</summary>
+              <div class="c-accordion__body">
+                <p>はい、いつでも解約可能です。解約手数料はかかりません。月末までにお手続きいただければ、翌月から適用されます。</p>
+              </div>
+            </details>
+            <details class="c-accordion p-faq__accordion">
+              <summary class="c-accordion__summary">セキュリティ対策は？</summary>
+              <div class="c-accordion__body">
+                <p>SSL/TLS 暗号化、定期的なセキュリティ監査、ISO 27001 認証を取得しています。お客様のデータは厳格に保護されています。</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="contact" class="l-section p-cta">
+        <div class="l-inner p-cta__inner">
+          <h2 class="c-section-heading p-cta__heading" data-animate="fade-in-slide-up">まずは無料で試してみませんか？</h2>
+          <p class="p-cta__text" data-animate="fade-in-slide-up">30日間の無料トライアル。クレジットカード不要。</p>
+          <div class="p-cta__action" data-animate="fade-in-slide-up">
+            <a href="/contact/" class="c-button-cta -large -accent p-cta__button">無料で始める</a>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="p-footer">
-      <nav class="p-footer__nav a-stagger" aria-label="フッターナビゲーション">
+      <nav class="p-footer__nav" data-stagger="fade-in-slide-up" aria-label="フッターナビゲーション">
         <div class="p-footer__nav-group">
-          <p class="p-footer__nav-heading">Learn</p>
+          <p class="p-footer__nav-heading">Service</p>
           <ul class="p-footer__nav-list">
-            <li><a href="/philosophy/" class="p-footer__nav-link">Philosophy</a></li>
-            <li><a href="/layers/" class="p-footer__nav-link">Layers</a></li>
+            <li><a href="#features" class="p-footer__nav-link">Features</a></li>
+            <li><a href="#faq" class="p-footer__nav-link">FAQ</a></li>
           </ul>
         </div>
         <div class="p-footer__nav-group">
-          <p class="p-footer__nav-heading">Resource</p>
+          <p class="p-footer__nav-heading">Support</p>
           <ul class="p-footer__nav-list">
-            <li><a href="https://github.com/mflocss/starter" class="p-footer__nav-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             <li><a href="/contact/" class="p-footer__nav-link">Contact</a></li>
+            <li><a href="https://github.com/" class="p-footer__nav-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
           </ul>
         </div>
       </nav>
       <div class="p-footer__bottom">
-        <p class="p-footer__copyright">&copy; 2026 mFLOCSS. MIT License.</p>
+        <p class="p-footer__copyright">&copy; 2026 Your Company</p>
       </div>
     </footer>
+
+
+    <a href="#" class="c-back-to-top p-back-to-top" data-animate="fade-in" data-no-observe data-back-to-top aria-label="ページの先頭に戻る">
+      <svg class="c-back-to-top__icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 4l-8 8h5v8h6v-8h5z" />
+      </svg>
+    </a>
   </body>
 </html>

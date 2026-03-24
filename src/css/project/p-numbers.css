@@ -1,0 +1,34 @@
+.p-numbers {
+  background-color: var(--color-bg-secondary);
+}
+
+.p-numbers__grid {
+  display: grid;
+  gap: 2rem;
+  margin-block-start: 2.5rem;
+  text-align: center;
+
+  @media (width >= 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.p-numbers__value {
+  --_font-size-min: 36;
+  --_font-size-max: 56;
+
+  font-size: clamp(
+    calc(var(--_font-size-min) * var(--px)),
+    calc((var(--_font-size-max) - var(--_font-size-min)) / var(--vp-range) * var(--vp-offset) + var(--_font-size-min) * var(--px)),
+    calc(var(--_font-size-max) * var(--px))
+  );
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  color: var(--color-main);
+}
+
+.p-numbers__label {
+  margin-block-start: 0.5rem;
+  font-size: 0.9375rem;
+  color: var(--color-text-light);
+}

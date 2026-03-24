@@ -2,7 +2,7 @@ const observeAnimations = () => {
   if (!('IntersectionObserver' in window)) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const targets = document.querySelectorAll('[class*="a-fade-in"], .a-scale-in, .a-stagger');
+  const targets = document.querySelectorAll('[data-animate]:not([data-no-observe]), [data-stagger]');
 
   if (targets.length === 0) return;
 
@@ -23,18 +23,18 @@ const observeAnimations = () => {
 
 const initStaggerDelays = () => {
 
-  const containers = document.querySelectorAll('.a-stagger');
+  const containers = document.querySelectorAll('[data-stagger]');
 
   containers.forEach((container) => {
     Array.from(container.children).forEach((child, index) => {
-      child.style.setProperty('--stagger-delay', `${index * 0.1}s`);
+      child.style.setProperty('--stagger-delay', `${index * 0.15}s`);
     });
   });
 };
 
 const markCurrentNav = () => {
   const path = window.location.pathname;
-  const links = document.querySelectorAll('.p-header__nav-link');
+  const links = document.querySelectorAll('[data-nav-link]');
 
   links.forEach((link) => {
     const href = link.getAttribute('href');
@@ -45,9 +45,30 @@ const markCurrentNav = () => {
   });
 };
 
+const initBackToTop = () => {
+  const button = document.querySelector('[data-back-to-top]');
+  if (!button) return;
+
+  const toggleVisibility = () => {
+    if (window.scrollY >= 300) {
+      button.classList.add('is-active');
+    } else {
+      button.classList.remove('is-active');
+    }
+  };
+
+  window.addEventListener('scroll', toggleVisibility, { passive: true });
+  toggleVisibility();
+
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0 });
+  });
+};
+
 const initMobileNav = () => {
-  const button = document.querySelector('.p-header__hamburger');
-  const nav = document.querySelector('.p-header__nav');
+  const button = document.querySelector('[data-hamburger]');
+  const nav = document.querySelector('[data-nav]');
 
   if (!button || !nav) return;
 
@@ -105,6 +126,7 @@ const initMobileNav = () => {
 document.addEventListener('DOMContentLoaded', () => {
   markCurrentNav();
   initMobileNav();
+  initBackToTop();
   initStaggerDelays();
   observeAnimations();
 });

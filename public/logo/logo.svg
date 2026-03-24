@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 32" width="160" height="32">
+  <style>
+    .logo-icon { fill: #475569; }
+    .logo-text { fill: #1e293b; }
+    @media (prefers-color-scheme: dark) {
+      .logo-icon { fill: #94a3b8; }
+      .logo-text { fill: #f1f5f9; }
+    }
+  </style>
+  <rect width="32" height="32" rx="6" class="logo-icon"/>
+  <text x="44" y="22" font-family="system-ui, sans-serif" font-size="18" font-weight="700" class="logo-text">Logo</text>
+</svg>

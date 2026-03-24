@@ -1,7 +1,4 @@
-/* mFLOCSS Entry Point */
 @import './layer-order.css';
-
-/* @property（@layer の外で宣言が必要） */
 @import './tokens/property.css';
 
 /* Tokens */
@@ -29,34 +26,33 @@
 @import './component/c-button-cta.css' layer(component);
 @import './component/c-section-heading.css' layer(component);
 @import './component/c-card.css' layer(component);
-@import './component/c-code-block.css' layer(component);
 @import './component/c-badge.css' layer(component);
 @import './component/c-table.css' layer(component);
 @import './component/c-blockquote.css' layer(component);
+@import './component/c-accordion.css' layer(component);
+@import './component/c-back-to-top.css' layer(component);
 @import './component/c-skip-link.css' layer(component);
 
 /* Project */
 @import './project/p-header.css' layer(project);
 @import './project/p-footer.css' layer(project);
 @import './project/p-hero.css' layer(project);
-@import './project/p-layer-showcase.css' layer(project);
+@import './project/p-problem.css' layer(project);
+@import './project/p-features.css' layer(project);
+@import './project/p-numbers.css' layer(project);
+@import './project/p-voice.css' layer(project);
+@import './project/p-faq.css' layer(project);
+@import './project/p-cta.css' layer(project);
+@import './project/p-back-to-top.css' layer(project);
 @import './project/p-contact-form.css' layer(project);
-@import './project/p-home-architecture.css' layer(project);
-@import './project/p-home-cascade.css' layer(project);
-@import './project/p-home-cta.css' layer(project);
-@import './project/p-layers-lead.css' layer(project);
-@import './project/p-layers-detail.css' layer(project);
-@import './project/p-layers-cta.css' layer(project);
-@import './project/p-philosophy.css' layer(project);
 @import './project/p-contact.css' layer(project);
 @import './project/p-skip-link.css' layer(project);
 
 /* Animation */
-@import './animation/a-fade-in-activate.css' layer(animation);
-@import './animation/a-fade-in-slide-up.css' layer(animation);
-@import './animation/a-fade-in-slide-right.css' layer(animation);
-@import './animation/a-scale-in.css' layer(animation);
-@import './animation/a-stagger.css' layer(animation);
+@import './animation/fade-in.css' layer(animation);
+@import './animation/fade-in-slide-up.css' layer(animation);
+@import './animation/fade-in-slide-right.css' layer(animation);
+@import './animation/scale-in.css' layer(animation);
 
 /* Utility */
 @import './utility/u-hidden.css' layer(utility);

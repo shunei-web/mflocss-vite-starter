@@ -1,0 +1,31 @@
+.p-voice__list {
+  display: grid;
+  gap: 2rem;
+  margin-block-start: 2.5rem;
+
+  @media (width >= 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.p-voice__cite {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-block-start: 1rem;
+  font-size: 0.875rem;
+  font-style: normal;
+  color: var(--color-text-light);
+}
+
+.p-voice__avatar {
+  inline-size: 3rem;
+  block-size: 3rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.p-voice__action {
+  margin-block-start: 3rem;
+  text-align: center;
+}

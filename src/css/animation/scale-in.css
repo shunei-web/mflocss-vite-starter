@@ -1,16 +1,19 @@
 @media (prefers-reduced-motion: no-preference) and (scripting: enabled) {
-  .a-fade-in-activate {
+  [data-animate="scale-in"] {
     opacity: 0;
+    scale: 0.95;
 
     &.is-active {
       opacity: 1;
-      animation: fade-in-activate 0.6s var(--ease-out-cubic);
+      scale: 1;
+      animation: scale-in 0.6s var(--ease-out-cubic);
     }
   }
 
-  @keyframes fade-in-activate {
+  @keyframes scale-in {
     from {
       opacity: 0;
+      scale: 0.95;
     }
   }
 }

@@ -1,0 +1,33 @@
+@media (prefers-reduced-motion: no-preference) and (scripting: enabled) {
+  @keyframes fade-in-slide-up {
+    from {
+      opacity: 0;
+      translate: 0 1.25rem;
+    }
+  }
+
+  /* 単体 */
+  [data-animate="fade-in-slide-up"] {
+    opacity: 0;
+    translate: 0 1.25rem;
+
+    &.is-active {
+      opacity: 1;
+      translate: 0;
+      animation: fade-in-slide-up 0.6s var(--ease-out-cubic);
+    }
+  }
+
+  /* stagger: 同じ @keyframes を子要素に遅延適用 */
+  [data-stagger="fade-in-slide-up"] > * {
+    opacity: 0;
+    translate: 0 1.25rem;
+  }
+
+  [data-stagger="fade-in-slide-up"].is-active > * {
+    opacity: 1;
+    translate: 0;
+    animation: fade-in-slide-up 0.6s var(--ease-out-cubic) backwards;
+    animation-delay: var(--stagger-delay, 0s);
+  }
+}

@@ -1,0 +1,14 @@
+.p-cta {
+  text-align: center;
+  background-color: var(--color-bg-secondary);
+}
+
+.p-cta__text {
+  margin-block-start: 1rem;
+  color: var(--color-text-light);
+  line-height: var(--line-height-base);
+}
+
+.p-cta__action {
+  margin-block-start: 2rem;
+}
