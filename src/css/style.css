@@ -27,7 +27,7 @@
 @import './component/c-section-heading.css' layer(component);
 @import './component/c-card.css' layer(component);
 @import './component/c-badge.css' layer(component);
-@import './component/c-table.css' layer(component);
+
 @import './component/c-blockquote.css' layer(component);
 @import './component/c-accordion.css' layer(component);
 @import './component/c-back-to-top.css' layer(component);

@@ -13,6 +13,10 @@
   }
 }
 
+.p-numbers__item {
+  /* grid item — 追加スタイルなし */
+}
+
 .p-numbers__value {
   --_font-size-min: 36;
   --_font-size-max: 56;
