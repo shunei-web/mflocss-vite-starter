@@ -1,5 +1,5 @@
 @import './layer-order.css';
-@import './tokens/property.css';
+@import './property.css';
 
 /* Tokens */
 @import './tokens/color.css' layer(tokens);
