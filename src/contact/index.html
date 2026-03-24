@@ -26,18 +26,19 @@
         <button
           type="button"
           class="p-header__hamburger"
+          data-hamburger
           aria-expanded="false"
           aria-controls="global-nav"
           aria-label="メニューを開く"
         >
           <span class="p-header__hamburger-icon" aria-hidden="true"></span>
         </button>
-        <nav id="global-nav" class="p-header__nav" aria-label="メインナビゲーション">
+        <nav id="global-nav" class="p-header__nav" data-nav aria-label="メインナビゲーション">
           <ul class="p-header__nav-list">
-            <li><a href="/" class="p-header__nav-link">Top</a></li>
-            <li><a href="/#features" class="p-header__nav-link">Features</a></li>
-            <li><a href="/#faq" class="p-header__nav-link">FAQ</a></li>
-            <li><a href="/contact/" class="p-header__nav-link">Contact</a></li>
+            <li><a href="/" class="p-header__nav-link" data-nav-link>Top</a></li>
+            <li><a href="/#features" class="p-header__nav-link" data-nav-link>Features</a></li>
+            <li><a href="/#faq" class="p-header__nav-link" data-nav-link>FAQ</a></li>
+            <li><a href="/contact/" class="p-header__nav-link" data-nav-link>Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -46,13 +47,13 @@
     <main id="main">
       <section class="l-section p-contact">
         <div class="l-inner p-contact__inner">
-          <h1 class="c-section-heading a-fade-in-activate">Contact</h1>
-          <p class="p-contact__lead a-fade-in-slide-up">
+          <h1 class="c-section-heading" data-animate="fade-in">Contact</h1>
+          <p class="p-contact__lead" data-animate="fade-in-slide-up">
             ご質問やご相談がございましたら、お気軽にお問い合わせください。
           </p>
 
           <form class="p-contact-form p-contact__form">
-            <div class="p-contact-form__field a-fade-in-slide-up">
+            <div class="p-contact-form__field" data-animate="fade-in-slide-up">
               <label class="p-contact-form__label" for="name">
                 お名前<span class="p-contact-form__required" aria-hidden="true">*</span>
               </label>
@@ -66,7 +67,7 @@
                 required
               />
             </div>
-            <div class="p-contact-form__field a-fade-in-slide-up">
+            <div class="p-contact-form__field" data-animate="fade-in-slide-up">
               <label class="p-contact-form__label" for="email">
                 メールアドレス<span class="p-contact-form__required" aria-hidden="true">*</span>
               </label>
@@ -80,7 +81,7 @@
                 required
               />
             </div>
-            <div class="p-contact-form__field a-fade-in-slide-up">
+            <div class="p-contact-form__field" data-animate="fade-in-slide-up">
               <label class="p-contact-form__label" for="category">
                 お問い合わせ種別<span class="p-contact-form__required" aria-hidden="true">*</span>
               </label>
@@ -97,7 +98,7 @@
                 <option value="other">その他</option>
               </select>
             </div>
-            <div class="p-contact-form__field a-fade-in-slide-up">
+            <div class="p-contact-form__field" data-animate="fade-in-slide-up">
               <label class="p-contact-form__label" for="subject">件名</label>
               <input
                 class="p-contact-form__input"
@@ -107,7 +108,7 @@
                 placeholder="お問い合わせの件名"
               />
             </div>
-            <fieldset class="p-contact-form__field a-fade-in-slide-up">
+            <fieldset class="p-contact-form__field" data-animate="fade-in-slide-up">
               <legend class="p-contact-form__label">
                 優先度<span class="p-contact-form__required" aria-hidden="true">*</span>
               </legend>
@@ -140,7 +141,7 @@
                 </label>
               </div>
             </fieldset>
-            <div class="p-contact-form__field a-fade-in-slide-up">
+            <div class="p-contact-form__field" data-animate="fade-in-slide-up">
               <label class="p-contact-form__label" for="message">
                 メッセージ<span class="p-contact-form__required" aria-hidden="true">*</span>
               </label>
@@ -153,7 +154,7 @@
                 required
               ></textarea>
             </div>
-            <div class="p-contact-form__field a-fade-in-slide-up">
+            <div class="p-contact-form__field" data-animate="fade-in-slide-up">
               <label class="p-contact-form__option-label">
                 <input
                   type="checkbox"
@@ -166,7 +167,7 @@
             </div>
             <button
               type="submit"
-              class="c-button-cta -large p-contact-form__submit a-fade-in-slide-up"
+              class="c-button-cta -large p-contact-form__submit" data-animate="fade-in-slide-up"
             >
               送信する
             </button>
@@ -176,7 +177,7 @@
     </main>
 
     <footer class="p-footer">
-      <nav class="p-footer__nav a-stagger" aria-label="フッターナビゲーション">
+      <nav class="p-footer__nav" data-stagger="fade-in-slide-up" aria-label="フッターナビゲーション">
         <div class="p-footer__nav-group">
           <p class="p-footer__nav-heading">Service</p>
           <ul class="p-footer__nav-list">
@@ -198,7 +199,7 @@
     </footer>
 
     <!-- Back to Top -->
-    <a href="#" class="c-back-to-top p-back-to-top a-fade-in-activate" data-no-observe aria-label="ページの先頭に戻る">
+    <a href="#" class="c-back-to-top p-back-to-top" data-animate="fade-in" data-no-observe data-back-to-top aria-label="ページの先頭に戻る">
       <svg class="c-back-to-top__icon" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 4l-8 8h5v8h6v-8h5z" />
       </svg>

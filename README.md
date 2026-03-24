@@ -104,7 +104,7 @@ src/css/
 | Layout | `l-` | layout | セクション・サイトレイアウト |
 | Component | `c-` | component | 複数ページで使い回す汎用パーツ |
 | Project | `p-` | project | 特定のページ・機能に使うパーツ |
-| Animation | `a-` | animation | スクロールアニメーション等 |
+| Animation | `data-animate` | animation | スクロールアニメーション等 |
 | Utility | `u-` | utility | 補助クラス（常に最優先で適用） |
 
 ## 設計ガイド

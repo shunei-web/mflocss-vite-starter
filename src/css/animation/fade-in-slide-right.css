@@ -1,19 +1,19 @@
 @media (prefers-reduced-motion: no-preference) and (scripting: enabled) {
-  .a-fade-in-slide-up {
+  [data-animate="fade-in-slide-right"] {
     opacity: 0;
-    translate: 0 20px;
+    translate: -20px 0;
 
     &.is-active {
       opacity: 1;
       translate: 0 0;
-      animation: fade-in-slide-up 0.6s var(--ease-out-cubic);
+      animation: fade-in-slide-right 0.6s var(--ease-out-cubic);
     }
   }
 
-  @keyframes fade-in-slide-up {
+  @keyframes fade-in-slide-right {
     from {
       opacity: 0;
-      translate: 0 20px;
+      translate: -20px 0;
     }
   }
 }
