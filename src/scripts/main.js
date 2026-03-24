@@ -2,7 +2,7 @@ const observeAnimations = () => {
   if (!('IntersectionObserver' in window)) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const targets = document.querySelectorAll('[class*="a-fade-in"], .a-scale-in, .a-stagger');
+  const targets = document.querySelectorAll('[class*="a-fade-in"]:not([data-no-observe]), .a-scale-in, .a-stagger');
 
   if (targets.length === 0) return;
 
@@ -42,6 +42,27 @@ const markCurrentNav = () => {
       link.classList.add('is-current');
       link.setAttribute('aria-current', 'page');
     }
+  });
+};
+
+const initBackToTop = () => {
+  const button = document.querySelector('.p-back-to-top');
+  if (!button) return;
+
+  const toggleVisibility = () => {
+    if (window.scrollY >= 300) {
+      button.classList.add('is-active');
+    } else {
+      button.classList.remove('is-active');
+    }
+  };
+
+  window.addEventListener('scroll', toggleVisibility, { passive: true });
+  toggleVisibility();
+
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0 });
   });
 };
 
@@ -105,6 +126,7 @@ const initMobileNav = () => {
 document.addEventListener('DOMContentLoaded', () => {
   markCurrentNav();
   initMobileNav();
+  initBackToTop();
   initStaggerDelays();
   observeAnimations();
 });

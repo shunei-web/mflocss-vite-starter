@@ -1,0 +1,7 @@
+/* ページトップボタンの配置 */
+.p-back-to-top {
+  position: fixed;
+  inset-block-end: 2rem;
+  inset-inline-end: 2rem;
+  z-index: var(--z-fixed);
+}

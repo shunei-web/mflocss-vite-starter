@@ -1,0 +1,71 @@
+/* details/summary ベースのアコーディオン */
+.c-accordion {
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  background-color: var(--color-surface);
+  overflow: hidden;
+
+  & + & {
+    margin-block-start: -1px;
+  }
+}
+
+.c-accordion:first-child {
+  border-start-start-radius: 0.5rem;
+  border-start-end-radius: 0.5rem;
+}
+
+.c-accordion:last-child {
+  border-end-start-radius: 0.5rem;
+  border-end-end-radius: 0.5rem;
+}
+
+.c-accordion__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem;
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-heading);
+  cursor: pointer;
+  list-style: none;
+  transition: background-color 0.2s var(--ease-out-cubic);
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::after {
+    content: "";
+    flex-shrink: 0;
+    inline-size: 0.625rem;
+    block-size: 0.625rem;
+    border-inline-end: 2px solid var(--color-text-light);
+    border-block-end: 2px solid var(--color-text-light);
+    rotate: -45deg;
+    transition: rotate 0.3s var(--ease-out-cubic);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: -2px;
+  }
+}
+
+@media (any-hover: hover) {
+  .c-accordion__summary:hover {
+    background-color: var(--color-bg-secondary);
+  }
+}
+
+[open] > .c-accordion__summary::after {
+  rotate: 45deg;
+}
+
+.c-accordion__body {
+  padding-block: 0 1.25rem;
+  padding-inline: 1.25rem;
+  color: var(--color-text-light);
+  line-height: var(--line-height-base);
+}

@@ -1,0 +1,6 @@
+/* FAQ セクション — アコーディオン配置 */
+.p-faq__list {
+  max-inline-size: 48rem;
+  margin-block-start: 2.5rem;
+  margin-inline: auto;
+}

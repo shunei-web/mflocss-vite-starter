@@ -1,0 +1,32 @@
+/* ページトップボタンの見た目（Portability Test 合格: 汎用 UI） */
+.c-back-to-top {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 3rem;
+  block-size: 3rem;
+  color: light-dark(var(--color-white), var(--color-bg));
+  background-color: var(--color-main);
+  border-radius: 50%;
+  transition:
+    background-color 0.3s var(--ease-out-cubic),
+    translate 0.3s var(--ease-out-cubic);
+
+  &:focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 2px;
+  }
+}
+
+.c-back-to-top__icon {
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  fill: currentcolor;
+}
+
+@media (any-hover: hover) {
+  .c-back-to-top:hover {
+    background-color: oklch(from var(--color-main) calc(l - 0.05) c h);
+    translate: 0 -2px;
+  }
+}

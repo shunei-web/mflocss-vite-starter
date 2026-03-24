@@ -1,0 +1,23 @@
+/* Voice セクション — お客様の声 */
+.p-voice__list {
+  display: grid;
+  gap: 2rem;
+  margin-block-start: 2.5rem;
+
+  @media (width >= 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.p-voice__cite {
+  display: block;
+  margin-block-start: 1rem;
+  font-size: 0.875rem;
+  font-style: normal;
+  color: var(--color-text-light);
+}
+
+.p-voice__action {
+  margin-block-start: 3rem;
+  text-align: center;
+}

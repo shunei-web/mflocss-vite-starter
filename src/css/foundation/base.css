@@ -1,3 +1,14 @@
+:where(html) {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(html) {
+    scroll-behavior: auto;
+  }
+}
+
 :where(body) {
   font-family: var(--font-family-ja);
   font-weight: var(--font-weight-regular);

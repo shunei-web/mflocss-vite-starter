@@ -1,0 +1,15 @@
+/* Features セクション — カード3列グリッド */
+.p-features__grid {
+  display: grid;
+  gap: 2rem;
+  margin-block-start: 2.5rem;
+
+  @media (width >= 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.p-features__card-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
