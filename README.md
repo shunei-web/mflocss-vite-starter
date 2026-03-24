@@ -133,13 +133,7 @@ mFLOCSS の設計原則と詳細な実装ガイドは以下を参照してくだ
 - **mFLOCSS 仕様**: https://github.com/mflocss/spec
 - **書籍（設計の詳細解説）**: https://zenn.dev/shunei/books/mflocss-design
 
-### 主なトピック
 
-- **`@import layer()` のネスト伝播**: サブレイヤーを使う場合、中間ファイルで明示的に `layer()` を指定する必要があります
-- **Container Queries**: コンテナ基準の `cqi` 単位を推奨。名前付きコンテナで意図しない祖先参照を防止
-- **流体計算ヘルパー**: `tokens/structure.css` の `--px` / `--vp-range` / `--vp-offset` で `clamp()` ベースのレスポンシブを実現
-- **Utility**: `u-hidden-pc` / `u-hidden-sp` / `u-visually-hidden` で表示制御
-- **カラートークン設計**: キーカラー → 共通カラー → 機能カラー → セマンティックカラーの 4 層構造
 
 ## ライセンス
 
