@@ -6,7 +6,15 @@
 }
 
 /* Document */
+:where(html) {
+  text-spacing-trim: trim-start;
+  text-autospace: normal;
+  line-break: strict;
+  overflow-wrap: anywhere;
+}
+
 :where(body) {
+  min-block-size: 100dvb;
   margin: unset;
 }
 
@@ -31,6 +39,20 @@
 
 :where(dd) {
   margin-inline-start: unset;
+}
+
+:where(pre) {
+  text-spacing-trim: space-all;
+  text-autospace: no-autospace;
+}
+
+/* Text-level semantics */
+:where(em:lang(ja)) {
+  font-weight: bolder;
+}
+
+:where(:is(i, cite, em, dfn, address):lang(ja)) {
+  font-style: unset;
 }
 
 /* Links */
