@@ -25,9 +25,7 @@ cd あなたのリポジトリ名
 npm install
 ```
 
-pnpm なら `pnpm install`。pnpm を使う場合は `corepack enable` で自動セットアップされます。
-
-npm でも pnpm でも動作します。使用するパッケージマネージャーの lockfile のみ残してください。
+npm でも pnpm でも動作します。
 
 ### 4. 開発サーバーを起動
 
@@ -65,11 +63,11 @@ base: '/lp/campaign/'
 3. **フォントを変える**: `src/css/tokens/typography.css` を変更。Web フォントを使う場合は Tokens 層に追加
 4. **セクションを削除する**: HTML からセクションを削除 → 対応する `p-{セクション名}.css` を削除 → そのセクション専用の Component があれば一緒に削除（grep で確認） → `style.css` の import を削除
 5. **セクションを追加する**: HTML に `<section>` を追加 → `src/css/project/p-{セクション名}.css` を作成 → `src/css/style.css` の Project 層に import を追加
-6. **Component を追加する**: Portability Test（他のページでも使えるか？）で層を判断 → `src/css/component/c-{名前}.css` を作成 → `style.css` に import を追加
+6. **Component を追加する**: 他のページでも使い回せるパーツなら `src/css/component/c-{名前}.css` を作成 → `style.css` に import を追加
 7. **ページを追加する**: `src/{ページ名}/index.html` を作成 → `vite.config.ts` の input に追加
 8. **Contact フォームの送信先を設定する**: フォームは HTML のみで送信先は含まれていません。バックエンドの実装またはフォーム送信サービスの接続が必要です
 
-`@layer` で優先順位が制御されているため、`style.css` の import 順序はスタイルの適用に影響しません。
+`@layer` で層の優先順位が制御されているため、`style.css` の import 順序はスタイルの適用に影響しません。
 
 ## アニメーション
 
