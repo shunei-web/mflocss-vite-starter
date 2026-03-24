@@ -4,7 +4,7 @@
   justify-content: center;
   inline-size: 3rem;
   block-size: 3rem;
-  color: light-dark(var(--color-white), var(--color-bg));
+  color: var(--color-back-to-top);
   background-color: var(--color-main);
   border-radius: 50%;
   transition:

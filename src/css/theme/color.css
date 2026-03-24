@@ -18,6 +18,7 @@
   --color-error-bg: light-dark(var(--error-bg-light), var(--error-bg-dark));
 
   /* 用途（コンテキストセマンティック） */
+  --color-back-to-top: light-dark(var(--white), var(--color-bg));
   --color-link: var(--color-main);
   --color-heading: var(--color-text);
   --color-focus-ring: light-dark(oklch(from var(--color-main) l c h / 25%), oklch(from var(--color-main) l c h / 30%));
