@@ -50,8 +50,7 @@ npm run dev
 
 ## デプロイ
 
-- ビルドコマンド: `npm run build`
-- 公開ディレクトリ: `dist`
+`npm run build` を実行し、生成された `dist/` の中身をサーバーにアップロードしてください。
 
 サブディレクトリに配置する場合は `vite.config.ts` の `base` を変更してください:
 
