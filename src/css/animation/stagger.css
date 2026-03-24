@@ -1,10 +1,10 @@
 @media (prefers-reduced-motion: no-preference) and (scripting: enabled) {
-  [data-stagger] > * {
+  [data-stagger="fade-in-slide-up"] > * {
     opacity: 0;
     translate: 0 20px;
   }
 
-  [data-stagger].is-active > * {
+  [data-stagger="fade-in-slide-up"].is-active > * {
     opacity: 1;
     translate: 0 0;
     animation: fade-in-slide-up 0.6s var(--ease-out-cubic);
