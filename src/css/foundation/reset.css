@@ -1,8 +1,3 @@
-/*
- * mFLOCSS Reset
- * ブラウザデフォルトの差異を吸収し、日本語組版に最適化するリセット CSS。
- */
-
 /* Universal */
 *,
 ::before,
@@ -10,32 +5,13 @@
   box-sizing: border-box;
 }
 
-/* Document — 日本語組版 + レイアウト安定化 */
-:where(:root) {
-  line-height: 1.5;
-  text-spacing-trim: trim-start;
-  text-autospace: normal;
-  line-break: strict;
-  overflow-wrap: anywhere;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-  scrollbar-gutter: stable;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-}
-
+/* Document */
 :where(body) {
-  min-block-size: 100dvb;
   margin: unset;
 }
 
 /* Sections */
-:where(h1) {
-  margin-block: 0.67em;
-  font-size: 2em;
-}
-
-:where(h2, h3, h4, h5, h6) {
+:where(h1, h2, h3, h4, h5, h6) {
   margin-block: unset;
 }
 
@@ -55,20 +31,6 @@
 
 :where(dd) {
   margin-inline-start: unset;
-}
-
-:where(pre) {
-  text-spacing-trim: space-all;
-  text-autospace: no-autospace;
-}
-
-/* Text-level semantics — 日本語対応 */
-:where(em:lang(ja)) {
-  font-weight: bolder;
-}
-
-:where(:is(i, cite, em, dfn, address):lang(ja)) {
-  font-style: unset;
 }
 
 /* Links */

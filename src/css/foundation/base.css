@@ -1,3 +1,17 @@
+/* 日本語組版 + レイアウト安定化 */
+:where(:root) {
+  line-height: 1.5;
+  text-spacing-trim: trim-start;
+  text-autospace: normal;
+  line-break: strict;
+  overflow-wrap: anywhere;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scrollbar-gutter: stable;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
 :where(html) {
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-height);
@@ -10,6 +24,7 @@
 }
 
 :where(body) {
+  min-block-size: 100dvb;
   font-family: var(--font-family-ja);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-base);
@@ -21,6 +36,20 @@
 :where(h1, h2, h3, h4, h5, h6) {
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-heading);
+}
+
+/* 日本語テキスト要素 */
+:where(em:lang(ja)) {
+  font-weight: bolder;
+}
+
+:where(:is(i, cite, em, dfn, address):lang(ja)) {
+  font-style: unset;
+}
+
+:where(pre) {
+  text-spacing-trim: space-all;
+  text-autospace: no-autospace;
 }
 
 :where(a) {
