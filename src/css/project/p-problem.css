@@ -2,6 +2,9 @@
   background-color: var(--color-bg-secondary);
 }
 
+.p-problem__inner {}
+.p-problem__heading {}
+
 .p-problem__list {
   display: grid;
   gap: 2rem;
@@ -31,6 +34,6 @@
 .p-problem__text {
   margin-block-start: 0.5rem;
   font-size: 0.9375rem;
-  color: var(--color-text-light);
   line-height: var(--line-height-base);
+  color: var(--color-text-light);
 }

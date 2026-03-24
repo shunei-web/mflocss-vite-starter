@@ -6,6 +6,8 @@
   background: radial-gradient(ellipse at 50% 0%, oklch(from var(--color-main) l c h / 6%) 0%, transparent 70%);
 }
 
+.p-hero__inner {}
+
 .p-hero__title {
   --_font-size-min: 28;
   --_font-size-max: 48;
@@ -21,8 +23,8 @@
   &::after {
     content: '';
     display: block;
-    inline-size: 3rem;
     block-size: 3px;
+    inline-size: 3rem;
     margin-block-start: 1rem;
     margin-inline: auto;
     background: linear-gradient(in oklab, var(--color-main), var(--color-accent));
@@ -40,21 +42,22 @@
     calc((var(--_font-size-max) - var(--_font-size-min)) / var(--vp-range) * var(--vp-offset) + var(--_font-size-min) * var(--px)),
     calc(var(--_font-size-max) * var(--px))
   );
-  color: var(--color-text-light);
   line-height: var(--line-height-base);
+  color: var(--color-text-light);
 }
 
 .p-hero__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
   justify-content: center;
+  gap: 1rem;
   margin-block-start: 2.5rem;
 }
 
+.p-hero__cta {}
+
 .p-hero__image {
   display: block;
-  inline-size: 100%;
   max-inline-size: 800px;
   block-size: auto;
   margin-block-start: 3rem;

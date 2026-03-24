@@ -1,3 +1,7 @@
+.p-contact {}
+.p-contact__inner {}
+.p-contact__heading {}
+
 .p-contact__lead {
   text-align: center;
   margin-block-start: 1rem;

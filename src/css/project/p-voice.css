@@ -1,3 +1,7 @@
+.p-voice {}
+.p-voice__inner {}
+.p-voice__heading {}
+
 .p-voice__list {
   display: grid;
   gap: 2rem;
@@ -7,6 +11,8 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.p-voice__item {}
 
 .p-voice__cite {
   display: flex;
@@ -29,3 +35,5 @@
   margin-block-start: 3rem;
   text-align: center;
 }
+
+.p-voice__cta {}

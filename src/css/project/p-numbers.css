@@ -2,6 +2,9 @@
   background-color: var(--color-bg-secondary);
 }
 
+.p-numbers__inner {}
+.p-numbers__heading {}
+
 .p-numbers__grid {
   display: grid;
   gap: 2rem;
@@ -12,6 +15,8 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+.p-numbers__item {}
 
 .p-numbers__value {
   --_font-size-min: 36;

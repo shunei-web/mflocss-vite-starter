@@ -1,3 +1,7 @@
+.p-features {}
+.p-features__inner {}
+.p-features__heading {}
+
 .p-features__grid {
   display: grid;
   gap: 2rem;
@@ -7,6 +11,11 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+.p-features__grid-item {}
+.p-features__card {}
+.p-features__card-image {}
+.p-features__badge {}
 
 .p-features__card-icon {
   font-size: 2.5rem;

@@ -1,5 +1,11 @@
+.p-faq {}
+.p-faq__inner {}
+.p-faq__heading {}
+
 .p-faq__list {
   max-inline-size: 48rem;
   margin-block-start: 2.5rem;
   margin-inline: auto;
 }
+
+.p-faq__accordion {}

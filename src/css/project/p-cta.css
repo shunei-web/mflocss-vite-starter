@@ -3,6 +3,9 @@
   background-color: var(--color-bg-secondary);
 }
 
+.p-cta__inner {}
+.p-cta__heading {}
+
 .p-cta__text {
   margin-block-start: 1rem;
   color: var(--color-text-light);
@@ -12,3 +15,5 @@
 .p-cta__action {
   margin-block-start: 2rem;
 }
+
+.p-cta__button {}
