@@ -42,21 +42,12 @@ function initDrawer() {
     });
   });
 
-  // ドロワー内リンククリックでドロワーを閉じる
-  // ページ遷移リンクはドロワーを閉じてから遷移（ちらつき防止）
+  // ドロワー内アンカーリンク（#xxx）クリックでドロワーを閉じる
+  // ページ遷移リンクはそのまま遷移（新ページにドロワーは存在しない）
   drawerLinks.forEach((link) => {
-    link.addEventListener('click', (e) => {
+    link.addEventListener('click', () => {
       const href = link.getAttribute('href');
-      const isPageNavigation = href && !href.startsWith('#');
-
-      if (isPageNavigation) {
-        e.preventDefault();
-        closeDrawer();
-        // dialog の close アニメーション完了後に遷移
-        drawer.addEventListener('close', () => {
-          window.location.href = href;
-        }, { once: true });
-      } else {
+      if (href && href.startsWith('#')) {
         closeDrawer();
       }
     });
