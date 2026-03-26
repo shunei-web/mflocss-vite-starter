@@ -1,0 +1,39 @@
+.p-numbers {
+  --section-padding-min: var(--section-narrow-min);
+  --section-padding-max: var(--section-narrow-max);
+
+  background-color: var(--color-bg-secondary);
+
+  .p-numbers__list {
+    display: grid;
+    gap: var(--space-lg);
+    text-align: center;
+
+    @media (width >= 768px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-xl);
+    }
+  }
+
+  .p-numbers__item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .p-numbers__value {
+    font-size: clamp(2.5rem, 4vi + 1rem, 3.5rem);
+    font-weight: var(--font-weight-heading);
+    line-height: 1.2;
+    color: var(--color-main);
+  }
+
+  .p-numbers__unit {
+    font-size: 0.5em;
+  }
+
+  .p-numbers__label {
+    font-size: var(--font-size-small);
+    color: var(--color-text-light);
+  }
+}

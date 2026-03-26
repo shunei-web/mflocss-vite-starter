@@ -6,4 +6,5 @@
   --font-weight-body: var(--font-weight-normal);
   --line-height-text: var(--line-height-body);
   --line-height-title: var(--line-height-heading);
+  --font-size-caption: var(--font-size-small);
 }

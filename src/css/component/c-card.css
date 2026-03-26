@@ -1,0 +1,6 @@
+.c-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm) var(--color-shadow);
+  padding: var(--space-lg);
+}

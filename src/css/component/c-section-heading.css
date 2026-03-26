@@ -1,0 +1,13 @@
+.c-section-heading {
+  text-align: center;
+  margin-block-end: var(--space-2xl);
+
+  & > p {
+    font-size: var(--font-size-caption);
+    font-weight: var(--font-weight-heading);
+    color: var(--color-main);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-block-end: var(--space-sm);
+  }
+}

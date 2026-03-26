@@ -1,0 +1,28 @@
+.p-cta {
+  --section-padding-min: var(--section-wide-min);
+  --section-padding-max: var(--section-wide-max);
+
+  background-color: var(--color-bg-secondary);
+
+  .p-cta__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-lg);
+    max-inline-size: var(--content-width-narrow);
+    margin-inline: auto;
+  }
+
+  .p-cta__title {
+    max-inline-size: 600px;
+  }
+
+  .p-cta__text {
+    color: var(--color-text-light);
+  }
+
+  .p-cta__button {
+    margin-block-start: var(--space-sm);
+  }
+}

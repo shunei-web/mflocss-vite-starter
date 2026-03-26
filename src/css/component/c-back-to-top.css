@@ -1,0 +1,18 @@
+/* position は p-back-to-top.css（Project）が担当 */
+.c-back-to-top {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 48px;
+  block-size: 48px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-main);
+  color: var(--color-surface);
+  font-size: 20px;
+  text-decoration: none;
+  transition: background-color 0.2s var(--ease-out-cubic);
+
+  &:hover {
+    background-color: oklch(from var(--color-main) calc(l * 1.1) c h);
+  }
+}

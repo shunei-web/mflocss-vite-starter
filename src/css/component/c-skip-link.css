@@ -1,0 +1,21 @@
+/* position: fixed は本来 Project 層が担当（Component SHOULD NOT）だが、
+   skip-link は全ページ共通かつ配置と見た目が不可分のため Component に集約。
+   Phase 3 で HTML に p-skip-link クラスを追加し Project に分離を検討 */
+.c-skip-link {
+  position: fixed;
+  inset-block-start: var(--space-md);
+  inset-inline-start: var(--space-md);
+  z-index: 100;
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-main);
+  color: var(--color-surface);
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-heading);
+  text-decoration: none;
+  translate: 0 -200%;
+  transition: translate 0.2s var(--ease-out-cubic);
+
+  &:focus {
+    translate: 0 0;
+  }
+}

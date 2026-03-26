@@ -1,0 +1,16 @@
+/* Component SHOULD NOT のため position: fixed は Project が担当 */
+.p-back-to-top {
+  position: fixed;
+  inset-block-end: var(--space-xl);
+  inset-inline-end: var(--space-xl);
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s var(--ease-out-cubic),
+    visibility 0.3s var(--ease-out-cubic);
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}

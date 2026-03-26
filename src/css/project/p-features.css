@@ -1,0 +1,59 @@
+.p-features {
+  .p-features__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xl);
+  }
+
+  /* @media = ページ全体のレイアウト（交互配置の切替） */
+  .p-features__item {
+    display: grid;
+    gap: var(--space-xl);
+    align-items: center;
+
+    @media (width >= 768px) {
+      grid-template-columns: 1fr 1fr;
+
+      /* 交互レイアウト（擬似クラスによる条件分岐） */
+      &:nth-child(even) {
+        direction: rtl;
+
+        & > * {
+          direction: ltr;
+        }
+      }
+    }
+  }
+
+  /* @container = コンポーネント単位のレスポンシブ（コンテナ幅に応じた余白・サイズ調整） */
+  .p-features__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+
+    @container (inline-size >= 400px) {
+      gap: clamp(var(--space-md), 3cqi, var(--space-lg));
+    }
+  }
+
+  .p-features__badge {
+    align-self: flex-start;
+  }
+
+  .p-features__text {
+    color: var(--color-text-light);
+  }
+
+  .p-features__media {
+    & img {
+      border-radius: var(--radius-md);
+      inline-size: 100%;
+    }
+  }
+
+  .p-features__caption {
+    font-size: var(--font-size-small);
+    color: var(--color-text-light);
+    margin-block-start: var(--space-sm);
+  }
+}

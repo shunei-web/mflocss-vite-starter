@@ -1,0 +1,26 @@
+.p-voice {
+  .p-voice__list {
+    display: grid;
+    gap: var(--space-xl);
+
+    @media (width >= 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .p-voice__card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .p-voice__avatar {
+    inline-size: 48px;
+    block-size: 48px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+  }
+
+  .p-voice__cite {
+    font-style: normal;
+  }
+}
