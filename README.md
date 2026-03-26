@@ -1,41 +1,91 @@
-# mflocss/starter
+# mFLOCSS Starter
 
-Zenn 技術書「そのFLOCSS、なぜそこに書いた？ —— mFLOCSS で迷わない CSS 設計の判断基準」付属のリファレンス実装。
+mFLOCSS spec v1.2 のリファレンス実装。LP 向けのスターターテンプレートとして、テキストや画像を差し替えるだけでそのまま使える構成です。
 
-mFLOCSS × Vite × モダン CSS で作る、崩れない CSS 設計のリファレンス実装です。
-
-## 必要環境
-
-- Node.js 20 以上
-- pnpm 9 以上（npm / yarn でも動きます）
-
-## 5分で始める
-
-### 1. リポジトリをテンプレートとして使用
-
-GitHub の [Use this template] ボタンから新しいリポジトリを作成してください。
-
-### 2. クローン
+## クイックスタート
 
 ```bash
-git clone https://github.com/あなたのユーザー名/あなたのリポジトリ名.git
-cd あなたのリポジトリ名
-```
-
-### 3. 依存パッケージをインストール
-
-```bash
+git clone https://github.com/mflocss/starter.git my-site
+cd my-site
 pnpm install
-```
-
-### 4. 開発サーバーを起動
-
-```bash
 pnpm dev
 ```
 
-ブラウザで http://localhost:5173 が開きます。
-ファイルを編集すると自動でリロードされます。
+ブラウザで `http://localhost:5173` を開き、LP が表示されることを確認してください。
+
+### テキストを差し替える
+
+HTML 内の `<!-- CUSTOMIZE: ... -->` コメントを検索すると、差し替えポイントが見つかります。
+
+- `src/index.html` — サービス名、キャッチコピー、各セクションのテキスト
+- `src/contact/index.html` — フォームの送信先（`action` 属性）
+- 全ページの `<head>` — title, description, OGP 情報
+
+## 色の変え方
+
+`src/css/tokens/color.css` の `/* CUSTOMIZE */` セクションにあるカラートークンを差し替えます。
+
+```css
+:root {
+  /* Main — メインカラー */
+  --sage-400: oklch(65% 0.08 150deg);  /* ← 色相(H)を変えるだけで印象が変わる */
+  --sage-600: oklch(45% 0.1 150deg);
+
+  /* Accent — アクセントカラー */
+  --terracotta-400: oklch(65% 0.12 35deg);
+  --terracotta-500: oklch(55% 0.15 35deg);
+}
+```
+
+Theme 層（`src/css/theme/color.css`）がセマンティック変数を通して全体に反映するため、Tokens を変えるだけで LP 全体の配色が切り替わります。
+
+`<meta name="theme-color">` の HEX 値も合わせて変更してください。
+
+## セクションの削除方法
+
+各セクションは独立しているため、HTML の `<section>` ブロックを削除するだけで動作します。
+
+1. 対象の `<section>` を HTML から削除
+2. `pnpm dev` で表示を確認
+3. 使わなくなった CSS ファイルがあれば `style.css` の `@import` を削除
+
+セクション間に依存関係はありません。ヘッダーのナビリンク（`#features` 等）だけ、削除したセクションへのリンクを忘れずに除去してください。
+
+## Component の追加方法
+
+mFLOCSS 準拠で新しい Component を追加する手順:
+
+1. `src/css/component/c-<名前>.css` を作成
+2. `style.css` に `@import './component/c-<名前>.css' layer(component);` を追加
+3. HTML に `c-<名前>` クラスを適用
+
+**Component の条件:**
+
+- Portability Test に合格すること（別のページ・プロジェクトに持っていっても壊れない）
+- Theme のセマンティック変数のみ参照（Tokens 直接参照は避ける）
+- position: fixed/sticky は使わない（Project 層が担当）
+- 外部レイアウト（margin, width, position）を自身で持たない
+
+## ダークモード無効化方法
+
+1. 全ページの `<meta name="color-scheme" content="light dark">` を `<meta name="color-scheme" content="light">` に変更
+2. `src/css/theme/color.css` の `light-dark()` 関数を light 側の値に置き換え
+
+```css
+/* Before */
+--color-main: light-dark(var(--sage-600), var(--sage-400));
+
+/* After */
+--color-main: var(--sage-600);
+```
+
+## ビルドと納品
+
+```bash
+pnpm build
+```
+
+`dist/` ディレクトリに最適化されたファイルが出力されます。そのまま静的ホスティング（Netlify, Vercel, Cloudflare Pages 等）にデプロイできます。
 
 ## コマンド一覧
 
@@ -48,48 +98,83 @@ pnpm dev
 | `pnpm lint:js` | ESLint でスクリプトを検査 |
 | `pnpm format` | Prettier でコードを整形 |
 
-## mFLOCSS の 8 層アーキテクチャ
+## @container vs @media の使い分け
 
-FLOCSS の 3 層（Foundation / Layout / Object）を、モダン CSS に対応させた 8 層構成です。
-CSS `@layer` で優先順位をブラウザが明示的に制御するため、詳細度の事故が起きません。
+| 観点 | @container | @media |
+|------|-----------|--------|
+| 基準 | 親コンテナの幅 | ビューポートの幅 |
+| 用途 | コンポーネント単位のレスポンシブ | ページ全体のレイアウト切替 |
+| サイズ単位 | `cqi`（container query inline） | `px` / `em` |
+| この LP での例 | Features カード内のレイアウト切替 | ヘッダーのナビ表示/非表示 |
+
+`l-container.css` で `container-type: inline-size` を宣言し、Project/Component 層でクエリを記述します。
+
+## MAY パターンの判断根拠
+
+mFLOCSS spec で MAY（任意）とされているパターンをこの LP で採用した理由:
+
+### Component ネスト（c-button 内に c-icon）
+
+spec は「Component の内部に別の Component をネストしてよい（MAY）」としています。c-button + c-icon は、ボタンにアイコンを添えるという汎用的な組み合わせであり、どちらも独立して機能するため採用しました。
+
+### Project コンテンツ内包（c-blockquote 内に p-voice のコンテンツ）
+
+Component の構造を壊さない範囲で、Project 固有のコンテンツ（アバター画像、引用者名）を内包しています。Component 側のスタイルは Project の存在を知らず、Project 側が Component の公開変数や拡張点を通じてスタイルを調整する設計です。
+
+### Project Element 拡張点
+
+固有スタイルがなくても Project Element クラスを付与（MAY）しています。将来的にページ固有のスタイルを追加する拡張点として機能します。
+
+## 対象ブラウザ
+
+- Chrome 123+
+- Safari 18+
+- Firefox 128+
+
+以下のモダン CSS 機能を使用しています:
+
+`@layer`, `@property`, `@container`, CSS Nesting, `:has()`, `:where()`, `oklch()`, `light-dark()`, 論理プロパティ, `clamp()`, 個別 transform プロパティ
+
+## 画像の差し替え
+
+同梱の画像は SVG ワイヤーフレームです。実写に差し替える場合:
+
+- Retina 対応のため、表示サイズの **2倍** で書き出し
+- Hero: 1600×800px（表示 800×400）
+- Features: 960×640px（表示 480×320）
+- アバター: 96×96px（表示 48×48）
+- OGP: 1200×630px（SNS が縮小するため2倍不要）
+- apple-touch-icon: 180×180px 固定
+
+## ファイル構成
 
 ```
-src/css/
-├── tokens/       デザイントークン（色・フォント・余白等の設計変数）
-├── theme/        セマンティックカラー・ダークモード
-├── foundation/   リセット・ベーススタイル
-├── layout/       セクション・サイトレイアウト
-├── component/    汎用パーツ（ボタン・見出し等）
-├── project/      ページ固有パーツ
-├── animation/    アニメーション（reduced-motion 対応）
-└── utility/      補助クラス
+src/
+├── css/
+│   ├── style.css          # エントリポイント
+│   ├── layer-order.css    # @layer 先制宣言
+│   ├── property.css       # @property 定義
+│   ├── tokens/            # 生のデザイン値
+│   ├── theme/             # セマンティック変数
+│   ├── foundation/        # リセット・ベーススタイル
+│   ├── layout/            # レイアウトプリミティブ
+│   ├── component/         # 再利用可能な UI パーツ
+│   ├── project/           # ページ固有のスタイル
+│   ├── animation/         # 装飾的アニメーション
+│   └── utility/           # ユーティリティ
+├── scripts/
+│   └── main.js            # ドロワー・アニメーション・Back to Top
+├── index.html             # トップページ
+├── contact/index.html     # お問い合わせ
+├── thanks/index.html      # サンクスページ
+└── privacy/index.html     # プライバシーポリシー
+public/
+├── images/                # SVG ワイヤーフレーム画像
+├── favicon.svg
+├── favicon.ico
+├── apple-touch-icon.png
+└── ogp.svg
 ```
-
-| 層 | プレフィックス | @layer | 役割 |
-|----|-------------|--------|------|
-| Tokens | — | tokens | デザイントークン（色・フォント・余白等の設計変数） |
-| Theme | — | theme | セマンティックカラー・ダークモード |
-| Foundation | — | foundation | カスタムリセット + ベーススタイル |
-| Layout | `l-` | layout | セクション・サイトレイアウト |
-| Component | `c-` | component | 複数ページで使い回す汎用パーツ |
-| Project | `p-` | project | 特定のページ・機能に使うパーツ |
-| Animation | `a-` | animation | スクロールアニメーション等 |
-| Utility | `u-` | utility | 補助クラス（常に最優先で適用） |
-
-## スタイルを追加する
-
-「どのレイヤーに書くか迷う」という場合は、本の第3章を参照してください。
-
-### 新しい Component を追加する場合
-
-1. `src/css/component/c-card.css` を作成
-2. `@layer component { }` で囲んで記述
-3. `src/css/style.css` に `@import './component/c-card.css';` を追加
-
-### 新しいページを追加する場合
-
-1. `src/pages/新ページ名/index.html` を作成
-2. `vite.config.ts` の `build.rollupOptions.input` に追加
 
 ## この本について
 

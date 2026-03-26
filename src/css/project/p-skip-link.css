@@ -1,0 +1,7 @@
+/* Component SHOULD NOT のため position: fixed は Project が担当 */
+.p-skip-link {
+  position: fixed;
+  inset-block-start: var(--space-md);
+  inset-inline-start: var(--space-md);
+  z-index: 100;
+}

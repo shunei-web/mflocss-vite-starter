@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#f5f3f0"/>
+  <rect x="40" y="40" width="1120" height="550" rx="16" fill="#fff" stroke="#e8e4e0" stroke-width="2"/>
+  <!-- 葉モチーフ -->
+  <path d="M600 160 Q640 200 630 260 Q615 300 600 320 Q585 300 570 260 Q560 200 600 160Z" fill="none" stroke="#5b7a5e" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="600" y1="180" x2="600" y2="300" stroke="#5b7a5e" stroke-width="1.5" opacity="0.5"/>
+  <!-- サービス名 -->
+  <text x="600" y="400" text-anchor="middle" font-family="system-ui, sans-serif" font-size="56" font-weight="700" fill="#2e2a26" letter-spacing="4">iluha</text>
+  <!-- キャッチコピー -->
+  <text x="600" y="460" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" fill="#6b6560">からだの声を、聴く時間。</text>
+  <!-- CUSTOMIZE ラベル -->
+  <text x="600" y="560" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#a3a09b">CUSTOMIZE: OGP 画像を差し替え（1200 × 630px PNG）</text>
+</svg>

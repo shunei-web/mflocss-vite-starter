@@ -1,1 +1,131 @@
-// Phase 3 で実装
+/**
+ * mFLOCSS Starter — メインスクリプト
+ *
+ * 機能:
+ * - ドロワーメニュー（dialog showModal/close + inert）
+ * - スクロールアニメーション（IntersectionObserver + data-animate）
+ * - スタッガーアニメーション（data-stagger）
+ * - Back to Top ボタン表示制御
+ */
+
+/* ----------------------------------------
+ * ドロワーメニュー
+ * ---------------------------------------- */
+
+function initDrawer() {
+  const drawer = document.getElementById('drawer');
+  if (!drawer) return;
+
+  const hamburgers = document.querySelectorAll('[data-hamburger]');
+  const nav = document.querySelector('[data-nav]');
+  const drawerLinks = drawer.querySelectorAll('a');
+
+  function openDrawer() {
+    drawer.showModal();
+    nav?.setAttribute('inert', '');
+    hamburgers.forEach((btn) => btn.setAttribute('aria-expanded', 'true'));
+  }
+
+  function closeDrawer() {
+    drawer.close();
+    nav?.removeAttribute('inert');
+    hamburgers.forEach((btn) => btn.setAttribute('aria-expanded', 'false'));
+  }
+
+  hamburgers.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      if (drawer.open) {
+        closeDrawer();
+      } else {
+        openDrawer();
+      }
+    });
+  });
+
+  // ドロワー内リンククリックでドロワーを閉じる
+  drawerLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      closeDrawer();
+    });
+  });
+
+  // ::backdrop クリックで閉じる
+  drawer.addEventListener('click', (e) => {
+    if (e.target === drawer) {
+      closeDrawer();
+    }
+  });
+}
+
+/* ----------------------------------------
+ * スクロールアニメーション（data-animate）
+ * ---------------------------------------- */
+
+function initScrollAnimation() {
+  const targets = document.querySelectorAll('[data-animate]');
+  if (targets.length === 0) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px',
+    },
+  );
+
+  targets.forEach((target) => observer.observe(target));
+}
+
+/* ----------------------------------------
+ * スタッガーアニメーション（data-stagger）
+ * ---------------------------------------- */
+
+function initStagger() {
+  const containers = document.querySelectorAll('[data-stagger]');
+  if (containers.length === 0) return;
+
+  containers.forEach((container) => {
+    const children = container.querySelectorAll('[data-animate]');
+    children.forEach((child, index) => {
+      child.style.setProperty('--stagger-delay', `${index * 0.1}s`);
+    });
+  });
+}
+
+/* ----------------------------------------
+ * Back to Top
+ * ---------------------------------------- */
+
+function initBackToTop() {
+  const backToTop = document.querySelector('.c-back-to-top');
+  if (!backToTop) return;
+
+  const threshold = 300;
+
+  function toggleVisibility() {
+    if (window.scrollY > threshold) {
+      backToTop.classList.add('is-visible');
+    } else {
+      backToTop.classList.remove('is-visible');
+    }
+  }
+
+  window.addEventListener('scroll', toggleVisibility, { passive: true });
+  toggleVisibility();
+}
+
+/* ----------------------------------------
+ * 初期化
+ * ---------------------------------------- */
+
+initDrawer();
+initStagger();
+initScrollAnimation();
+initBackToTop();

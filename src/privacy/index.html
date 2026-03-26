@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no,address=no,email=no">
   <meta name="color-scheme" content="light dark">
-  <title>お問い合わせ完了 — iluha</title>
-  <meta name="description" content="お問い合わせを受け付けました。24時間以内にご連絡いたします。">
-  <meta name="robots" content="noindex">
+  <!-- CUSTOMIZE: ページタイトル・説明文を差し替え -->
+  <title>プライバシーポリシー — iluha</title>
+  <meta name="description" content="iluha のプライバシーポリシー。個人情報の取り扱いについてご案内いたします。">
   <!-- CUSTOMIZE: tokens/color.css のメインカラーに合わせて変更 -->
   <meta name="theme-color" content="#5b7a5e">
+  <!-- CUSTOMIZE: 本番 URL に差し替え -->
+  <link rel="canonical" href="https://example.com/privacy/">
   <!-- Favicon -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -68,11 +70,38 @@
   </header>
 
   <main id="main">
-    <section class="l-section p-thanks">
-      <div class="l-inner p-thanks__inner">
-        <h1 class="p-thanks__title">お問い合わせありがとうございます</h1>
-        <p class="p-thanks__text">24時間以内に、ご入力いただいたメールアドレスへ折り返しご連絡いたします。</p>
-        <a href="/" class="c-button -primary -large p-thanks__cta">トップページに戻る</a>
+    <!-- CUSTOMIZE: プライバシーポリシーの内容を差し替え -->
+    <section class="l-section p-privacy">
+      <div class="l-inner">
+        <h1 class="p-privacy__title">プライバシーポリシー</h1>
+
+        <div class="p-privacy__body">
+          <h2>個人情報の取り扱いについて</h2>
+          <p>当サロン（以下「当店」）は、お客様の個人情報を適切に保護し、以下の方針に基づいて取り扱います。</p>
+
+          <h2>収集する情報</h2>
+          <p>当店では、ご予約・お問い合わせの際に以下の情報をお伺いすることがあります。</p>
+          <ul>
+            <li>お名前</li>
+            <li>メールアドレス</li>
+            <li>電話番号</li>
+            <li>お問い合わせ内容</li>
+          </ul>
+
+          <h2>利用目的</h2>
+          <p>収集した個人情報は、以下の目的にのみ使用いたします。</p>
+          <ul>
+            <li>ご予約の確認・連絡</li>
+            <li>お問い合わせへの回答</li>
+            <li>サービス向上のための分析（個人を特定しない形で）</li>
+          </ul>
+
+          <h2>第三者への提供</h2>
+          <p>法令に基づく場合を除き、お客様の同意なく個人情報を第三者に提供することはありません。</p>
+
+          <h2>お問い合わせ</h2>
+          <p>個人情報の取り扱いに関するお問い合わせは、<a href="/contact/">お問い合わせフォーム</a>よりご連絡ください。</p>
+        </div>
       </div>
     </section>
   </main>
@@ -86,7 +115,7 @@
           <li><a href="/#voice" class="p-footer__nav-link">お客様の声</a></li>
           <li><a href="/#faq" class="p-footer__nav-link">よくある質問</a></li>
           <li><a href="/contact/" class="p-footer__nav-link">ご予約</a></li>
-          <li><a href="/privacy/" class="p-footer__nav-link">プライバシーポリシー</a></li>
+          <li><a href="/privacy/" class="p-footer__nav-link" aria-current="page">プライバシーポリシー</a></li>
         </ul>
       </nav>
       <address class="p-footer__address">

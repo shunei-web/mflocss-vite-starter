@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400" fill="none">
+  <rect width="800" height="400" rx="8" fill="#f5f3f0"/>
+  <!-- 施術ベッド -->
+  <rect x="200" y="200" width="400" height="20" rx="4" stroke="#c4bdb5" stroke-width="2"/>
+  <rect x="210" y="180" width="80" height="30" rx="6" stroke="#c4bdb5" stroke-width="2"/>
+  <!-- 脚 -->
+  <line x1="240" y1="220" x2="240" y2="280" stroke="#c4bdb5" stroke-width="2"/>
+  <line x1="560" y1="220" x2="560" y2="280" stroke="#c4bdb5" stroke-width="2"/>
+  <!-- 植物 -->
+  <line x1="680" y1="300" x2="680" y2="180" stroke="#a3b5a5" stroke-width="2"/>
+  <ellipse cx="680" cy="170" rx="20" ry="30" stroke="#a3b5a5" stroke-width="2"/>
+  <ellipse cx="660" cy="190" rx="15" ry="22" stroke="#a3b5a5" stroke-width="2"/>
+  <ellipse cx="700" cy="185" rx="16" ry="24" stroke="#a3b5a5" stroke-width="2"/>
+  <!-- ポット -->
+  <rect x="665" y="300" width="30" height="25" rx="4" stroke="#c4bdb5" stroke-width="2"/>
+  <!-- 照明 -->
+  <line x1="400" y1="40" x2="400" y2="100" stroke="#c4bdb5" stroke-width="1.5"/>
+  <path d="M380 100 L420 100 L410 130 L390 130 Z" stroke="#c4bdb5" stroke-width="1.5"/>
+  <!-- ワイヤーフレームラベル -->
+  <text x="400" y="360" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#a3a09b">800 × 400 — サロン内観</text>
+</svg>
