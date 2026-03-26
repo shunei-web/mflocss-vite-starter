@@ -43,9 +43,22 @@ function initDrawer() {
   });
 
   // ドロワー内リンククリックでドロワーを閉じる
+  // ページ遷移リンクはドロワーを閉じてから遷移（ちらつき防止）
   drawerLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-      closeDrawer();
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      const isPageNavigation = href && !href.startsWith('#');
+
+      if (isPageNavigation) {
+        e.preventDefault();
+        closeDrawer();
+        // dialog の close アニメーション完了後に遷移
+        drawer.addEventListener('close', () => {
+          window.location.href = href;
+        }, { once: true });
+      } else {
+        closeDrawer();
+      }
     });
   });
 
