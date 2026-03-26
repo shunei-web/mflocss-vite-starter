@@ -14,8 +14,10 @@
   transition: background-color 0.3s var(--ease-out-cubic),
     translate 0.3s var(--ease-out-cubic);
 
-  &:hover {
-    translate: 0 -2px;
+  @media (any-hover: hover) {
+    &:hover {
+      translate: 0 -2px;
+    }
   }
 
   &:active {
@@ -28,8 +30,10 @@
     border-color: var(--color-accent);
     color: var(--color-surface);
 
-    &:hover {
-      background-color: oklch(from var(--color-accent) calc(l * 1.08) c h);
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: oklch(from var(--color-accent) calc(l * 1.08) c h);
+      }
     }
   }
 
@@ -38,8 +42,10 @@
     background-color: transparent;
     color: var(--color-main);
 
-    &:hover {
-      background-color: oklch(from var(--color-main) l c h / 8%);
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: oklch(from var(--color-main) l c h / 8%);
+      }
     }
   }
 

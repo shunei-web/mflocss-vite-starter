@@ -24,8 +24,10 @@
     text-decoration: none;
     transition: color 0.2s var(--ease-out-cubic);
 
-    &:hover {
-      color: var(--color-main);
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--color-main);
+      }
     }
   }
 
@@ -39,8 +41,10 @@
     text-decoration: none;
     color: inherit;
 
-    &:hover {
-      color: var(--color-main);
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--color-main);
+      }
     }
   }
 
