@@ -1,8 +1,3 @@
-/*
- * mFLOCSS Reset
- * ブラウザデフォルトの差異を吸収し、日本語組版に最適化するリセット CSS。
- */
-
 /* Universal */
 *,
 ::before,
@@ -10,7 +5,7 @@
   box-sizing: border-box;
 }
 
-/* Document — 日本語組版 + レイアウト安定化 */
+/* Document */
 :where(:root) {
   line-height: 1.5;
   text-spacing-trim: trim-start;
@@ -21,7 +16,6 @@
   text-size-adjust: 100%;
   scrollbar-gutter: stable;
   -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
 }
 
 :where(body) {
@@ -30,13 +24,9 @@
 }
 
 /* Sections */
-:where(h1) {
-  margin-block: 0.67em;
-  font-size: 2em;
-}
-
-:where(h2, h3, h4, h5, h6) {
+:where(h1, h2, h3, h4, h5, h6) {
   margin-block: unset;
+  font-size: unset;
 }
 
 /* Grouping content */
@@ -50,6 +40,8 @@
 
 :where(ul, ol, menu) {
   padding-inline-start: unset;
+
+  /* 空文字列を使うことで Safari VoiceOver でリストとして認識される（list-style: none は認識されない） */
   list-style-type: "";
 }
 
@@ -62,7 +54,7 @@
   text-autospace: no-autospace;
 }
 
-/* Text-level semantics — 日本語対応 */
+/* Text-level semantics */
 :where(em:lang(ja)) {
   font-weight: bolder;
 }
@@ -112,12 +104,16 @@
   border: unset;
 }
 
+:where(legend) {
+  padding-inline: unset;
+}
+
 :where(textarea) {
   margin-block: unset;
   resize: block;
 }
 
-::placeholder {
+:where(::placeholder) {
   opacity: unset;
 }
 
@@ -130,11 +126,6 @@
 :where(dialog, [popover]) {
   padding: unset;
   border: unset;
-}
-
-:where(:focus-visible) {
-  outline: 2px solid currentcolor;
-  outline-offset: 3px;
 }
 
 :where(:disabled, [aria-disabled="true" i]) {

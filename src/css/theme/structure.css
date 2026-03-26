@@ -1,12 +1,7 @@
+/* Tokens の物理値を Theme のセマンティック名にマッピング。
+   ブランド切替やレスポンシブ対応でここの値を差し替える */
 :root {
   --content-width: var(--content-max);
-  --content-padding-inline: clamp(
-    calc(var(--gutter-min) * var(--px)),
-    calc(
-      (var(--gutter-max) - var(--gutter-min))
-      / var(--vp-range) * var(--vp-offset)
-      + var(--gutter-min) * var(--px)
-    ),
-    calc(var(--gutter-max) * var(--px))
-  );
+  --content-width-narrow: var(--content-narrow);
+  --header-size: var(--header-height);
 }

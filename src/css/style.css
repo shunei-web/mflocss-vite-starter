@@ -1,59 +1,33 @@
-/* mFLOCSS Entry Point */
+/*
+ * 対象ブラウザ: モダンブラウザ（Chrome 123+, Safari 18+, Firefox 128+）
+ * 使用技術: @layer, @property, oklch(), light-dark(), CSS Nesting, :has()
+ */
 @import './layer-order.css';
 
-/* @property（@layer の外で宣言が必要） */
-@import './tokens/property.css';
+/* @property（@layer の外で宣言） */
+@import './property.css';
 
-/* Tokens */
+/* Tokens: 生のデザイン値（色・サイズ・余白）。ブランドカラーの差し替えはここ */
 @import './tokens/color.css' layer(tokens);
 @import './tokens/typography.css' layer(tokens);
 @import './tokens/structure.css' layer(tokens);
 @import './tokens/ease.css' layer(tokens);
-@import './tokens/z.css' layer(tokens);
 
-/* Theme */
+/* Theme: セマンティックな意味づけ（ダークモード切替はここで完結） */
 @import './theme/color.css' layer(theme);
 @import './theme/typography.css' layer(theme);
 @import './theme/structure.css' layer(theme);
 
 /* Foundation */
-@import './foundation/reset.css' layer(foundation);
-@import './foundation/base.css' layer(foundation);
-@import './foundation/form.css' layer(foundation);
+@import './foundation/reset.css' layer(foundation.reset);
+@import './foundation/base.css' layer(foundation.base);
+@import './foundation/form.css' layer(foundation.form);
 
 /* Layout */
+@import './layout/l-viewport.css' layer(layout);
 @import './layout/l-section.css' layer(layout);
 @import './layout/l-inner.css' layer(layout);
 @import './layout/l-container.css' layer(layout);
 
-/* Component */
-@import './component/c-button-cta.css' layer(component);
-@import './component/c-section-heading.css' layer(component);
-@import './component/c-card.css' layer(component);
-@import './component/c-code-block.css' layer(component);
-@import './component/c-badge.css' layer(component);
-@import './component/c-table.css' layer(component);
-@import './component/c-blockquote.css' layer(component);
-@import './component/c-skip-link.css' layer(component);
-
-/* Project */
-@import './project/p-header.css' layer(project);
-@import './project/p-footer.css' layer(project);
-@import './project/p-hero.css' layer(project);
-@import './project/p-layer-showcase.css' layer(project);
-@import './project/p-contact-form.css' layer(project);
-@import './project/p-home.css' layer(project);
-@import './project/p-philosophy.css' layer(project);
-@import './project/p-layers.css' layer(project);
-@import './project/p-contact.css' layer(project);
-@import './project/p-skip-link.css' layer(project);
-
-/* Animation */
-@import './animation/a-fade-in-activate.css' layer(animation);
-@import './animation/a-fade-in-slide-up.css' layer(animation);
-@import './animation/a-fade-in-slide-right.css' layer(animation);
-@import './animation/a-scale-in.css' layer(animation);
-@import './animation/a-stagger.css' layer(animation);
-
 /* Utility */
-@import './utility/u-hidden.css' layer(utility);
+@import './utility/visibility.css' layer(utility);

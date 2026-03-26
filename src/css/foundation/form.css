@@ -4,6 +4,7 @@
   border: none;
   background: none;
   padding: 0;
+  touch-action: manipulation;
 }
 
 /* ラベル */
@@ -20,6 +21,10 @@
   background-position: right 0.75rem center;
   background-size: 1rem;
   padding-inline-end: 2.5rem;
+
+  @media (prefers-color-scheme: dark) {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23aaa' d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+  }
 }
 
 /* ラジオボタン・チェックボックス共通 */
@@ -53,7 +58,7 @@
 :where(input[type="radio"]:checked) {
   background-image: radial-gradient(
     circle at center,
-    var(--color-white) 30%,
+    var(--color-surface) 30%,
     var(--color-main) 32%
   );
 }
@@ -67,4 +72,19 @@
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' d='M3.5 8l3 3 6-6'/%3E%3C/svg%3E");
   background-size: 100%;
   background-position: center;
+
+  @media (prefers-color-scheme: dark) {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23111' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' d='M3.5 8l3 3 6-6'/%3E%3C/svg%3E");
+  }
+}
+
+/* 無効状態 */
+:where(:disabled) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* プレースホルダー */
+:where(::placeholder) {
+  color: var(--color-text-light);
 }

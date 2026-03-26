@@ -1,6 +1,6 @@
 .l-inner {
   box-sizing: content-box;
-  max-inline-size: calc(var(--content-width) * var(--px));
-  padding-inline: var(--content-padding-inline);
+  max-inline-size: var(--content-width);
+  padding-inline: clamp(var(--space-md), 4vi, var(--space-3xl));
   margin-inline: auto;
 }

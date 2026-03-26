@@ -1,193 +1,199 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="light dark" />
-    <title>Contact | mFLOCSS</title>
-    <meta name="description" content="mFLOCSS へのお問い合わせ。Foundation 層のフォームリセットと Project 層のスタイル設計を実装例として確認できます。" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <script type="module" src="/scripts/main.js"></script>
-  </head>
-  <body>
-    <a href="#main" class="c-skip-link">コンテンツへスキップ</a>
-    <header class="p-header">
-      <div class="l-inner p-header__inner">
-        <a href="/" class="p-header__logo">mFLOCSS</a>
-        <button
-          type="button"
-          class="p-header__hamburger"
-          aria-expanded="false"
-          aria-controls="global-nav"
-          aria-label="メニューを開く"
-        >
-          <span class="p-header__hamburger-icon" aria-hidden="true"></span>
-        </button>
-        <nav id="global-nav" class="p-header__nav" aria-label="メインナビゲーション">
-          <ul class="p-header__nav-list">
-            <li><a href="/" class="p-header__nav-link">Top</a></li>
-            <li><a href="/philosophy/" class="p-header__nav-link">Philosophy</a></li>
-            <li><a href="/layers/" class="p-header__nav-link">Layers</a></li>
-            <li><a href="/contact/" class="p-header__nav-link">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no,address=no,email=no">
+  <meta name="color-scheme" content="light dark">
+  <!-- CUSTOMIZE: ページタイトル・説明文を差し替え -->
+  <title>ご予約・お問い合わせ — iluha</title>
+  <meta name="description" content="iluha のご予約・お問い合わせフォーム。24時間以内に折り返しご連絡いたします。">
+  <!-- CUSTOMIZE: tokens/color.css のメインカラーに合わせて変更 -->
+  <meta name="theme-color" content="#5b7a5e">
+  <!-- CUSTOMIZE: 本番 URL に差し替え -->
+  <link rel="canonical" href="https://example.com/contact/">
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ご予約・お問い合わせ — iluha">
+  <meta property="og:description" content="30代・40代の女性のための完全個室ボディケアサロン。カウンセリング重視の施術で、内側からからだを整えます。初回体験 60分 4,400円。">
+  <!-- CUSTOMIZE: OGP画像・faviconを差し替え -->
+  <meta property="og:image" content="https://example.com/ogp.png">
+  <!-- CUSTOMIZE: 本番 URL に差し替え -->
+  <meta property="og:url" content="https://example.com/contact/">
+  <meta property="og:site_name" content="iluha">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="l-viewport">
+  <!-- Skip Link -->
+  <a href="#main" class="c-skip-link">本文へスキップ</a>
 
-    <main id="main">
-      <section class="l-section">
-        <div class="l-inner">
-          <h1 class="c-section-heading a-fade-in-activate">Contact</h1>
-          <p class="p-contact__lead a-fade-in-slide-up">
-            お問い合わせフォームのサンプルです。<br />
-            Foundation 層のフォームリセットと Project 層の <code>p-contact-form</code> の組み合わせを確認できます。
-          </p>
+  <!-- NOTE: ヘッダー・フッターは 3 ファイル共通。変更時は全ファイルに反映すること -->
+  <!-- Header -->
+  <header class="p-header">
+    <div class="l-inner p-header__inner">
+      <a href="/" class="p-header__logo" translate="no">iluha</a>
 
-          <form class="p-contact-form p-contact__form">
-            <div class="p-contact-form__field a-fade-in-slide-up">
-              <label class="p-contact-form__label" for="name">
-                お名前<span class="p-contact-form__required" aria-hidden="true">*</span>
-              </label>
-              <input
-                class="p-contact-form__input"
-                type="text"
-                id="name"
-                name="name"
-                autocomplete="name"
-                placeholder="山田 太郎"
-                required
-              />
-            </div>
-            <div class="p-contact-form__field a-fade-in-slide-up">
-              <label class="p-contact-form__label" for="email">
-                メールアドレス<span class="p-contact-form__required" aria-hidden="true">*</span>
-              </label>
-              <input
-                class="p-contact-form__input"
-                type="email"
-                id="email"
-                name="email"
-                autocomplete="email"
-                placeholder="example@example.com"
-                required
-              />
-            </div>
-            <div class="p-contact-form__field a-fade-in-slide-up">
-              <label class="p-contact-form__label" for="category">
-                お問い合わせ種別<span class="p-contact-form__required" aria-hidden="true">*</span>
-              </label>
-              <select
-                class="p-contact-form__select"
-                id="category"
-                name="category"
-                required
-              >
-                <option value="">選択してください</option>
-                <option value="general">一般的なお問い合わせ</option>
-                <option value="support">技術サポート</option>
-                <option value="feedback">フィードバック</option>
-                <option value="other">その他</option>
-              </select>
-            </div>
-            <div class="p-contact-form__field a-fade-in-slide-up">
-              <label class="p-contact-form__label" for="subject">件名</label>
-              <input
-                class="p-contact-form__input"
-                type="text"
-                id="subject"
-                name="subject"
-                placeholder="お問い合わせの件名"
-              />
-            </div>
-            <fieldset class="p-contact-form__field a-fade-in-slide-up">
-              <legend class="p-contact-form__label">
-                優先度<span class="p-contact-form__required" aria-hidden="true">*</span>
-              </legend>
-              <div class="p-contact-form__option-group">
-                <label class="p-contact-form__option-label">
-                  <input
-                    type="radio"
-                    name="priority"
-                    value="low"
-                  />
-                  低
-                </label>
-                <label class="p-contact-form__option-label">
-                  <input
-                    type="radio"
-                    name="priority"
-                    value="normal"
-                    checked
-                    required
-                  />
-                  通常
-                </label>
-                <label class="p-contact-form__option-label">
-                  <input
-                    type="radio"
-                    name="priority"
-                    value="high"
-                  />
-                  高
-                </label>
-              </div>
-            </fieldset>
-            <div class="p-contact-form__field a-fade-in-slide-up">
-              <label class="p-contact-form__label" for="message">
-                メッセージ<span class="p-contact-form__required" aria-hidden="true">*</span>
-              </label>
-              <textarea
-                class="p-contact-form__input"
-                id="message"
-                name="message"
-                rows="6"
-                placeholder="お問い合わせ内容をご記入ください"
-                required
-              ></textarea>
-            </div>
-            <div class="p-contact-form__field a-fade-in-slide-up">
-              <label class="p-contact-form__option-label">
-                <input
-                  type="checkbox"
-                  name="agree"
-                  id="agree"
-                  required
-                />
-                プライバシーポリシーに同意する
-              </label>
-            </div>
-            <button
-              type="submit"
-              class="c-button-cta -large p-contact-form__submit a-fade-in-slide-up"
-            >
-              送信する
-            </button>
-          </form>
-        </div>
-      </section>
-    </main>
-
-    <footer class="p-footer">
-      <nav class="p-footer__nav a-stagger" aria-label="フッターナビゲーション">
-        <div class="p-footer__nav-group">
-          <p class="p-footer__nav-heading">Learn</p>
-          <ul class="p-footer__nav-list">
-            <li><a href="/philosophy/" class="p-footer__nav-link">Philosophy</a></li>
-            <li><a href="/layers/" class="p-footer__nav-link">Layers</a></li>
-          </ul>
-        </div>
-        <div class="p-footer__nav-group">
-          <p class="p-footer__nav-heading">Resource</p>
-          <ul class="p-footer__nav-list">
-            <li><a href="https://github.com/mflocss/starter" class="p-footer__nav-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="/contact/" class="p-footer__nav-link">Contact</a></li>
-          </ul>
-        </div>
+      <nav class="p-header__nav" aria-label="メインナビゲーション" data-nav>
+        <ul class="p-header__nav-list">
+          <li><a href="/#features" class="p-header__nav-link">特徴</a></li>
+          <li><a href="/#voice" class="p-header__nav-link">お客様の声</a></li>
+          <li><a href="/#faq" class="p-header__nav-link">よくある質問</a></li>
+          <li><a href="/contact/" class="p-header__nav-link" aria-current="page">ご予約</a></li>
+        </ul>
+        <a href="/contact/" class="c-button -primary p-header__cta" aria-current="page">初回体験を予約する</a>
       </nav>
-      <div class="p-footer__bottom">
-        <p class="p-footer__copyright">&copy; 2026 mFLOCSS. MIT License.</p>
+
+      <button class="p-header__hamburger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="メニューを開く" data-hamburger>
+        <svg class="c-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="8" x2="21" y2="8"></line>
+          <line x1="3" y1="16" x2="21" y2="16"></line>
+        </svg>
+      </button>
+
+      <dialog class="p-header__drawer" id="drawer" aria-labelledby="drawer-title">
+        <div class="p-header__drawer-inner">
+          <span id="drawer-title" class="u-visually-hidden">ナビゲーションメニュー</span>
+          <button class="p-header__drawer-close" type="button" aria-label="メニューを閉じる" data-hamburger>
+            <svg class="c-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+              <line x1="6" y1="18" x2="18" y2="6"></line>
+            </svg>
+          </button>
+          <nav aria-label="ドロワーナビゲーション">
+            <ul class="p-header__drawer-list">
+              <li><a href="/#features" class="p-header__drawer-link">特徴</a></li>
+              <li><a href="/#voice" class="p-header__drawer-link">お客様の声</a></li>
+              <li><a href="/#faq" class="p-header__drawer-link">よくある質問</a></li>
+              <li><a href="/contact/" class="p-header__drawer-link" aria-current="page">ご予約</a></li>
+            </ul>
+          </nav>
+          <a href="/contact/" class="c-button -primary p-header__drawer-cta" aria-current="page">初回体験を予約する</a>
+        </div>
+      </dialog>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="l-section p-contact">
+      <div class="l-inner">
+        <h1 class="p-contact__title">ご予約・お問い合わせ</h1>
+        <p class="p-contact__lead">下記フォームからお気軽にどうぞ。24時間以内に折り返しご連絡いたします。</p>
+
+        <!-- CUSTOMIZE: フォーム送信先を実際のバックエンド URL に差し替え -->
+        <form class="p-contact__form" action="/thanks/" method="post">
+          <!-- 氏名 -->
+          <div class="p-contact__field">
+            <label for="name" class="p-contact__label">お名前</label>
+            <input type="text" id="name" name="name" class="p-contact__input" required autocomplete="name" aria-describedby="name-error">
+            <p id="name-error" class="p-contact__error" role="alert"></p>
+          </div>
+
+          <!-- メール -->
+          <div class="p-contact__field">
+            <label for="email" class="p-contact__label">メールアドレス</label>
+            <input type="email" id="email" name="email" class="p-contact__input" required autocomplete="email" aria-describedby="email-error">
+            <p id="email-error" class="p-contact__error" role="alert"></p>
+          </div>
+
+          <!-- 電話番号 -->
+          <div class="p-contact__field">
+            <label for="tel" class="p-contact__label">電話番号</label>
+            <input type="tel" id="tel" name="tel" class="p-contact__input" autocomplete="tel" aria-describedby="tel-error">
+            <p id="tel-error" class="p-contact__error" role="alert"></p>
+          </div>
+
+          <!-- お問い合わせ種別 -->
+          <div class="p-contact__field">
+            <label for="category" class="p-contact__label">お問い合わせ種別</label>
+            <select id="category" name="category" class="p-contact__select">
+              <option value="">選択してください</option>
+              <option value="reservation">初回体験の予約</option>
+              <option value="inquiry">施術に関するお問い合わせ</option>
+              <option value="other">その他</option>
+            </select>
+          </div>
+
+          <!-- プラン選択 -->
+          <fieldset class="p-contact__fieldset">
+            <legend class="p-contact__legend">ご希望のプラン</legend>
+            <div class="p-contact__radio-group">
+              <label class="p-contact__radio-label">
+                <input type="radio" name="plan" value="body-care" class="p-contact__radio">
+                ボディケア（60分）
+              </label>
+              <label class="p-contact__radio-label">
+                <input type="radio" name="plan" value="facial" class="p-contact__radio">
+                フェイシャル（45分）
+              </label>
+              <label class="p-contact__radio-label">
+                <input type="radio" name="plan" value="relaxation" class="p-contact__radio">
+                リラクゼーション（90分）
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- メッセージ -->
+          <div class="p-contact__field">
+            <label for="message" class="p-contact__label">メッセージ</label>
+            <textarea id="message" name="message" class="p-contact__textarea" required rows="6" aria-describedby="message-error"></textarea>
+            <p id="message-error" class="p-contact__error" role="alert"></p>
+          </div>
+
+          <!-- 同意確認 -->
+          <div class="p-contact__field">
+            <label class="p-contact__checkbox-label">
+              <input type="checkbox" name="agree" class="p-contact__checkbox" required>
+              <a href="/privacy/">プライバシーポリシー</a>に同意する
+            </label>
+          </div>
+
+          <!-- 送信 -->
+          <div class="p-contact__actions">
+            <button type="submit" class="c-button -primary -large p-contact__submit">送信する</button>
+          </div>
+        </form>
       </div>
-    </footer>
-  </body>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="p-footer">
+    <div class="l-inner p-footer__inner">
+      <nav class="p-footer__nav" aria-label="フッターナビゲーション">
+        <ul class="p-footer__nav-list">
+          <li><a href="/#features" class="p-footer__nav-link">特徴</a></li>
+          <li><a href="/#voice" class="p-footer__nav-link">お客様の声</a></li>
+          <li><a href="/#faq" class="p-footer__nav-link">よくある質問</a></li>
+          <li><a href="/contact/" class="p-footer__nav-link">ご予約</a></li>
+          <li><a href="/privacy/" class="p-footer__nav-link">プライバシーポリシー</a></li>
+        </ul>
+      </nav>
+      <address class="p-footer__address">
+        〒xxx-xxxx 東京都渋谷区○○ x-x-x ○○ビル 3F<br>
+        <a href="tel:03-xxxx-xxxx" class="p-footer__tel" translate="no">TEL: 03-xxxx-xxxx</a><br>
+        営業時間: 10:00〜20:00（最終受付 19:00）<br>
+        定休日: 毎週水曜日
+      </address>
+      <p class="p-footer__copyright">
+        <small><span translate="no">© 2026 iluha</span></small>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <a href="#" class="c-back-to-top p-back-to-top" aria-label="ページの先頭に戻る" data-animate>
+    <svg class="c-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <polyline points="5,12 10,7 15,12"></polyline>
+    </svg>
+  </a>
+
+  <script type="module" src="/scripts/main.js"></script>
+</body>
 </html>

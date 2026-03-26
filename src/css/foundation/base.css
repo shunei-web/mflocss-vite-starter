@@ -1,27 +1,60 @@
-:where(html) {
-  container-type: inline-size;
-  container-name: viewport;
-}
-
 :where(body) {
-  font-family: var(--font-family-ja);
-  font-weight: var(--font-weight-regular);
-  line-height: var(--line-height-base);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-text);
   color: var(--color-text);
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
-  font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-heading);
+  font-weight: var(--font-weight-heading);
+  line-height: var(--line-height-title);
+  color: var(--color-heading);
+}
+
+:where(h1) {
+  --_font-size-min: var(--font-size-h1-min);
+  --_font-size-max: var(--font-size-h1-max);
+
+  font-size: clamp(var(--_font-size-min), 4vi + 1rem, var(--_font-size-max));
+}
+
+:where(h2) {
+  --_font-size-min: var(--font-size-h2-min);
+  --_font-size-max: var(--font-size-h2-max);
+
+  font-size: clamp(var(--_font-size-min), 2vi + 1rem, var(--_font-size-max));
+}
+
+:where(h3) {
+  --_font-size-min: var(--font-size-h3-min);
+  --_font-size-max: var(--font-size-h3-max);
+
+  font-size: clamp(var(--_font-size-min), 0.5vi + 1rem, var(--_font-size-max));
+}
+
+:where(small) {
+  font-size: var(--font-size-small);
 }
 
 :where(a) {
   color: var(--color-link);
-  text-decoration: none;
+}
+
+:where(::selection) {
+  background-color: var(--color-main);
+  color: var(--color-surface);
 }
 
 :where(:focus-visible) {
-  outline-color: var(--color-main);
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :where(:root) {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
+  }
 }

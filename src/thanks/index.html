@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no,address=no,email=no">
+  <meta name="color-scheme" content="light dark">
+  <title>お問い合わせ完了 — iluha</title>
+  <meta name="description" content="お問い合わせを受け付けました。24時間以内にご連絡いたします。">
+  <meta name="robots" content="noindex">
+  <!-- CUSTOMIZE: tokens/color.css のメインカラーに合わせて変更 -->
+  <meta name="theme-color" content="#5b7a5e">
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="l-viewport">
+  <!-- Skip Link -->
+  <a href="#main" class="c-skip-link">本文へスキップ</a>
+
+  <!-- NOTE: ヘッダー・フッターは 3 ファイル共通。変更時は全ファイルに反映すること -->
+  <!-- Header -->
+  <header class="p-header">
+    <div class="l-inner p-header__inner">
+      <a href="/" class="p-header__logo" translate="no">iluha</a>
+
+      <nav class="p-header__nav" aria-label="メインナビゲーション" data-nav>
+        <ul class="p-header__nav-list">
+          <li><a href="/#features" class="p-header__nav-link">特徴</a></li>
+          <li><a href="/#voice" class="p-header__nav-link">お客様の声</a></li>
+          <li><a href="/#faq" class="p-header__nav-link">よくある質問</a></li>
+          <li><a href="/contact/" class="p-header__nav-link">ご予約</a></li>
+        </ul>
+        <a href="/contact/" class="c-button -primary p-header__cta">初回体験を予約する</a>
+      </nav>
+
+      <button class="p-header__hamburger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="メニューを開く" data-hamburger>
+        <svg class="c-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="8" x2="21" y2="8"></line>
+          <line x1="3" y1="16" x2="21" y2="16"></line>
+        </svg>
+      </button>
+
+      <dialog class="p-header__drawer" id="drawer" aria-labelledby="drawer-title">
+        <div class="p-header__drawer-inner">
+          <span id="drawer-title" class="u-visually-hidden">ナビゲーションメニュー</span>
+          <button class="p-header__drawer-close" type="button" aria-label="メニューを閉じる" data-hamburger>
+            <svg class="c-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+              <line x1="6" y1="18" x2="18" y2="6"></line>
+            </svg>
+          </button>
+          <nav aria-label="ドロワーナビゲーション">
+            <ul class="p-header__drawer-list">
+              <li><a href="/#features" class="p-header__drawer-link">特徴</a></li>
+              <li><a href="/#voice" class="p-header__drawer-link">お客様の声</a></li>
+              <li><a href="/#faq" class="p-header__drawer-link">よくある質問</a></li>
+              <li><a href="/contact/" class="p-header__drawer-link">ご予約</a></li>
+            </ul>
+          </nav>
+          <a href="/contact/" class="c-button -primary p-header__drawer-cta">初回体験を予約する</a>
+        </div>
+      </dialog>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="l-section p-thanks">
+      <div class="l-inner p-thanks__inner">
+        <h1 class="p-thanks__title">お問い合わせありがとうございます</h1>
+        <p class="p-thanks__text">24時間以内に、ご入力いただいたメールアドレスへ折り返しご連絡いたします。</p>
+        <a href="/" class="c-button -primary -large p-thanks__cta">トップページに戻る</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="p-footer">
+    <div class="l-inner p-footer__inner">
+      <nav class="p-footer__nav" aria-label="フッターナビゲーション">
+        <ul class="p-footer__nav-list">
+          <li><a href="/#features" class="p-footer__nav-link">特徴</a></li>
+          <li><a href="/#voice" class="p-footer__nav-link">お客様の声</a></li>
+          <li><a href="/#faq" class="p-footer__nav-link">よくある質問</a></li>
+          <li><a href="/contact/" class="p-footer__nav-link">ご予約</a></li>
+          <li><a href="/privacy/" class="p-footer__nav-link">プライバシーポリシー</a></li>
+        </ul>
+      </nav>
+      <address class="p-footer__address">
+        〒xxx-xxxx 東京都渋谷区○○ x-x-x ○○ビル 3F<br>
+        <a href="tel:03-xxxx-xxxx" class="p-footer__tel" translate="no">TEL: 03-xxxx-xxxx</a><br>
+        営業時間: 10:00〜20:00（最終受付 19:00）<br>
+        定休日: 毎週水曜日
+      </address>
+      <p class="p-footer__copyright">
+        <small><span translate="no">© 2026 iluha</span></small>
+      </p>
+    </div>
+  </footer>
+
+  <script type="module" src="/scripts/main.js"></script>
+</body>
+</html>

@@ -1,255 +1,341 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="light dark" />
-    <title>mFLOCSS — 8層CSSアーキテクチャ</title>
-    <meta name="description" content="mFLOCSS は CSS の設計判断を8つの層で整理する思考フレームワーク。@layer によるカスケード制御と、Tokens・Theme の分離設計を学べます。" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <script type="module" src="/scripts/main.js"></script>
-  </head>
-  <body>
-    <a href="#main" class="c-skip-link">コンテンツへスキップ</a>
-    <header class="p-header">
-      <div class="l-inner p-header__inner">
-        <a href="/" class="p-header__logo">mFLOCSS</a>
-        <button
-          type="button"
-          class="p-header__hamburger"
-          aria-expanded="false"
-          aria-controls="global-nav"
-          aria-label="メニューを開く"
-        >
-          <span class="p-header__hamburger-icon" aria-hidden="true"></span>
-        </button>
-        <nav id="global-nav" class="p-header__nav" aria-label="メインナビゲーション">
-          <ul class="p-header__nav-list">
-            <li><a href="/" class="p-header__nav-link">Top</a></li>
-            <li><a href="/philosophy/" class="p-header__nav-link">Philosophy</a></li>
-            <li><a href="/layers/" class="p-header__nav-link">Layers</a></li>
-            <li><a href="/contact/" class="p-header__nav-link">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no,address=no,email=no">
+  <meta name="color-scheme" content="light dark">
+  <!-- CUSTOMIZE: ページタイトル・説明文を差し替え -->
+  <title>iluha — からだの声を、聴く時間。</title>
+  <meta name="description" content="iluha（イルハ）は、30代・40代の女性のための完全個室ボディケアサロン。カウンセリング重視の施術で、内側からからだを整えます。初回体験 60分 4,400円。">
+  <!-- CUSTOMIZE: tokens/color.css のメインカラーに合わせて変更 -->
+  <meta name="theme-color" content="#5b7a5e">
+  <!-- CUSTOMIZE: 本番 URL に差し替え -->
+  <link rel="canonical" href="https://example.com/">
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="iluha — からだの声を、聴く時間。">
+  <meta property="og:description" content="30代・40代の女性のための完全個室ボディケアサロン。カウンセリング重視の施術で、内側からからだを整えます。初回体験 60分 4,400円。">
+  <!-- CUSTOMIZE: OGP画像・faviconを差し替え -->
+  <meta property="og:image" content="https://example.com/ogp.png">
+  <!-- CUSTOMIZE: 本番 URL に差し替え -->
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:site_name" content="iluha">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="l-viewport">
+  <!-- Skip Link -->
+  <a href="#main" class="c-skip-link">本文へスキップ</a>
 
-    <main id="main">
-      <section class="p-hero a-scale-in">
-        <div class="l-inner">
-          <h1 class="p-hero__title">
-            その FLOCSS、<br />なぜそこに書いた？
-          </h1>
-          <p class="p-hero__lead">
-            テンプレートは「結果」であって「判断の過程」ではない。<br />
-            mFLOCSS は CSS の設計判断を8つの層で整理する、思考フレームワークです。
-          </p>
-          <div class="p-hero__actions">
-            <a href="/philosophy/" class="c-button-cta -large">設計思想を学ぶ</a>
-            <a href="/layers/" class="c-button-cta -large -accent">8層を理解する</a>
-          </div>
-        </div>
-      </section>
+  <!-- NOTE: ヘッダー・フッターは 3 ファイル共通。変更時は全ファイルに反映すること -->
+  <!-- Header -->
+  <header class="p-header">
+    <div class="l-inner p-header__inner">
+      <!-- CUSTOMIZE: サービス名を差し替え -->
+      <a href="/" class="p-header__logo" translate="no">iluha</a>
 
-      <section class="l-section">
-        <div class="l-inner">
-          <h2 class="c-section-heading a-fade-in-slide-up">8層アーキテクチャ</h2>
-          <p class="p-home__section-lead a-fade-in-slide-up">
-            mFLOCSS は CSS を 8 つのフラットな層に分類します。<br />
-            各層は <code>@layer</code> で優先順位が固定され、詳細度の衝突が起きません。
-          </p>
-
-          <div class="p-home__section-body">
-            <div class="l-container a-fade-in-slide-up">
-              <div class="p-home__card -tokens">
-                <article class="c-card">
-                  <div class="c-card__body">
-                    <span class="c-badge">Tokens</span>
-                    <h3 class="c-card__title">プリミティブトークン</h3>
-                    <p class="c-card__text">
-                      oklch 色コード、フォントスタック、数値スケール。意味を持たない「素材」を一箇所に集約する。
-                    </p>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            <div class="l-container a-fade-in-slide-up">
-              <div class="p-home__card -theme">
-                <article class="c-card">
-                  <div class="c-card__body">
-                    <span class="c-badge">Theme</span>
-                    <h3 class="c-card__title">セマンティック変数へのマッピング</h3>
-                    <p class="c-card__text">
-                      Tokens に意味のある名前を与える。<code>--color-main</code> のように。ダークモードは Theme だけで切り替わる。
-                    </p>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            <div class="l-container a-fade-in-slide-up">
-              <div class="p-home__card -foundation">
-                <article class="c-card">
-                  <div class="c-card__body">
-                    <span class="c-badge">Foundation</span>
-                    <h3 class="c-card__title">ブラウザ環境の初期化と基本スタイル</h3>
-                    <p class="c-card__text">
-                      リセット CSS と要素セレクタのデフォルト。<code>:where()</code> でゼロ詳細度を維持する。
-                    </p>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            <div class="l-container a-fade-in-slide-up">
-              <div class="p-home__card -layout">
-                <article class="c-card">
-                  <div class="c-card__body">
-                    <span class="c-badge">Layout</span>
-                    <h3 class="c-card__title">位置と空間の配置</h3>
-                    <p class="c-card__text">
-                      セクション、グリッド、スタック。中身の見た目に関与せず「配置と空間」だけを担当する。
-                    </p>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            <div class="l-container a-fade-in-slide-up">
-              <div class="p-home__card -component">
-                <article class="c-card">
-                  <div class="c-card__body">
-                    <span class="c-badge">Component</span>
-                    <h3 class="c-card__title">再利用パーツ</h3>
-                    <p class="c-card__text">
-                      別のサイトにそのまま持っていけるパーツ。ボタン、カード、見出し、バッジなど。
-                    </p>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            <div class="l-container a-fade-in-slide-up">
-              <div class="p-home__card -project">
-                <article class="c-card">
-                  <div class="c-card__body">
-                    <span class="c-badge">Project</span>
-                    <h3 class="c-card__title">サイト固有のパーツと文脈</h3>
-                    <p class="c-card__text">
-                      サイト固有のデザインに依存するパーツ。Component を組み合わせ、文脈に応じた配置・装飾を担う。
-                    </p>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            <div class="l-container a-fade-in-slide-up">
-              <div class="p-home__card -animation">
-                <article class="c-card">
-                  <div class="c-card__body">
-                    <span class="c-badge">Animation</span>
-                    <h3 class="c-card__title">動きの分離管理</h3>
-                    <p class="c-card__text">
-                      アニメーションを分離し、<code>prefers-reduced-motion</code> と <code>scripting</code> の 2 条件を一元管理する。
-                    </p>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            <div class="l-container a-fade-in-slide-up">
-              <div class="p-home__card -utility">
-                <article class="c-card">
-                  <div class="c-card__body">
-                    <span class="c-badge">Utility</span>
-                    <h3 class="c-card__title">単一目的のスタイル上書き</h3>
-                    <p class="c-card__text">
-                      他の層で解決できない局所的な微調整のみ。<code>!important</code> で最高優先度を保証する。
-                    </p>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="l-section">
-        <div class="l-inner">
-          <h2 class="c-section-heading a-fade-in-slide-up">@layer で詳細度を制御する</h2>
-
-          <div class="p-home__layer-section-body">
-            <blockquote class="c-blockquote a-fade-in-slide-right">
-              道具がどんなに進化しても、「どこに何を書くか」という設計判断は人間がやるしかない。
-            </blockquote>
-
-            <div class="c-code-block a-fade-in-slide-up">
-              <div class="c-code-block__header">layer-order.css</div>
-              <pre class="c-code-block__body"><code>@layer tokens, theme, foundation, layout, component, project, animation, utility;</code></pre>
-            </div>
-
-            <p class="a-fade-in-slide-up">
-              この 1 行で、8つの層の優先順位がブラウザに明示的に固定されます。
-              セレクタの詳細度に関係なく、後に宣言された層ほど優先度が高くなります。
-              <code>!important</code> に頼る必要は、もうありません。
-            </p>
-
-            <div class="c-code-block a-fade-in-slide-up">
-              <div class="c-code-block__header">Before: 詳細度の上書き合戦</div>
-              <pre class="c-code-block__body"><code>.card .button { background: #28a745; }             /* (0, 2, 0) */
-.card .button.is-featured { background: #ff6600; } /* (0, 3, 0) で対抗… */</code></pre>
-            </div>
-
-            <div class="c-code-block a-fade-in-slide-up">
-              <div class="c-code-block__header">After: mFLOCSS の @layer</div>
-              <pre class="c-code-block__body"><code>@layer component {
-  .c-card .c-button.-accent { background: var(--color-accent); } /* (0, 3, 0) */
-}
-@layer project {
-  .p-hero .c-button { background: var(--color-hero); }          /* (0, 2, 0) */
-}
-/* project の詳細度が低くても、layer 宣言順で project が勝つ */</code></pre>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="l-section">
-        <div class="l-inner p-home__cta">
-          <h2 class="c-section-heading a-fade-in-slide-up">設計思想を身につけよう</h2>
-          <p class="a-fade-in-slide-up">
-            このサイト自身が mFLOCSS で設計されています。<br />
-            ソースコードを読みながら、設計の判断基準を体験してください。
-          </p>
-          <div class="p-home__cta-action a-fade-in-slide-up">
-            <a href="/philosophy/" class="c-button-cta -large -accent">設計思想を読む</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="p-footer">
-      <nav class="p-footer__nav a-stagger" aria-label="フッターナビゲーション">
-        <div class="p-footer__nav-group">
-          <p class="p-footer__nav-heading">Learn</p>
-          <ul class="p-footer__nav-list">
-            <li><a href="/philosophy/" class="p-footer__nav-link">Philosophy</a></li>
-            <li><a href="/layers/" class="p-footer__nav-link">Layers</a></li>
-          </ul>
-        </div>
-        <div class="p-footer__nav-group">
-          <p class="p-footer__nav-heading">Resource</p>
-          <ul class="p-footer__nav-list">
-            <li><a href="https://github.com/mflocss/starter" class="p-footer__nav-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="/contact/" class="p-footer__nav-link">Contact</a></li>
-          </ul>
-        </div>
+      <nav class="p-header__nav" aria-label="メインナビゲーション" data-nav>
+        <ul class="p-header__nav-list">
+          <li><a href="#features" class="p-header__nav-link">特徴</a></li>
+          <li><a href="#voice" class="p-header__nav-link">お客様の声</a></li>
+          <li><a href="#faq" class="p-header__nav-link">よくある質問</a></li>
+          <li><a href="/contact/" class="p-header__nav-link">ご予約</a></li>
+        </ul>
+        <a href="/contact/" class="c-button -primary p-header__cta">初回体験を予約する</a>
       </nav>
-      <div class="p-footer__bottom">
-        <p class="p-footer__copyright">&copy; 2026 mFLOCSS. MIT License.</p>
+
+      <button class="p-header__hamburger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="メニューを開く" data-hamburger>
+        <svg class="c-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="8" x2="21" y2="8"></line>
+          <line x1="3" y1="16" x2="21" y2="16"></line>
+        </svg>
+      </button>
+
+      <dialog class="p-header__drawer" id="drawer" aria-labelledby="drawer-title">
+        <div class="p-header__drawer-inner">
+          <span id="drawer-title" class="u-visually-hidden">ナビゲーションメニュー</span>
+          <button class="p-header__drawer-close" type="button" aria-label="メニューを閉じる" data-hamburger>
+            <svg class="c-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+              <line x1="6" y1="18" x2="18" y2="6"></line>
+            </svg>
+          </button>
+          <nav aria-label="ドロワーナビゲーション">
+            <ul class="p-header__drawer-list">
+              <li><a href="#features" class="p-header__drawer-link">特徴</a></li>
+              <li><a href="#voice" class="p-header__drawer-link">お客様の声</a></li>
+              <li><a href="#faq" class="p-header__drawer-link">よくある質問</a></li>
+              <li><a href="/contact/" class="p-header__drawer-link">ご予約</a></li>
+            </ul>
+          </nav>
+          <a href="/contact/" class="c-button -primary p-header__drawer-cta">初回体験を予約する</a>
+        </div>
+      </dialog>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="l-section p-hero" aria-labelledby="hero-heading">
+      <div class="l-inner p-hero__inner">
+        <!-- CUSTOMIZE: サービス名・キャッチコピーを差し替え -->
+        <div class="p-hero__content">
+          <h1 id="hero-heading" class="p-hero__title">からだの声を、<br class="u-hidden-pc">聴く時間。</h1>
+          <p class="p-hero__lead">忙しい毎日の中で後回しにしてきた自分のケア。<br class="u-hidden-sp">iluha は、内側から整うボディケアサロンです。</p>
+          <div class="p-hero__actions">
+            <a href="/contact/" class="c-button -primary -large p-hero__cta">
+              初回体験を予約する
+              <svg class="c-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="4" y1="10" x2="16" y2="10"></line>
+                <polyline points="11,5 16,10 11,15"></polyline>
+              </svg>
+            </a>
+            <a href="#features" class="c-button -ghost -large p-hero__sub-cta">メニューを見る</a>
+          </div>
+        </div>
+        <!-- CUSTOMIZE: 画像を差し替え（推奨サイズ: 800x400。実写の場合は Retina 対応のため 2 倍サイズで書き出し） -->
+        <div class="p-hero__media">
+          <img src="/images/hero-main.svg" alt="サロン内観のイメージ" width="800" height="400" fetchpriority="high">
+        </div>
       </div>
-    </footer>
-  </body>
+    </section>
+
+    <!-- Problem -->
+    <section class="l-section p-problem" id="problem" aria-labelledby="problem-heading" data-stagger="fade-in-slide-up">
+      <div class="l-inner">
+        <hgroup class="c-section-heading p-problem__heading">
+          <p lang="en">Problem</p>
+          <h2 id="problem-heading">こんな日々、続いていませんか？</h2>
+        </hgroup>
+        <ul class="p-problem__list">
+          <li class="p-problem__item" data-animate="fade-in-slide-up">
+            <h3 class="p-problem__item-title">朝起きても疲れが抜けない</h3>
+            <p class="p-problem__item-text">睡眠時間は取っているのに、目覚めがすっきりしない。週末に寝溜めしても月曜にはもう重い。</p>
+          </li>
+          <li class="p-problem__item" data-animate="fade-in-slide-up">
+            <h3 class="p-problem__item-title">肩や腰が常に張っている</h3>
+            <p class="p-problem__item-text">デスクワークが続くと夕方には限界。マッサージに行っても翌日には戻っている。</p>
+          </li>
+          <li class="p-problem__item" data-animate="fade-in-slide-up">
+            <h3 class="p-problem__item-title">自分のための時間がない</h3>
+            <p class="p-problem__item-text">仕事、家事、育児。気づけば一日が終わっていて、自分のことは後回しになっている。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <!-- CUSTOMIZE: サービス名・テキストを差し替え -->
+    <section class="l-section p-features" id="features" aria-labelledby="features-heading" data-animate="fade-in-slide-up">
+      <div class="l-inner">
+        <hgroup class="c-section-heading p-features__heading">
+          <p lang="en">Features</p>
+          <h2 id="features-heading">iluha が選ばれる理由</h2>
+        </hgroup>
+        <div class="p-features__list">
+          <article class="l-container p-features__item" data-animate="fade-in-slide-up">
+            <div class="p-features__content">
+              <span class="c-badge -accent p-features__badge" lang="en">Counseling</span>
+              <h3 class="p-features__title">まず、30分話すことから</h3>
+              <p class="p-features__text">施術の前に、今のからだの状態をじっくり伺います。不調の原因は人それぞれ。あなたに合ったケアを、会話の中から一緒に見つけます。</p>
+            </div>
+            <!-- CUSTOMIZE: 画像を差し替え（推奨サイズ: 480x320。実写の場合は Retina 対応のため 2 倍サイズで書き出し） -->
+            <figure class="p-features__media">
+              <img src="/images/feature-counseling.svg" alt="" width="480" height="320" loading="lazy">
+              <figcaption class="p-features__caption">カウンセリングの様子</figcaption>
+            </figure>
+          </article>
+          <article class="l-container p-features__item" data-animate="fade-in-slide-up">
+            <div class="p-features__content">
+              <span class="c-badge -accent p-features__badge" lang="en">Treatment</span>
+              <h3 class="p-features__title">筋膜と深層にアプローチ</h3>
+              <p class="p-features__text">表面をほぐすだけでは戻ってしまう。iluha では筋膜リリースと深層ケアを組み合わせ、根本からからだのバランスを整えます。</p>
+            </div>
+            <!-- CUSTOMIZE: 画像を差し替え（推奨サイズ: 480x320。実写の場合は Retina 対応のため 2 倍サイズで書き出し） -->
+            <figure class="p-features__media">
+              <img src="/images/feature-treatment.svg" alt="" width="480" height="320" loading="lazy">
+              <figcaption class="p-features__caption">施術の様子</figcaption>
+            </figure>
+          </article>
+          <article class="l-container p-features__item" data-animate="fade-in-slide-up">
+            <div class="p-features__content">
+              <span class="c-badge -accent p-features__badge" lang="en">Private</span>
+              <h3 class="p-features__title">完全個室、あなただけの空間</h3>
+              <p class="p-features__text">周りを気にせず、安心してからだを預けられる環境を。施術中に眠ってしまう方がほとんどです。</p>
+            </div>
+            <!-- CUSTOMIZE: 画像を差し替え（推奨サイズ: 480x320。実写の場合は Retina 対応のため 2 倍サイズで書き出し） -->
+            <figure class="p-features__media">
+              <img src="/images/feature-private-room.svg" alt="" width="480" height="320" loading="lazy">
+              <figcaption class="p-features__caption">個室の様子</figcaption>
+            </figure>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Numbers -->
+    <section class="l-section p-numbers" id="numbers" aria-labelledby="numbers-heading" data-animate="fade-in-slide-up">
+      <div class="l-inner">
+        <hgroup class="c-section-heading p-numbers__heading">
+          <p lang="en">Numbers</p>
+          <h2 id="numbers-heading">実績</h2>
+        </hgroup>
+        <ul class="p-numbers__list">
+          <li class="p-numbers__item">
+            <span class="p-numbers__value" translate="no">1,200<span class="p-numbers__unit">+</span></span>
+            <span class="p-numbers__label">施術実績（年間）</span>
+          </li>
+          <li class="p-numbers__item">
+            <span class="p-numbers__value" translate="no">96.2<span class="p-numbers__unit">%</span></span>
+            <span class="p-numbers__label">リピート率</span>
+          </li>
+          <li class="p-numbers__item">
+            <span class="p-numbers__value" translate="no">+15<span class="p-numbers__unit">min</span></span>
+            <span class="p-numbers__label">初回カウンセリングの充実度</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Voice -->
+    <section class="l-section p-voice" id="voice" aria-labelledby="voice-heading" data-animate="fade-in-slide-up">
+      <div class="l-inner">
+        <hgroup class="c-section-heading p-voice__heading">
+          <p lang="en">Voice</p>
+          <h2 id="voice-heading">お客様の声</h2>
+        </hgroup>
+        <div class="p-voice__list">
+          <article class="c-card p-voice__card" data-animate="fade-in-slide-up">
+            <blockquote class="c-blockquote p-voice__blockquote">
+              <p class="c-blockquote__title p-voice__quote-title">毎週通うつもりはなかったのに、からだが求めるようになりました</p>
+              <p class="c-blockquote__text p-voice__quote-text">3ヶ月前、慢性的な肩こりで初めて来ました。最初のカウンセリングで「それは肩だけの問題じゃない」と言われたのが印象的で。今は月2回、自分を整える時間として通っています。</p>
+              <footer class="c-blockquote__footer p-voice__footer">
+                <!-- CUSTOMIZE: 画像を差し替え（推奨サイズ: 48x48。実写の場合は Retina 対応のため 2 倍サイズで書き出し） -->
+                <img class="p-voice__avatar" src="/images/avatar-1.svg" alt="" width="48" height="48" loading="lazy">
+                <cite class="p-voice__cite">田中美咲（38歳・会社員）</cite>
+              </footer>
+            </blockquote>
+          </article>
+          <article class="c-card p-voice__card" data-animate="fade-in-slide-up">
+            <blockquote class="c-blockquote p-voice__blockquote">
+              <p class="c-blockquote__title p-voice__quote-title">ここに来ると、呼吸が深くなるんです</p>
+              <p class="c-blockquote__text p-voice__quote-text">育児で自分の時間がなくて、気づいたら浅い呼吸が癖になっていました。施術後にからだが軽くなるだけでなく、気持ちまでゆるむ感覚がありました。</p>
+              <footer class="c-blockquote__footer p-voice__footer">
+                <!-- CUSTOMIZE: 画像を差し替え（推奨サイズ: 48x48。実写の場合は Retina 対応のため 2 倍サイズで書き出し） -->
+                <img class="p-voice__avatar" src="/images/avatar-2.svg" alt="" width="48" height="48" loading="lazy">
+                <cite class="p-voice__cite">山本あかり（42歳・主婦）</cite>
+              </footer>
+            </blockquote>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="l-section p-faq" id="faq" aria-labelledby="faq-heading" data-animate="fade-in-slide-up">
+      <div class="l-inner">
+        <hgroup class="c-section-heading p-faq__heading">
+          <p lang="en">FAQ</p>
+          <h2 id="faq-heading">よくある質問</h2>
+        </hgroup>
+        <div class="p-faq__list">
+          <details class="c-accordion p-faq__item" open>
+            <summary class="c-accordion__summary p-faq__question">
+              施術に痛みはありますか？
+              <svg class="c-icon c-accordion__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                <polyline points="5,8 10,13 15,8"></polyline>
+              </svg>
+            </summary>
+            <div class="c-accordion__content p-faq__answer">
+              <p>痛みを我慢していただくことはありません。からだの状態に合わせて圧を調整します。施術中に眠ってしまう方も多いです。</p>
+            </div>
+          </details>
+          <details class="c-accordion p-faq__item">
+            <summary class="c-accordion__summary p-faq__question">
+              どのくらいの頻度で通えばいいですか？
+              <svg class="c-icon c-accordion__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                <polyline points="5,8 10,13 15,8"></polyline>
+              </svg>
+            </summary>
+            <div class="c-accordion__content p-faq__answer">
+              <p>最初の1ヶ月は週1回をおすすめしています。からだが整ってきたら、月1〜2回のメンテナンスに移行される方が多いです。</p>
+            </div>
+          </details>
+          <details class="c-accordion p-faq__item">
+            <summary class="c-accordion__summary p-faq__question">
+              予約の変更やキャンセルはできますか？
+              <svg class="c-icon c-accordion__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                <polyline points="5,8 10,13 15,8"></polyline>
+              </svg>
+            </summary>
+            <div class="c-accordion__content p-faq__answer">
+              <p>前日までにご連絡いただければ、変更・キャンセルとも無料で承ります。</p>
+            </div>
+          </details>
+          <details class="c-accordion p-faq__item">
+            <summary class="c-accordion__summary p-faq__question">
+              男性も利用できますか？
+              <svg class="c-icon c-accordion__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                <polyline points="5,8 10,13 15,8"></polyline>
+              </svg>
+            </summary>
+            <div class="c-accordion__content p-faq__answer">
+              <p>現在は女性専用とさせていただいております。</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="l-section p-cta" id="cta" aria-labelledby="cta-heading" data-animate="fade-in-slide-up">
+      <div class="l-inner p-cta__inner">
+        <h2 id="cta-heading" class="p-cta__title">まずは一度、からだの声を聴いてみませんか？</h2>
+        <p class="p-cta__text">初回体験は 60分 4,400円。カウンセリング込み。無理な勧誘はいたしません。</p>
+        <a href="/contact/" class="c-button -primary -large p-cta__button">初回体験を予約する</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="p-footer">
+    <div class="l-inner p-footer__inner">
+      <nav class="p-footer__nav" aria-label="フッターナビゲーション">
+        <ul class="p-footer__nav-list">
+          <li><a href="#features" class="p-footer__nav-link">特徴</a></li>
+          <li><a href="#voice" class="p-footer__nav-link">お客様の声</a></li>
+          <li><a href="#faq" class="p-footer__nav-link">よくある質問</a></li>
+          <li><a href="/contact/" class="p-footer__nav-link">ご予約</a></li>
+          <li><a href="/privacy/" class="p-footer__nav-link">プライバシーポリシー</a></li>
+        </ul>
+      </nav>
+      <!-- CUSTOMIZE: 住所・電話番号・営業時間を差し替え -->
+      <address class="p-footer__address">
+        〒xxx-xxxx 東京都渋谷区○○ x-x-x ○○ビル 3F<br>
+        <a href="tel:03-xxxx-xxxx" class="p-footer__tel" translate="no">TEL: 03-xxxx-xxxx</a><br>
+        営業時間: 10:00〜20:00（最終受付 19:00）<br>
+        定休日: 毎週水曜日
+      </address>
+      <p class="p-footer__copyright">
+        <small><span translate="no">© 2026 iluha</span></small>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <a href="#" class="c-back-to-top p-back-to-top" aria-label="ページの先頭に戻る" data-animate>
+    <svg class="c-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <polyline points="5,12 10,7 15,12"></polyline>
+    </svg>
+  </a>
+
+  <script type="module" src="/scripts/main.js"></script>
+</body>
 </html>

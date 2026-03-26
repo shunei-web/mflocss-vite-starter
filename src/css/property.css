@@ -1,0 +1,16 @@
+/* @property は @layer の外で宣言する必要がある（CSS 仕様上の制約）。
+   l-section のパディング計算に使用。inherits: false で子孫への継承を防止 */
+
+/* NOTE: @property 未対応ブラウザでは initial-value がフォールバック値として適用される */
+
+@property --section-padding-min {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 64px;
+}
+
+@property --section-padding-max {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 100px;
+}

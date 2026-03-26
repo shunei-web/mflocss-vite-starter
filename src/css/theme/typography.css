@@ -1,8 +1,9 @@
+/* Tokens の物理値を Theme のセマンティック名にマッピング。
+   ブランド切替やレスポンシブ対応でここの値を差し替える */
 :root {
-  --font-family-ja: var(--font-ja);
-  --font-family-code: var(--font-code);
-  --font-weight-regular: var(--weight-regular);
-  --font-weight-bold: var(--weight-bold);
-  --line-height-base: var(--leading-relaxed);
-  --line-height-heading: var(--leading-tight);
+  --font-family: var(--font-family-base);
+  --font-weight-heading: var(--font-weight-bold);
+  --font-weight-body: var(--font-weight-normal);
+  --line-height-text: var(--line-height-body);
+  --line-height-title: var(--line-height-heading);
 }
