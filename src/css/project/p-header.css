@@ -27,7 +27,6 @@
     text-decoration: none;
   }
 
-  /* PC ナビ */
   .p-header__nav {
     display: none;
     align-items: center;
@@ -43,7 +42,7 @@
     gap: var(--space-lg);
   }
 
-  /* CSS 変数経由の上書き例 */
+  /* hover で変数だけ切り替え、transition を1箇所で管理 */
   .p-header__nav-link {
     --_link-color: var(--color-text);
 
@@ -63,9 +62,7 @@
     font-size: var(--font-size-small);
   }
 
-  /* ハンバーガー（スタイルは c-hamburger が担当） */
-
-  /* ドロワー（show() + ヘッダー常時表示方式） */
+  /* show() を使用（showModal() だとヘッダーが背面に隠れる） */
   .p-header__drawer {
     position: fixed;
     inset-block: var(--header-size) 0;
