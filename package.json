@@ -9,14 +9,16 @@
     "preview": "vite preview",
     "lint:css": "stylelint \"src/**/*.css\"",
     "lint:js": "eslint \"src/**/*.js\"",
+    "lint:html": "markuplint \"src/**/*.html\"",
     "format": "prettier --write \"src/**/*.{html,css,js}\"",
-    "check": "pnpm format && pnpm lint:css && pnpm lint:js"
+    "check": "pnpm format && pnpm lint:css && pnpm lint:js && pnpm lint:html"
   },
   "devDependencies": {
     "@eslint/js": "^9.0.0",
     "eslint": "^9.0.0",
     "eslint-config-prettier": "^9.0.0",
     "globals": "^17.4.0",
+    "markuplint": "^4.14.1",
     "prettier": "^3.0.0",
     "stylelint": "^16.0.0",
     "stylelint-config-standard": "^37.0.0",
