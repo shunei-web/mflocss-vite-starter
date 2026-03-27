@@ -1,4 +1,5 @@
 :root {
+  /* CUSTOMIZE: ダークモード不要なら light のみに */
   color-scheme: light dark;
 
   /* グローバルセマンティック */
