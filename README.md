@@ -1,6 +1,6 @@
 # mFLOCSS Starter
 
-mFLOCSS spec v1.2 のリファレンス実装。LP 向けのスターターテンプレートとして、テキストや画像を差し替えるだけでそのまま使える構成です。
+mFLOCSS のリファレンス実装。LP 向けのスターターテンプレートとして、テキストや画像を差し替えるだけでそのまま使える構成です。
 
 ## クイックスタート
 
@@ -23,21 +23,21 @@ HTML 内の `<!-- CUSTOMIZE: ... -->` コメントを検索すると、差し替
 
 ## 色の変え方
 
-`src/css/tokens/color.css` の `/* CUSTOMIZE */` セクションにあるカラートークンを差し替えます。
+`src/css/token/color-primitive.css` の `/* CUSTOMIZE */` セクションにあるカラーパレットを差し替えます。
 
 ```css
 :root {
   /* Main — メインカラー */
-  --sage-400: oklch(65% 0.08 150deg);  /* ← 色相(H)を変えるだけで印象が変わる */
-  --sage-600: oklch(45% 0.1 150deg);
+  --_sage-400: oklch(65% 0.08 150deg);  /* ← 色相(H)を変えるだけで印象が変わる */
+  --_sage-600: oklch(45% 0.1 150deg);
 
   /* Accent — アクセントカラー */
-  --terracotta-400: oklch(65% 0.12 35deg);
-  --terracotta-500: oklch(55% 0.15 35deg);
+  --_terracotta-400: oklch(65% 0.12 35deg);
+  --_terracotta-500: oklch(55% 0.15 35deg);
 }
 ```
 
-Theme 層（`src/css/theme/color.css`）がセマンティック変数を通して全体に反映するため、Tokens を変えるだけで LP 全体の配色が切り替わります。
+`color.css` がセマンティック変数を通して全体に反映するため、パレットを変えるだけで LP 全体の配色が切り替わります。
 
 `<meta name="theme-color">` の HEX 値も合わせて変更してください。
 
@@ -69,14 +69,14 @@ mFLOCSS 準拠で新しい Component を追加する手順:
 ## ダークモード無効化方法
 
 1. 全ページの `<meta name="color-scheme" content="light dark">` を `<meta name="color-scheme" content="light">` に変更
-2. `src/css/theme/color.css` の `light-dark()` 関数を light 側の値に置き換え
+2. `src/css/token/color.css` の `light-dark()` 関数を light 側の値に置き換え
 
 ```css
 /* Before */
---color-main: light-dark(var(--sage-600), var(--sage-400));
+--color-main: light-dark(var(--_sage-600), var(--_sage-400));
 
 /* After */
---color-main: var(--sage-600);
+--color-main: var(--_sage-600);
 ```
 
 ## ビルドと納品
@@ -156,9 +156,9 @@ src/
 │   ├── style.css          # エントリポイント
 │   ├── layer-order.css    # @layer 先制宣言
 │   ├── property.css       # @property 定義
-│   ├── tokens/            # 生のデザイン値
-│   ├── theme/             # セマンティック変数
-│   ├── foundation/        # リセット・ベーススタイル（index.css でサブレイヤー管理）
+│   ├── token/             # デザイントークン（カラー・タイポグラフィ・余白等）
+│   ├── reset/             # ブラウザリセット
+│   ├── foundation/        # 要素の基本スタイル（base + form）
 │   ├── layout/            # レイアウトプリミティブ
 │   ├── component/         # 再利用可能な UI パーツ
 │   ├── project/           # ページ固有のスタイル
