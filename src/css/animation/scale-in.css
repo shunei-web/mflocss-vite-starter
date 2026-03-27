@@ -6,7 +6,7 @@
     }
   }
 
-  [data-animate="scale-in"] {
+  [data-animate='scale-in'] {
     animation: scale-in 0.8s var(--ease-out-quart) both;
     animation-play-state: paused;
     animation-delay: var(--stagger-delay, 0s);

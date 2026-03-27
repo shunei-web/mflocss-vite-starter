@@ -6,7 +6,8 @@
   z-index: var(--z-back-to-top);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s var(--ease-out-cubic),
+  transition:
+    opacity 0.3s var(--ease-out-cubic),
     visibility 0.3s var(--ease-out-cubic);
 
   &.is-visible {

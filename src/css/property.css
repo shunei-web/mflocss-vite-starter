@@ -4,19 +4,19 @@
 /* NOTE: @property 未対応ブラウザでは initial-value がフォールバック値として適用される */
 
 @property --section-padding-min {
-  syntax: "<length>";
+  syntax: '<length>';
   inherits: false;
   initial-value: 64px;
 }
 
 @property --section-padding-max {
-  syntax: "<length>";
+  syntax: '<length>';
   inherits: false;
   initial-value: 100px;
 }
 
 @property --stagger-delay {
-  syntax: "<time>";
+  syntax: '<time>';
   inherits: false;
   initial-value: 0s;
 }

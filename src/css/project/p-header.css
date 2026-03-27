@@ -12,8 +12,6 @@
     backdrop-filter: none;
   }
 
-
-
   .p-header__inner {
     display: flex;
     align-items: center;
@@ -97,7 +95,6 @@
     overflow-y: auto;
     overscroll-behavior-block: contain;
   }
-
 
   .p-header__drawer-list {
     display: flex;

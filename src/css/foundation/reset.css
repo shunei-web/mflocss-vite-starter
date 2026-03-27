@@ -47,7 +47,7 @@
   padding-inline-start: unset;
 
   /* 空文字列を使うことで Safari VoiceOver でリストとして認識される（list-style: none は認識されない） */
-  list-style-type: "";
+  list-style-type: '';
 }
 
 :where(dd) {
@@ -124,7 +124,7 @@
 
 /* Interactive */
 :where(summary) {
-  list-style-type: "";
+  list-style-type: '';
   cursor: pointer;
 }
 
@@ -133,10 +133,10 @@
   border: unset;
 }
 
-:where(:disabled, [aria-disabled="true" i]) {
+:where(:disabled, [aria-disabled='true' i]) {
   cursor: default;
 }
 
-:where([hidden]:not([hidden="until-found" i])) {
+:where([hidden]:not([hidden='until-found' i])) {
   display: none !important;
 }

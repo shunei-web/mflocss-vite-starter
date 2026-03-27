@@ -6,7 +6,7 @@
     }
   }
 
-  [data-animate="fade-in-slide-up"] {
+  [data-animate='fade-in-slide-up'] {
     animation: fade-in-slide-up 0.6s var(--ease-out-quart) both;
     animation-play-state: paused;
     animation-delay: var(--stagger-delay, 0s);

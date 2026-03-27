@@ -11,7 +11,8 @@
   line-height: var(--line-height-title);
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.3s var(--ease-out-cubic),
+  transition:
+    background-color 0.3s var(--ease-out-cubic),
     translate 0.3s var(--ease-out-cubic);
 
   @media (any-hover: hover) {

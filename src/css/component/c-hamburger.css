@@ -22,7 +22,9 @@
   block-size: 2px;
   background-color: currentcolor;
   border-radius: 1px;
-  transition: transform 0.3s var(--ease-out-cubic), opacity 0.3s var(--ease-out-cubic);
+  transition:
+    transform 0.3s var(--ease-out-cubic),
+    opacity 0.3s var(--ease-out-cubic);
 }
 
 .c-hamburger__line {
