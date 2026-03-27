@@ -1,3 +1,4 @@
+/* グローバル: プロジェクト非依存の汎用値 */
 :root {
   --radius-sm: 4px;
   --radius-md: 8px;
