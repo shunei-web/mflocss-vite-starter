@@ -23,7 +23,7 @@
 }
 
 .p-header__logo {
-  font-size: clamp(calc(20 * var(--px)), 0.5vi + 1rem, calc(24 * var(--px)));
+  font-size: var(--font-size-logo);
   font-weight: var(--font-weight-heading);
   color: var(--color-main);
   letter-spacing: 0.08em;
@@ -112,7 +112,7 @@
 }
 
 .p-header__drawer-nav-link {
-  font-size: clamp(calc(18 * var(--px)), 0.5vi + 1rem, calc(20 * var(--px)));
+  font-size: var(--font-size-nav-lg);
   color: var(--color-text);
   text-decoration: none;
   transition: color var(--duration-fast) var(--ease-out-cubic);

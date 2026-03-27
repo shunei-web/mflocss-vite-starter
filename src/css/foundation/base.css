@@ -14,24 +14,15 @@
 }
 
 :where(h1) {
-  --_font-size-min: var(--font-size-h1-min);
-  --_font-size-max: var(--font-size-h1-max);
-
-  font-size: clamp(var(--_font-size-min), 4vi + 1rem, var(--_font-size-max));
+  font-size: var(--font-size-h1);
 }
 
 :where(h2) {
-  --_font-size-min: var(--font-size-h2-min);
-  --_font-size-max: var(--font-size-h2-max);
-
-  font-size: clamp(var(--_font-size-min), 2vi + 1rem, var(--_font-size-max));
+  font-size: var(--font-size-h2);
 }
 
 :where(h3) {
-  --_font-size-min: var(--font-size-h3-min);
-  --_font-size-max: var(--font-size-h3-max);
-
-  font-size: clamp(var(--_font-size-min), 0.5vi + 1rem, var(--_font-size-max));
+  font-size: var(--font-size-h3);
 }
 
 :where(small) {

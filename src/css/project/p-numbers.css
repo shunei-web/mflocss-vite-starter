@@ -28,7 +28,7 @@
 }
 
 .p-numbers__value {
-  font-size: clamp(calc(40 * var(--px)), 4vi + 1rem, calc(56 * var(--px)));
+  font-size: var(--font-size-display);
   font-weight: var(--font-weight-heading);
   line-height: 1.2;
   color: var(--color-main);

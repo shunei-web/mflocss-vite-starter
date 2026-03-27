@@ -54,7 +54,7 @@
   /* Hero・CTA 等の主要導線用。vi でコンテナ幅に連動 */
   &.-large {
     padding: var(--space-md) var(--space-xl);
-    font-size: clamp(calc(16 * var(--px)), 0.5vi + 0.9rem, calc(18 * var(--px)));
+    font-size: var(--font-size-button-lg);
   }
 
   &.is-loading {

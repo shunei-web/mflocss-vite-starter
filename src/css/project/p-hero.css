@@ -31,7 +31,7 @@
 }
 
 .p-hero__lead {
-  font-size: clamp(calc(16 * var(--px)), 0.3vi + 0.9rem, calc(18 * var(--px)));
+  font-size: var(--font-size-lead);
   color: var(--color-text-light);
 }
 
