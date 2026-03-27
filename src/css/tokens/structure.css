@@ -1,17 +1,17 @@
 /* CUSTOMIZE: プロジェクトごとに変わる値 */
 :root {
-  /* セクション余白スケール（3段階） */
-  --section-lg-min: 100px;
-  --section-lg-max: 160px;
-  --section-md-min: 64px;
-  --section-md-max: 100px;
-  --section-sm-min: 40px;
-  --section-sm-max: 64px;
+  /* セクション余白スケール（単位なし。Theme で rem に変換） */
+  --section-lg-min: 100;
+  --section-lg-max: 160;
+  --section-md-min: 64;
+  --section-md-max: 100;
+  --section-sm-min: 40;
+  --section-sm-max: 64;
 
-  /* 幅スケール */
-  --width-xl: 1280px;
-  --width-lg: 720px;
+  /* 幅スケール（単位なし。Theme で px に変換） */
+  --width-xl: 1280;
+  --width-lg: 720;
 
-  /* 高さスケール */
-  --height-header: 64px;
+  /* 高さスケール（単位なし。Theme で rem に変換） */
+  --height-header: 64;
 }
