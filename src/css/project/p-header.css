@@ -11,109 +11,115 @@
     background-color: var(--color-bg);
     backdrop-filter: none;
   }
+}
 
-  .p-header__inner {
+.p-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  block-size: var(--header-size);
+}
+
+.p-header__logo {
+  font-size: clamp(1.25rem, 0.5vi + 1rem, 1.5rem);
+  font-weight: var(--font-weight-heading);
+  letter-spacing: 0.08em;
+  color: var(--color-main);
+  text-decoration: none;
+}
+
+.p-header__nav {
+  display: none;
+  align-items: center;
+  gap: var(--space-lg);
+
+  @media (width >= 768px) {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    block-size: var(--header-size);
   }
+}
 
-  .p-header__logo {
-    font-size: clamp(1.25rem, 0.5vi + 1rem, 1.5rem);
-    font-weight: var(--font-weight-heading);
-    letter-spacing: 0.08em;
-    color: var(--color-main);
-    text-decoration: none;
-  }
+.p-header__nav-list {
+  display: flex;
+  gap: var(--space-lg);
+}
 
-  .p-header__nav {
-    display: none;
-    align-items: center;
-    gap: var(--space-lg);
+/* hover で変数だけ切り替え、transition を1箇所で管理 */
+.p-header__nav-link {
+  --_link-color: var(--color-text);
 
-    @media (width >= 768px) {
-      display: flex;
+  color: var(--_link-color);
+  font-size: var(--font-size-small);
+  text-decoration: none;
+  transition: color 0.2s var(--ease-out-cubic);
+
+  @media (any-hover: hover) {
+    &:hover {
+      --_link-color: var(--color-main);
     }
   }
+}
 
-  .p-header__nav-list {
-    display: flex;
-    gap: var(--space-lg);
+.p-header__cta {
+  font-size: var(--font-size-small);
+}
+
+/* show() を使用（showModal() だとヘッダーが背面に隠れる） */
+.p-header__drawer {
+  position: fixed;
+  inset-block: var(--header-size) 0;
+  inset-inline: 0;
+  z-index: var(--z-drawer);
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: var(--color-bg);
+  transform: translateX(100%);
+  transition: transform 0.3s var(--ease-out-cubic);
+  overflow: hidden;
+
+  &[open] {
+    transform: translateX(0);
   }
+}
 
-  /* hover で変数だけ切り替え、transition を1箇所で管理 */
-  .p-header__nav-link {
-    --_link-color: var(--color-text);
+.p-header__drawer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: safe center;
+  gap: var(--space-xl);
+  block-size: 100%;
+  padding: var(--space-xl);
+  overflow-y: auto;
+  overscroll-behavior-block: contain;
+}
 
-    color: var(--_link-color);
-    font-size: var(--font-size-small);
-    text-decoration: none;
-    transition: color 0.2s var(--ease-out-cubic);
+.p-header__hamburger {
+}
 
-    @media (any-hover: hover) {
-      &:hover {
-        --_link-color: var(--color-main);
-      }
+.p-header__drawer-nav {
+}
+
+.p-header__drawer-nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.p-header__drawer-nav-link {
+  font-size: clamp(1.125rem, 0.5vi + 1rem, 1.25rem);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.2s var(--ease-out-cubic);
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--color-main);
     }
   }
+}
 
-  .p-header__cta {
-    font-size: var(--font-size-small);
-  }
-
-  /* show() を使用（showModal() だとヘッダーが背面に隠れる） */
-  .p-header__drawer {
-    position: fixed;
-    inset-block: var(--header-size) 0;
-    inset-inline: 0;
-    z-index: var(--z-drawer);
-    margin: 0;
-    padding: 0;
-    border: none;
-    background-color: var(--color-bg);
-    transform: translateX(100%);
-    transition: transform 0.3s var(--ease-out-cubic);
-    overflow: hidden;
-
-    &[open] {
-      transform: translateX(0);
-    }
-  }
-
-  .p-header__drawer-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: safe center;
-    gap: var(--space-xl);
-    block-size: 100%;
-    padding: var(--space-xl);
-    overflow-y: auto;
-    overscroll-behavior-block: contain;
-  }
-
-  .p-header__drawer-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-xl);
-  }
-
-  .p-header__drawer-link {
-    font-size: clamp(1.125rem, 0.5vi + 1rem, 1.25rem);
-    color: var(--color-text);
-    text-decoration: none;
-    transition: color 0.2s var(--ease-out-cubic);
-
-    @media (any-hover: hover) {
-      &:hover {
-        color: var(--color-main);
-      }
-    }
-  }
-
-  .p-header__drawer-cta {
-    margin-block-start: var(--space-md);
-  }
+.p-header__drawer-cta {
+  margin-block-start: var(--space-md);
 }

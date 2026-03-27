@@ -1,19 +1,23 @@
 .p-thanks {
-  .p-thanks__inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: var(--space-lg);
-    min-block-size: 50dvb;
-    justify-content: center;
-  }
+}
 
-  .p-thanks__text {
-    color: var(--color-text-light);
-  }
+.p-thanks__title {
+}
 
-  .p-thanks__cta {
-    margin-block-start: var(--space-md);
-  }
+.p-thanks__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-lg);
+  min-block-size: 50dvb;
+  justify-content: center;
+}
+
+.p-thanks__text {
+  color: var(--color-text-light);
+}
+
+.p-thanks__cta {
+  margin-block-start: var(--space-md);
 }

@@ -1,6 +1,10 @@
 .p-faq {
-  .p-faq__list {
-    max-inline-size: var(--content-width-narrow);
-    margin-inline: auto;
-  }
+}
+
+.p-faq__heading {
+}
+
+.p-faq__list {
+  max-inline-size: var(--content-width-narrow);
+  margin-inline: auto;
 }

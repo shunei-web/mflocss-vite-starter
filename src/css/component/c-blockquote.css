@@ -1,35 +1,35 @@
 .c-blockquote {
   border-inline-start: 3px solid var(--color-main);
   padding-inline-start: var(--space-lg);
+}
 
-  .c-blockquote__title {
-    font-weight: var(--font-weight-heading);
-    line-height: var(--line-height-title);
-    margin-block-end: var(--space-sm);
-  }
+.c-blockquote__title {
+  font-weight: var(--font-weight-heading);
+  line-height: var(--line-height-title);
+  margin-block-end: var(--space-sm);
+}
 
-  .c-blockquote__text {
-    color: var(--color-text-light);
-    margin-block-end: var(--space-md);
-  }
+.c-blockquote__text {
+  color: var(--color-text-light);
+  margin-block-end: var(--space-md);
+}
 
-  .c-blockquote__footer {
-    display: flex;
-    align-items: center;
-    gap: var(--space-md);
-    font-size: var(--font-size-caption);
-    font-style: normal;
-    color: var(--color-text-light);
-  }
+.c-blockquote__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  font-size: var(--font-size-caption);
+  font-style: normal;
+  color: var(--color-text-light);
+}
 
-  .c-blockquote__avatar {
-    inline-size: 48px;
-    block-size: 48px;
-    border-radius: var(--radius-full);
-    object-fit: cover;
-  }
+.c-blockquote__avatar {
+  inline-size: 48px;
+  block-size: 48px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
 
-  .c-blockquote__cite {
-    font-style: normal;
-  }
+.c-blockquote__cite {
+  font-style: normal;
 }

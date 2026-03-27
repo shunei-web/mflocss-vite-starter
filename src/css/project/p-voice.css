@@ -1,15 +1,22 @@
 .p-voice {
-  .p-voice__list {
-    display: grid;
-    gap: var(--space-xl);
+}
 
-    @media (width >= 768px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
+.p-voice__heading {
+}
 
-  .p-voice__card {
-    display: flex;
-    flex-direction: column;
+.p-voice__list {
+  display: grid;
+  gap: var(--space-xl);
+
+  @media (width >= 768px) {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.p-voice__blockquote {
+}
+
+.p-voice__card {
+  display: flex;
+  flex-direction: column;
 }

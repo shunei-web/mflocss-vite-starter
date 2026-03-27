@@ -1,40 +1,41 @@
 .p-privacy {
-  .p-privacy__title {
+}
+
+.p-privacy__title {
+  font-weight: var(--font-weight-heading);
+  margin-block-end: var(--space-lg);
+}
+
+.p-privacy__body {
+  max-inline-size: 40rem;
+  line-height: var(--line-height-body);
+
+  & h2 {
     font-weight: var(--font-weight-heading);
-    margin-block-end: var(--space-lg);
+    margin-block: var(--space-xl) var(--space-sm);
   }
 
-  .p-privacy__body {
-    max-inline-size: 40rem;
-    line-height: var(--line-height-body);
+  & p {
+    margin-block-end: var(--space-md);
+  }
 
-    & h2 {
-      font-weight: var(--font-weight-heading);
-      margin-block: var(--space-xl) var(--space-sm);
-    }
+  & ul {
+    margin-block-end: var(--space-md);
+    padding-inline-start: var(--space-lg);
+  }
 
-    & p {
-      margin-block-end: var(--space-md);
-    }
+  & li {
+    margin-block-end: var(--space-xs);
+  }
 
-    & ul {
-      margin-block-end: var(--space-md);
-      padding-inline-start: var(--space-lg);
-    }
+  & a {
+    color: var(--color-main);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
 
-    & li {
-      margin-block-end: var(--space-xs);
-    }
-
-    & a {
-      color: var(--color-main);
-      text-decoration: underline;
-      text-underline-offset: 0.2em;
-
-      @media (any-hover: hover) {
-        &:hover {
-          text-decoration: none;
-        }
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: none;
       }
     }
   }
