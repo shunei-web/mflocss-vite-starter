@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "lint:css": "stylelint \"src/**/*.css\"",
     "lint:js": "eslint \"src/**/*.js\"",
-    "format": "prettier --write \"src/**/*.{html,css,js}\""
+    "format": "prettier --write \"src/**/*.{html,css,js}\"",
+    "check": "pnpm format && pnpm lint:css && pnpm lint:js && pnpm build"
   },
   "devDependencies": {
     "@eslint/js": "^9.0.0",
