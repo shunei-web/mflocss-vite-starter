@@ -46,7 +46,6 @@
   }
 }
 
-/* × 状態（aria-expanded="true"） */
 .c-hamburger[aria-expanded='true'] .c-hamburger__line {
   background-color: transparent;
 
