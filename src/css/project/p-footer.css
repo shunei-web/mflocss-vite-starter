@@ -1,7 +1,7 @@
 .p-footer {
   padding-block: var(--space-3xl);
   background-color: var(--color-bg-secondary);
-  border-block-start: 1px solid var(--color-border);
+  border-block-start: calc(1 * 1px) solid var(--color-border);
 }
 
 .p-footer__inner {

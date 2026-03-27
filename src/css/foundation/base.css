@@ -48,8 +48,8 @@
 }
 
 :where(:focus-visible) {
-  outline: 2px solid var(--color-focus-ring);
-  outline-offset: 2px;
+  outline: calc(2 * 1px) solid var(--color-focus-ring);
+  outline-offset: calc(2 * 1px);
 }
 
 @media (prefers-reduced-motion: no-preference) {

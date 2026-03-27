@@ -1,6 +1,6 @@
 .c-accordion {
   overflow: hidden;
-  border: 1px solid var(--color-border);
+  border: calc(1 * 1px) solid var(--color-border);
   border-radius: var(--radius-md);
 
   & + & {

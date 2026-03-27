@@ -5,8 +5,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  inline-size: 44px;
-  block-size: 44px;
+  inline-size: calc(44 * 1px);
+  block-size: calc(44 * 1px);
   cursor: pointer;
 
   @media (width >= 768px) {
@@ -18,10 +18,10 @@
 .c-hamburger__line::before,
 .c-hamburger__line::after {
   display: block;
-  inline-size: 20px;
-  block-size: 2px;
+  inline-size: calc(20 * 1px);
+  block-size: calc(2 * 1px);
   background-color: currentcolor;
-  border-radius: 1px;
+  border-radius: calc(1 * 1px);
   transition:
     transform 0.3s var(--ease-out-cubic),
     opacity 0.3s var(--ease-out-cubic);
@@ -38,11 +38,11 @@
   }
 
   &::before {
-    translate: 0 -6px;
+    translate: 0 calc(-6 * 1px);
   }
 
   &::after {
-    translate: 0 6px;
+    translate: 0 calc(6 * 1px);
   }
 }
 
