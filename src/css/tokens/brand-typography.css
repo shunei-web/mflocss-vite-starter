@@ -1,5 +1,0 @@
-/* CUSTOMIZE: フォントファミリーを差し替え */
-:root {
-  --font-family-base: 'Noto Sans JP', 'Hiragino Sans',
-    'Hiragino Kaku Gothic ProN', meiryo, sans-serif;
-}

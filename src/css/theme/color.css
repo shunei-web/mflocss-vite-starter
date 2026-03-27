@@ -10,7 +10,7 @@
   --color-text: light-dark(var(--neutral-900), var(--neutral-50));
   --color-text-light: light-dark(var(--neutral-600), var(--neutral-400));
   --color-border: light-dark(var(--neutral-300), var(--neutral-600));
-  --color-error: light-dark(var(--error-500), var(--error-400));
+  --color-error: light-dark(var(--red-500), var(--red-400));
   --color-shadow: light-dark(oklch(from var(--black) l c h / 10%), oklch(from var(--white) l c h / 8%));
 
   /* コンテキストセマンティック */

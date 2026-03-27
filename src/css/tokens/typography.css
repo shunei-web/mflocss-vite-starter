@@ -1,4 +1,10 @@
 :root {
+  /* CUSTOMIZE: フォントファミリーを差し替え */
+  --font-family-base: 'Noto Sans JP', 'Hiragino Sans',
+    'Hiragino Kaku Gothic ProN', meiryo, sans-serif;
+
+  /* --- グローバル --- */
+
   /* ウェイト */
   --font-weight-normal: 400;
   --font-weight-bold: 700;
