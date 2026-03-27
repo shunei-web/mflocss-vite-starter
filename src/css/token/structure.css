@@ -11,8 +11,8 @@
   --section-narrow-max: calc(64 * var(--px));
 
   /* CUSTOMIZE: コンテンツ幅（px。レイアウト制約） */
-  --content-width: calc(1280 * 1px);
-  --content-width-narrow: calc(720 * 1px);
+  --content-width: 1280px;
+  --content-width-narrow: 720px;
 
   /* CUSTOMIZE: ヘッダー高さ */
   --header-size: calc(64 * var(--px));

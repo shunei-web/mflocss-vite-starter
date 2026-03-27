@@ -1,7 +1,7 @@
 /* CUSTOMIZE: 角丸スケール（px。装飾のためスケーリング不要） */
 :root {
-  --radius-sm: calc(4 * 1px);
-  --radius-md: calc(8 * 1px);
-  --radius-lg: calc(16 * 1px);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
   --radius-full: calc(infinity * 1px);
 }
