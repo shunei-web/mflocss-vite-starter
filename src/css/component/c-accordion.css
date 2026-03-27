@@ -3,9 +3,8 @@
   border-radius: var(--radius-md);
   overflow: hidden;
 
-  /* 隣接時にボーダーが二重にならないよう1px分を重ねる */
   & + & {
-    margin-block-start: calc(-1 * 1px);
+    border-block-start: none;
   }
 
   .c-accordion__summary {
