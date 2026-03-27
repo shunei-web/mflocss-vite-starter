@@ -94,9 +94,11 @@ pnpm build
 | `pnpm dev` | 開発サーバー起動（HMR 有効） |
 | `pnpm build` | 本番ビルド（dist/ に出力） |
 | `pnpm preview` | ビルド結果のプレビュー |
+| `pnpm check` | format + lint を一括実行 |
+| `pnpm format` | Prettier でコードを整形 |
 | `pnpm lint:css` | Stylelint でスタイルを検査 |
 | `pnpm lint:js` | ESLint でスクリプトを検査 |
-| `pnpm format` | Prettier でコードを整形 |
+| `pnpm lint:html` | markuplint で HTML を検査 |
 
 ## @container vs @media の使い分け
 
@@ -156,7 +158,7 @@ src/
 │   ├── property.css       # @property 定義
 │   ├── tokens/            # 生のデザイン値
 │   ├── theme/             # セマンティック変数
-│   ├── foundation/        # リセット・ベーススタイル
+│   ├── foundation/        # リセット・ベーススタイル（index.css でサブレイヤー管理）
 │   ├── layout/            # レイアウトプリミティブ
 │   ├── component/         # 再利用可能な UI パーツ
 │   ├── project/           # ページ固有のスタイル
