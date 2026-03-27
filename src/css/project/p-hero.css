@@ -1,5 +1,5 @@
 .p-hero {
-  /* 直接プロパティの上書き例 */
+  /* Hero はセクション余白を広めに取る */
   --section-padding-min: var(--section-wide-min);
   --section-padding-max: var(--section-wide-max);
 

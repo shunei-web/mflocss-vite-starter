@@ -1,4 +1,5 @@
 .p-numbers {
+  /* セクション余白を狭めに */
   --section-padding-min: var(--section-narrow-min);
   --section-padding-max: var(--section-narrow-max);
 
