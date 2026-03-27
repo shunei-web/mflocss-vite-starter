@@ -11,7 +11,7 @@ pnpm install
 pnpm dev
 ```
 
-ブラウザで `http://localhost:5173` を開き、LP が表示されることを確認してください。
+ターミナルに表示された URL をブラウザで開き、LP が表示されることを確認してください。
 
 ### テキストを差し替える
 
@@ -43,7 +43,7 @@ HTML 内の `<!-- CUSTOMIZE: ... -->` コメントを検索すると、差し替
 
 ## 余白・文字サイズの変え方
 
-トークン層（`src/css/token/`）にデザイン値が集約されています。`--px` ヘルパー（`calc(1rem / 16)`）により、数値はデザインカンプの px 指定値をそのまま記述できます。
+Token 層（`src/css/token/`）にデザイン値が集約されています。`--px` ヘルパー（`calc(1rem / 16)`）により、数値はデザインカンプの px 指定値をそのまま記述できます。
 
 ```css
 /* 数値を変えるだけ。rem への変換は --px が担う */
@@ -76,7 +76,7 @@ mFLOCSS 準拠で新しい Component を追加する手順:
 **Component の条件:**
 
 - Portability Test に合格すること（別のページ・プロジェクトに持っていっても壊れない）
-- token 層のセマンティック変数（`--color-*`, `--space-*` 等）のみ参照。`--_` プレフィックスの内部変数は直接参照しない
+- Token 層のセマンティック変数（`--color-*`, `--space-*` 等）のみ参照。`--_` プレフィックスの内部変数は直接参照しない
 - position: fixed/sticky は使わない（Project 層が担当）
 - 外部レイアウト（margin, width, position）を自身で持たない
 
@@ -124,22 +124,6 @@ pnpm build
 | この LP での例 | Features カード内のレイアウト切替 | ヘッダーのナビ表示/非表示 |
 
 `l-container.css` で `container-type: inline-size` を宣言し、Project/Component 層でクエリを記述します。
-
-## MAY パターンの判断根拠
-
-mFLOCSS spec で MAY（任意）とされているパターンをこの LP で採用した理由:
-
-### Component ネスト（c-button 内に c-icon）
-
-spec は「Component の内部に別の Component をネストしてよい（MAY）」としています。c-button + c-icon は、ボタンにアイコンを添えるという汎用的な組み合わせであり、どちらも独立して機能するため採用しました。
-
-### Project コンテンツ内包（c-blockquote 内に p-voice のコンテンツ）
-
-Component の構造を壊さない範囲で、Project 固有のコンテンツ（アバター画像、引用者名）を内包しています。Component 側のスタイルは Project の存在を知らず、Project 側が Component の公開変数や拡張点を通じてスタイルを調整する設計です。
-
-### Project Element 拡張点
-
-固有スタイルがなくても Project Element クラスを付与（MAY）しています。将来的にページ固有のスタイルを追加する拡張点として機能します。
 
 ## 対象ブラウザ
 
@@ -189,7 +173,7 @@ public/
 ├── favicon.svg
 ├── favicon.ico
 ├── apple-touch-icon.png
-└── ogp.svg
+└── ogp.png
 ```
 
 ## この本について
