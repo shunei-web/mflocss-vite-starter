@@ -3,7 +3,7 @@
   --font-family-base: 'Noto Sans JP', 'Hiragino Sans',
     'Hiragino Kaku Gothic ProN', meiryo, sans-serif;
 
-  /* グローバル: プロジェクト非依存の普遍値 */
+  /* グローバル: 多くのプロジェクトで共通して使える値 */
 
   /* ウェイト */
   --font-weight-normal: 400;
