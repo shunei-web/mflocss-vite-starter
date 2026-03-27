@@ -2,9 +2,7 @@
   /* CUSTOMIZE: プロジェクトごとに変わる値 */
 
   /* フォントファミリー */
-  --font-family-base:
-    'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', meiryo,
-    sans-serif;
+  --font-family-base: 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', meiryo, sans-serif;
 
   /* 行間 */
   --line-height-body: 1.8;

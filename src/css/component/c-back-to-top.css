@@ -4,11 +4,11 @@
   justify-content: center;
   inline-size: 48px;
   block-size: 48px;
-  border-radius: var(--radius-full);
-  background-color: var(--color-main);
-  color: var(--color-surface);
   font-size: 20px;
+  color: var(--color-surface);
   text-decoration: none;
+  background-color: var(--color-main);
+  border-radius: var(--radius-full);
   transition: background-color 0.2s var(--ease-out-cubic);
 
   @media (any-hover: hover) {

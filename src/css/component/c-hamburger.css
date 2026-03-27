@@ -32,9 +32,9 @@
 
   &::before,
   &::after {
-    content: '';
     position: absolute;
     inset-inline-start: 0;
+    content: '';
   }
 
   &::before {
@@ -50,12 +50,12 @@
   background-color: transparent;
 
   &::before {
-    translate: 0 0;
     rotate: 45deg;
+    translate: 0 0;
   }
 
   &::after {
-    translate: 0 0;
     rotate: -45deg;
+    translate: 0 0;
   }
 }

@@ -1,7 +1,7 @@
 .c-accordion {
+  overflow: hidden;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  overflow: hidden;
 
   & + & {
     border-block-start: none;
@@ -10,9 +10,9 @@
 
 .c-accordion__summary {
   display: flex;
+  gap: var(--space-md);
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-md);
   padding: var(--space-md) var(--space-lg);
   font-weight: var(--font-weight-heading);
   line-height: var(--line-height-title);

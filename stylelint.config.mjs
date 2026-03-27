@@ -1,20 +1,15 @@
 export default {
-  extends: ['stylelint-config-standard'],
+  extends: ['stylelint-config-standard', 'stylelint-config-recess-order'],
   rules: {
     'block-no-empty': [true, { severity: 'warning' }],
     'selector-class-pattern': null,
-    'custom-property-pattern':
-      '^([a-z][a-z0-9]*(-[a-z0-9]+)*|_[a-z0-9]+(-[a-z0-9]+)*)$',
+    'custom-property-pattern': '^([a-z][a-z0-9]*(-[a-z0-9]+)*|_[a-z0-9]+(-[a-z0-9]+)*)$',
     'at-rule-no-unknown': [true, { ignoreAtRules: ['layer'] }],
     'import-notation': 'string',
     'property-no-vendor-prefix': [
       true,
       {
-        ignoreProperties: [
-          'text-size-adjust',
-          '-webkit-text-size-adjust',
-          '-webkit-tap-highlight-color',
-        ],
+        ignoreProperties: ['text-size-adjust', '-webkit-text-size-adjust', '-webkit-tap-highlight-color'],
       },
     ],
   },

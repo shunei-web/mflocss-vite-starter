@@ -1,10 +1,10 @@
 /* ボタン */
 :where(button) {
-  cursor: pointer;
-  border: none;
-  background: none;
   padding: 0;
   touch-action: manipulation;
+  cursor: pointer;
+  background: none;
+  border: none;
 }
 
 /* ラベル */
@@ -14,13 +14,13 @@
 
 /* セレクトボックス */
 :where(select) {
+  padding-inline-end: 2.5rem;
   appearance: none;
   background-color: var(--color-surface);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23666' d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 1rem;
-  padding-inline-end: 2.5rem;
 
   /* NOTE: SVG data URI 内では CSS カスタムプロパティ・light-dark() が使えないため、Foundation でダークモード対応する（spec §5.2 SHOULD の正当な逸脱） */
   @media (prefers-color-scheme: dark) {
@@ -30,26 +30,23 @@
 
 /* ラジオボタン・チェックボックス共通 */
 :where(input[type='radio'], input[type='checkbox']) {
-  appearance: none;
+  flex-shrink: 0;
   inline-size: 1.25em;
   block-size: 1.25em;
   margin: 0;
-  border: 1px solid var(--color-border);
   vertical-align: middle;
+  appearance: none;
   cursor: pointer;
-  flex-shrink: 0;
+  border: 1px solid var(--color-border);
   transition: border-color 0.2s var(--ease-out-cubic);
 }
 
 :where(input[type='radio']:checked, input[type='checkbox']:checked) {
-  border-color: var(--color-main);
   background-color: var(--color-main);
+  border-color: var(--color-main);
 }
 
-:where(
-  input[type='radio']:focus-visible,
-  input[type='checkbox']:focus-visible
-) {
+:where(input[type='radio']:focus-visible, input[type='checkbox']:focus-visible) {
   outline: 2px solid var(--color-focus-ring);
   outline-offset: 2px;
 }
@@ -60,11 +57,7 @@
 }
 
 :where(input[type='radio']:checked) {
-  background-image: radial-gradient(
-    circle at center,
-    var(--color-surface) 30%,
-    var(--color-main) 32%
-  );
+  background-image: radial-gradient(circle at center, var(--color-surface) 30%, var(--color-main) 32%);
 }
 
 /* チェックボックス */
@@ -74,8 +67,8 @@
 
 :where(input[type='checkbox']:checked) {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' d='M3.5 8l3 3 6-6'/%3E%3C/svg%3E");
-  background-size: 100%;
   background-position: center;
+  background-size: 100%;
 
   /* NOTE: SVG data URI 内では CSS カスタムプロパティ・light-dark() が使えないため、Foundation でダークモード対応する（spec §5.2 SHOULD の正当な逸脱） */
   @media (prefers-color-scheme: dark) {
@@ -85,8 +78,8 @@
 
 /* 無効状態 */
 :where(:disabled) {
-  opacity: 0.5;
   cursor: not-allowed;
+  opacity: 0.5;
 }
 
 /* プレースホルダー */

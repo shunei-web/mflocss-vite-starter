@@ -2,8 +2,8 @@
 }
 
 .p-privacy__title {
-  font-weight: var(--font-weight-heading);
   margin-block-end: var(--space-lg);
+  font-weight: var(--font-weight-heading);
 }
 
 .p-privacy__body {
@@ -11,8 +11,8 @@
   line-height: var(--line-height-body);
 
   & h2 {
-    font-weight: var(--font-weight-heading);
     margin-block: var(--space-xl) var(--space-sm);
+    font-weight: var(--font-weight-heading);
   }
 
   & p {
@@ -20,8 +20,8 @@
   }
 
   & ul {
-    margin-block-end: var(--space-md);
     padding-inline-start: var(--space-lg);
+    margin-block-end: var(--space-md);
   }
 
   & li {

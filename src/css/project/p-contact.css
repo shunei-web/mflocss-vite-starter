@@ -2,22 +2,22 @@
 }
 
 .p-contact__title {
-  text-align: center;
   margin-block-end: var(--space-md);
+  text-align: center;
 }
 
 .p-contact__lead {
-  text-align: center;
-  color: var(--color-text-light);
   margin-block-end: var(--space-2xl);
+  color: var(--color-text-light);
+  text-align: center;
 }
 
 .p-contact__form {
-  max-inline-size: 640px;
-  margin-inline: auto;
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
+  max-inline-size: 640px;
+  margin-inline: auto;
 }
 
 .p-contact__field {
@@ -28,8 +28,8 @@
 
 /* :has() による必須マーク自動付与 */
 .p-contact__label:has(+ :required)::after {
-  content: ' *';
   color: var(--color-error);
+  content: ' *';
 }
 
 .p-contact__textarea {
@@ -40,11 +40,11 @@
 .p-contact__textarea,
 .p-contact__select {
   padding: var(--space-sm) var(--space-md);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  background-color: var(--color-surface);
   font: inherit;
   color: inherit;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
   transition: border-color 0.2s var(--ease-out-cubic);
 
   &:focus {
@@ -57,9 +57,9 @@
 }
 
 .p-contact__error {
+  min-block-size: 0;
   font-size: var(--font-size-small);
   color: var(--color-error);
-  min-block-size: 0;
 
   &:empty {
     display: none;
@@ -73,8 +73,8 @@
 }
 
 .p-contact__legend {
-  font-weight: var(--font-weight-heading);
   margin-block-end: var(--space-xs);
+  font-weight: var(--font-weight-heading);
 }
 
 .p-contact__radio-group {
@@ -86,8 +86,8 @@
 .p-contact__radio-label,
 .p-contact__checkbox-label {
   display: flex;
-  align-items: center;
   gap: var(--space-sm);
+  align-items: center;
   cursor: pointer;
 }
 

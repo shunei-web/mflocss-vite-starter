@@ -7,14 +7,14 @@
 
 /* Document */
 :where(:root) {
+  scrollbar-gutter: stable;
   line-height: 1.5;
-  text-spacing-trim: trim-start;
-  text-autospace: normal;
   line-break: strict;
   overflow-wrap: anywhere;
+  text-spacing-trim: trim-start;
+  text-autospace: normal;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  scrollbar-gutter: stable;
   -webkit-tap-highlight-color: transparent;
 
   /* ドロワー表示中の背面スクロール抑制 */
@@ -95,17 +95,17 @@
 
 /* Forms */
 :where(button, input, select, textarea) {
+  font: inherit;
+  color: inherit;
+  letter-spacing: unset;
   border: 1px solid;
   border-radius: unset;
-  color: inherit;
-  font: inherit;
-  letter-spacing: unset;
 }
 
 :where(fieldset) {
   min-inline-size: 0;
-  margin: unset;
   padding: unset;
+  margin: unset;
   border: unset;
 }
 
@@ -124,8 +124,8 @@
 
 /* Interactive */
 :where(summary) {
-  list-style-type: '';
   cursor: pointer;
+  list-style-type: '';
 }
 
 :where(dialog, [popover]) {

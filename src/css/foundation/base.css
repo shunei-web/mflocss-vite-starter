@@ -43,8 +43,8 @@
 }
 
 :where(::selection) {
-  background-color: var(--color-main);
   color: var(--color-surface);
+  background-color: var(--color-main);
 }
 
 :where(:focus-visible) {

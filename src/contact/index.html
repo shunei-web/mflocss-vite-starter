@@ -8,10 +8,7 @@
     <meta name="color-scheme" content="light dark" />
     <!-- CUSTOMIZE: ページタイトル・説明文を差し替え -->
     <title>ご予約・お問い合わせ — iluha</title>
-    <meta
-      name="description"
-      content="iluha のご予約・お問い合わせフォーム。24時間以内に折り返しご連絡いたします。"
-    />
+    <meta name="description" content="iluha のご予約・お問い合わせフォーム。24時間以内に折り返しご連絡いたします。" />
     <!-- CUSTOMIZE: tokens/color.css のメインカラーに合わせて変更 -->
     <meta name="theme-color" content="#5b7a5e" />
     <!-- CUSTOMIZE: 本番 URL に差し替え -->
@@ -53,17 +50,10 @@
             <li><a href="/#voice" class="p-header__nav-link">お客様の声</a></li>
             <li><a href="/#faq" class="p-header__nav-link">よくある質問</a></li>
             <li>
-              <a href="/contact/" class="p-header__nav-link" aria-current="page"
-                >ご予約</a
-              >
+              <a href="/contact/" class="p-header__nav-link" aria-current="page">ご予約</a>
             </li>
           </ul>
-          <a
-            href="/contact/"
-            class="c-button -primary p-header__cta"
-            aria-current="page"
-            >初回体験を予約する</a
-          >
+          <a href="/contact/" class="c-button -primary p-header__cta" aria-current="page">初回体験を予約する</a>
         </nav>
 
         <button
@@ -77,49 +67,26 @@
           <span class="c-hamburger__line" aria-hidden="true"></span>
         </button>
 
-        <dialog
-          class="p-header__drawer"
-          id="drawer"
-          aria-labelledby="drawer-title"
-        >
+        <dialog class="p-header__drawer" id="drawer" aria-labelledby="drawer-title">
           <div class="p-header__drawer-inner">
-            <span id="drawer-title" class="u-visually-hidden"
-              >ナビゲーションメニュー</span
-            >
-            <nav
-              class="p-header__drawer-nav"
-              aria-label="ドロワーナビゲーション"
-            >
+            <span id="drawer-title" class="u-visually-hidden">ナビゲーションメニュー</span>
+            <nav class="p-header__drawer-nav" aria-label="ドロワーナビゲーション">
               <ul class="p-header__drawer-nav-list">
                 <li>
-                  <a href="/#features" class="p-header__drawer-nav-link"
-                    >特徴</a
-                  >
+                  <a href="/#features" class="p-header__drawer-nav-link">特徴</a>
                 </li>
                 <li>
-                  <a href="/#voice" class="p-header__drawer-nav-link"
-                    >お客様の声</a
-                  >
+                  <a href="/#voice" class="p-header__drawer-nav-link">お客様の声</a>
                 </li>
                 <li>
-                  <a href="/#faq" class="p-header__drawer-nav-link"
-                    >よくある質問</a
-                  >
+                  <a href="/#faq" class="p-header__drawer-nav-link">よくある質問</a>
                 </li>
                 <li>
-                  <a
-                    href="/contact/"
-                    class="p-header__drawer-nav-link"
-                    aria-current="page"
-                    >ご予約</a
-                  >
+                  <a href="/contact/" class="p-header__drawer-nav-link" aria-current="page">ご予約</a>
                 </li>
               </ul>
             </nav>
-            <a
-              href="/contact/"
-              class="c-button -primary p-header__drawer-cta"
-              aria-current="page"
+            <a href="/contact/" class="c-button -primary p-header__drawer-cta" aria-current="page"
               >初回体験を予約する</a
             >
           </div>
@@ -131,9 +98,7 @@
       <section class="l-section p-contact">
         <div class="l-inner">
           <h1 class="p-contact__title">ご予約・お問い合わせ</h1>
-          <p class="p-contact__lead">
-            下記フォームからお気軽にどうぞ。24時間以内に折り返しご連絡いたします。
-          </p>
+          <p class="p-contact__lead">下記フォームからお気軽にどうぞ。24時間以内に折り返しご連絡いたします。</p>
 
           <!-- CUSTOMIZE: フォーム送信先を実際のバックエンド URL に差し替え -->
           <form class="p-contact__form" action="/thanks/" method="post">
@@ -183,15 +148,8 @@
 
             <!-- お問い合わせ種別 -->
             <div class="p-contact__field">
-              <label for="category" class="p-contact__label"
-                >お問い合わせ種別</label
-              >
-              <select
-                id="category"
-                name="category"
-                class="p-contact__select"
-                required
-              >
+              <label for="category" class="p-contact__label">お問い合わせ種別</label>
+              <select id="category" name="category" class="p-contact__select" required>
                 <option value="">選択してください</option>
                 <option value="reservation">初回体験の予約</option>
                 <option value="inquiry">施術に関するお問い合わせ</option>
@@ -204,31 +162,15 @@
               <legend class="p-contact__legend">ご希望のプラン</legend>
               <div class="p-contact__radio-group">
                 <label class="p-contact__radio-label">
-                  <input
-                    type="radio"
-                    name="plan"
-                    value="body-care"
-                    class="p-contact__radio"
-                    required
-                  />
+                  <input type="radio" name="plan" value="body-care" class="p-contact__radio" required />
                   ボディケア（60分）
                 </label>
                 <label class="p-contact__radio-label">
-                  <input
-                    type="radio"
-                    name="plan"
-                    value="facial"
-                    class="p-contact__radio"
-                  />
+                  <input type="radio" name="plan" value="facial" class="p-contact__radio" />
                   フェイシャル（45分）
                 </label>
                 <label class="p-contact__radio-label">
-                  <input
-                    type="radio"
-                    name="plan"
-                    value="relaxation"
-                    class="p-contact__radio"
-                  />
+                  <input type="radio" name="plan" value="relaxation" class="p-contact__radio" />
                   リラクゼーション（90分）
                 </label>
               </div>
@@ -251,24 +193,14 @@
             <!-- 同意確認 -->
             <div class="p-contact__field">
               <label class="p-contact__checkbox-label">
-                <input
-                  type="checkbox"
-                  name="agree"
-                  class="p-contact__checkbox"
-                  required
-                />
+                <input type="checkbox" name="agree" class="p-contact__checkbox" required />
                 <a href="/privacy/">プライバシーポリシー</a>に同意する
               </label>
             </div>
 
             <!-- 送信 -->
             <div class="p-contact__actions">
-              <button
-                type="submit"
-                class="c-button -primary -large p-contact__submit"
-              >
-                送信する
-              </button>
+              <button type="submit" class="c-button -primary -large p-contact__submit">送信する</button>
             </div>
           </form>
         </div>
@@ -285,17 +217,13 @@
             <li><a href="/#faq" class="p-footer__nav-link">よくある質問</a></li>
             <li><a href="/contact/" class="p-footer__nav-link">ご予約</a></li>
             <li>
-              <a href="/privacy/" class="p-footer__nav-link"
-                >プライバシーポリシー</a
-              >
+              <a href="/privacy/" class="p-footer__nav-link">プライバシーポリシー</a>
             </li>
           </ul>
         </nav>
         <address class="p-footer__address">
           〒xxx-xxxx 東京都渋谷区○○ x-x-x ○○ビル 3F<br />
-          <a href="tel:03-xxxx-xxxx" class="p-footer__tel" translate="no"
-            >TEL: 03-xxxx-xxxx</a
-          ><br />
+          <a href="tel:03-xxxx-xxxx" class="p-footer__tel" translate="no">TEL: 03-xxxx-xxxx</a><br />
           営業時間: 10:00〜20:00（最終受付 19:00）<br />
           定休日: 毎週水曜日
         </address>
@@ -306,11 +234,7 @@
     </footer>
 
     <!-- Back to Top -->
-    <a
-      href="#"
-      class="c-back-to-top p-back-to-top"
-      aria-label="ページの先頭に戻る"
-    >
+    <a href="#" class="c-back-to-top p-back-to-top" aria-label="ページの先頭に戻る">
       <svg
         class="c-icon"
         width="20"

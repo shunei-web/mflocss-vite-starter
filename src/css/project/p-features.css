@@ -47,13 +47,13 @@
 
 .p-features__media {
   & img {
-    border-radius: var(--radius-md);
     inline-size: 100%;
+    border-radius: var(--radius-md);
   }
 }
 
 .p-features__caption {
+  margin-block-start: var(--space-sm);
   font-size: var(--font-size-small);
   color: var(--color-text-light);
-  margin-block-start: var(--space-sm);
 }

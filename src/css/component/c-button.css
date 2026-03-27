@@ -1,16 +1,16 @@
 .c-button {
   display: inline-flex;
+  gap: var(--space-sm);
   align-items: center;
   justify-content: center;
-  gap: var(--space-sm);
   padding: var(--space-sm) var(--space-lg);
-  border: 1px solid var(--color-main);
-  border-radius: var(--radius-lg);
-  font-weight: var(--font-weight-heading);
   font-size: inherit;
+  font-weight: var(--font-weight-heading);
   line-height: var(--line-height-title);
   text-decoration: none;
   cursor: pointer;
+  border: 1px solid var(--color-main);
+  border-radius: var(--radius-lg);
   transition:
     background-color 0.3s var(--ease-out-cubic),
     translate 0.3s var(--ease-out-cubic);
@@ -27,9 +27,9 @@
 
   /* CTA 用。accent で他のボタンと視覚的に差別化 */
   &.-primary {
+    color: var(--color-surface);
     background-color: var(--color-accent);
     border-color: var(--color-accent);
-    color: var(--color-surface);
 
     @media (any-hover: hover) {
       &:hover {
@@ -39,8 +39,8 @@
   }
 
   &.-ghost {
-    background-color: transparent;
     color: var(--color-main);
+    background-color: transparent;
 
     @media (any-hover: hover) {
       &:hover {
