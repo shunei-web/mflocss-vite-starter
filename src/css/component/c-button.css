@@ -14,8 +14,8 @@
   border: var(--border-width) solid var(--color-main);
   border-radius: var(--radius-lg);
   transition:
-    background-color 0.3s var(--ease-out-cubic),
-    translate 0.3s var(--ease-out-cubic);
+    background-color var(--duration-normal) var(--ease-out-cubic),
+    translate var(--duration-normal) var(--ease-out-cubic);
 
   @media (any-hover: hover) {
     &:hover {
@@ -54,7 +54,7 @@
   /* Hero・CTA 等の主要導線用。vi でコンテナ幅に連動 */
   &.-large {
     padding: var(--space-md) var(--space-xl);
-    font-size: clamp(1rem, 0.5vi + 0.9rem, 1.125rem);
+    font-size: clamp(calc(16 * var(--px)), 0.5vi + 0.9rem, calc(18 * var(--px)));
   }
 
   &.is-loading {

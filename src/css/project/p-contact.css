@@ -50,7 +50,7 @@
   background-color: var(--color-surface);
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-sm);
-  transition: border-color 0.2s var(--ease-out-cubic);
+  transition: border-color var(--duration-fast) var(--ease-out-cubic);
 
   &:focus {
     border-color: var(--color-main);

@@ -28,8 +28,8 @@
   background-color: currentcolor;
   border-radius: var(--_line-radius);
   transition:
-    transform 0.3s var(--ease-out-cubic),
-    opacity 0.3s var(--ease-out-cubic);
+    transform var(--duration-normal) var(--ease-out-cubic),
+    opacity var(--duration-normal) var(--ease-out-cubic);
 }
 
 .c-hamburger__line {

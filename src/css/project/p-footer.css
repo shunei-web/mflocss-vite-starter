@@ -27,7 +27,7 @@
   font-size: var(--font-size-caption);
   color: var(--color-text-light);
   text-decoration: none;
-  transition: color 0.2s var(--ease-out-cubic);
+  transition: color var(--duration-fast) var(--ease-out-cubic);
 
   @media (any-hover: hover) {
     &:hover {

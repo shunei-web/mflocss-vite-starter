@@ -38,7 +38,7 @@
   appearance: none;
   cursor: pointer;
   border: var(--border-width) solid var(--color-border);
-  transition: border-color 0.2s var(--ease-out-cubic);
+  transition: border-color var(--duration-fast) var(--ease-out-cubic);
 }
 
 :where(input[type='radio']:checked, input[type='checkbox']:checked) {

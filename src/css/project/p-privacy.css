@@ -8,8 +8,10 @@
 }
 
 .p-privacy__body {
-  max-inline-size: 40rem;
-  line-height: var(--line-height-body);
+  --_body-max: calc(640 * var(--px));
+
+  max-inline-size: var(--_body-max);
+  line-height: var(--line-height-text);
 
   & h2 {
     margin-block: var(--space-xl) var(--space-sm);

@@ -20,7 +20,7 @@
 
 .c-accordion__icon {
   flex-shrink: 0;
-  transition: rotate 0.3s var(--ease-out-cubic);
+  transition: rotate var(--duration-normal) var(--ease-out-cubic);
 
   .c-accordion[open] & {
     rotate: 180deg;

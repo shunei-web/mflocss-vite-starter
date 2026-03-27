@@ -6,8 +6,8 @@
   visibility: hidden;
   opacity: 0;
   transition:
-    opacity 0.3s var(--ease-out-cubic),
-    visibility 0.3s var(--ease-out-cubic);
+    opacity var(--duration-normal) var(--ease-out-cubic),
+    visibility var(--duration-normal) var(--ease-out-cubic);
 
   &.is-visible {
     visibility: visible;
