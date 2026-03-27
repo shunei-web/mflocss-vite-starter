@@ -14,13 +14,16 @@
 @import './tokens/space.css' layer(tokens);
 @import './tokens/radius.css' layer(tokens);
 @import './tokens/shadow.css' layer(tokens);
-@import './tokens/z-index.css' layer(tokens);
-@import './tokens/ease.css' layer(tokens);
 
-/* Theme: セマンティックな意味づけ（ダークモード切替はここで完結） */
+/* Theme: セマンティックな意味づけ + 単位付与（上位層はここだけ参照） */
 @import './theme/color.css' layer(theme);
 @import './theme/typography.css' layer(theme);
 @import './theme/structure.css' layer(theme);
+@import './theme/space.css' layer(theme);
+@import './theme/radius.css' layer(theme);
+@import './theme/shadow.css' layer(theme);
+@import './theme/z-index.css' layer(theme);
+@import './theme/ease.css' layer(theme);
 
 /* Foundation */
 @import './foundation/index.css' layer(foundation);

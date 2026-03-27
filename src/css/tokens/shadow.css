@@ -1,6 +1,8 @@
-/* グローバル: 多くのプロジェクトで共通して使える値 */
+/* CUSTOMIZE: プロジェクトごとに変わる値（単位なし。Theme で px に変換） */
 :root {
-  /* ジオメトリのみ。色は Theme 層 */
-  --shadow-sm: 0 1px 3px;
-  --shadow-md: 0 4px 12px;
+  /* ジオメトリのみ: y-offset, blur-radius */
+  --_shadow-sm-y: 1;
+  --_shadow-sm-blur: 3;
+  --_shadow-md-y: 4;
+  --_shadow-md-blur: 12;
 }

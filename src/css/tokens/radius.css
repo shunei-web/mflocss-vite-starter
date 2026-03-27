@@ -1,7 +1,7 @@
-/* グローバル: 多くのプロジェクトで共通して使える値 */
+/* CUSTOMIZE: プロジェクトごとに変わる値（単位なし。Theme で px に変換） */
 :root {
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 16px;
-  --radius-full: calc(infinity * 1px);
+  --_radius-sm: 4;
+  --_radius-md: 8;
+  --_radius-lg: 16;
+  --_radius-full: 9999;
 }

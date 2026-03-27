@@ -1,11 +1,11 @@
-/* グローバル: 多くのプロジェクトで共通して使える値 */
+/* CUSTOMIZE: プロジェクトごとに変わる値（単位なし。Theme で rem に変換） */
 :root {
   /* 余白: 8px グリッド */
-  --space-xs: 4px;
-  --space-sm: 8px;
-  --space-md: 16px;
-  --space-lg: 24px;
-  --space-xl: 32px;
-  --space-2xl: 48px;
-  --space-3xl: 64px;
+  --_space-xs: 4;
+  --_space-sm: 8;
+  --_space-md: 16;
+  --_space-lg: 24;
+  --_space-xl: 32;
+  --_space-2xl: 48;
+  --_space-3xl: 64;
 }
