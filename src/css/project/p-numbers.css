@@ -28,9 +28,11 @@
 }
 
 .p-numbers__value {
+  --_line-height: 1.2;
+
   font-size: var(--font-size-display);
   font-weight: var(--font-weight-heading);
-  line-height: 1.2;
+  line-height: var(--_line-height);
   color: var(--color-main);
 }
 

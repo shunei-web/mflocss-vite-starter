@@ -41,6 +41,20 @@ HTML 内の `<!-- CUSTOMIZE: ... -->` コメントを検索すると、差し替
 
 `<meta name="theme-color">` の HEX 値も合わせて変更してください。
 
+## 余白・文字サイズの変え方
+
+トークン層（`src/css/token/`）にデザイン値が集約されています。`--px` ヘルパー（`calc(1rem / 16)`）により、数値はデザインカンプの px 指定値をそのまま記述できます。
+
+```css
+/* 数値を変えるだけ。rem への変換は --px が担う */
+--space-lg: calc(24 * var(--px));   /* 24px 相当の rem */
+--font-size-h1: clamp(calc(32 * var(--px)), 4vi + 1rem, calc(56 * var(--px)));
+```
+
+## ブレークポイントの変更
+
+デフォルトのブレークポイントは `768px` です。CSS の仕様上 `@media` にカスタムプロパティは使えないため、変更する場合はプロジェクト全体で `768px` を検索置換してください。
+
 ## セクションの削除方法
 
 各セクションは独立しているため、HTML の `<section>` ブロックを削除するだけで動作します。
@@ -62,7 +76,7 @@ mFLOCSS 準拠で新しい Component を追加する手順:
 **Component の条件:**
 
 - Portability Test に合格すること（別のページ・プロジェクトに持っていっても壊れない）
-- Theme のセマンティック変数のみ参照（Tokens 直接参照は避ける）
+- token 層のセマンティック変数（`--color-*`, `--space-*` 等）のみ参照。`--_` プレフィックスの内部変数は直接参照しない
 - position: fixed/sticky は使わない（Project 層が担当）
 - 外部レイアウト（margin, width, position）を自身で持たない
 
@@ -155,7 +169,7 @@ src/
 ├── css/
 │   ├── style.css          # エントリポイント
 │   ├── layer-order.css    # @layer 先制宣言
-│   ├── property.css       # @property 定義
+│   ├── property.css       # @property 定義（@layer 外。CSS 仕様の制約）
 │   ├── token/             # デザイントークン（カラー・タイポグラフィ・余白等）
 │   ├── reset/             # ブラウザリセット
 │   ├── foundation/        # 要素の基本スタイル（base + form）
