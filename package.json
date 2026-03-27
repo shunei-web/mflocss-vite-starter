@@ -10,7 +10,7 @@
     "lint:css": "stylelint \"src/**/*.css\"",
     "lint:js": "eslint \"src/**/*.js\"",
     "lint:html": "markuplint \"src/**/*.html\"",
-    "format": "prettier --write \"src/**/*.{html,css,js}\"",
+    "format": "prettier --write .",
     "check": "pnpm format && pnpm lint:css && pnpm lint:js && pnpm lint:html"
   },
   "devDependencies": {
