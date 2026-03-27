@@ -83,6 +83,7 @@
     max-block-size: calc(100dvb - var(--header-size));
     inline-size: 100%;
     block-size: calc(100dvb - var(--header-size));
+    overflow-y: auto;
 
     &[open] {
       transform: translateX(0);
@@ -93,12 +94,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: var(--space-xl);
     min-block-size: 100%;
     padding: var(--space-xl);
     overflow-y: auto;
     overscroll-behavior-block: contain;
+
+    /* 中央寄せ: ナビを margin-block: auto で中央に */
+    & > nav {
+      margin-block: auto;
+    }
   }
 
 
