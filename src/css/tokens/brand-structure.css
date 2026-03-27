@@ -1,13 +1,5 @@
+/* CUSTOMIZE: レイアウト・セクション設計を差し替え */
 :root {
-  /* 余白: 8px グリッド */
-  --space-xs: 4px;
-  --space-sm: 8px;
-  --space-md: 16px;
-  --space-lg: 24px;
-  --space-xl: 32px;
-  --space-2xl: 48px;
-  --space-3xl: 64px;
-
   /* セクション余白（3段階）:
      wide = Hero, CTA（広い余白で訴求力を高める）
      standard = Features, Voice, FAQ（通常のセクション）
@@ -19,26 +11,10 @@
   --section-narrow-min: 40px;
   --section-narrow-max: 64px;
 
-  /* 角丸 */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 16px;
-  --radius-full: calc(infinity * 1px);
-
-  /* シャドウ（ジオメトリのみ。色は Theme 層） */
-  --shadow-sm: 0 1px 3px;
-  --shadow-md: 0 4px 12px;
-
   /* コンテンツ幅 */
   --content-max: 1280px;
   --content-narrow: 720px;
 
   /* ヘッダー高さ */
   --header-height: 64px;
-
-  /* z-index */
-  --z-back-to-top: 5;
-  --z-drawer: 10;
-  --z-header: 20;
-  --z-skip-link: 100;
 }

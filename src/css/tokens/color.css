@@ -1,14 +1,4 @@
 :root {
-  /* CUSTOMIZE: ブランドカラーを差し替え */
-
-  /* Main — セージグリーン（H:150） */
-  --sage-400: oklch(65% 0.08 150deg);
-  --sage-600: oklch(45% 0.1 150deg);
-
-  /* Accent — テラコッタ（H:35） */
-  --terracotta-400: oklch(65% 0.12 35deg);
-  --terracotta-500: oklch(55% 0.15 35deg);
-
   /* Neutral — ウォームグレー（H:70） */
   --neutral-50: oklch(98% 0.005 70deg);
   --neutral-100: oklch(95% 0.005 70deg);
