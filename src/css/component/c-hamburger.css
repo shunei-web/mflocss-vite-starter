@@ -2,6 +2,11 @@
    aria-expanded の状態に連動して変化する */
 
 .c-hamburger {
+  --_line-width: 20px;
+  --_line-height: 2px;
+  --_line-gap: 6px;
+  --_line-radius: 1px;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,10 +23,10 @@
 .c-hamburger__line::before,
 .c-hamburger__line::after {
   display: block;
-  inline-size: 20px;
-  block-size: 2px;
+  inline-size: var(--_line-width);
+  block-size: var(--_line-height);
   background-color: currentcolor;
-  border-radius: 1px;
+  border-radius: var(--_line-radius);
   transition:
     transform 0.3s var(--ease-out-cubic),
     opacity 0.3s var(--ease-out-cubic);
@@ -38,11 +43,11 @@
   }
 
   &::before {
-    translate: 0 -6px;
+    translate: 0 calc(var(--_line-gap) * -1);
   }
 
   &::after {
-    translate: 0 6px;
+    translate: 0 var(--_line-gap);
   }
 }
 

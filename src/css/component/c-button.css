@@ -1,4 +1,6 @@
 .c-button {
+  --_hover-lift: -2px;
+
   display: inline-flex;
   gap: var(--space-sm);
   align-items: center;
@@ -17,7 +19,7 @@
 
   @media (any-hover: hover) {
     &:hover {
-      translate: 0 -2px;
+      translate: 0 var(--_hover-lift);
     }
   }
 

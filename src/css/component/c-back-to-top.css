@@ -1,10 +1,12 @@
 .c-back-to-top {
+  --_icon-size: 20px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
   inline-size: var(--size-icon-area);
   block-size: var(--size-icon-area);
-  font-size: 20px;
+  font-size: var(--_icon-size);
   color: var(--color-surface);
   text-decoration: none;
   background-color: var(--color-main);

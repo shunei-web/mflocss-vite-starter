@@ -17,7 +17,9 @@
 }
 
 .p-cta__title {
-  max-inline-size: 600px;
+  --_title-max: 600px;
+
+  max-inline-size: var(--_title-max);
 }
 
 .p-cta__text {

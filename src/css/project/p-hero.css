@@ -52,8 +52,10 @@
 }
 
 .p-hero__media {
+  --_media-max: 800px;
+
   inline-size: 100%;
-  max-inline-size: 800px;
+  max-inline-size: var(--_media-max);
 
   & img {
     border-radius: var(--radius-md);

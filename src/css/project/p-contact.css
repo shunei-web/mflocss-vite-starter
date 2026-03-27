@@ -14,10 +14,12 @@
 }
 
 .p-contact__form {
+  --_form-max: 640px;
+
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
-  max-inline-size: 640px;
+  max-inline-size: var(--_form-max);
   margin-inline: auto;
 }
 
@@ -34,7 +36,9 @@
 }
 
 .p-contact__textarea {
-  min-block-size: 160px;
+  --_textarea-min: 160px;
+
+  min-block-size: var(--_textarea-min);
 }
 
 .p-contact__input,

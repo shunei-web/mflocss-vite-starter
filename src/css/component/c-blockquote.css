@@ -1,6 +1,8 @@
 .c-blockquote {
+  --_border-width: 3px;
+
   padding-inline-start: var(--space-lg);
-  border-inline-start: 3px solid var(--color-main);
+  border-inline-start: var(--_border-width) solid var(--color-main);
 }
 
 .c-blockquote__title {
