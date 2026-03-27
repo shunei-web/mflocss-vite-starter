@@ -23,9 +23,7 @@
 @import './theme/structure.css' layer(theme);
 
 /* Foundation */
-@import './foundation/reset.css' layer(foundation.reset);
-@import './foundation/base.css' layer(foundation.base);
-@import './foundation/form.css' layer(foundation.form);
+@import './foundation/index.css' layer(foundation);
 
 /* Layout */
 @import './layout/l-viewport.css' layer(layout);
