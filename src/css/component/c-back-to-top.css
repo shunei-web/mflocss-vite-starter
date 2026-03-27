@@ -2,9 +2,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  inline-size: calc(48 * 1px);
-  block-size: calc(48 * 1px);
-  font-size: calc(20 * 1px);
+  inline-size: 48px;
+  block-size: 48px;
+  font-size: 20px;
   color: var(--color-surface);
   text-decoration: none;
   background-color: var(--color-main);

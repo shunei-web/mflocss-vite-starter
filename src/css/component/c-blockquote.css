@@ -1,6 +1,6 @@
 .c-blockquote {
   padding-inline-start: var(--space-lg);
-  border-inline-start: calc(3 * 1px) solid var(--color-main);
+  border-inline-start: 3px solid var(--color-main);
 }
 
 .c-blockquote__title {
@@ -24,8 +24,8 @@
 }
 
 .c-blockquote__avatar {
-  inline-size: calc(48 * 1px);
-  block-size: calc(48 * 1px);
+  inline-size: 48px;
+  block-size: 48px;
   object-fit: cover;
   border-radius: var(--radius-full);
 }

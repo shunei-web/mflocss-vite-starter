@@ -2,7 +2,7 @@
   @keyframes fade-in-slide-up {
     from {
       opacity: 0;
-      translate: 0 calc(24 * 1px);
+      translate: 0 24px;
     }
   }
 

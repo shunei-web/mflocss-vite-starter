@@ -23,7 +23,7 @@
   flex-direction: column;
   gap: var(--space-lg);
   align-items: center;
-  max-inline-size: var(--content-width-narrow);
+  max-inline-size: 720px;
 }
 
 .p-hero__title {
@@ -31,7 +31,7 @@
 }
 
 .p-hero__lead {
-  font-size: clamp(var(--font-size-caption), 0.3vi + 0.9rem, calc(18 * var(--px)));
+  font-size: clamp(1rem, 0.3vi + 0.9rem, 1.125rem);
   color: var(--color-text-light);
 }
 
@@ -53,7 +53,7 @@
 
 .p-hero__media {
   inline-size: 100%;
-  max-inline-size: calc(800 * 1px);
+  max-inline-size: 800px;
 
   & img {
     border-radius: var(--radius-md);
