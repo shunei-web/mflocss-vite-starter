@@ -9,7 +9,6 @@
 
 /* Token: デザイン値の定義 + 単位付与（上位層はここだけ参照） */
 @import './token/helpers.css' layer(token);
-@import './token/color-primitive.css' layer(token);
 @import './token/color.css' layer(token);
 @import './token/typography.css' layer(token);
 @import './token/structure.css' layer(token);

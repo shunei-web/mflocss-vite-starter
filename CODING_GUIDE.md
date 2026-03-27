@@ -54,7 +54,7 @@ JavaScript で切り替える状態は `.is-*` を使用:
 }
 ```
 
-例外: `color-primitive.css` の `--_` パレット変数は `color.css` から参照されます（カラーの primitive → semantic 変換のため）。
+例外: `color.css` 内の `--_` パレット変数は同ファイルのセマンティック変数から参照されます（primitive → semantic 変換）。
 
 ## ファイル追加手順
 

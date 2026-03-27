@@ -23,7 +23,7 @@ HTML 内の `<!-- CUSTOMIZE: ... -->` コメントを検索すると、差し替
 
 ## 色の変え方
 
-`src/css/token/color-primitive.css` の `/* CUSTOMIZE */` セクションにあるカラーパレットを差し替えます。
+`src/css/token/color.css` の `/* CUSTOMIZE */` セクションにあるカラーパレットを差し替えます。
 
 ```css
 :root {
