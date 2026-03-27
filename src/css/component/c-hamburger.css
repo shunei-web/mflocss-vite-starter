@@ -5,8 +5,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  inline-size: 44px;
-  block-size: 44px;
+  inline-size: var(--size-tap-target);
+  block-size: var(--size-tap-target);
   cursor: pointer;
 
   @media (width >= 768px) {

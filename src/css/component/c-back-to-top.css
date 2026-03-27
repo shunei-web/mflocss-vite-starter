@@ -2,8 +2,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  inline-size: 48px;
-  block-size: 48px;
+  inline-size: var(--size-icon-area);
+  block-size: var(--size-icon-area);
   font-size: 20px;
   color: var(--color-surface);
   text-decoration: none;

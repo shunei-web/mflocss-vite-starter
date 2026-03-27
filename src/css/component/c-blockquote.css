@@ -24,8 +24,8 @@
 }
 
 .c-blockquote__avatar {
-  inline-size: 48px;
-  block-size: 48px;
+  inline-size: var(--size-icon-area);
+  block-size: var(--size-icon-area);
   object-fit: cover;
   border-radius: var(--radius-full);
 }

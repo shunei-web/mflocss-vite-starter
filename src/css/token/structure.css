@@ -16,4 +16,13 @@
 
   /* CUSTOMIZE: ヘッダー高さ */
   --header-size: calc(64 * var(--px));
+
+  /* CUSTOMIZE: UI サイズ */
+  --size-tap-target: 44px;
+  --size-icon-area: 48px;
+
+  /* CUSTOMIZE: ボーダー・フォーカスリング */
+  --border-width: 1px;
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
 }
