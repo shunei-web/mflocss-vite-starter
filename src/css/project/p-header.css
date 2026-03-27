@@ -47,7 +47,7 @@
 .p-header__nav-link {
   --_link-color: var(--color-text);
 
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-caption);
   color: var(--_link-color);
   text-decoration: none;
   transition: color 0.2s var(--ease-out-cubic);
@@ -60,7 +60,7 @@
 }
 
 .p-header__cta {
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-caption);
 }
 
 /* show() を使用（showModal() だとヘッダーが背面に隠れる） */
@@ -95,9 +95,11 @@
 }
 
 .p-header__hamburger {
+  /* CUSTOMIZE */
 }
 
 .p-header__drawer-nav {
+  /* CUSTOMIZE */
 }
 
 .p-header__drawer-nav-list {

@@ -13,6 +13,7 @@
 }
 
 .p-footer__nav {
+  /* CUSTOMIZE */
 }
 
 .p-footer__nav-list {
@@ -23,7 +24,7 @@
 }
 
 .p-footer__nav-link {
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-caption);
   color: var(--color-text-light);
   text-decoration: none;
   transition: color 0.2s var(--ease-out-cubic);
@@ -36,7 +37,7 @@
 }
 
 .p-footer__address {
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-caption);
   line-height: 2;
   color: var(--color-text-light);
 }

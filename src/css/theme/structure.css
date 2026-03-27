@@ -1,7 +1,17 @@
 /* Tokens の物理値を Theme のセマンティック名にマッピング。
    ブランド切替やレスポンシブ対応でここの値を差し替える */
 :root {
-  --content-width: var(--content-max);
-  --content-width-narrow: var(--content-narrow);
-  --header-size: var(--header-height);
+  /* セクション余白:
+     wide = Hero, CTA（広い余白で訴求力を高める）
+     standard = Features, Voice, FAQ（通常のセクション）
+     narrow = Problem, Numbers（密度を上げて情報を凝縮） */
+  --section-wide-min: var(--section-lg-min);
+  --section-wide-max: var(--section-lg-max);
+  --section-standard-min: var(--section-md-min);
+  --section-standard-max: var(--section-md-max);
+  --section-narrow-min: var(--section-sm-min);
+  --section-narrow-max: var(--section-sm-max);
+  --content-width: var(--width-xl);
+  --content-width-narrow: var(--width-lg);
+  --header-size: var(--height-header);
 }

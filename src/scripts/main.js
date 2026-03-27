@@ -2,7 +2,7 @@
  * mFLOCSS Starter — メインスクリプト
  *
  * 機能:
- * - ドロワーメニュー（dialog showModal/close + inert）
+ * - ドロワーメニュー（dialog show/close + inert）
  * - スクロールアニメーション（IntersectionObserver + data-animate）
  * - スタッガーアニメーション（data-stagger）
  * - Back to Top ボタン表示制御

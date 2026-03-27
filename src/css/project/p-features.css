@@ -1,7 +1,9 @@
 .p-features {
+  /* CUSTOMIZE */
 }
 
 .p-features__heading {
+  /* CUSTOMIZE */
 }
 
 .p-features__list {
@@ -35,6 +37,7 @@
 }
 
 .p-features__title {
+  /* CUSTOMIZE */
 }
 
 .p-features__badge {
@@ -54,6 +57,6 @@
 
 .p-features__caption {
   margin-block-start: var(--space-sm);
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-caption);
   color: var(--color-text-light);
 }

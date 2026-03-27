@@ -1,20 +1,17 @@
 /* CUSTOMIZE: プロジェクトごとに変わる値 */
 :root {
-  /* セクション余白（3段階）:
-     wide = Hero, CTA（広い余白で訴求力を高める）
-     standard = Features, Voice, FAQ（通常のセクション）
-     narrow = Problem, Numbers（密度を上げて情報を凝縮） */
-  --section-wide-min: 100px;
-  --section-wide-max: 160px;
-  --section-standard-min: 64px;
-  --section-standard-max: 100px;
-  --section-narrow-min: 40px;
-  --section-narrow-max: 64px;
+  /* セクション余白スケール（3段階） */
+  --section-lg-min: 100px;
+  --section-lg-max: 160px;
+  --section-md-min: 64px;
+  --section-md-max: 100px;
+  --section-sm-min: 40px;
+  --section-sm-max: 64px;
 
-  /* コンテンツ幅 */
-  --content-max: 1280px;
-  --content-narrow: 720px;
+  /* 幅スケール */
+  --width-xl: 1280px;
+  --width-lg: 720px;
 
-  /* ヘッダー高さ */
-  --header-height: 64px;
+  /* 高さスケール */
+  --height-header: 64px;
 }

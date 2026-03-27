@@ -1,4 +1,5 @@
 .p-contact {
+  /* CUSTOMIZE */
 }
 
 .p-contact__title {
@@ -58,7 +59,7 @@
 
 .p-contact__error {
   min-block-size: 0;
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-caption);
   color: var(--color-error);
 
   &:empty {
@@ -99,12 +100,15 @@
 }
 
 .p-contact__radio {
+  /* CUSTOMIZE */
 }
 
 .p-contact__checkbox {
+  /* CUSTOMIZE */
 }
 
 .p-contact__submit {
+  /* CUSTOMIZE */
 }
 
 .p-contact__actions {

@@ -35,7 +35,7 @@
 }
 
 :where(small) {
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-caption);
 }
 
 :where(a) {
@@ -55,6 +55,6 @@
 @media (prefers-reduced-motion: no-preference) {
   :where(:root) {
     scroll-behavior: smooth;
-    scroll-padding-top: var(--header-height);
+    scroll-padding-top: var(--header-size);
   }
 }

@@ -8,13 +8,13 @@
   --line-height-body: 1.8;
   --line-height-heading: 1.4;
 
-  /* 見出しサイズ */
-  --font-size-h1-min: 32px;
-  --font-size-h1-max: 56px;
-  --font-size-h2-min: 24px;
-  --font-size-h2-max: 36px;
-  --font-size-h3-min: 18px;
-  --font-size-h3-max: 21px;
+  /* タイプスケール（min-max ペア） */
+  --font-size-4xl-min: 32px;
+  --font-size-4xl-max: 56px;
+  --font-size-2xl-min: 24px;
+  --font-size-2xl-max: 36px;
+  --font-size-lg-min: 18px;
+  --font-size-lg-max: 21px;
 
   /* グローバル: 多くのプロジェクトで共通して使える値 */
 
@@ -22,7 +22,7 @@
   --font-weight-normal: 400;
   --font-weight-bold: 700;
 
-  /* 本文サイズ */
-  --font-size-body: 16px;
-  --font-size-small: 14px;
+  /* サイズスケール */
+  --font-size-md: 16px;
+  --font-size-sm: 14px;
 }

@@ -6,5 +6,11 @@
   --font-weight-body: var(--font-weight-normal);
   --line-height-text: var(--line-height-body);
   --line-height-title: var(--line-height-heading);
-  --font-size-caption: var(--font-size-small);
+  --font-size-caption: var(--font-size-sm);
+  --font-size-h1-min: var(--font-size-4xl-min);
+  --font-size-h1-max: var(--font-size-4xl-max);
+  --font-size-h2-min: var(--font-size-2xl-min);
+  --font-size-h2-max: var(--font-size-2xl-max);
+  --font-size-h3-min: var(--font-size-lg-min);
+  --font-size-h3-max: var(--font-size-lg-max);
 }
