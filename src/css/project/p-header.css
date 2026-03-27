@@ -83,7 +83,7 @@
     max-block-size: calc(100dvb - var(--header-size));
     inline-size: 100%;
     block-size: calc(100dvb - var(--header-size));
-    overflow-y: auto;
+    overflow: hidden;
 
     &[open] {
       transform: translateX(0);
@@ -95,7 +95,7 @@
     flex-direction: column;
     align-items: center;
     gap: var(--space-xl);
-    min-block-size: 100%;
+    block-size: 100%;
     padding: var(--space-xl);
     overflow-y: auto;
     overscroll-behavior-block: contain;
