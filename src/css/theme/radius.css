@@ -1,7 +1,0 @@
-/* Tokens の数値を px に変換（装飾。スケーリング不要） */
-:root {
-  --radius-sm: calc(var(--_radius-sm) * 1px);
-  --radius-md: calc(var(--_radius-md) * 1px);
-  --radius-lg: calc(var(--_radius-lg) * 1px);
-  --radius-full: calc(var(--_radius-full) * 1px);
-}

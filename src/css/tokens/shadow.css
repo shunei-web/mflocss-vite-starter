@@ -1,8 +1,0 @@
-/* CUSTOMIZE: プロジェクトごとに変わる値（単位なし。Theme で px に変換） */
-:root {
-  /* ジオメトリのみ: y-offset, blur-radius */
-  --_shadow-sm-y: 1;
-  --_shadow-sm-blur: 3;
-  --_shadow-md-y: 4;
-  --_shadow-md-blur: 12;
-}

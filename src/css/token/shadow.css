@@ -1,0 +1,5 @@
+/* CUSTOMIZE: シャドウ（ジオメトリ px + 色は color.css の --color-shadow を参照） */
+:root {
+  --shadow-sm: 0 calc(1 * 1px) calc(3 * 1px);
+  --shadow-md: 0 calc(4 * 1px) calc(12 * 1px);
+}

@@ -1,5 +1,0 @@
-/* Tokens のジオメトリ数値を px に変換し、色と組み合わせ */
-:root {
-  --shadow-sm: 0 calc(var(--_shadow-sm-y) * 1px) calc(var(--_shadow-sm-blur) * 1px);
-  --shadow-md: 0 calc(var(--_shadow-md-y) * 1px) calc(var(--_shadow-md-blur) * 1px);
-}

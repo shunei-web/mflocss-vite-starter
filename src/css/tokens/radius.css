@@ -1,7 +1,0 @@
-/* CUSTOMIZE: プロジェクトごとに変わる値（単位なし。Theme で px に変換） */
-:root {
-  --_radius-sm: 4;
-  --_radius-md: 8;
-  --_radius-lg: 16;
-  --_radius-full: 9999;
-}

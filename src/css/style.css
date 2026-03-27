@@ -7,26 +7,24 @@
 /* @property（@layer の外で宣言） */
 @import './property.css';
 
-/* Tokens: 生のデザイン値。CUSTOMIZE コメントの箇所がブランド固有 */
-@import './tokens/color.css' layer(tokens);
-@import './tokens/typography.css' layer(tokens);
-@import './tokens/structure.css' layer(tokens);
-@import './tokens/space.css' layer(tokens);
-@import './tokens/radius.css' layer(tokens);
-@import './tokens/shadow.css' layer(tokens);
+/* Design: デザイン値の定義 + 単位付与（上位層はここだけ参照） */
+@import './token/helpers.css' layer(token);
+@import './token/color-primitive.css' layer(token);
+@import './token/color.css' layer(token);
+@import './token/typography.css' layer(token);
+@import './token/structure.css' layer(token);
+@import './token/space.css' layer(token);
+@import './token/radius.css' layer(token);
+@import './token/shadow.css' layer(token);
+@import './token/z-index.css' layer(token);
+@import './token/ease.css' layer(token);
 
-/* Theme: セマンティックな意味づけ + 単位付与（上位層はここだけ参照） */
-@import './theme/color.css' layer(theme);
-@import './theme/typography.css' layer(theme);
-@import './theme/structure.css' layer(theme);
-@import './theme/space.css' layer(theme);
-@import './theme/radius.css' layer(theme);
-@import './theme/shadow.css' layer(theme);
-@import './theme/z-index.css' layer(theme);
-@import './theme/ease.css' layer(theme);
+/* Reset: ブラウザ環境の初期化 */
+@import './reset/reset.css' layer(reset);
 
-/* Foundation */
-@import './foundation/index.css' layer(foundation);
+/* Foundation: 要素の基本スタイル */
+@import './foundation/base.css' layer(foundation);
+@import './foundation/form.css' layer(foundation);
 
 /* Layout */
 @import './layout/l-viewport.css' layer(layout);

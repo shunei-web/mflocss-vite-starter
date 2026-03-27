@@ -1,0 +1,21 @@
+:root {
+  /* CUSTOMIZE: ダークモード不要なら light のみに */
+  color-scheme: light dark;
+
+  /* グローバルセマンティック */
+  --color-main: light-dark(var(--_sage-600), var(--_sage-400));
+  --color-accent: light-dark(var(--_terracotta-500), var(--_terracotta-400));
+  --color-bg: light-dark(var(--_neutral-50), var(--_neutral-900));
+  --color-bg-secondary: light-dark(var(--_neutral-100), var(--_neutral-800));
+  --color-surface: light-dark(var(--_white), var(--_neutral-800));
+  --color-text: light-dark(var(--_neutral-900), var(--_neutral-50));
+  --color-text-light: light-dark(var(--_neutral-600), var(--_neutral-400));
+  --color-border: light-dark(var(--_neutral-300), var(--_neutral-600));
+  --color-error: light-dark(var(--_red-500), var(--_red-400));
+  --color-shadow: light-dark(oklch(from var(--_black) l c h / 10%), oklch(from var(--_white) l c h / 8%));
+
+  /* コンテキストセマンティック */
+  --color-link: var(--color-main);
+  --color-heading: var(--color-text);
+  --color-focus-ring: var(--color-main);
+}
