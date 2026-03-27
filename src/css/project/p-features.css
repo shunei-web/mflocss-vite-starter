@@ -5,7 +5,6 @@
     gap: var(--space-3xl);
   }
 
-  /* @media = ページ全体のレイアウト（交互配置の切替） */
   .p-features__item {
     display: grid;
     gap: var(--space-xl);
@@ -14,18 +13,12 @@
     @media (width >= 768px) {
       grid-template-columns: 1fr 1fr;
 
-      /* 交互レイアウト（擬似クラスによる条件分岐） */
-      &:nth-child(even) {
-        direction: rtl;
-
-        & > * {
-          direction: ltr;
-        }
+      &:nth-child(even) > :first-child {
+        order: 2;
       }
     }
   }
 
-  /* @container = コンポーネント単位のレスポンシブ（コンテナ幅に応じた余白・サイズ調整） */
   .p-features__content {
     display: flex;
     flex-direction: column;
