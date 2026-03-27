@@ -16,6 +16,11 @@
   text-size-adjust: 100%;
   scrollbar-gutter: stable;
   -webkit-tap-highlight-color: transparent;
+
+  /* ドロワー表示中の背面スクロール抑制 */
+  &:has(dialog[open]) {
+    overflow: hidden;
+  }
 }
 
 :where(body) {

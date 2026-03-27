@@ -1,0 +1,60 @@
+/* ハンバーガーボタン（☰ ↔ × アニメーション）
+   aria-expanded の状態に連動して変化する */
+
+.c-hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 44px;
+  block-size: 44px;
+  cursor: pointer;
+
+  @media (width >= 768px) {
+    display: none;
+  }
+}
+
+.c-hamburger__line,
+.c-hamburger__line::before,
+.c-hamburger__line::after {
+  display: block;
+  inline-size: 20px;
+  block-size: 2px;
+  background-color: currentcolor;
+  border-radius: 1px;
+  transition: transform 0.3s var(--ease-out-cubic), opacity 0.3s var(--ease-out-cubic);
+}
+
+.c-hamburger__line {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+  }
+
+  &::before {
+    translate: 0 -6px;
+  }
+
+  &::after {
+    translate: 0 6px;
+  }
+}
+
+/* × 状態（aria-expanded="true"） */
+.c-hamburger[aria-expanded='true'] .c-hamburger__line {
+  background-color: transparent;
+
+  &::before {
+    translate: 0 0;
+    rotate: 45deg;
+  }
+
+  &::after {
+    translate: 0 0;
+    rotate: -45deg;
+  }
+}

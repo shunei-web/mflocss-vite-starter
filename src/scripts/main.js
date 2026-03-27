@@ -21,7 +21,7 @@ function initDrawer() {
   const drawerLinks = drawer.querySelectorAll('a');
 
   function openDrawer() {
-    drawer.showModal();
+    drawer.show();
     nav?.setAttribute('inert', '');
     hamburgers.forEach((btn) => btn.setAttribute('aria-expanded', 'true'));
   }
