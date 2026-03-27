@@ -95,8 +95,10 @@
     align-items: center;
     justify-content: center;
     gap: var(--space-xl);
-    block-size: 100%;
+    min-block-size: 100%;
     padding: var(--space-xl);
+    overflow-y: auto;
+    overscroll-behavior-block: contain;
   }
 
 
