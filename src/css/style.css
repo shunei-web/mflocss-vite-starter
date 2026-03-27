@@ -56,7 +56,6 @@
 @import './project/p-contact.css' layer(project);
 @import './project/p-thanks.css' layer(project);
 @import './project/p-back-to-top.css' layer(project);
-@import './project/p-skip-link.css' layer(project);
 @import './project/p-privacy.css' layer(project);
 
 /* Animation */
@@ -64,4 +63,4 @@
 @import './animation/scale-in.css' layer(animation);
 
 /* Utility */
-@import './utility/visibility.css' layer(utility);
+@import './utility/u-hidden.css' layer(utility);

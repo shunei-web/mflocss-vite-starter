@@ -21,4 +21,15 @@
     font-style: normal;
     color: var(--color-text-light);
   }
+
+  .c-blockquote__avatar {
+    inline-size: 48px;
+    block-size: 48px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+  }
+
+  .c-blockquote__cite {
+    font-style: normal;
+  }
 }

@@ -12,15 +12,4 @@
     display: flex;
     flex-direction: column;
   }
-
-  .p-voice__avatar {
-    inline-size: 48px;
-    block-size: 48px;
-    border-radius: var(--radius-full);
-    object-fit: cover;
-  }
-
-  .p-voice__cite {
-    font-style: normal;
-  }
 }
