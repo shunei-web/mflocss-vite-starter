@@ -1,5 +1,5 @@
 :root {
-  /* CUSTOMIZE: ブランドカラーを差し替え */
+  /* CUSTOMIZE: プロジェクトごとに変わる値 */
 
   /* Main — セージグリーン（H:150） */
   --sage-400: oklch(65% 0.08 150deg);
@@ -9,7 +9,7 @@
   --terracotta-400: oklch(65% 0.12 35deg);
   --terracotta-500: oklch(55% 0.15 35deg);
 
-  /* グローバル: プロジェクト非依存の汎用値 */
+  /* グローバル: プロジェクト非依存の普遍値 */
 
   /* Neutral — ウォームグレー（H:70） */
   --neutral-50: oklch(98% 0.005 70deg);

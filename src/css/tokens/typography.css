@@ -1,9 +1,9 @@
 :root {
-  /* CUSTOMIZE: フォントファミリーを差し替え */
+  /* CUSTOMIZE: プロジェクトごとに変わる値 */
   --font-family-base: 'Noto Sans JP', 'Hiragino Sans',
     'Hiragino Kaku Gothic ProN', meiryo, sans-serif;
 
-  /* グローバル: プロジェクト非依存の汎用値 */
+  /* グローバル: プロジェクト非依存の普遍値 */
 
   /* ウェイト */
   --font-weight-normal: 400;
