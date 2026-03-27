@@ -79,10 +79,6 @@
     background-color: var(--color-bg);
     transform: translateX(100%);
     transition: transform 0.3s var(--ease-out-cubic);
-    max-inline-size: 100%;
-    max-block-size: calc(100dvb - var(--header-size));
-    inline-size: 100%;
-    block-size: calc(100dvb - var(--header-size));
     overflow: hidden;
 
     &[open] {
