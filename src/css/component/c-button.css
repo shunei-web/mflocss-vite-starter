@@ -25,7 +25,7 @@
     translate: 0 0;
   }
 
-  /* Modifier: -primary */
+  /* CTA 用。accent で他のボタンと視覚的に差別化 */
   &.-primary {
     background-color: var(--color-accent);
     border-color: var(--color-accent);
@@ -38,7 +38,6 @@
     }
   }
 
-  /* Modifier: -ghost */
   &.-ghost {
     background-color: transparent;
     color: var(--color-main);
@@ -50,13 +49,12 @@
     }
   }
 
-  /* Modifier: -large */
+  /* Hero・CTA 等の主要導線用。vi でコンテナ幅に連動 */
   &.-large {
     padding: var(--space-md) var(--space-xl);
     font-size: clamp(1rem, 0.5vi + 0.9rem, 1.125rem);
   }
 
-  /* State: .is-loading */
   &.is-loading {
     pointer-events: none;
     opacity: 0.7;
