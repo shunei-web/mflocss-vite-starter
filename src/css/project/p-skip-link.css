@@ -3,5 +3,5 @@
   position: fixed;
   inset-block-start: var(--space-md);
   inset-inline-start: var(--space-md);
-  z-index: 100;
+  z-index: var(--z-skip-link);
 }

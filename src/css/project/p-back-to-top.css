@@ -3,7 +3,7 @@
   position: fixed;
   inset-block-end: var(--space-xl);
   inset-inline-end: var(--space-xl);
-  z-index: 5;
+  z-index: var(--z-back-to-top);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s var(--ease-out-cubic),
