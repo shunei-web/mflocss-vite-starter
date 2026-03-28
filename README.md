@@ -23,7 +23,7 @@ HTML 内の `<!-- CUSTOMIZE: ... -->` コメントを検索すると、差し替
 
 ## 色の変え方
 
-`src/css/token/color.css` の `/* CUSTOMIZE */` セクションにあるカラーパレットを差し替えます。
+`src/assets/css/token/color.css` の `/* CUSTOMIZE */` セクションにあるカラーパレットを差し替えます。
 
 ```css
 :root {
@@ -43,7 +43,7 @@ HTML 内の `<!-- CUSTOMIZE: ... -->` コメントを検索すると、差し替
 
 ## 余白・文字サイズの変え方
 
-Token 層（`src/css/token/`）にデザイン値が集約されています。`--px` ヘルパー（`calc(1rem / 16)`）により、数値はデザインカンプの px 指定値をそのまま記述できます。
+Token 層（`src/assets/css/token/`）にデザイン値が集約されています。`--px` ヘルパー（`calc(1rem / 16)`）により、数値はデザインカンプの px 指定値をそのまま記述できます。
 
 ```css
 /* 数値を変えるだけ。rem への変換は --px が担う */
@@ -69,7 +69,7 @@ Token 層（`src/css/token/`）にデザイン値が集約されています。`
 
 mFLOCSS 準拠で新しい Component を追加する手順:
 
-1. `src/css/component/c-<名前>.css` を作成
+1. `src/assets/css/component/c-<名前>.css` を作成
 2. `style.css` に `@import './component/c-<名前>.css' layer(component);` を追加
 3. HTML に `c-<名前>` クラスを適用
 
@@ -83,7 +83,7 @@ mFLOCSS 準拠で新しい Component を追加する手順:
 ## ダークモード無効化方法
 
 1. 全ページの `<meta name="color-scheme" content="light dark">` を `<meta name="color-scheme" content="light">` に変更
-2. `src/css/token/color.css` の `light-dark()` 関数を light 側の値に置き換え
+2. `src/assets/css/token/color.css` の `light-dark()` 関数を light 側の値に置き換え
 
 ```css
 /* Before */
@@ -150,21 +150,22 @@ pnpm build
 
 ```
 src/
-├── css/
-│   ├── style.css          # エントリポイント
-│   ├── layer-order.css    # @layer 先制宣言
-│   ├── property.css       # @property 定義（@layer 外。CSS 仕様の制約）
-│   ├── token/             # デザイントークン（カラー・タイポグラフィ・余白等）
-│   ├── reset/             # ブラウザリセット
-│   ├── foundation/        # 要素の基本スタイル（base + form）
-│   ├── layout/            # レイアウトプリミティブ
-│   ├── component/         # 再利用可能な UI パーツ
-│   ├── project/           # ページ固有のスタイル
-│   ├── animation/         # 装飾的アニメーション
-│   └── utility/           # ユーティリティ
-├── images/                # SVG ワイヤーフレーム画像（ビルドでハッシュ付与）
-├── scripts/
-│   └── main.js            # ドロワー・アニメーション・Back to Top
+├── assets/
+│   ├── css/
+│   │   ├── style.css          # エントリポイント
+│   │   ├── layer-order.css    # @layer 先制宣言
+│   │   ├── property.css       # @property 定義（@layer 外。CSS 仕様の制約）
+│   │   ├── token/             # デザイントークン（カラー・タイポグラフィ・余白等）
+│   │   ├── reset/             # ブラウザリセット
+│   │   ├── foundation/        # 要素の基本スタイル（base + form）
+│   │   ├── layout/            # レイアウトプリミティブ
+│   │   ├── component/         # 再利用可能な UI パーツ
+│   │   ├── project/           # ページ固有のスタイル
+│   │   ├── animation/         # 装飾的アニメーション
+│   │   └── utility/           # ユーティリティ
+│   ├── images/                # SVG ワイヤーフレーム画像（ビルドでハッシュ付与）
+│   └── scripts/
+│       └── main.js            # ドロワー・アニメーション・Back to Top
 ├── index.html             # トップページ
 ├── contact/index.html     # お問い合わせ
 ├── thanks/index.html      # サンクスページ
