@@ -4,24 +4,41 @@ mFLOCSS のリファレンス実装。LP 向けのスターターテンプレー
 
 ## クイックスタート
 
-```bash
-git clone https://github.com/mflocss/starter.git my-site
-cd my-site
-pnpm install
-pnpm dev
-```
+1. GitHub の「**Use this template**」ボタンから新しいリポジトリを作成
+2. 作成したリポジトリをクローン:
+   ```bash
+   git clone https://github.com/<your-name>/<your-repo>.git
+   cd <your-repo>
+   npm install
+   npm run dev
+   ```
+3. ターミナルに表示された URL をブラウザで開き、LP が表示されることを確認
 
-ターミナルに表示された URL をブラウザで開き、LP が表示されることを確認してください。
+## カスタマイズ
 
-### テキストを差し替える
+HTML・CSS 内の `<!-- CUSTOMIZE -->` / `/* CUSTOMIZE */` コメントを検索すると、差し替えポイントが見つかります。
 
-HTML 内の `<!-- CUSTOMIZE: ... -->` コメントを検索すると、差し替えポイントが見つかります。
+### テキスト・画像の差し替え
 
 - `src/index.html` — サービス名、キャッチコピー、各セクションのテキスト
-- `src/contact/index.html` — フォームの送信先（`action` 属性）
+- `src/contact/index.html` — フォーム項目
 - 全ページの `<head>` — title, description, OGP 情報
+- `src/assets/images/` — コンテンツ画像（Retina 対応のため表示サイズの **2倍** で書き出し）
 
-## 色の変え方
+### favicon・OGP の差し替え
+
+`public/` 配下のファイルを差し替えます:
+
+| ファイル | サイズ | 用途 |
+|---------|--------|------|
+| `favicon.svg` | — | モダンブラウザ用 |
+| `favicon.ico` | 32×32 | レガシーブラウザ用 |
+| `apple-touch-icon.png` | 180×180 | iOS ホーム画面 |
+| `ogp.png` | 1200×630 | SNS シェア画像 |
+
+各ページの `<meta name="theme-color">` も合わせて変更してください。
+
+### 色の変え方
 
 `src/assets/css/token/color.css` の `/* CUSTOMIZE */` セクションにあるカラーパレットを差し替えます。
 
@@ -39,9 +56,7 @@ HTML 内の `<!-- CUSTOMIZE: ... -->` コメントを検索すると、差し替
 
 `color.css` がセマンティック変数を通して全体に反映するため、パレットを変えるだけで LP 全体の配色が切り替わります。
 
-`<meta name="theme-color">` の HEX 値も合わせて変更してください。
-
-## 余白・文字サイズの変え方
+### 余白・文字サイズの変え方
 
 Token 層（`src/assets/css/token/`）にデザイン値が集約されています。`--px` ヘルパー（`calc(1rem / 16)`）により、数値はデザインカンプの px 指定値をそのまま記述できます。
 
@@ -51,51 +66,7 @@ Token 層（`src/assets/css/token/`）にデザイン値が集約されていま
 --font-size-h1: clamp(calc(32 * var(--px)), 4vi + 1rem, calc(56 * var(--px)));
 ```
 
-## ブレークポイントの変更
-
-デフォルトのブレークポイントは `768px` です。CSS の仕様上 `@media` にカスタムプロパティは使えないため、変更する場合はプロジェクト全体で `768px` を検索置換してください。
-
-## ページの追加方法
-
-1. `src/` に新しいディレクトリと `index.html` を作成（例: `src/about/index.html`）
-2. `vite.config.ts` の `rolldownOptions.input` にエントリを追加:
-   ```ts
-   about: resolve(__dirname, 'src/about/index.html'),
-   ```
-3. ヘッダー・フッターのナビリンクを全ページに追加
-4. 必要に応じて Project CSS を作成し `style.css` に `@import` を追加
-
-## ページの削除方法
-
-1. 対象のディレクトリを削除（例: `src/thanks/`）
-2. `vite.config.ts` の `rolldownOptions.input` から該当エントリを削除
-3. ヘッダー・フッターのナビリンクを全ページから除去
-4. 不要な Project CSS があれば `style.css` の `@import` を削除
-
-## favicon・OGP の差し替え
-
-`public/` 配下のファイルを差し替えます:
-
-| ファイル | サイズ | 用途 |
-|---------|--------|------|
-| `favicon.svg` | — | モダンブラウザ用 |
-| `favicon.ico` | 32×32 | レガシーブラウザ用 |
-| `apple-touch-icon.png` | 180×180 | iOS ホーム画面 |
-| `ogp.png` | 1200×630 | SNS シェア画像 |
-
-各ページの `<meta name="theme-color">` も合わせて変更してください。
-
-## フォーム送信先の設定
-
-`src/contact/index.html` の `<form>` タグに `action` 属性を追加します:
-
-```html
-<form class="p-contact__form" action="https://your-form-service.com/submit" method="POST">
-```
-
-現状は `action` が未設定（フォームサービスに応じて設定してください）。
-
-## 外部フォントの追加
+### 外部フォントの追加
 
 1. 全ページの `<head>` にフォントの `<link>` タグを追加（例: Google Fonts）
 2. `src/assets/css/token/typography.css` の `--font-family` を変更:
@@ -103,39 +74,7 @@ Token 層（`src/assets/css/token/`）にデザイン値が集約されていま
    --font-family: 'Inter', 'Noto Sans JP', sans-serif;
    ```
 
-## セクションの追加方法
-
-1. `src/index.html` に `<section class="l-section p-<名前>">` を追加
-2. `src/assets/css/project/p-<名前>.css` を作成
-3. `style.css` に `@import './project/p-<名前>.css' layer(project);` を追加
-4. ヘッダーのナビリンクに `#<名前>` を追加（必要に応じて）
-
-## セクションの削除方法
-
-各セクションは独立しているため、HTML の `<section>` ブロックを削除するだけで動作します。
-
-1. 対象の `<section>` を HTML から削除
-2. `pnpm dev` で表示を確認
-3. 使わなくなった CSS ファイルがあれば `style.css` の `@import` を削除
-
-セクション間に依存関係はありません。ヘッダーのナビリンク（`#features` 等）だけ、削除したセクションへのリンクを忘れずに除去してください。
-
-## Component の追加方法
-
-mFLOCSS 準拠で新しい Component を追加する手順:
-
-1. `src/assets/css/component/c-<名前>.css` を作成
-2. `style.css` に `@import './component/c-<名前>.css' layer(component);` を追加
-3. HTML に `c-<名前>` クラスを適用
-
-**Component の条件:**
-
-- Portability Test に合格すること（別のページ・プロジェクトに持っていっても壊れない）
-- Token 層のセマンティック変数（`--color-*`, `--space-*` 等）のみ参照。`--_` プレフィックスの内部変数は直接参照しない
-- position: fixed/sticky は使わない（Project 層が担当）
-- 外部レイアウト（margin, width, position）を自身で持たない
-
-## ダークモード無効化方法
+### ダークモード無効化
 
 1. 全ページの `<meta name="color-scheme" content="light dark">` を `<meta name="color-scheme" content="light">` に変更
 2. `src/assets/css/token/color.css` の `light-dark()` 関数を light 側の値に置き換え
@@ -148,10 +87,60 @@ mFLOCSS 準拠で新しい Component を追加する手順:
 --color-main: var(--_sage-600);
 ```
 
+### ブレークポイントの変更
+
+デフォルトのブレークポイントは `768px` です。CSS の仕様上 `@media` にカスタムプロパティは使えないため、変更する場合はプロジェクト全体で `768px` を検索置換してください。
+
+### フォーム送信先の設定
+
+`src/contact/index.html` の `<form>` タグに `action` 属性を追加します:
+
+```html
+<form class="p-contact__form" action="https://your-form-service.com/submit" method="POST">
+```
+
+現状は `action` が未設定（フォームサービスに応じて設定してください）。
+
+## 構造の変更
+
+### セクションの追加
+
+1. `src/index.html` に `<section class="l-section p-<名前>">` を追加
+2. `src/assets/css/project/p-<名前>.css` を作成
+3. `style.css` に `@import './project/p-<名前>.css' layer(project);` を追加
+4. ヘッダーのナビリンクに `#<名前>` を追加（必要に応じて）
+
+### セクションの削除
+
+各セクションは独立しているため、HTML の `<section>` ブロックを削除するだけで動作します。
+
+1. 対象の `<section>` を HTML から削除
+2. `npm run dev` で表示を確認
+3. 使わなくなった CSS ファイルがあれば `style.css` の `@import` を削除
+
+セクション間に依存関係はありません。ヘッダーのナビリンク（`#features` 等）だけ、削除したセクションへのリンクを忘れずに除去してください。
+
+### ページの追加
+
+1. `src/` に新しいディレクトリと `index.html` を作成（例: `src/about/index.html`）
+2. `vite.config.ts` の `rolldownOptions.input` にエントリを追加:
+   ```ts
+   about: resolve(__dirname, 'src/about/index.html'),
+   ```
+3. ヘッダー・フッターのナビリンクを全ページに追加
+4. 必要に応じて Project CSS を作成し `style.css` に `@import` を追加
+
+### ページの削除
+
+1. 対象のディレクトリを削除（例: `src/thanks/`）
+2. `vite.config.ts` の `rolldownOptions.input` から該当エントリを削除
+3. ヘッダー・フッターのナビリンクを全ページから除去
+4. 不要な Project CSS があれば `style.css` の `@import` を削除
+
 ## ビルドと納品
 
 ```bash
-pnpm build
+npm run build
 ```
 
 `dist/` ディレクトリに最適化されたファイルが出力されます。そのまま静的ホスティング（Netlify, Vercel, Cloudflare Pages 等）にデプロイできます。
@@ -162,52 +151,28 @@ pnpm build
 base: '/my-site/',
 ```
 
-## コマンド一覧
+## リファレンス
+
+### コマンド一覧
 
 | コマンド | 説明 |
 |---------|------|
-| `pnpm dev` | 開発サーバー起動（HMR 有効） |
-| `pnpm build` | 本番ビルド（dist/ に出力） |
-| `pnpm preview` | ビルド結果のプレビュー |
-| `pnpm check` | format + lint を一括実行 |
-| `pnpm format` | Prettier でコードを整形 |
-| `pnpm lint:css` | Stylelint でスタイルを検査 |
-| `pnpm lint:js` | ESLint でスクリプトを検査 |
-| `pnpm lint:html` | markuplint で HTML を検査 |
+| `npm run dev` | 開発サーバー起動（HMR 有効） |
+| `npm run build` | 本番ビルド（dist/ に出力） |
+| `npm run preview` | ビルド結果のプレビュー |
+| `npm run check` | format + lint を一括実行 |
+| `npm run format` | Prettier でコードを整形 |
+| `npm run lint:css` | Stylelint でスタイルを検査 |
+| `npm run lint:js` | ESLint でスクリプトを検査 |
+| `npm run lint:html` | markuplint で HTML を検査 |
 
-## @container vs @media の使い分け
+### 対象ブラウザ
 
-| 観点 | @container | @media |
-|------|-----------|--------|
-| 基準 | 親コンテナの幅 | ビューポートの幅 |
-| 用途 | コンポーネント単位のレスポンシブ | ページ全体のレイアウト切替 |
-| サイズ単位 | `cqi`（container query inline） | `px` / `em` |
-| この LP での例 | Features カード内のレイアウト切替 | ヘッダーのナビ表示/非表示 |
+Chrome 123+ / Safari 18+ / Firefox 128+
 
-`l-container.css` で `container-type: inline-size` を宣言し、Project/Component 層でクエリを記述します。
+使用しているモダン CSS: `@layer`, `@property`, `@container`, CSS Nesting, `:has()`, `:where()`, `oklch()`, `light-dark()`, 論理プロパティ, `clamp()`
 
-## 対象ブラウザ
-
-- Chrome 123+
-- Safari 18+
-- Firefox 128+
-
-以下のモダン CSS 機能を使用しています:
-
-`@layer`, `@property`, `@container`, CSS Nesting, `:has()`, `:where()`, `oklch()`, `light-dark()`, 論理プロパティ, `clamp()`, 個別 transform プロパティ
-
-## 画像の差し替え
-
-同梱の画像は SVG ワイヤーフレームです。実写に差し替える場合:
-
-- Retina 対応のため、表示サイズの **2倍** で書き出し
-- Hero: 1600×800px（表示 800×400）
-- Features: 960×640px（表示 480×320）
-- アバター: 96×96px（表示 48×48）
-- OGP: 1200×630px（SNS が縮小するため2倍不要）
-- apple-touch-icon: 180×180px 固定
-
-## ファイル構成
+### ファイル構成
 
 ```
 src/
@@ -224,7 +189,7 @@ src/
 │   │   ├── project/           # ページ固有のスタイル
 │   │   ├── animation/         # 装飾的アニメーション
 │   │   └── utility/           # ユーティリティ
-│   ├── images/                # SVG ワイヤーフレーム画像（ビルドでハッシュ付与）
+│   ├── images/                # コンテンツ画像（ビルドでハッシュ付与）
 │   └── scripts/
 │       └── main.js            # ドロワー・アニメーション・Back to Top
 ├── index.html             # トップページ
@@ -238,11 +203,10 @@ public/                    # ルートパス固定のファイル
 └── ogp.png
 ```
 
-## この本について
+## 関連リンク
 
-[そのFLOCSS、なぜそこに書いた？ —— mFLOCSS で迷わない CSS 設計の判断基準](https://zenn.dev/shunei/books/mflocss-design)
-
-公式サイト: [mflocss.dev](https://mflocss.dev)
+- [そのFLOCSS、なぜそこに書いた？ —— mFLOCSS で迷わない CSS 設計の判断基準](https://zenn.dev/shunei/books/mflocss-design)
+- [mflocss.dev](https://mflocss.dev)
 
 ## ライセンス
 
