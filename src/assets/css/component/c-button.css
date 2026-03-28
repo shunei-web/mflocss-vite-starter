@@ -19,6 +19,11 @@
     background-color var(--duration-normal) var(--ease-out-cubic),
     translate var(--duration-normal) var(--ease-out-cubic);
 
+  /* 1 ガード: モーション軽減設定で transition を無効化 */
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+
   @media (any-hover: hover) {
     &:hover {
       translate: 0 var(--_hover-lift);
