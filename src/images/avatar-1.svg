@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
-  <circle cx="24" cy="24" r="23" fill="#f5f3f0" stroke="#c4bdb5" stroke-width="1"/>
-  <circle cx="24" cy="18" r="8" fill="#d4cec7"/>
-  <path d="M10 42 Q10 30 24 30 Q38 30 38 42" fill="#d4cec7"/>
-  <!-- 髪の毛（ショート） -->
-  <path d="M16 16 Q16 8 24 8 Q32 8 32 16" stroke="#a3a09b" stroke-width="1.5" fill="none"/>
-</svg>
