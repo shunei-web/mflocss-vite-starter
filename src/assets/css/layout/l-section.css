@@ -1,5 +1,8 @@
 .l-section {
-  padding-block: clamp(var(--section-padding-min), 8vi + 1rem, var(--section-padding-max));
+  --section-padding-min: var(--section-standard-min);
+  --section-padding-max: var(--section-standard-max);
+
+  padding-block: clamp(var(--section-padding-min), 3.462vi + 3.1346rem, var(--section-padding-max));
   container-name: section;
   container-type: inline-size;
 }

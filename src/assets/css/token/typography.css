@@ -2,15 +2,15 @@
   /* CUSTOMIZE: フォントファミリー */
   --font-family: 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', meiryo, sans-serif;
 
-  /* CUSTOMIZE: 流体タイポグラフィ（数値 = デザイナーの px 指定値） */
-  --font-size-h1: clamp(calc(32 * var(--px)), 4vi + 1rem, calc(56 * var(--px)));
-  --font-size-h2: clamp(calc(24 * var(--px)), 2vi + 1rem, calc(36 * var(--px)));
-  --font-size-h3: clamp(calc(18 * var(--px)), 0.5vi + 1rem, calc(21 * var(--px)));
-  --font-size-lead: clamp(calc(16 * var(--px)), 0.3vi + 0.9rem, calc(18 * var(--px)));
-  --font-size-button-lg: clamp(calc(16 * var(--px)), 0.5vi + 0.9rem, calc(18 * var(--px)));
-  --font-size-logo: clamp(calc(20 * var(--px)), 0.5vi + 1rem, calc(24 * var(--px)));
-  --font-size-nav-lg: clamp(calc(18 * var(--px)), 0.5vi + 1rem, calc(20 * var(--px)));
-  --font-size-display: clamp(calc(40 * var(--px)), 4vi + 1rem, calc(56 * var(--px)));
+  /* CUSTOMIZE: 流体タイポグラフィ（viewport-min → viewport-max のリニア補間） */
+  --font-size-h1: clamp(calc(32 * var(--px)), 2.308vi + 1.4231rem, calc(56 * var(--px)));
+  --font-size-h2: clamp(calc(24 * var(--px)), 1.154vi + 1.2115rem, calc(36 * var(--px)));
+  --font-size-h3: clamp(calc(18 * var(--px)), 0.288vi + 1.0529rem, calc(21 * var(--px)));
+  --font-size-lead: clamp(calc(16 * var(--px)), 0.192vi + 0.9519rem, calc(18 * var(--px)));
+  --font-size-button-lg: clamp(calc(16 * var(--px)), 0.192vi + 0.9519rem, calc(18 * var(--px)));
+  --font-size-logo: clamp(calc(20 * var(--px)), 0.385vi + 1.1538rem, calc(24 * var(--px)));
+  --font-size-nav-lg: clamp(calc(18 * var(--px)), 0.192vi + 1.0769rem, calc(20 * var(--px)));
+  --font-size-display: clamp(calc(40 * var(--px)), 1.538vi + 2.1154rem, calc(56 * var(--px)));
   --font-size-caption: calc(14 * var(--px));
 
   /* CUSTOMIZE: 行間 */

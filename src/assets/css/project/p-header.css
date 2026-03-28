@@ -70,9 +70,9 @@
   position: fixed;
   inset-block: var(--header-size) 0;
   inset-inline: 0;
+  z-index: var(--z-drawer);
   inline-size: 100%;
   block-size: calc(100dvb - var(--header-size));
-  z-index: var(--z-drawer);
   padding: 0;
   margin: 0;
   overflow-y: auto;

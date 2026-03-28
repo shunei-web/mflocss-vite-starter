@@ -1,5 +1,17 @@
 :root {
-  /* CUSTOMIZE: セクション余白（数値 = デザイナーの px 指定値）
+  /* CUSTOMIZE: デザインカンプ幅（単位なし px 値。流体補間の範囲） */
+  --viewport-min: 400;
+  --viewport-max: 1440;
+
+  /* CUSTOMIZE: コンテンツ領域 */
+  --content-width: 1280px;
+  --content-width-narrow: 720px;
+  --content-padding-min: calc(16 * var(--px));
+  --content-padding-max: calc(40 * var(--px));
+  --content-padding: clamp(var(--content-padding-min), 2.308vi + 0.4231rem, var(--content-padding-max));
+  --header-size: calc(64 * var(--px));
+
+  /* CUSTOMIZE: セクション余白
      wide = Hero, CTA（広い余白で訴求力を高める）
      standard = Features, Voice, FAQ（通常のセクション）
      narrow = Problem, Numbers（密度を上げて情報を凝縮） */
@@ -10,18 +22,9 @@
   --section-narrow-min: calc(40 * var(--px));
   --section-narrow-max: calc(64 * var(--px));
 
-  /* CUSTOMIZE: コンテンツ幅（px。レイアウト制約） */
-  --content-width: 1280px;
-  --content-width-narrow: 720px;
-
-  /* CUSTOMIZE: ヘッダー高さ */
-  --header-size: calc(64 * var(--px));
-
-  /* CUSTOMIZE: UI サイズ */
+  /* CUSTOMIZE: インタラクション */
   --size-tap-target: 44px;
   --size-icon-area: 48px;
-
-  /* CUSTOMIZE: ボーダー・フォーカスリング */
   --border-width: 1px;
   --focus-ring-width: 2px;
   --focus-ring-offset: 2px;

@@ -182,7 +182,6 @@ src/
 │   ├── css/
 │   │   ├── style.css          # エントリポイント
 │   │   ├── layer-order.css    # @layer 先制宣言
-│   │   ├── property.css       # @property 定義（@layer 外。CSS 仕様の制約）
 │   │   ├── token/             # デザイントークン（カラー・タイポグラフィ・余白等）
 │   │   ├── reset/             # ブラウザリセット
 │   │   ├── foundation/        # 要素の基本スタイル（base + form）
