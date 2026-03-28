@@ -16,7 +16,7 @@ mFLOCSS のリファレンス実装。LP 向けのスターターテンプレー
 
 ## カスタマイズ
 
-HTML・CSS 内の `<!-- CUSTOMIZE -->` / `/* CUSTOMIZE */` コメントを検索すると、差し替えポイントが見つかります。
+プロジェクト全体で `CUSTOMIZE` を検索すると、差し替えポイントが見つかります（HTML・CSS・vite.config.ts）。
 
 ### テキスト・画像の差し替え
 
@@ -36,8 +36,6 @@ HTML・CSS 内の `<!-- CUSTOMIZE -->` / `/* CUSTOMIZE */` コメントを検索
 | `apple-touch-icon.png` | 180×180 | iOS ホーム画面 |
 | `ogp.png` | 1200×630 | SNS シェア画像 |
 
-各ページの `<meta name="theme-color">` も合わせて変更してください。
-
 ### 色の変え方
 
 `src/assets/css/token/color.css` の `/* CUSTOMIZE */` セクションにあるカラーパレットを差し替えます。
@@ -54,7 +52,7 @@ HTML・CSS 内の `<!-- CUSTOMIZE -->` / `/* CUSTOMIZE */` コメントを検索
 }
 ```
 
-`color.css` がセマンティック変数を通して全体に反映するため、パレットを変えるだけで LP 全体の配色が切り替わります。
+`color.css` がセマンティック変数を通して全体に反映するため、パレットを変えるだけで LP 全体の配色が切り替わります。oklch 以外の形式（HEX, rgb 等）でも動作します。
 
 ### 余白・文字サイズの変え方
 
@@ -74,7 +72,11 @@ Token 層（`src/assets/css/token/`）にデザイン値が集約されていま
    --font-family: 'Inter', 'Noto Sans JP', sans-serif;
    ```
 
-### ダークモード無効化
+### ダークモード
+
+初期設定では OS のダークモード設定に自動追従します（手動切り替え UI はありません）。
+
+**無効化する場合:**
 
 1. 全ページの `<meta name="color-scheme" content="light dark">` を `<meta name="color-scheme" content="light">` に変更
 2. `src/assets/css/token/color.css` の `light-dark()` 関数を light 側の値に置き換え
