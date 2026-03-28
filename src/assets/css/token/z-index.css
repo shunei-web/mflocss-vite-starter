@@ -1,4 +1,4 @@
-/* プロジェクト横断で共通。単位なし */
+/* CUSTOMIZE: z-index スケール（プロジェクト横断で共通。単位なし） */
 :root {
   --z-back-to-top: 5;
   --z-drawer: 10;

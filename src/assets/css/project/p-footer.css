@@ -1,3 +1,5 @@
+/* --_ = ブロック内部変数（CODING_GUIDE 参照） */
+
 .p-footer {
   padding-block: var(--space-3xl);
   background-color: var(--color-bg-secondary);
@@ -13,7 +15,7 @@
 }
 
 .p-footer__nav {
-  /* CUSTOMIZE */
+  /* スタイルなし（HTML クラスとの対応を維持） */
 }
 
 .p-footer__nav-list {

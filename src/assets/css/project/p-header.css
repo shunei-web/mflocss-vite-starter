@@ -1,3 +1,5 @@
+/* --_ = ブロック内部変数（CODING_GUIDE 参照） */
+
 .p-header {
   --_blur: 8px;
 
@@ -80,7 +82,10 @@
   background-color: var(--color-bg);
   border: none;
   transform: translateX(100%);
-  transition: transform var(--duration-normal) var(--ease-out-cubic);
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: transform var(--duration-normal) var(--ease-out-cubic);
+  }
 
   &[open] {
     transform: translateX(0);
@@ -98,11 +103,11 @@
 }
 
 .p-header__hamburger {
-  /* CUSTOMIZE */
+  /* スタイルなし（HTML クラスとの対応を維持） */
 }
 
 .p-header__drawer-nav {
-  /* CUSTOMIZE */
+  /* スタイルなし（HTML クラスとの対応を維持） */
 }
 
 .p-header__drawer-nav-list {

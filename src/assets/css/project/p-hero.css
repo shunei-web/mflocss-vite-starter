@@ -1,3 +1,5 @@
+/* --_ = ブロック内部変数（CODING_GUIDE 参照） */
+
 .p-hero {
   /* Hero はセクション余白を広めに取る */
   --section-padding-min: var(--section-wide-min);
@@ -36,11 +38,11 @@
 }
 
 .p-hero__cta {
-  /* CUSTOMIZE */
+  /* スタイルなし（HTML クラスとの対応を維持） */
 }
 
 .p-hero__sub-cta {
-  /* CUSTOMIZE */
+  /* スタイルなし（HTML クラスとの対応を維持） */
 }
 
 .p-hero__actions {

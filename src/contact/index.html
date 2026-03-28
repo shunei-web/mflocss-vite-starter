@@ -40,7 +40,7 @@
 
     <!-- NOTE: ヘッダー・フッターは全ページ共通。変更時は全ファイルに反映すること -->
     <!-- Header -->
-    <header class="p-header">
+    <header class="p-header" id="top" tabindex="-1">
       <div class="l-inner p-header__inner">
         <a href="/" class="p-header__logo" translate="no">iluha</a>
 
@@ -61,7 +61,7 @@
           type="button"
           aria-expanded="false"
           aria-controls="drawer"
-          aria-label="メニューを開く"
+          aria-label="メニュー"
           data-hamburger
         >
           <span class="c-hamburger__line" aria-hidden="true"></span>
@@ -105,45 +105,19 @@
             <!-- 氏名 -->
             <div class="p-contact__field">
               <label for="name" class="p-contact__label">お名前</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                class="p-contact__input"
-                required
-                autocomplete="name"
-                aria-describedby="name-error"
-              />
-              <p id="name-error" class="p-contact__error" role="alert"></p>
+              <input type="text" id="name" name="name" class="p-contact__input" required autocomplete="name" />
             </div>
 
             <!-- メール -->
             <div class="p-contact__field">
               <label for="email" class="p-contact__label">メールアドレス</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                class="p-contact__input"
-                required
-                autocomplete="email"
-                aria-describedby="email-error"
-              />
-              <p id="email-error" class="p-contact__error" role="alert"></p>
+              <input type="email" id="email" name="email" class="p-contact__input" required autocomplete="email" />
             </div>
 
             <!-- 電話番号 -->
             <div class="p-contact__field">
               <label for="tel" class="p-contact__label">電話番号</label>
-              <input
-                type="tel"
-                id="tel"
-                name="tel"
-                class="p-contact__input"
-                autocomplete="tel"
-                aria-describedby="tel-error"
-              />
-              <p id="tel-error" class="p-contact__error" role="alert"></p>
+              <input type="tel" id="tel" name="tel" class="p-contact__input" autocomplete="tel" />
             </div>
 
             <!-- お問い合わせ種別 -->
@@ -179,15 +153,7 @@
             <!-- メッセージ -->
             <div class="p-contact__field">
               <label for="message" class="p-contact__label">メッセージ</label>
-              <textarea
-                id="message"
-                name="message"
-                class="p-contact__textarea"
-                required
-                rows="6"
-                aria-describedby="message-error"
-              ></textarea>
-              <p id="message-error" class="p-contact__error" role="alert"></p>
+              <textarea id="message" name="message" class="p-contact__textarea" required rows="6"></textarea>
             </div>
 
             <!-- 同意確認 -->
@@ -234,8 +200,10 @@
     </footer>
 
     <!-- Back to Top -->
-    <a href="#" class="c-back-to-top p-back-to-top" aria-label="ページの先頭に戻る">
-      <svg class="c-icon" width="20" height="20" aria-hidden="true"><use href="../assets/images/icons/chevron-up.svg#icon"/></svg>
+    <a href="#top" class="c-back-to-top p-back-to-top" aria-label="ページの先頭に戻る">
+      <svg class="c-icon" width="20" height="20" aria-hidden="true">
+        <use href="../assets/images/icons/chevron-up.svg#icon" />
+      </svg>
     </a>
 
     <script type="module" src="/assets/scripts/main.js"></script>

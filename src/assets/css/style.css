@@ -1,6 +1,6 @@
 /*
  * 対象ブラウザ: モダンブラウザ（Chrome 123+, Safari 18+, Firefox 128+）
- * 使用技術: @layer, oklch(), light-dark(), CSS Nesting, :has()
+ * 使用技術: 詳細は README.md を参照
  */
 @import './layer-order.css';
 

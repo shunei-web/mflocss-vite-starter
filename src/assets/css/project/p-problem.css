@@ -5,12 +5,13 @@
 }
 
 .p-problem__heading {
-  /* CUSTOMIZE */
+  /* スタイルなし（HTML クラスとの対応を維持） */
 }
 
 .p-problem__list {
   display: grid;
   gap: var(--space-lg);
+  margin-block-start: var(--space-2xl);
 
   @media (width >= 768px) {
     grid-template-columns: repeat(3, 1fr);
@@ -25,9 +26,10 @@
 }
 
 .p-problem__item-title {
-  margin-block-end: var(--space-sm);
+  /* スタイルなし（HTML クラスとの対応を維持） */
 }
 
 .p-problem__item-text {
+  margin-block-start: var(--space-sm);
   color: var(--color-text-light);
 }

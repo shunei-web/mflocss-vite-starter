@@ -1,14 +1,15 @@
+/* --_ = ブロック内部変数（CODING_GUIDE 参照） */
+
 .p-contact {
-  /* CUSTOMIZE */
+  /* スタイルなし（HTML クラスとの対応を維持） */
 }
 
 .p-contact__title {
-  margin-block-end: var(--space-md);
   text-align: center;
 }
 
 .p-contact__lead {
-  margin-block-end: var(--space-2xl);
+  margin-block-start: var(--space-md);
   color: var(--color-text-light);
   text-align: center;
 }
@@ -20,6 +21,7 @@
   flex-direction: column;
   gap: var(--space-lg);
   max-inline-size: var(--_form-max);
+  margin-block-start: var(--space-2xl);
   margin-inline: auto;
 }
 
@@ -62,16 +64,6 @@
   }
 }
 
-.p-contact__error {
-  min-block-size: 0;
-  font-size: var(--font-size-caption);
-  color: var(--color-error);
-
-  &:empty {
-    display: none;
-  }
-}
-
 .p-contact__fieldset {
   display: flex;
   flex-direction: column;
@@ -79,7 +71,6 @@
 }
 
 .p-contact__legend {
-  margin-block-end: var(--space-xs);
   font-weight: var(--font-weight-heading);
 }
 
@@ -87,6 +78,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+  margin-block-start: var(--space-xs);
 }
 
 .p-contact__radio-label,
@@ -105,15 +97,15 @@
 }
 
 .p-contact__radio {
-  /* CUSTOMIZE */
+  /* スタイルなし（HTML クラスとの対応を維持） */
 }
 
 .p-contact__checkbox {
-  /* CUSTOMIZE */
+  /* スタイルなし（HTML クラスとの対応を維持） */
 }
 
 .p-contact__submit {
-  /* CUSTOMIZE */
+  /* スタイルなし（HTML クラスとの対応を維持） */
 }
 
 .p-contact__actions {

@@ -101,10 +101,39 @@ JavaScript で切り替える状態は `.is-*` を使用:
 | **rem** | `calc(N * var(--px))` | フォントサイズ・余白・ヘッダー高さ等、ユーザーのフォント設定に追従すべき値 |
 | **px** | `Npx` | 角丸・シャドウ・ボーダー幅・コンテンツ幅上限・タップ領域等、物理的な制約に紐づく値 |
 
+## 流体タイポグラフィ
+
+`typography.css` の `clamp()` 値は viewport-min〜viewport-max 間のリニア補間で算出しています。
+
+```
+preferred = (max - min) / (viewport-max - viewport-min) × 100vi + 切片rem
+切片 = min - (max - min) / (viewport-max - viewport-min) × viewport-min
+```
+
+例: `--font-size-h1` は 32px → 56px を 400px → 1440px で補間:
+
+```
+傾き = (56 - 32) / (1440 - 400) = 0.02308 → 2.308vi
+切片 = 32/16 - 0.02308 × 400/16 = 2 - 0.577 = 1.4231rem
+→ clamp(calc(32 * var(--px)), 2.308vi + 1.4231rem, calc(56 * var(--px)))
+```
+
 ## ファイル追加手順
 
 1. 対応するレイヤーのディレクトリに `プレフィックス-名前.css` を作成
 2. `style.css` に `@import './ディレクトリ/ファイル名.css' layer(レイヤー名);` を追加
+
+## 空のルールセット
+
+HTML のクラスと CSS のルールセットは 1:1 で対応させます。スタイルが不要なクラスでも、ルールセットを残してコメントで意図を示します。
+
+```css
+.p-header__hamburger {
+  /* スタイルなし（HTML クラスとの対応を維持） */
+}
+```
+
+納品前に `CUSTOMIZE` コメントが残っていないことを確認してください。
 
 ## コミットメッセージ
 

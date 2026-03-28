@@ -1,15 +1,16 @@
 .p-features {
-  /* CUSTOMIZE */
+  /* スタイルなし（HTML クラスとの対応を維持） */
 }
 
 .p-features__heading {
-  /* CUSTOMIZE */
+  /* スタイルなし（HTML クラスとの対応を維持） */
 }
 
 .p-features__list {
   display: flex;
   flex-direction: column;
   gap: var(--space-3xl);
+  margin-block-start: var(--space-2xl);
 }
 
 .p-features__item {
@@ -37,7 +38,7 @@
 }
 
 .p-features__title {
-  /* CUSTOMIZE */
+  /* スタイルなし（HTML クラスとの対応を維持） */
 }
 
 .p-features__badge {

@@ -10,6 +10,8 @@
     <title>お問い合わせ完了 — iluha</title>
     <meta name="description" content="お問い合わせを受け付けました。24時間以内にご連絡いたします。" />
     <meta name="robots" content="noindex" />
+    <!-- CUSTOMIZE: 本番 URL に差し替え -->
+    <link rel="canonical" href="https://example.com/thanks/" />
     <!-- CUSTOMIZE: token/color.css のメインカラーに合わせて変更 -->
     <meta name="theme-color" content="#5b7a5e" />
     <!-- CUSTOMIZE: OGP画像・faviconを差し替え -->
@@ -25,7 +27,7 @@
 
     <!-- NOTE: ヘッダー・フッターは全ページ共通。変更時は全ファイルに反映すること -->
     <!-- Header -->
-    <header class="p-header">
+    <header class="p-header" id="top" tabindex="-1">
       <div class="l-inner p-header__inner">
         <a href="/" class="p-header__logo" translate="no">iluha</a>
 
@@ -44,7 +46,7 @@
           type="button"
           aria-expanded="false"
           aria-controls="drawer"
-          aria-label="メニューを開く"
+          aria-label="メニュー"
           data-hamburger
         >
           <span class="c-hamburger__line" aria-hidden="true"></span>
@@ -112,8 +114,10 @@
     </footer>
 
     <!-- Back to Top -->
-    <a href="#" class="c-back-to-top p-back-to-top" aria-label="ページの先頭に戻る">
-      <svg class="c-icon" width="20" height="20" aria-hidden="true"><use href="../assets/images/icons/chevron-up.svg#icon"/></svg>
+    <a href="#top" class="c-back-to-top p-back-to-top" aria-label="ページの先頭に戻る">
+      <svg class="c-icon" width="20" height="20" aria-hidden="true">
+        <use href="../assets/images/icons/chevron-up.svg#icon" />
+      </svg>
     </a>
 
     <script type="module" src="/assets/scripts/main.js"></script>

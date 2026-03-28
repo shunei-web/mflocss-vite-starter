@@ -1,9 +1,10 @@
+/* --_ = ブロック内部変数（CODING_GUIDE 参照） */
+
 .p-privacy {
-  /* CUSTOMIZE */
+  /* スタイルなし（HTML クラスとの対応を維持） */
 }
 
 .p-privacy__title {
-  margin-block-end: var(--space-lg);
   font-weight: var(--font-weight-heading);
 }
 
@@ -11,24 +12,28 @@
   --_body-max: 640px;
 
   max-inline-size: var(--_body-max);
+  margin-block-start: var(--space-lg);
   line-height: var(--line-height-text);
 
   & h2 {
-    margin-block: var(--space-xl) var(--space-sm);
+    margin-block-start: var(--space-xl);
     font-weight: var(--font-weight-heading);
   }
 
-  & p {
-    margin-block-end: var(--space-md);
+  & :is(p, ul) {
+    margin-block-start: var(--space-md);
+  }
+
+  & h2 + :is(p, ul) {
+    margin-block-start: var(--space-sm);
   }
 
   & ul {
     padding-inline-start: var(--space-lg);
-    margin-block-end: var(--space-md);
   }
 
-  & li {
-    margin-block-end: var(--space-xs);
+  & li + li {
+    margin-block-start: var(--space-xs);
   }
 
   & a {

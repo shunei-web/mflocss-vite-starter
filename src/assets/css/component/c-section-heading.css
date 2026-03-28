@@ -1,13 +1,15 @@
 .c-section-heading {
-  margin-block-end: var(--space-2xl);
   text-align: center;
 
   & > p {
-    margin-block-end: var(--space-sm);
     font-size: var(--font-size-caption);
     font-weight: var(--font-weight-heading);
     color: var(--color-main);
     text-transform: uppercase;
     letter-spacing: 0.1em;
+  }
+
+  & > p + * {
+    margin-block-start: var(--space-sm);
   }
 }

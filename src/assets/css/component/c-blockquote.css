@@ -1,3 +1,5 @@
+/* --_ = ブロック内部変数（CODING_GUIDE 参照） */
+
 .c-blockquote {
   --_border-width: 3px;
 
@@ -6,13 +8,12 @@
 }
 
 .c-blockquote__title {
-  margin-block-end: var(--space-sm);
   font-weight: var(--font-weight-heading);
   line-height: var(--line-height-title);
 }
 
 .c-blockquote__text {
-  margin-block-end: var(--space-md);
+  margin-block-start: var(--space-sm);
   color: var(--color-text-light);
 }
 
@@ -20,6 +21,7 @@
   display: flex;
   gap: var(--space-md);
   align-items: center;
+  margin-block-start: var(--space-md);
   font-size: var(--font-size-caption);
   font-style: normal;
   color: var(--color-text-light);

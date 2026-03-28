@@ -1,6 +1,8 @@
 /* ハンバーガーボタン（☰ ↔ × アニメーション）
    aria-expanded の状態に連動して変化する */
 
+/* --_ = ブロック内部変数（CODING_GUIDE 参照） */
+
 .c-hamburger {
   --_line-width: 20px;
   --_line-height: 2px;
@@ -27,9 +29,12 @@
   block-size: var(--_line-height);
   background-color: currentcolor;
   border-radius: var(--_line-radius);
-  transition:
-    transform var(--duration-normal) var(--ease-out-cubic),
-    opacity var(--duration-normal) var(--ease-out-cubic);
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition:
+      transform var(--duration-normal) var(--ease-out-cubic),
+      opacity var(--duration-normal) var(--ease-out-cubic);
+  }
 }
 
 .c-hamburger__line {

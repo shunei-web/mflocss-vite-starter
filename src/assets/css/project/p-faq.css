@@ -1,12 +1,13 @@
 .p-faq {
-  /* CUSTOMIZE */
+  /* スタイルなし（HTML クラスとの対応を維持） */
 }
 
 .p-faq__heading {
-  /* CUSTOMIZE */
+  /* スタイルなし（HTML クラスとの対応を維持） */
 }
 
 .p-faq__list {
   max-inline-size: var(--content-width-narrow);
+  margin-block-start: var(--space-2xl);
   margin-inline: auto;
 }

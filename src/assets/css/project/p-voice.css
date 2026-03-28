@@ -1,14 +1,15 @@
 .p-voice {
-  /* CUSTOMIZE */
+  /* スタイルなし（HTML クラスとの対応を維持） */
 }
 
 .p-voice__heading {
-  /* CUSTOMIZE */
+  /* スタイルなし（HTML クラスとの対応を維持） */
 }
 
 .p-voice__list {
   display: grid;
   gap: var(--space-xl);
+  margin-block-start: var(--space-2xl);
 
   @media (width >= 768px) {
     grid-template-columns: repeat(2, 1fr);
@@ -16,7 +17,7 @@
 }
 
 .p-voice__blockquote {
-  /* CUSTOMIZE */
+  /* スタイルなし（HTML クラスとの対応を維持） */
 }
 
 .p-voice__card {
