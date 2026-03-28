@@ -79,6 +79,15 @@ JavaScript で切り替える状態は `.is-*` を使用:
 .is-loading
 ```
 
+## モーションガード
+
+| 層 | ガード | 理由 |
+|----|--------|------|
+| Animation | `(prefers-reduced-motion: no-preference) and (scripting: enabled)` | JS 無効時に要素が不可視になるのを防止 |
+| Component / Project | `(prefers-reduced-motion: no-preference)` | 要素は常に可視。滑らかさだけを制御 |
+
+Animation 層は `opacity: 0` 等で初期状態を隠すため、JS が動かないと要素が見えなくなる。Component / Project の transition は状態変化の滑らかさのみで、ガードの有無にかかわらず要素は表示される。
+
 ## カスタムプロパティ
 
 ### プライベート変数（`--_`）
