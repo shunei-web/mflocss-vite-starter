@@ -70,10 +70,13 @@
   position: fixed;
   inset-block: var(--header-size) 0;
   inset-inline: 0;
+  inline-size: 100%;
+  block-size: calc(100dvb - var(--header-size));
   z-index: var(--z-drawer);
   padding: 0;
   margin: 0;
-  overflow: hidden;
+  overflow-y: auto;
+  overscroll-behavior-block: contain;
   background-color: var(--color-bg);
   border: none;
   transform: translateX(100%);
@@ -90,10 +93,8 @@
   gap: var(--space-xl);
   align-items: center;
   justify-content: safe center;
-  block-size: 100%;
+  min-block-size: 100%;
   padding: var(--space-xl);
-  overflow-y: auto;
-  overscroll-behavior-block: contain;
 }
 
 .p-header__hamburger {
