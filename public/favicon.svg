@@ -6,10 +6,8 @@
   </defs>
   <g clip-path="url(#clip)">
     <rect width="32" height="32" fill="#5b7a5e"/>
-    <!-- 葉モチーフ -->
-    <path d="M16 6 Q24 12 22 20 Q18 26 16 28 Q14 26 10 20 Q8 12 16 6Z" fill="none" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/>
-    <line x1="16" y1="10" x2="16" y2="24" stroke="#fff" stroke-width="1" opacity="0.7"/>
-    <path d="M16 14 Q13 12 11 14" fill="none" stroke="#fff" stroke-width="0.8" opacity="0.5"/>
-    <path d="M16 18 Q19 16 21 18" fill="none" stroke="#fff" stroke-width="0.8" opacity="0.5"/>
+    <!-- 葉モチーフ（シンプルなティアドロップ + 茎） -->
+    <circle cx="16" cy="14" r="7" fill="none" stroke="#fff" stroke-width="1.5"/>
+    <line x1="16" y1="21" x2="16" y2="28" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
   </g>
 </svg>
