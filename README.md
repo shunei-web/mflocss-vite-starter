@@ -55,6 +55,61 @@ Token 層（`src/assets/css/token/`）にデザイン値が集約されていま
 
 デフォルトのブレークポイントは `768px` です。CSS の仕様上 `@media` にカスタムプロパティは使えないため、変更する場合はプロジェクト全体で `768px` を検索置換してください。
 
+## ページの追加方法
+
+1. `src/` に新しいディレクトリと `index.html` を作成（例: `src/about/index.html`）
+2. `vite.config.ts` の `rolldownOptions.input` にエントリを追加:
+   ```ts
+   about: resolve(__dirname, 'src/about/index.html'),
+   ```
+3. ヘッダー・フッターのナビリンクを全ページに追加
+4. 必要に応じて Project CSS を作成し `style.css` に `@import` を追加
+
+## ページの削除方法
+
+1. 対象のディレクトリを削除（例: `src/thanks/`）
+2. `vite.config.ts` の `rolldownOptions.input` から該当エントリを削除
+3. ヘッダー・フッターのナビリンクを全ページから除去
+4. 不要な Project CSS があれば `style.css` の `@import` を削除
+
+## favicon・OGP の差し替え
+
+`public/` 配下のファイルを差し替えます:
+
+| ファイル | サイズ | 用途 |
+|---------|--------|------|
+| `favicon.svg` | — | モダンブラウザ用 |
+| `favicon.ico` | 32×32 | レガシーブラウザ用 |
+| `apple-touch-icon.png` | 180×180 | iOS ホーム画面 |
+| `ogp.png` | 1200×630 | SNS シェア画像 |
+
+各ページの `<meta name="theme-color">` も合わせて変更してください。
+
+## フォーム送信先の設定
+
+`src/contact/index.html` の `<form>` タグに `action` 属性を追加します:
+
+```html
+<form class="p-contact__form" action="https://your-form-service.com/submit" method="POST">
+```
+
+現状は `action` が未設定（フォームサービスに応じて設定してください）。
+
+## 外部フォントの追加
+
+1. 全ページの `<head>` にフォントの `<link>` タグを追加（例: Google Fonts）
+2. `src/assets/css/token/typography.css` の `--font-family` を変更:
+   ```css
+   --font-family: 'Inter', 'Noto Sans JP', sans-serif;
+   ```
+
+## セクションの追加方法
+
+1. `src/index.html` に `<section class="l-section p-<名前>">` を追加
+2. `src/assets/css/project/p-<名前>.css` を作成
+3. `style.css` に `@import './project/p-<名前>.css' layer(project);` を追加
+4. ヘッダーのナビリンクに `#<名前>` を追加（必要に応じて）
+
 ## セクションの削除方法
 
 各セクションは独立しているため、HTML の `<section>` ブロックを削除するだけで動作します。
@@ -100,6 +155,12 @@ pnpm build
 ```
 
 `dist/` ディレクトリに最適化されたファイルが出力されます。そのまま静的ホスティング（Netlify, Vercel, Cloudflare Pages 等）にデプロイできます。
+
+サブディレクトリ（例: `https://example.com/my-site/`）にデプロイする場合は、`vite.config.ts` の `base` を変更してください:
+
+```ts
+base: '/my-site/',
+```
 
 ## コマンド一覧
 
