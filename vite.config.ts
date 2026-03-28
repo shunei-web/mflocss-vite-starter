@@ -7,7 +7,7 @@ export default defineConfig({
   base: '/',
 
   build: {
-    rollupOptions: {
+    rolldownOptions: {
       input: {
         main: resolve(__dirname, 'src/index.html'),
         contact: resolve(__dirname, 'src/contact/index.html'),
