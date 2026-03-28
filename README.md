@@ -162,14 +162,14 @@ src/
 │   ├── project/           # ページ固有のスタイル
 │   ├── animation/         # 装飾的アニメーション
 │   └── utility/           # ユーティリティ
+├── images/                # SVG ワイヤーフレーム画像（ビルドでハッシュ付与）
 ├── scripts/
 │   └── main.js            # ドロワー・アニメーション・Back to Top
 ├── index.html             # トップページ
 ├── contact/index.html     # お問い合わせ
 ├── thanks/index.html      # サンクスページ
 └── privacy/index.html     # プライバシーポリシー
-public/
-├── images/                # SVG ワイヤーフレーム画像
+public/                    # ルートパス固定のファイル
 ├── favicon.svg
 ├── favicon.ico
 ├── apple-touch-icon.png
